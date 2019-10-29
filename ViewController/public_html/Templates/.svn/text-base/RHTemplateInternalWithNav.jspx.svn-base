@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <af:pageTemplateDef var="attrs">
+    <af:decorativeBox id="pt_db1" topHeight="75px">
+      <f:facet name="center">
+        <af:panelSplitter id="pt_ps1" splitterPosition="180">
+          <f:facet name="first">
+            <af:navigationPane id="pt_np1" hint="list">
+            
+              <af:commandNavigationItem text="Document Preface" id="pt_cni1"
+                                        destination="/portal/RegulatoryHandbook/InternalPolicyPreface"
+                                        rendered="#{sessionScope.rhSession.fldUserAction eq 'ISSDP'}"/>
+              <af:commandNavigationItem text="Enquiries" id="pt_cni6"
+                                        destination="/portal/RegulatoryHandbook/InternalEnquiries"/>
+              <af:commandNavigationItem text="FAQ" id="pt_cni2"
+                                        destination="/portal/RegulatoryHandbook/InternalFaqs"/>
+              <af:commandNavigationItem text="Supporting Documents "
+                                        id="pt_cni5"
+                                        destination="/portal/RegulatoryHandbook/InternalSupportingDocumentsRequest"
+                                        rendered="#{sessionScope.rhSession.fldUserType eq '03'}"></af:commandNavigationItem>
+              <af:commandNavigationItem text="Aging Report" id="pt_cni3"
+                                        destination="/portal/RegulatoryHandbook/InternalAgingReport"/>
+              <af:commandNavigationItem text="Document Expiry" id="pt_cni4"
+                                        destination="/portal/RegulatoryHandbook/InternalPolicyExpiry"
+                                        rendered="#{sessionScope.rhSession.fldUserType eq '03'}"></af:commandNavigationItem>
+            </af:navigationPane>
+          </f:facet>
+          <f:facet name="second">
+            <af:facetRef facetName="body"/>
+          </f:facet>
+        </af:panelSplitter>
+      </f:facet>
+    </af:decorativeBox>
+    <af:xmlContent>
+      <component xmlns="http://xmlns.oracle.com/adf/faces/rich/component">
+        <display-name>RHTemplateInternal</display-name>
+        <facet>
+          <facet-name>body</facet-name>
+        </facet>
+      </component>
+    </af:xmlContent>
+  </af:pageTemplateDef>
+</jsp:root>

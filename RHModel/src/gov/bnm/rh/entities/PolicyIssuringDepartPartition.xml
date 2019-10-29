@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="PolicyIssuringDepartPartition"
+  Version="11.1.1.64.93"
+  InheritPersonalization="true"
+  DBObjectType="table"
+  DBObjectName="PolicyIssuringDepartPartition"
+  AliasName="PolicyIssuringDepartPartitio1"
+  BindingStyle="JDBC"
+  UseGlueCode="false">
+  <DesignTime>
+    <AttrArray Name="_publishEvents"/>
+  </DesignTime>
+  <Attribute
+    Name="issuringDepartId"
+    IsNotNull="true"
+    Precision="10"
+    ColumnName="issuringDepartId"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="varchar"
+    TableName="PolicyIssuringDepartPartition"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="itemId"
+    IsNotNull="true"
+    Precision="20"
+    ColumnName="itemId"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="varchar"
+    TableName="PolicyIssuringDepartPartition"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="Policy"
+    Association="gov.bnm.rh.entities.assoc.PolicyIssuringDepartPartitionItemIdAssoc"
+    AssociationEnd="gov.bnm.rh.entities.assoc.PolicyIssuringDepartPartitionItemIdAssoc.Policy"
+    AssociationOtherEnd="gov.bnm.rh.entities.assoc.PolicyIssuringDepartPartitionItemIdAssoc.PolicyIssuringDepartPartition"
+    Type="gov.bnm.rh.entities.PolicyImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="IssuringDepartment"
+    Association="gov.bnm.rh.entities.assoc.PolicyIssuringDepartPartitionDepIdAssoc"
+    AssociationEnd="gov.bnm.rh.entities.assoc.PolicyIssuringDepartPartitionDepIdAssoc.IssuringDepartment"
+    AssociationOtherEnd="gov.bnm.rh.entities.assoc.PolicyIssuringDepartPartitionDepIdAssoc.PolicyIssuringDepartPartition"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <ViewLinkAccessor
+    Name="IssuringDepartmentView"
+    ViewLink="PolicyIssuringDepartPartitionDepIdLink"
+    ViewLinkEnd="PolicyIssuringDepartPartitionDepIdLink.IssuringDepartmentView1"
+    ViewLinkOtherEnd="PolicyIssuringDepartPartitionDepIdLink.destEnd"
+    Type="oracle.jbo.server.ViewRowImpl"
+    IsUpdateable="false"/>
+  <Key
+    Name="PolicyissuringdepartpartitionIssuringdepartidCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_DBObjectName" Value="POLICYISSURINGDEPARTPARTITION_"/>
+      <Attr Name="_checkCondition" Value='"issuringDepartId" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="gov.bnm.rh.entities.PolicyIssuringDepartPartition.issuringDepartId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="PolicyissuringdepartpartitionItemidCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_DBObjectName" Value="POLICYISSURINGDEPARTPARTITION_"/>
+      <Attr Name="_checkCondition" Value='"itemId" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="gov.bnm.rh.entities.PolicyIssuringDepartPartition.itemId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="PolicyissuringdepartpartitionPrimaryKey"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="POLICYISSURINGDEPARTPARTITION_"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="gov.bnm.rh.entities.PolicyIssuringDepartPartition.issuringDepartId"/>
+      <Item Value="gov.bnm.rh.entities.PolicyIssuringDepartPartition.itemId"/>
+    </AttrArray>
+  </Key>
+</Entity>

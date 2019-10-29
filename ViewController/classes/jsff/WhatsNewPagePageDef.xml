@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.64.93" id="WhatsNewPagePageDef" Package="jsff">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="PolicyView1" RangeSize="5"
+              DataControl="RegBookAppModuleDataControl"
+              id="PolicyView1Iterator"/>
+    <iterator id="PolicyActiveOnlyViewObj1Iterator"
+              Binds="PolicyActiveOnlyViewObj1"
+              DataControl="RegBookAppModuleDataControl" RangeSize="50"
+              Refresh="always"/>
+    <searchRegion Binds="PolicyActiveOnlyViewObj1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="PolicyActiveOnlyViewObj1Query"/>
+    <iterator id="AttachmentDownloadViewObj1Iterator"
+              Binds="AttachmentDownloadViewObj1"
+              DataControl="RegBookAppModuleDataControl" RangeSize="25"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="PolicyView1Iterator" id="PolicyView1">
+      <nodeDefinition DefName="gov.bnm.rh.views.PolicyView" Name="PolicyView10">
+        <AttrNames>
+          <Item Value="RefNum"/>
+          <Item Value="GuidelineTitle"/>
+          <Item Value="EffectiveDate"/>
+          <Item Value="NewIssuanceDate"/>
+          <Item Value="itemId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="PolicyActiveOnlyViewObj1Iterator"
+          id="PolicyActiveOnlyViewObj1">
+      <nodeDefinition DefName="gov.bnm.rh.views.PolicyActiveOnlyViewObj"
+                      Name="PolicyActiveOnlyViewObj10">
+        <AttrNames>
+          <Item Value="AttachmentId"/>
+          <Item Value="Sectors"/>
+          <Item Value="InstitutionTypes"/>
+          <Item Value="GuidelineTitle"/>
+          <Item Value="EffectiveDate"/>
+          <Item Value="IssuingDepartment"/>
+          <Item Value="NewIssuanceDate"/>
+          <Item Value="Category"/>
+          <Item Value="itemId"/>
+          <Item Value="RelavantAct"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <methodAction id="getWhatsNewPolicys" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="getWhatsNewPolicys"
+                  IsViewObjectMethod="false"
+                  DataControl="RegBookAppModuleDataControl"
+                  InstanceName="RegBookAppModuleDataControl.dataProvider">
+      <NamedData NDName="isInternalExternal"
+                 NDValue="#{rhSession.isInternalExternal}#{sessionScope.rhSession.isInternalExternal}"
+                 NDType="java.lang.String"/>
+      <NamedData NDName="orgId" NDValue="#{sessionScope.rhSession.fldOrgId}"
+                 NDType="java.lang.String"/>
+      <NamedData NDName="depId"
+                 NDValue="#{sessionScope.rhSession.fldDepartmentId}"
+                 NDType="java.lang.String"/>
+    </methodAction>
+  </bindings>
+</pageDefinition>

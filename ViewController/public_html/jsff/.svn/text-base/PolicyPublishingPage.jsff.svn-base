@@ -1,0 +1,1247 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelStretchLayout id="psl1">
+    <f:facet name="center">
+      <af:panelGroupLayout id="pgl1" layout="scroll">
+        <af:panelFormLayout id="pfl1">
+          <af:spacer width="10" height="10" id="s20"/>
+          <af:panelLabelAndMessage label="Amend Version" id="plam6"
+                                   visible="#{pageFlowScope.formType eq 'PV' and pageFlowScope.sup ne 'Y'}">
+            <af:outputText value="#{pageFlowScope.version}" id="ot11"/>
+          </af:panelLabelAndMessage>
+          <af:selectOneRadio label="Amendment" id="sor1" layout="horizontal"
+                             rendered="#{pageFlowScope.formType eq 'PA'}"
+                             required="true"
+                             binding="#{backingBeanScope.backBean_PolicyPublishing.sor1}"
+                             valueChangeListener="#{backingBeanScope.backBean_PolicyPublishing.amendmentAction}"
+                             autoSubmit="true" value="N">
+            <af:selectItem label="Yes" value="Y" id="si2"/>
+            <af:selectItem label="No" value="N" id="si3"/>
+          </af:selectOneRadio>
+          <af:inputText value="#{bindings.Reference.inputValue}"
+                        label="#{bindings.Reference.hints.label}"
+                        required="#{bindings.Reference.hints.mandatory}"
+                        columns="70"
+                        maximumLength="#{bindings.Reference.hints.precision}"
+                        shortDesc="#{bindings.Reference.hints.tooltip}" id="it1"
+                        binding="#{backingBeanScope.backBean_PolicyPublishing.it1}"
+                        readOnly="#{pageFlowScope.formType eq 'PV'}">
+            <f:validator binding="#{bindings.Reference.validator}"/>
+          </af:inputText>
+          <af:spacer width="10" height="10" id="s21"/>
+          <af:inputText value="#{bindings.GuidelineTitle.inputValue}"
+                        label="#{bindings.GuidelineTitle.hints.label}"
+                        required="#{bindings.GuidelineTitle.hints.mandatory}"
+                        columns="70"
+                        maximumLength="#{bindings.GuidelineTitle.hints.precision}"
+                        shortDesc="#{bindings.GuidelineTitle.hints.tooltip}"
+                        id="it2" rows="2"
+                        requiredMessageDetail="You Must Insert ID"
+                        readOnly="#{pageFlowScope.formType eq 'PV'}"
+                        binding="#{backingBeanScope.backBean_PolicyPublishing.it2}">
+            <f:validator binding="#{bindings.GuidelineTitle.validator}"/>
+          </af:inputText>
+          <af:spacer width="10" height="10" id="s22"/>
+          <af:panelLabelAndMessage label="Author" id="plam1">
+            <af:commandImageLink text="Add" id="cil5" icon="/images/add.png"
+                                 action="#{backingBeanScope.backBean_PolicyPublishing.showPopupP5}"
+                                 visible="#{pageFlowScope.formType ne 'PV'}"
+                                 rendered="#{adfFacesContext.outputMode ne 'printable'}"/>
+            <af:spacer height="10" width="10" id="s41"/>
+            <af:commandImageLink text="Remove" id="cil6"
+                                 action="#{backingBeanScope.backBean_PolicyPublishing.showPopupP5}"
+                                 icon="/images/rem.png" partialTriggers="cb5"
+                                 visible="#{pageFlowScope.formType ne 'PV'}"
+                                 rendered="#{adfFacesContext.outputMode ne 'printable'}"
+                                 disabled="#{pageFlowScope.formType eq 'PV' or bindings.PolicybnmuserspartitionView1Iterator.estimatedRowCount &lt;1}"/>
+          </af:panelLabelAndMessage>
+          <af:popup id="p5"
+                    binding="#{backingBeanScope.backBean_PolicyPublishing.p5}">
+            <af:dialog id="d5" contentWidth="700" contentHeight="350"
+                       type="none">
+              <af:panelStretchLayout id="psl9" startWidth="335px"
+                                     endWidth="334px" bottomHeight="25px"
+                                     topHeight="0px"
+                                     inlineStyle="width:700px; height:350px;">
+                <f:facet name="bottom">
+                  <af:panelGroupLayout id="pgl32" layout="horizontal">
+                    <af:commandButton text="Close" id="cb5"
+                                      action="#{backingBeanScope.backBean_PolicyPublishing.hidePopupP5}"/>
+                  </af:panelGroupLayout>
+                </f:facet>
+                <f:facet name="center">
+                  <af:panelGroupLayout layout="vertical"
+                                       xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                                       id="pgl30">
+                    <af:spacer width="10" height="100" id="s26"/>
+                    <af:commandButton text=">" id="cb21" partialSubmit="true"
+                                      action="#{backingBeanScope.backBean_Shuttle.addAuthors}"/>
+                    <af:spacer width="10" height="10" id="s27"/>
+                    <af:commandButton text="&lt;" id="cb22" partialSubmit="true"
+                                      action="#{backingBeanScope.backBean_Shuttle.removeAuthors}"/>
+                    <af:spacer width="10" height="100" id="s28"/>
+                  </af:panelGroupLayout>
+                </f:facet>
+                <f:facet name="start">
+                  <af:panelGroupLayout layout="scroll"
+                                       xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                                       id="pgl29">
+                    <af:table value="#{bindings.InternaluserView11.collectionModel}"
+                              var="row"
+                              rows="#{bindings.InternaluserView11.rangeSize}"
+                              emptyText="#{bindings.InternaluserView11.viewable ? 'No data to display.' : 'Access Denied.'}"
+                              fetchSize="#{bindings.InternaluserView11.rangeSize}"
+                              rowBandingInterval="1"
+                              filterModel="#{bindings.InternaluserView11Query.queryDescriptor}"
+                              queryListener="#{bindings.InternaluserView11Query.processQuery}"
+                              filterVisible="true" varStatus="vs"
+                              selectionListener="#{bindings.InternaluserView11.collectionModel.makeCurrent}"
+                              rowSelection="multiple" id="t21"
+                              columnStretching="column:c33"
+                              binding="#{backingBeanScope.backBean_Shuttle.t3}">
+                      <af:column sortProperty="#{bindings.InternaluserView11.hints.FULLNAME.name}"
+                                 filterable="true" sortable="true"
+                                 filterFeatures="caseInsensitive"
+                                 headerText="#{bindings.InternaluserView11.hints.FULLNAME.label}"
+                                 id="c33">
+                        <af:outputText value="#{row.FULLNAME}" id="ot30"/>
+                      </af:column>
+                    </af:table>
+                  </af:panelGroupLayout>
+                </f:facet>
+                <f:facet name="end">
+                  <af:panelGroupLayout layout="scroll"
+                                       xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                                       id="pgl31">
+                    <af:table value="#{bindings.PolicybnmuserspartitionView1.collectionModel}"
+                              var="row"
+                              rows="#{bindings.PolicybnmuserspartitionView1.rangeSize}"
+                              emptyText="#{bindings.PolicybnmuserspartitionView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                              fetchSize="#{bindings.PolicybnmuserspartitionView1.rangeSize}"
+                              rowBandingInterval="1"
+                              filterModel="#{bindings.PolicybnmuserspartitionView1Query.queryDescriptor}"
+                              queryListener="#{bindings.PolicybnmuserspartitionView1Query.processQuery}"
+                              filterVisible="true" varStatus="vs"
+                              selectionListener="#{bindings.PolicybnmuserspartitionView1.collectionModel.makeCurrent}"
+                              rowSelection="multiple" id="t22"
+                              columnStretching="column:c34"
+                              binding="#{backingBeanScope.backBean_Shuttle.t4}"
+                              partialTriggers="::cb21 ::cb22">
+                      <af:column sortProperty="#{bindings.PolicybnmuserspartitionView1.hints.userName.name}"
+                                 filterable="true" sortable="true"
+                                 filterFeatures="caseInsensitive"
+                                 headerText="#{bindings.PolicybnmuserspartitionView1.hints.userName.label}"
+                                 id="c34">
+                        <af:outputText value="#{row.userName}" id="ot31"/>
+                      </af:column>
+                    </af:table>
+                  </af:panelGroupLayout>
+                </f:facet>
+              </af:panelStretchLayout>
+            </af:dialog>
+          </af:popup>
+          <af:iterator id="i2"
+                       value="#{bindings.PolicybnmuserspartitionView11.collectionModel}"
+                       var="row" varStatus="vs">
+            <af:outputText value="#{row.userName}" id="ot7"/>
+          </af:iterator>
+          <af:spacer width="10" height="10" id="s23"/>
+          <!--
+          **comment because CR Rh-002 2017 by shankar 30-oct-2017
+          <af:panelLabelAndMessage label="#{bindings.EffectiveDate.hints.label}"
+                                   id="plam9" partialTriggers="sor1"
+                                   visible="#{pageFlowScope.formType eq 'PV' or backingBeanScope.backBean_PolicyPublishing.amendmentAction eq 'N'}">
+            
+            
+            
+            <af:outputText value="#{bindings.EffectiveDate.inputValue}"
+                           escape="false" id="ot4"/>
+                           
+                            
+          </af:panelLabelAndMessage -->
+          <!-- visible="#{ backingBeanScope.backBean_PolicyPublishing.amendmentAction ne 'N'}" -->
+          <af:richTextEditor label="#{bindings.EffectiveDate.hints.label}"
+                             id="rte1" columns="85" rows="6"
+                             value="#{bindings.EffectiveDate.inputValue}"
+                             partialTriggers="sor1"
+                             binding="#{backingBeanScope.backBean_PolicyPublishing.rte1}"
+                             toolboxLayout="history formatAll justify list indent"
+                             inlineStyle="font-family:Arial, Helvetica, sans-serif;"
+                             autoSubmit="true"/>
+          <af:spacer width="10" height="10" id="s24"/>
+          <af:inputDate value="#{bindings.FirstIssuanceDate.inputValue}"
+                        label="#{bindings.FirstIssuanceDate.hints.label}"
+                        required="#{bindings.FirstIssuanceDate.hints.mandatory}"
+                        shortDesc="#{bindings.FirstIssuanceDate.hints.tooltip}"
+                        id="id2" readOnly="true"
+                        visible="#{pageFlowScope.formType  ne 'PP' }">
+            <f:validator binding="#{bindings.FirstIssuanceDate.validator}"/>
+            <af:convertDateTime pattern="#{bindings.FirstIssuanceDate.format}"/>
+          </af:inputDate>
+         
+          <af:inputDate value="#{bindings.NewIssuanceDate.inputValue}"
+                        label="#{bindings.NewIssuanceDate.hints.label}"
+                        required="#{bindings.NewIssuanceDate.hints.mandatory}"
+                        shortDesc="#{bindings.NewIssuanceDate.hints.tooltip}"
+                        id="id1" readOnly="#{pageFlowScope.formType eq 'PV'  or  backingBeanScope.backBean_PolicyPublishing.amendmentAction eq 'N'}"
+                        binding="#{backingBeanScope.backBean_PolicyPublishing.id1}"
+                        partialTriggers="sor1">
+            <af:convertDateTime pattern="dd MMMM yyyy"/>
+          </af:inputDate>
+          <af:spacer width="10" height="10" id="s25"/>
+          <!--
+            **comment because CR Rh-002 2017 by shankar 30-oct-2017 >
+          <af:panelLabelAndMessage label="#{bindings.Summary.hints.label}"
+                                   id="plam10" partialTriggers="sor1"
+                                   visible="#{pageFlowScope.formType eq 'PV' or backingBeanScope.backBean_PolicyPublishing.amendmentAction eq 'N'}">
+            
+            <af:outputText value="#{bindings.Summary.inputValue}" escape="false"
+                           id="ot29"/>
+                           
+          </af:panelLabelAndMessage> -->
+          <!--visible="#{ backingBeanScope.backBean_PolicyPublishing.amendmentAction ne 'N'}" -->
+          <af:richTextEditor value="#{bindings.Summary.inputValue}"
+                             label="#{bindings.Summary.hints.label}"
+                             required="#{bindings.Summary.hints.mandatory}"
+                             id="rte3" columns="85" rows="6"
+                             partialTriggers="sor1"
+                             toolboxLayout="history formatAll justify list indent"
+                             binding="#{backingBeanScope.backBean_PolicyPublishing.rte3}"></af:richTextEditor>
+          <af:spacer width="10" height="10" id="s29"/>
+          <!-- 
+          *comment because CR Rh-002 2017 by shankar 30-oct-2017
+          <af:panelLabelAndMessage label="#{bindings.Highlights.hints.label}"
+                                   id="plam11" partialTriggers="sor1"
+                                   visible="#{pageFlowScope.formType eq 'PV'  or backingBeanScope.backBean_PolicyPublishing.amendmentAction eq 'N'}">
+            <af:outputText value="#{bindings.Highlights.inputValue}"
+                           escape="false" id="ot40" />
+                           
+          </af:panelLabelAndMessage> -->
+          <!--visible="#{ backingBeanScope.backBean_PolicyPublishing.amendmentAction ne 'N'}"  -->
+          <af:richTextEditor label="#{bindings.Highlights.hints.label}"
+                             id="rte2" columns="85" rows="6"
+                             required="#{bindings.Highlights.hints.mandatory}"
+                             value="#{bindings.Highlights.inputValue}"
+                             partialTriggers="sor1"
+                             toolboxLayout="history formatAll justify list indent"
+                             binding="#{backingBeanScope.backBean_PolicyPublishing.rte2}"></af:richTextEditor>
+          <af:spacer width="10" height="10" id="s59"/>
+          <af:inputText label="#{bindings.SectionInCharge.hints.label}" id="it6"
+                        maximumLength="#{bindings.SectionInCharge.hints.precision}"
+                        shortDesc="#{bindings.SectionInCharge.hints.tooltip}"
+                        readOnly="#{pageFlowScope.formType eq 'PV'}"
+                        columns="70"
+                        value="#{bindings.SectionInCharge.inputValue}"
+                        binding="#{backingBeanScope.backBean_PolicyPublishing.it6}"/>
+          <af:spacer width="10" height="10" id="s61"/>
+          <af:panelLabelAndMessage label="Issuing Department" id="plam2"
+                                   rendered="#{sessionScope.rhSession.isInternalExternal eq 'IN'}">
+            <af:commandImageLink text="Add" id="cil2" icon="/images/add.png"
+                                 action="#{backingBeanScope.backBean_PolicyPublishing.showPopupP1}"
+                                 visible="#{pageFlowScope.formType ne 'PV'}"
+                                 rendered="#{adfFacesContext.outputMode ne 'printable'}"
+                                 disabled="#{pageFlowScope.formType eq 'PV' or  backingBeanScope.backBean_PolicyPublishing.amendmentAction eq 'N'}"
+                                 partialTriggers="sor1"/>
+            <af:spacer width="10" height="10" id="s42"/>
+            <af:commandImageLink text="Remove" id="cil7"
+                                 action="#{backingBeanScope.backBean_PolicyPublishing.showPopupP1}"
+                                 visible="#{pageFlowScope.formType ne 'PV'}"
+                                 rendered="#{adfFacesContext.outputMode ne 'printable'}"
+                                 icon="/images/rem.png" partialTriggers="cb3"
+                                 disabled="#{pageFlowScope.formType eq 'PV' or  backingBeanScope.backBean_PolicyPublishing.amendmentAction eq 'N'or bindings.PolicydepartmentpartitionView1Iterator.estimatedRowCount &lt;1}"/>
+          </af:panelLabelAndMessage>
+          <af:iterator id="i3"
+                       rendered="#{sessionScope.rhSession.isInternalExternal eq 'IN'}"
+                       value="#{bindings.PolicydepartmentpartitionView11.collectionModel}"
+                       var="row" varStatus="vs">
+            <af:outputText value="#{row.DepartmentName}" id="ot6"/>
+          </af:iterator>
+          <af:spacer width="10" height="10" id="s30"
+                     rendered="#{sessionScope.rhSession.isInternalExternal eq 'IN'}"/>
+          <af:popup id="p1"
+                    binding="#{backingBeanScope.backBean_PolicyPublishing.p1}">
+            <af:dialog contentWidth="700" contentHeight="350" id="d1"
+                       type="none">
+              <af:panelStretchLayout id="psl2" startWidth="335px"
+                                     endWidth="334px" bottomHeight="25px"
+                                     topHeight="0px"
+                                     inlineStyle="width:700px; height:350px;">
+                <f:facet name="bottom">
+                  <af:panelGroupLayout id="pgl5" layout="horizontal">
+                    <af:commandButton text="Close" id="cb3"
+                                      action="#{backingBeanScope.backBean_PolicyPublishing.hidePopupP1}"/>
+                  </af:panelGroupLayout>
+                </f:facet>
+                <f:facet name="center">
+                  <af:panelGroupLayout id="pgl4" layout="vertical"
+                                       halign="center">
+                    <af:spacer width="10" height="100" id="s1"/>
+                    <af:commandButton text=">" id="cb1" partialSubmit="true"
+                                      action="#{backingBeanScope.backBean_Shuttle.addDepartment}"/>
+                    <af:spacer width="10" height="10" id="s2"/>
+                    <af:commandButton text="&lt;" id="cb2" partialSubmit="true"
+                                      action="#{backingBeanScope.backBean_Shuttle.removeDepartment}"/>
+                    <af:spacer width="10" height="100" id="s3"/>
+                  </af:panelGroupLayout>
+                </f:facet>
+                <f:facet name="start">
+                  <af:panelGroupLayout id="pgl2" halign="center">
+                    <af:table value="#{bindings.DepartmentView11.collectionModel}"
+                              var="row"
+                              rows="#{bindings.DepartmentView11.rangeSize}"
+                              emptyText="#{bindings.DepartmentView11.viewable ? 'No data to display.' : 'Access Denied.'}"
+                              fetchSize="#{bindings.DepartmentView11.rangeSize}"
+                              rowBandingInterval="1"
+                              filterModel="#{bindings.DepartmentView11Query.queryDescriptor}"
+                              queryListener="#{bindings.DepartmentView11Query.processQuery}"
+                              filterVisible="true" varStatus="vs"
+                              selectionListener="#{bindings.DepartmentView11.collectionModel.makeCurrent}"
+                              rowSelection="multiple" id="t1"
+                              binding="#{backingBeanScope.backBean_Shuttle.t1}"
+                              columnStretching="column:c2" width="335">
+                      <af:column sortProperty="#{bindings.DepartmentView11.hints.NAME.name}"
+                                 filterable="true" sortable="true"
+                                 filterFeatures="caseInsensitive"
+                                 headerText="#{bindings.DepartmentView11.hints.NAME.label}"
+                                 id="c2" width="159">
+                        <af:outputText value="#{row.NAME}" id="ot3"/>
+                      </af:column>
+                    </af:table>
+                  </af:panelGroupLayout>
+                </f:facet>
+                <f:facet name="end">
+                  <af:panelGroupLayout id="pgl3" halign="center">
+                    <af:table value="#{bindings.PolicydepartmentpartitionView1.collectionModel}"
+                              var="row"
+                              rows="#{bindings.PolicydepartmentpartitionView1.rangeSize}"
+                              emptyText="#{bindings.PolicydepartmentpartitionView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                              fetchSize="#{bindings.PolicydepartmentpartitionView1.rangeSize}"
+                              rowBandingInterval="1"
+                              filterModel="#{bindings.PolicydepartmentpartitionView1Query.queryDescriptor}"
+                              queryListener="#{bindings.PolicydepartmentpartitionView1Query.processQuery}"
+                              filterVisible="true" varStatus="vs"
+                              selectionListener="#{bindings.PolicydepartmentpartitionView1.collectionModel.makeCurrent}"
+                              rowSelection="multiple" id="t2"
+                              partialTriggers="::cb1 ::cb2"
+                              columnStretching="column:c3"
+                              binding="#{backingBeanScope.backBean_Shuttle.t2}"
+                              width="335">
+                      <af:column sortProperty="#{bindings.PolicydepartmentpartitionView1.hints.DepartmentName.name}"
+                                 filterable="true" sortable="true"
+                                 filterFeatures="caseInsensitive"
+                                 headerText="#{bindings.PolicydepartmentpartitionView1.hints.DepartmentName.label}"
+                                 id="c3" width="138">
+                        <af:outputText value="#{row.DepartmentName}" id="ot5"/>
+                      </af:column>
+                    </af:table>
+                  </af:panelGroupLayout>
+                </f:facet>
+              </af:panelStretchLayout>
+            </af:dialog>
+          </af:popup>
+          <af:panelLabelAndMessage label="Category " id="plam3">
+            <af:commandImageLink text="Add" id="cil3" icon="/images/add.png"
+                                 action="#{backingBeanScope.backBean_PolicyPublishing.showPopupP2}"
+                                 disabled="#{pageFlowScope.formType eq 'PV'}"
+                                 visible="#{pageFlowScope.formType ne 'PV'}"
+                                 rendered="#{adfFacesContext.outputMode ne 'printable'}"
+                                 binding="#{backingBeanScope.backBean_PolicyPublishing.cil3}"
+                                 clientComponent="true"/>
+            <af:spacer width="10" height="10" id="s43"/>
+            <af:commandImageLink text="Remove" id="cil8"
+                                 action="#{backingBeanScope.backBean_PolicyPublishing.showPopupP2}"
+                                 icon="/images/rem.png"
+                                 partialTriggers="cb10 cb9 cb8"
+                                 visible="#{pageFlowScope.formType ne 'PV'}"
+                                 rendered="#{adfFacesContext.outputMode ne 'printable'}"
+                                 disabled="#{pageFlowScope.formType eq 'PV' or bindings.PolicycategoriespartitionView1Iterator.estimatedRowCount &lt;1}"/>
+          </af:panelLabelAndMessage>
+          <af:popup id="p2"
+                    binding="#{backingBeanScope.backBean_PolicyPublishing.p2}">
+            <af:dialog contentWidth="700" contentHeight="350" id="d2"
+                       type="none">
+              <af:activeOutputText value="Name : #{securityContext.userName} authenticated : #{securityContext.authenticated}  UserIn All Roles :  #{securityContext.userInRole['03']}"
+                                   id="aot1" visible="true" rendered="false"/>
+              <af:tree value="#{bindings.CategoriesView7.treeModel}" var="node"
+                       selectionListener="#{bindings.CategoriesView7.treeModel.makeCurrent}"
+                       rowSelection="single" id="tt1"
+                       binding="#{backingBeanScope.backBean_PolicyPublishing.tr1}"
+                       inlineStyle="background-color:white;"
+                       styleClass="AFStretchWidth">
+                <f:facet name="nodeStamp">
+                  <!-- af:column id="c9" width="578" -->
+                  <af:group id="g1">
+                    <af:image source="/images/null-leaf.png" id="i1"
+                              rendered="#{node.children == null and node.isAllowToPublish == true}"
+                              inlineStyle="position: absolute; margin-left:-20px; border: 1px solid white; width: 14px; height: 16px;"
+                              visible="true"/>
+                    <af:image source="/images/null-leaf.png" id="i4"
+                              rendered="#{node.children == null and !node.isAllowToPublish == true}"
+                              inlineStyle="position: absolute; margin-left:-20px; border: 1px solid white; width: 14px; height: 11px;"
+                              visible="true"/>
+                    <af:selectBooleanCheckbox label=""
+                                              rendered="#{node.isAllowToPublish}"
+                                              valueChangeListener="#{backingBeanScope.backBean_PolicyPublishing.checkBoxValueChange}"
+                                              value="#{node.isCheckCategory}"
+                                              autoSubmit="true" id="sbc1"/>
+                    <af:spacer width="10" id="s38"/>
+                    <af:outputText value="#{node.CategoryDescription}"
+                                   id="ot33"/>
+                  </af:group>
+                  <!-- /af:column -->
+                </f:facet>
+                <f:facet name="pathStamp">
+                  <af:outputText value="#{node}" id="ot32"/>
+                </f:facet>
+              </af:tree>
+              <af:spacer height="10" id="s39"/>
+              <af:commandButton text="Close" id="cb7"
+                                action="#{backingBeanScope.backBean_PolicyPublishing.addCategories}"/>
+            </af:dialog>
+          </af:popup>
+          <af:iterator id="i40"
+                       value="#{bindings.PolicycategoriespartitionView11.collectionModel}"
+                       var="row" varStatus="vs">
+            <af:outputText value="#{row.CategoryName}" id="ot34"/>
+          </af:iterator>
+          <af:spacer width="10" height="10" id="s31"/>
+          <af:panelLabelAndMessage label="#{pageFlowScope.formType ne 'PV'?'Document Partitioning':'Applicability'}"
+                                   id="plam4">
+            <af:commandImageLink text="Add " id="cil1"
+                                 action="#{backingBeanScope.backBean_PolicyPublishing.showPopupP3}"
+                                 disabled="#{pageFlowScope.formType eq 'PV'}"
+                                 visible="#{pageFlowScope.formType ne 'PV'}"
+                                 icon="/images/add.png"
+                                 rendered="#{adfFacesContext.outputMode ne 'printable'}"
+                                 binding="#{backingBeanScope.backBean_PolicyPublishing.cil1}"/>
+            <af:spacer width="10" height="10" id="s44"/>
+            <af:commandImageLink text="Remove" id="cil9"
+                                 action="#{backingBeanScope.backBean_PolicyPublishing.showPopupP3}"
+                                 icon="/images/rem.png"
+                                 rendered="#{adfFacesContext.outputMode ne 'printable'}"
+                                 partialTriggers="cb8 cb9 cb10"
+                                 visible="#{pageFlowScope.formType ne 'PV'}"
+                                 disabled="#{pageFlowScope.formType eq 'PV' or  ! backingBeanScope.backBean_PolicyPublishing.partitionTypeAction }"/>
+          </af:panelLabelAndMessage>
+          <af:popup id="p3"
+                    binding="#{backingBeanScope.backBean_PolicyPublishing.p3}">
+            <af:dialog contentWidth="750" contentHeight="410" id="d3"
+                       type="none">
+              <af:panelStretchLayout id="psl4"
+                                     inlineStyle="width:750px; height:405px;">
+                <f:facet name="center">
+                  <af:panelGroupLayout layout="scroll"
+                                       xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                                       id="pgl10">
+                    <af:panelStretchLayout id="psl5"
+                                           binding="#{backingBeanScope.backBean_PolicyPublishing.ps15}"
+                                           visible="#{pageFlowScope.partitionValue eq '1'}"
+                                           startWidth="335px" endWidth="335px"
+                                           bottomHeight="25px" topHeight="0px"
+                                           inlineStyle="width:700px; height:350px;">
+                      <f:facet name="bottom">
+                        <af:panelGroupLayout id="pgl11" layout="horizontal">
+                          <af:commandButton text="Close" id="cb8"
+                                            action="#{backingBeanScope.backBean_PolicyPublishing.hidePopupP3}"/>
+                        </af:panelGroupLayout>
+                      </f:facet>
+                      <f:facet name="center">
+                        <af:panelGroupLayout id="pgl12" layout="vertical">
+                          <af:spacer width="10" height="100" id="s13"/>
+                          <af:commandButton text=">" id="cb15"
+                                            partialSubmit="true"
+                                            action="#{backingBeanScope.backBean_Shuttle.addSectors}"/>
+                          <af:spacer width="10" height="10" id="s14"/>
+                          <af:commandButton text="&lt;" id="cb16"
+                                            action="#{backingBeanScope.backBean_Shuttle.removeSectors}"
+                                            partialSubmit="true"/>
+                          <af:spacer width="10" height="100" id="s15"/>
+                        </af:panelGroupLayout>
+                      </f:facet>
+                      <f:facet name="start">
+                        <af:panelGroupLayout id="pgl13">
+                          <af:table value="#{bindings.SectorsView1.collectionModel}"
+                                    var="row"
+                                    rows="#{bindings.SectorsView1.rangeSize}"
+                                    emptyText="#{bindings.SectorsView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                    fetchSize="#{bindings.SectorsView1.rangeSize}"
+                                    rowBandingInterval="1"
+                                    filterModel="#{bindings.SectorsView1Query.queryDescriptor}"
+                                    queryListener="#{bindings.SectorsView1Query.processQuery}"
+                                    filterVisible="true" varStatus="vs"
+                                    selectionListener="#{bindings.SectorsView1.collectionModel.makeCurrent}"
+                                    rowSelection="multiple" id="t7"
+                                    columnStretching="column:c11"
+                                    binding="#{backingBeanScope.backBean_Shuttle.t5}"
+                                    width="335">
+                            <af:column sortProperty="#{bindings.SectorsView1.hints.SectorName.name}"
+                                       filterable="true" sortable="true"
+                                       filterFeatures="caseInsensitive"
+                                       headerText="#{bindings.SectorsView1.hints.SectorName.label}"
+                                       id="c11">
+                              <af:outputText value="#{row.SectorName}"
+                                             id="ot12"/>
+                            </af:column>
+                          </af:table>
+                        </af:panelGroupLayout>
+                      </f:facet>
+                      <f:facet name="end">
+                        <af:panelGroupLayout id="pgl14">
+                          <af:table value="#{bindings.Policybusinesssectorpartition1View1.collectionModel}"
+                                    var="row"
+                                    rows="#{bindings.Policybusinesssectorpartition1View1.rangeSize}"
+                                    emptyText="#{bindings.Policybusinesssectorpartition1View1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                    fetchSize="#{bindings.Policybusinesssectorpartition1View1.rangeSize}"
+                                    rowBandingInterval="1"
+                                    filterModel="#{bindings.Policybusinesssectorpartition1View1Query.queryDescriptor}"
+                                    queryListener="#{bindings.Policybusinesssectorpartition1View1Query.processQuery}"
+                                    filterVisible="true" varStatus="vs"
+                                    selectionListener="#{bindings.Policybusinesssectorpartition1View1.collectionModel.makeCurrent}"
+                                    rowSelection="multiple" id="t8"
+                                    binding="#{backingBeanScope.backBean_Shuttle.t6}"
+                                    width="335" partialTriggers="::cb15 ::cb16"
+                                    columnStretching="column:c12">
+                            <af:column sortProperty="#{bindings.Policybusinesssectorpartition1View1.hints.SectorName.name}"
+                                       filterable="true" sortable="true"
+                                       filterFeatures="caseInsensitive"
+                                       headerText="#{bindings.Policybusinesssectorpartition1View1.hints.SectorName.label}"
+                                       id="c12">
+                              <af:outputText value="#{row.SectorName}"
+                                             id="ot13"/>
+                            </af:column>
+                          </af:table>
+                        </af:panelGroupLayout>
+                      </f:facet>
+                    </af:panelStretchLayout>
+                    <af:panelStretchLayout id="psl6"
+                                           binding="#{backingBeanScope.backBean_PolicyPublishing.ps16}"
+                                           visible="#{pageFlowScope.partitionValue eq '2'}"
+                                           startWidth="335px" endWidth="335px"
+                                           bottomHeight="25px" topHeight="0px"
+                                           inlineStyle="width:700px; height:350px;">
+                      <f:facet name="bottom">
+                        <af:panelGroupLayout id="pgl18" layout="horizontal">
+                          <af:commandButton text="Close" id="cb9"
+                                            action="#{backingBeanScope.backBean_PolicyPublishing.hidePopupP3}"/>
+                        </af:panelGroupLayout>
+                      </f:facet>
+                      <f:facet name="center">
+                        <af:panelGroupLayout id="pgl17" layout="vertical">
+                          <af:spacer width="10" height="100" id="s10"/>
+                          <af:commandButton text=">" id="cb13"
+                                            partialSubmit="true"
+                                            action="#{backingBeanScope.backBean_Shuttle.addInstitutiontype}"/>
+                          <af:spacer width="10" height="10" id="s11"/>
+                          <af:commandButton text="&lt;" id="cb14"
+                                            partialSubmit="true"
+                                            action="#{backingBeanScope.backBean_Shuttle.removeInstitutiontype}"/>
+                          <af:spacer width="10" height="100" id="s12"/>
+                        </af:panelGroupLayout>
+                      </f:facet>
+                      <f:facet name="start">
+                        <af:panelGroupLayout id="pgl16">
+                          <af:table value="#{bindings.InstitutiontypeView1.collectionModel}"
+                                    var="row"
+                                    rows="#{bindings.InstitutiontypeView1.rangeSize}"
+                                    emptyText="#{bindings.InstitutiontypeView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                    fetchSize="#{bindings.InstitutiontypeView1.rangeSize}"
+                                    rowBandingInterval="1"
+                                    filterModel="#{bindings.InstitutiontypeView1Query.queryDescriptor}"
+                                    queryListener="#{bindings.InstitutiontypeView1Query.processQuery}"
+                                    filterVisible="true" varStatus="vs"
+                                    selectionListener="#{bindings.InstitutiontypeView1.collectionModel.makeCurrent}"
+                                    rowSelection="multiple" id="t10"
+                                    binding="#{backingBeanScope.backBean_Shuttle.t7}"
+                                    width="335" columnStretching="column:c15">
+                            <af:column sortProperty="#{bindings.InstitutiontypeView1.hints.Name.name}"
+                                       filterable="true" sortable="true"
+                                       filterFeatures="caseInsensitive"
+                                       headerText="#{bindings.InstitutiontypeView1.hints.Name.label}"
+                                       id="c15">
+                              <af:outputText value="#{row.Name}" id="ot16"/>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.InstitutiontypeView1.hints.SectorName.name}"
+                                       filterable="true" sortable="true"
+                                       filterFeatures="caseInsensitive"
+                                       headerText="#{bindings.InstitutiontypeView1.hints.SectorName.label}"
+                                       id="c14">
+                              <af:outputText value="#{row.SectorName}"
+                                             id="ot15"/>
+                            </af:column>
+                          </af:table>
+                        </af:panelGroupLayout>
+                      </f:facet>
+                      <f:facet name="end">
+                        <af:panelGroupLayout id="pgl15">
+                          <af:table value="#{bindings.PolicyinstitutiontypepartitionView1.collectionModel}"
+                                    var="row"
+                                    rows="#{bindings.PolicyinstitutiontypepartitionView1.rangeSize}"
+                                    emptyText="#{bindings.PolicyinstitutiontypepartitionView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                    fetchSize="#{bindings.PolicyinstitutiontypepartitionView1.rangeSize}"
+                                    rowBandingInterval="1"
+                                    filterModel="#{bindings.PolicyinstitutiontypepartitionView1Query.queryDescriptor}"
+                                    queryListener="#{bindings.PolicyinstitutiontypepartitionView1Query.processQuery}"
+                                    filterVisible="true" varStatus="vs"
+                                    selectionListener="#{bindings.PolicyinstitutiontypepartitionView1.collectionModel.makeCurrent}"
+                                    rowSelection="multiple" id="t9"
+                                    binding="#{backingBeanScope.backBean_Shuttle.t8}"
+                                    width="335" partialTriggers="::cb13 ::cb14"
+                                    columnStretching="column:c13">
+                            <af:column sortProperty="#{bindings.PolicyinstitutiontypepartitionView1.hints.InstitutiontypeName.name}"
+                                       filterable="true" sortable="true"
+                                       filterFeatures="caseInsensitive"
+                                       headerText="#{bindings.PolicyinstitutiontypepartitionView1.hints.InstitutiontypeName.label}"
+                                       id="c13">
+                              <af:outputText value="#{row.InstitutiontypeName}"
+                                             id="ot14"/>
+                            </af:column>
+                          </af:table>
+                        </af:panelGroupLayout>
+                      </f:facet>
+                    </af:panelStretchLayout>
+                    <af:panelStretchLayout id="psl7"
+                                           binding="#{backingBeanScope.backBean_PolicyPublishing.ps17}"
+                                           visible="#{pageFlowScope.partitionValue eq '3'}"
+                                           startWidth="335px" endWidth="335px"
+                                           bottomHeight="25px" topHeight="0px"
+                                           inlineStyle="width:700px; height:350px;">
+                      <f:facet name="bottom">
+                        <af:panelGroupLayout id="pgl22" layout="horizontal">
+                          <af:commandButton text="Close" id="cb10"
+                                            action="#{backingBeanScope.backBean_PolicyPublishing.hidePopupP3}"/>
+                        </af:panelGroupLayout>
+                      </f:facet>
+                      <f:facet name="center">
+                        <af:panelGroupLayout id="pgl21" layout="vertical">
+                          <af:spacer width="10" height="100" id="s7"/>
+                          <af:commandButton text=">" id="cb11"
+                                            partialSubmit="true"
+                                            action="#{backingBeanScope.backBean_Shuttle.addOrganization}"/>
+                          <af:spacer width="10" height="10" id="s8"/>
+                          <af:commandButton text="&lt;" id="cb12"
+                                            partialSubmit="true"
+                                            action="#{backingBeanScope.backBean_Shuttle.removeOrganization}"/>
+                          <af:spacer width="10" height="100" id="s9"/>
+                        </af:panelGroupLayout>
+                      </f:facet>
+                      <f:facet name="start">
+                        <af:panelGroupLayout id="pgl20">
+                          <af:table value="#{bindings.OrganizationView1.collectionModel}"
+                                    var="row"
+                                    rows="#{bindings.OrganizationView1.rangeSize}"
+                                    emptyText="#{bindings.OrganizationView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                    fetchSize="#{bindings.OrganizationView1.rangeSize}"
+                                    rowBandingInterval="1"
+                                    filterModel="#{bindings.OrganizationView1Query.queryDescriptor}"
+                                    queryListener="#{bindings.OrganizationView1Query.processQuery}"
+                                    filterVisible="true" varStatus="vs"
+                                    selectionListener="#{bindings.OrganizationView1.collectionModel.makeCurrent}"
+                                    rowSelection="multiple" id="t11"
+                                    binding="#{backingBeanScope.backBean_Shuttle.t9}"
+                                    width="335" columnStretching="column:c18">
+                            <af:column sortProperty="#{bindings.OrganizationView1.hints.Name.name}"
+                                       filterable="true" sortable="true"
+                                       filterFeatures="caseInsensitive"
+                                       headerText="#{bindings.OrganizationView1.hints.Name.label}"
+                                       id="c18">
+                              <af:outputText value="#{row.Name}" id="ot19"/>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.OrganizationView1.hints.InstTypeName.name}"
+                                       filterable="true" sortable="true"
+                                       filterFeatures="caseInsensitive"
+                                       headerText="#{bindings.OrganizationView1.hints.InstTypeName.label}"
+                                       id="c17">
+                              <af:outputText value="#{row.InstTypeName}"
+                                             id="ot18"/>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.OrganizationView1.hints.SectorName.name}"
+                                       filterable="true" sortable="true"
+                                       filterFeatures="caseInsensitive"
+                                       headerText="#{bindings.OrganizationView1.hints.SectorName.label}"
+                                       id="c16">
+                              <af:outputText value="#{row.SectorName}"
+                                             id="ot17"/>
+                            </af:column>
+                          </af:table>
+                        </af:panelGroupLayout>
+                      </f:facet>
+                      <f:facet name="end">
+                        <af:panelGroupLayout id="pgl19">
+                          <af:table value="#{bindings.PolicyorganizationpartitionView1.collectionModel}"
+                                    var="row"
+                                    rows="#{bindings.PolicyorganizationpartitionView1.rangeSize}"
+                                    emptyText="#{bindings.PolicyorganizationpartitionView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                    fetchSize="#{bindings.PolicyorganizationpartitionView1.rangeSize}"
+                                    rowBandingInterval="1"
+                                    filterModel="#{bindings.PolicyorganizationpartitionView1Query.queryDescriptor}"
+                                    queryListener="#{bindings.PolicyorganizationpartitionView1Query.processQuery}"
+                                    filterVisible="true" varStatus="vs"
+                                    selectionListener="#{bindings.PolicyorganizationpartitionView1.collectionModel.makeCurrent}"
+                                    rowSelection="multiple" id="t12"
+                                    binding="#{backingBeanScope.backBean_Shuttle.t10}"
+                                    width="335" partialTriggers="::cb11 ::cb12"
+                                    columnStretching="column:c19">
+                            <af:column sortProperty="#{bindings.PolicyorganizationpartitionView1.hints.OrgName.name}"
+                                       filterable="true" sortable="true"
+                                       filterFeatures="caseInsensitive"
+                                       headerText="#{bindings.PolicyorganizationpartitionView1.hints.OrgName.label}"
+                                       id="c19">
+                              <af:outputText value="#{row.OrgName}" id="ot20"/>
+                            </af:column>
+                          </af:table>
+                        </af:panelGroupLayout>
+                      </f:facet>
+                    </af:panelStretchLayout>
+                  </af:panelGroupLayout>
+                </f:facet>
+                <f:facet name="top">
+                  <af:panelGroupLayout layout="scroll"
+                                       xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                                       id="pgl23">
+                    <af:selectOneChoice value="#{bindings.partitionTypeId.inputValue}"
+                                        label="#{bindings.partitionTypeId.label}"
+                                        required="#{bindings.partitionTypeId.hints.mandatory}"
+                                        shortDesc="#{bindings.partitionTypeId.hints.tooltip}"
+                                        valueChangeListener="#{backingBeanScope.backBean_PolicyPublishing.policyPartitioning}"
+                                        id="soc3" autoSubmit="true"
+                                        binding="#{backingBeanScope.backBean_PolicyPublishing.soc3}"
+                                        readOnly="#{bindings.Policybusinesssectorpartition1View1Iterator.estimatedRowCount >0 or bindings.PolicyinstitutiontypepartitionView1Iterator.estimatedRowCount >0 or bindings.PolicyorganizationpartitionView1Iterator.estimatedRowCount >0}"
+                                        partialTriggers="cb15 cb16 cb13 cb14 cb11 cb12">
+                      <f:selectItems value="#{bindings.partitionTypeId.items}"
+                                     id="si5"/>
+                    </af:selectOneChoice>
+                  </af:panelGroupLayout>
+                </f:facet>
+              </af:panelStretchLayout>
+            </af:dialog>
+          </af:popup>
+          <af:iterator id="i5"
+                       value="#{bindings.Policybusinesssectorpartition1View11.collectionModel}"
+                       var="row" varStatus="vs">
+            <af:outputText value="#{row.SectorName}" id="ot21"/>
+          </af:iterator>
+          <af:iterator id="i6"
+                       value="#{bindings.PolicyinstitutiontypepartitionView11.collectionModel}"
+                       var="row" varStatus="vs">
+            <af:outputText value="#{row.InstitutiontypeName}" id="ot22"/>
+          </af:iterator>
+          <af:iterator id="i7"
+                       value="#{bindings.PolicyorganizationpartitionView11.collectionModel}"
+                       var="row" varStatus="vs">
+            <af:outputText value="#{row.OrgName}" id="ot23"/>
+          </af:iterator>
+          <af:spacer width="10" height="10" id="s32"/>
+          <af:selectOneRadio label="Display in What's New?" id="sor3"
+                             layout="horizontal"
+                             rendered="#{pageFlowScope.formType ne 'PV'}"
+                             valueChangeListener="#{backingBeanScope.backBean_PolicyPublishing.whatsNewAction}"
+                             autoSubmit="true"
+                             value="#{bindings.DisplayInWhatsNew.inputValue}"
+                             binding="#{backingBeanScope.backBean_PolicyPublishing.sor3}">
+            <af:selectItem label="Yes" value="true" id="si9"/>
+            <af:selectItem label="No" value="false" id="si10"/>
+          </af:selectOneRadio>
+          <af:selectOneChoice id="soc5"
+                              binding="#{backingBeanScope.backBean_PolicyPublishing.soc5}"
+                              rendered="#{pageFlowScope.formType ne 'PV'}"
+                              visible="#{bindings.DisplayInWhatsNew.inputValue}"
+                              value="#{bindings.WhatsNewMonths.inputValue}">
+            <af:selectItem label="1 Month" value="1" id="si12"/>
+            <af:selectItem label="3 Months" value="3" id="si13"/>
+            <af:selectItem label="6 Months" value="6" id="si14"/>
+            <af:selectItem label="9 Months" value="9" id="si15"/>
+            <af:selectItem label="12 Months" value="12" id="si11"/>
+          </af:selectOneChoice>
+          <af:spacer width="10" height="10" id="s40"/>
+          <af:selectOneChoice value="#{bindings.DocCategory.inputValue}"
+                              label="#{bindings.DocCategory.label}"
+                              readOnly="#{pageFlowScope.formType eq 'PV'}"
+                              required="#{bindings.DocCategory.hints.mandatory}"
+                              shortDesc="#{bindings.DocCategory.hints.tooltip}"
+                              id="soc6"
+                              binding="#{backingBeanScope.backBean_PolicyPublishing.soc6}">
+            <f:selectItems value="#{bindings.DocCategory.items}" id="si17"/>
+          </af:selectOneChoice>
+          <af:spacer width="10" height="10" id="s60"/>
+          <af:outputText value="*Note: Mandatory to attach at least one pdf and one word document"
+                         id="ot2"
+                         rendered="#{adfFacesContext.outputMode ne 'printable'}"/>
+          <!-- 
+                         *comment because CR Rh-002 2017 by shankar 31-oct-2017
+                          or  backingBeanScope.backBean_PolicyPublishing.amendmentAction eq 'N'
+                         -->
+          <af:inputFile label="Document" id="if1" autoSubmit="true"
+                        immediate="true"
+                        binding="#{backingBeanScope.backBean_PolicyPublishing.if1}"
+                        value="#{backingBeanScope.backBean_PolicyPublishing.polDocUploadedFile}"
+                        shortDesc="Please ensure the file is uploaded successfully before proceeding to upload the next file."
+                        readOnly="#{pageFlowScope.formType eq 'PV' }"
+                        partialTriggers="sor1"/>
+          <af:table value="#{bindings.AttachedfileView2_1.collectionModel}"
+                    var="row" rows="#{bindings.AttachedfileView2_1.rangeSize}"
+                    emptyText="#{bindings.AttachedfileView2_1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                    fetchSize="#{bindings.AttachedfileView2_1.rangeSize}"
+                    rowBandingInterval="1"
+                    selectedRowKeys="#{bindings.AttachedfileView2_1.collectionModel.selectedRow}"
+                    selectionListener="#{bindings.AttachedfileView2_1.collectionModel.makeCurrent}"
+                    rowSelection="single" id="t16"
+                    binding="#{backingBeanScope.backBean_PolicyPublishing.t16}"
+                    partialTriggers="::if1"
+                    visible="#{bindings.AttachedfileView2_1Iterator.estimatedRowCount > 0}"
+                    inlineStyle="height:54px;" width="426">
+            <af:column sortProperty="#{bindings.AttachedfileView2_1.hints.filenameOrig.name}"
+                       sortable="false" id="c23" width="30">
+              <!-- 
+                       *comment because CR Rh-002 2017 by shankar 31-oct-2017
+                        or  backingBeanScope.backBean_PolicyPublishing.amendmentAction eq 'N'
+                       -->
+              <af:commandLink text="X" id="cl4"
+                              actionListener="#{backingBeanScope.backBean_PolicyPublishing.onDeletePolDocFileSelected}"
+                              disabled="#{pageFlowScope.formType eq 'PV'}"
+                              partialTriggers="::sor1">
+                <f:attribute name="rowKeyDelete" value="#{row.rowKey}"/>
+              </af:commandLink>
+            </af:column>
+            <af:column sortProperty="#{bindings.AttachedfileView2_1.hints.filenameOrig.name}"
+                       sortable="false" id="c24" width="370">
+              <af:commandLink text="#{row.filenameOrig}" id="cl5"
+                              actionListener="#{backingBeanScope.backBean_PolicyPublishing.onOpenPolDocFileSelected}">
+                <f:attribute name="rowKey" value="#{row.rowKey}"/>
+              </af:commandLink>
+            </af:column>
+          </af:table>
+          <af:spacer width="10" height="10" id="s33"/>
+          <!-- 
+                       *comment because CR Rh-002 2017 by shankar 31-oct-2017
+                         or  backingBeanScope.backBean_PolicyPublishing.amendmentAction eq 'N'
+                       -->
+          <af:inputFile label="Attachment" id="if2" autoSubmit="true"
+                        readOnly="#{pageFlowScope.formType eq 'PV'}"
+                        binding="#{backingBeanScope.backBean_PolicyPublishing.if2}"
+                        value="#{backingBeanScope.backBean_PolicyPublishing.polOthUploadedFile}"
+                        shortDesc="Please ensure the file is uploaded successfully before proceeding to upload the next file."
+                        partialTriggers="sor1"/>
+          <af:table value="#{bindings.AttachedfileEx1View1.collectionModel}"
+                    var="row" rows="#{bindings.AttachedfileEx1View1.rangeSize}"
+                    emptyText="#{bindings.AttachedfileEx1View1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                    fetchSize="#{bindings.AttachedfileEx1View1.rangeSize}"
+                    rowBandingInterval="1"
+                    selectedRowKeys="#{bindings.AttachedfileEx1View1.collectionModel.selectedRow}"
+                    selectionListener="#{bindings.AttachedfileEx1View1.collectionModel.makeCurrent}"
+                    rowSelection="single" id="t17" partialTriggers="::if2"
+                    binding="#{backingBeanScope.backBean_PolicyPublishing.t17}"
+                    visible="#{bindings.AttachedfileEx1View1Iterator.estimatedRowCount > 0}"
+                    inlineStyle="height:49px;" width="426">
+            <af:column sortProperty="#{bindings.AttachedfileEx1View1.hints.fileId.name}"
+                       sortable="false" id="c25" width="30">
+              <!-- 
+                       *comment because CR Rh-002 2017 by shankar 31-oct-2017
+                          or  backingBeanScope.backBean_PolicyPublishing.amendmentAction eq 'N'
+                       -->
+              <af:commandLink text="X" id="cl6"
+                              actionListener="#{backingBeanScope.backBean_PolicyPublishing.onDeletePolOthFileSelected}"
+                              disabled="#{pageFlowScope.formType eq 'PV' }"
+                              partialTriggers="::sor1">
+                <f:attribute name="rowKeyDelete" value="#{row.rowKey}"/>
+              </af:commandLink>
+            </af:column>
+            <af:column sortProperty="#{bindings.AttachedfileEx1View1.hints.filenameOrig.name}"
+                       sortable="false" id="c26" width="370">
+              <af:commandLink text="#{row.filenameOrig}" id="cl7"
+                              actionListener="#{backingBeanScope.backBean_PolicyPublishing.onOpenPolOthFileSelected}">
+                <f:attribute name="rowKey" value="#{row.rowKey}"/>
+              </af:commandLink>
+            </af:column>
+          </af:table>
+          <af:spacer width="10" height="10" id="s34"/>
+          <af:commandButton text="Download" id="cb17"
+                            binding="#{backingBeanScope.backBean_PolicyPublishing.cb17}"
+                            visible="false" immediate="true">
+            <af:fileDownloadActionListener method="#{backingBeanScope.backBean_PolicyPublishing.doDownload}"
+                                           filename="#{pageFlowScope.filenameOrig}"/>
+          </af:commandButton>
+          <af:selectOneChoice value="#{bindings.Classification.inputValue}"
+                              label="#{bindings.Classification.label}"
+                              readOnly="#{pageFlowScope.formType eq 'PV'}"
+                              required="#{bindings.Classification.hints.mandatory}"
+                              shortDesc="#{bindings.Classification.hints.tooltip}"
+                              id="soc2"
+                              binding="#{backingBeanScope.backBean_PolicyPublishing.soc2}">
+            <f:selectItems value="#{bindings.Classification.items}" id="si1"/>
+          </af:selectOneChoice>
+          <af:spacer width="10" height="10" id="s35"/>
+          <af:outputText value="*Example:Keyword1,Keyword2,Keyword3" id="ot41"
+                         rendered="#{adfFacesContext.outputMode ne 'printable'}"/>
+          <af:inputText value="#{bindings.keywords.inputValue}"
+                        label="#{bindings.keywords.hints.label}"
+                        required="#{bindings.keywords.hints.mandatory}"
+                        columns="70"
+                        maximumLength="#{bindings.keywords.hints.precision}"
+                        shortDesc="#{bindings.keywords.hints.tooltip}" id="it5"
+                        readOnly="#{pageFlowScope.formType eq 'PV'}"
+                        binding="#{backingBeanScope.backBean_PolicyPublishing.it5}">
+            <f:validator binding="#{bindings.keywords.validator}"/>
+          </af:inputText>
+          <af:spacer width="10" height="10" id="s36"/>
+          <af:panelLabelAndMessage label="Superseded Policies" id="plam5">
+            <af:commandImageLink text="Add" id="cil4" icon="/images/add.png"
+                                 action="#{backingBeanScope.backBean_PolicyPublishing.showPopupP4}"
+                                 disabled="#{pageFlowScope.formType eq 'PV'}"
+                                 visible="#{pageFlowScope.formType ne 'PV'}"
+                                 clientComponent="true" immediate="true"
+                                 rendered="#{adfFacesContext.outputMode ne 'printable'}"
+                                 binding="#{backingBeanScope.backBean_PolicyPublishing.cil4}"/>
+            <af:spacer width="10" height="10" id="s45"/>
+            <af:commandImageLink text="Remove" id="cil10"
+                                 action="#{backingBeanScope.backBean_PolicyPublishing.showPopupP4}"
+                                 icon="/images/rem.png" partialTriggers="cb20"
+                                 visible="#{pageFlowScope.formType ne 'PV'}"
+                                 rendered="#{adfFacesContext.outputMode ne 'printable'}"
+                                 disabled="#{pageFlowScope.formType eq 'PV' or bindings.SuperseededpoliciesView1Iterator.estimatedRowCount &lt;1}"/>
+          </af:panelLabelAndMessage>
+          <af:popup id="p4"
+                    binding="#{backingBeanScope.backBean_PolicyPublishing.p4}">
+            <af:dialog contentWidth="700" contentHeight="350" id="d4"
+                       type="none">
+              <af:panelStretchLayout startWidth="335px" endWidth="335px"
+                                     bottomHeight="25px" topHeight="0px"
+                                     inlineStyle="width:700px;" id="psl8">
+                <f:facet name="bottom">
+                  <af:panelGroupLayout id="pgl24">
+                    <af:commandButton text="Close" id="cb20"
+                                      action="#{backingBeanScope.backBean_PolicyPublishing.hidePopupP4}"></af:commandButton>
+                  </af:panelGroupLayout>
+                </f:facet>
+                <f:facet name="center">
+                  <af:panelGroupLayout id="pgl25">
+                    <af:spacer width="10" height="100" id="s16"/>
+                    <af:commandButton text=">" id="cb18"
+                                      action="#{backingBeanScope.backBean_Shuttle.addSuperseeded}"
+                                      partialSubmit="true"/>
+                    <af:spacer width="10" height="10" id="s17"/>
+                    <af:commandButton text="&lt;" id="cb19"
+                                      action="#{backingBeanScope.backBean_Shuttle.removeSuperseeded}"
+                                      partialSubmit="true"/>
+                    <af:spacer width="10" height="100" id="s18"/>
+                  </af:panelGroupLayout>
+                </f:facet>
+                <f:facet name="start">
+                  <af:panelGroupLayout id="pgl26">
+                    <af:table value="#{bindings.PolicyArchiveOnly1.collectionModel}"
+                              var="row"
+                              rows="#{bindings.PolicyArchiveOnly1.rangeSize}"
+                              emptyText="#{bindings.PolicyArchiveOnly1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                              fetchSize="#{bindings.PolicyArchiveOnly1.rangeSize}"
+                              rowBandingInterval="1"
+                              filterModel="#{bindings.PolicyArchiveOnly1Query.queryDescriptor}"
+                              queryListener="#{bindings.PolicyArchiveOnly1Query.processQuery}"
+                              filterVisible="true" varStatus="vs"
+                              selectionListener="#{bindings.PolicyArchiveOnly1.collectionModel.makeCurrent}"
+                              rowSelection="multiple" id="t5"
+                              binding="#{backingBeanScope.backBean_Shuttle.t11}"
+                              width="335" columnStretching="column:c8">
+                      <af:column sortProperty="#{bindings.PolicyArchiveOnly1.hints.RefNum.name}"
+                                 filterable="true" sortable="true"
+                                 filterFeatures="caseInsensitive"
+                                 headerText="#{bindings.PolicyArchiveOnly1.hints.RefNum.label}"
+                                 id="c7">
+                        <af:outputText value="#{row.RefNum}" id="ot10"/>
+                      </af:column>
+                      <af:column sortProperty="#{bindings.PolicyArchiveOnly1.hints.GuidelineTitle.name}"
+                                 filterable="true" sortable="true"
+                                 filterFeatures="caseInsensitive"
+                                 headerText="#{bindings.PolicyArchiveOnly1.hints.GuidelineTitle.label}"
+                                 id="c8">
+                        <af:outputText value="#{row.GuidelineTitle}" id="ot9"/>
+                      </af:column>
+                    </af:table>
+                  </af:panelGroupLayout>
+                </f:facet>
+                <f:facet name="end">
+                  <af:panelGroupLayout id="pgl27">
+                    <af:table value="#{bindings.SuperseededpoliciesView1.collectionModel}"
+                              var="row"
+                              rows="#{bindings.SuperseededpoliciesView1.rangeSize}"
+                              emptyText="#{bindings.SuperseededpoliciesView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                              fetchSize="#{bindings.SuperseededpoliciesView1.rangeSize}"
+                              rowBandingInterval="1"
+                              filterModel="#{bindings.SuperseededpoliciesView1Query.queryDescriptor}"
+                              queryListener="#{bindings.SuperseededpoliciesView1Query.processQuery}"
+                              filterVisible="true" varStatus="vs"
+                              selectionListener="#{bindings.SuperseededpoliciesView1.collectionModel.makeCurrent}"
+                              rowSelection="multiple" id="t19"
+                              binding="#{backingBeanScope.backBean_Shuttle.t12}"
+                              partialTriggers="::cb18 ::cb19" width="335"
+                              columnStretching="column:c30">
+                      <af:column sortProperty="#{bindings.SuperseededpoliciesView1.hints.PolicyId.name}"
+                                 filterable="true" sortable="true"
+                                 filterFeatures="caseInsensitive"
+                                 headerText="#{bindings.SuperseededpoliciesView1.hints.PolicyId.label}"
+                                 id="c29">
+                        <af:outputText value="#{row.PolicyId}" id="ot27"/>
+                      </af:column>
+                      <af:column sortProperty="#{bindings.SuperseededpoliciesView1.hints.PolicyName.name}"
+                                 filterable="true" sortable="true"
+                                 filterFeatures="caseInsensitive"
+                                 headerText="#{bindings.SuperseededpoliciesView1.hints.PolicyName.label}"
+                                 id="c30">
+                        <af:outputText value="#{row.PolicyName}" id="ot26"/>
+                      </af:column>
+                    </af:table>
+                  </af:panelGroupLayout>
+                </f:facet>
+              </af:panelStretchLayout>
+            </af:dialog>
+          </af:popup>
+          <af:iterator id="i8"
+                       value="#{bindings.SuperseededpoliciesView11.collectionModel}"
+                       var="row" varStatus="vs">
+            <af:outputText value="#{row.PolicyName}" id="ot28"/>
+          </af:iterator>
+          <af:spacer width="10" height="10" id="s37"/>
+          <af:selectOneRadio label="#{bindings.PublishToBNM.label}" id="sor2"
+                             value="#{bindings.PublishToBNM.inputValue}"
+                             readOnly="#{pageFlowScope.formType eq 'PV'}"
+                             binding="#{backingBeanScope.backBean_PolicyPublishing.sor2}"
+                             clientComponent="true" layout="horizontal"
+                             visible="#{pageFlowScope.formType ne 'PV'}">
+            <af:selectItem label="Yes" value="Y" id="si4"/>
+            <af:selectItem label="No" value="N" id="si6"/>
+          </af:selectOneRadio>
+          <af:spacer width="10" height="10" id="s46"/>
+          <af:panelLabelAndMessage label="FAQ" id="plam7"
+                                   rendered="#{pageFlowScope.formType ne 'PV'}">
+            <af:commandImageLink text="Add" id="cil11" icon="/images/add.png"
+                                 action="#{backingBeanScope.backBean_PolicyPublishing.showPopupP6}"
+                                 disabled="#{pageFlowScope.formType eq 'PV'}"
+                                 rendered="#{adfFacesContext.outputMode ne 'printable'}"
+                                 visible="#{pageFlowScope.formType ne 'PV'}"/>
+          </af:panelLabelAndMessage>
+          <af:popup id="p6"
+                    binding="#{backingBeanScope.backBean_PolicyPublishing.p6}">
+            <af:dialog id="d6" type="none">
+              <af:panelGroupLayout id="pgl34" layout="scroll">
+                <af:panelFormLayout id="pfl2" partialTriggers="cb26">
+                  <f:facet name="footer">
+                    <af:panelGroupLayout id="pgl35" layout="horizontal">
+                      <af:commandButton text="Save" id="cb26"
+                                        action="#{backingBeanScope.backBean_PolicyPublishing.submitFaq}"
+                                        partialSubmit="true"/>
+                      <af:spacer height="10" width="10" id="s52"/>
+                      <af:commandButton text="Close" id="cb27"
+                                        action="#{backingBeanScope.backBean_PolicyPublishing.hidePopupP6}"/>
+                    </af:panelGroupLayout>
+                  </f:facet>
+                  <af:iterator id="i123"
+                               value="#{bindings.EnquiryfaqForFaqView1.collectionModel}"
+                               varStatus="vs" var="row"
+                               rows="#{bindings.EnquiryfaqForFaqView1.rangeSize}">
+                    <af:outputText value=" #{vs.index + 1} . #{row.Title}"
+                                   id="ot35" inlineStyle="font-weight:bold;"/>
+                    <af:outputFormatted value="#{row.Abstract11}" id="of1"/>
+                    <af:spacer width="10" height="10" id="s48"/>
+                  </af:iterator>
+                  <af:inputText label="Question" id="it3" columns="80" rows="3"
+                                binding="#{backingBeanScope.backBean_PolicyPublishing.it3}"/>
+                  <af:spacer width="10" height="10" id="s49"/>
+                  <af:richTextEditor label="Answer" id="rte4" rows="3"
+                                     columns="100"
+                                     toolboxLayout="history formatAll justify list indent"
+                                     binding="#{backingBeanScope.backBean_PolicyPublishing.rte4}"/>
+                  <af:spacer width="10" height="10" id="s50"/>
+                </af:panelFormLayout>
+              </af:panelGroupLayout>
+            </af:dialog>
+          </af:popup>
+          <af:iterator id="i9"
+                       value="#{bindings.EnquiryfaqForFaqView11.collectionModel}"
+                       var="row" varStatus="vs"
+                       rendered="#{pageFlowScope.formType ne 'PV'}">
+            <af:outputText value="#{row.Title}" id="ot24"/>
+          </af:iterator>
+          <af:spacer width="10" height="10" id="s47"/>
+          <af:panelLabelAndMessage label="Supporting Document" id="plam8"
+                                   rendered="#{pageFlowScope.formType ne 'PV'}">
+            <af:commandImageLink text="Add " id="cil12"
+                                 action="#{backingBeanScope.backBean_PolicyPublishing.showPopupP7}"
+                                 visible="#{pageFlowScope.formType ne 'PV'}"
+                                 icon="/images/add.png"
+                                 rendered="#{adfFacesContext.outputMode ne 'printable' and pageFlowScope.formType ne 'PV'}"/>
+            <af:spacer width="10" height="10" id="s53"/>
+            <af:commandImageLink text="Remove" id="cil13"
+                                 action="#{backingBeanScope.backBean_PolicyPublishing.showPopupP7}"
+                                 icon="/images/rem.png"
+                                 rendered="#{adfFacesContext.outputMode ne 'printable'}"
+                                 partialTriggers="cb29 cb28 cb6"
+                                 visible="#{pageFlowScope.formType ne 'PV'}"
+                                 disabled="#{pageFlowScope.formType eq 'PV' or  bindings.AttachedfileSupportDocViewObj1Iterator.estimatedRowCount &lt;1}"/>
+          </af:panelLabelAndMessage>
+          <af:popup id="p7"
+                    binding="#{backingBeanScope.backBean_PolicyPublishing.p7}">
+            <af:dialog id="d7" type="none" contentWidth="500"
+                       contentHeight="500">
+              <af:panelGroupLayout layout="scroll"
+                                   xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                                   id="pgl36" inlineStyle="width:500px;">
+                <af:table value="#{bindings.AttachedfileSupportDocViewObj1.collectionModel}"
+                          var="row"
+                          rows="#{bindings.AttachedfileSupportDocViewObj1.rangeSize}"
+                          emptyText="#{bindings.AttachedfileSupportDocViewObj1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          fetchSize="#{bindings.AttachedfileSupportDocViewObj1.rangeSize}"
+                          rowBandingInterval="1"
+                          filterModel="#{bindings.AttachedfileSupportDocViewObj1Query.queryDescriptor}"
+                          queryListener="#{bindings.AttachedfileSupportDocViewObj1Query.processQuery}"
+                          filterVisible="true" varStatus="vs"
+                          selectedRowKeys="#{bindings.AttachedfileSupportDocViewObj1.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.AttachedfileSupportDocViewObj1.collectionModel.makeCurrent}"
+                          rowSelection="single" id="t25"
+                          binding="#{backingBeanScope.backBean_PolicyPublishing.t25}"
+                          partialTriggers="::cb28 ::cb6"
+                          inlineStyle="height:208px;" width="420"
+                          columnStretching="column:c35">
+                  <af:column sortProperty="#{bindings.AttachedfileSupportDocViewObj1.hints.documentName.name}"
+                             headerText="#{bindings.AttachedfileSupportDocViewObj1.hints.documentName.label}"
+                             id="c35">
+                    <af:outputText value="#{row.documentName}" id="ot37"/>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.AttachedfileSupportDocViewObj1.hints.type.name}"
+                             headerText="#{bindings.AttachedfileSupportDocViewObj1.hints.type.label}"
+                             id="c36">
+                    <af:outputText value="#{row.type}" id="ot36"/>
+                  </af:column>
+                  <af:column headerText="Action" id="c37">
+                    <af:commandLink text="View" id="cl1"
+                                    actionListener="#{backingBeanScope.backBean_PolicyPublishing.onOpenSuppDocFileSelected}">
+                      <f:attribute name="rowKey" value="#{row.rowKey}"/>
+                    </af:commandLink>
+                  </af:column>
+                </af:table>
+                <af:spacer width="10" height="10" id="s51"/>
+                <af:panelGroupLayout id="pgl37" layout="horizontal">
+                  <af:commandButton text="Remove Selected Supporting Document"
+                                    id="cb28" partialSubmit="true"
+                                    action="#{backingBeanScope.backBean_PolicyPublishing.doDeleteSuppDoc}"
+                                    disabled="#{bindings.AttachedfileSupportDocViewObj1Iterator.estimatedRowCount &lt;1}"
+                                    partialTriggers="t25"/>
+                </af:panelGroupLayout>
+                <af:spacer width="10" height="10" id="s57"/>
+                <af:inputText columns="30" rows="1" maximumLength="40"
+                              label="Title" id="it4"
+                              binding="#{backingBeanScope.backBean_PolicyPublishing.it4}"/>
+                <af:spacer width="10" height="10" id="s55"/>
+                <af:selectOneChoice value="#{bindings.ClassificationView1.inputValue}"
+                                    label="Security Classification"
+                                    required="#{bindings.ClassificationView1.hints.mandatory}"
+                                    shortDesc="#{bindings.ClassificationView1.hints.tooltip}"
+                                    id="soc1"
+                                    binding="#{backingBeanScope.backBean_PolicyPublishing.soc1}">
+                  <f:selectItems value="#{bindings.ClassificationView1.items}"
+                                 id="si7"/>
+                </af:selectOneChoice>
+                <af:spacer width="10" height="10" id="s54"/>
+                <af:inputFile label="Attach File" id="if3"
+                              valueChangeListener="#{backingBeanScope.backBean_PolicyPublishing.suppDocAction}"
+                              binding="#{backingBeanScope.backBean_PolicyPublishing.if3}"/>
+                <af:spacer width="10" height="10" id="s56"/>
+                <af:panelGroupLayout id="pgl38" layout="horizontal">
+                  <af:commandButton text="Save" id="cb6" partialSubmit="true"
+                                    action="#{backingBeanScope.backBean_PolicyPublishing.submitSuppdoc}"/>
+                  <af:spacer width="10" height="10" id="s58"/>
+                  <af:commandButton text="Close" id="cb29" partialSubmit="true"
+                                    action="#{backingBeanScope.backBean_PolicyPublishing.hidePopupP7}"/>
+                </af:panelGroupLayout>
+              </af:panelGroupLayout>
+            </af:dialog>
+          </af:popup>
+          <af:table value="#{bindings.AttachedfileSupportDocViewObj11.collectionModel}"
+                    var="row"
+                    rows="#{bindings.AttachedfileSupportDocViewObj11.rangeSize}"
+                    emptyText="#{bindings.AttachedfileSupportDocViewObj11.viewable ? 'No data to display.' : 'Access Denied.'}"
+                    fetchSize="#{bindings.AttachedfileSupportDocViewObj11.rangeSize}"
+                    rowBandingInterval="1" id="t26" inlineStyle="height:70px;"
+                    visible="#{bindings.AttachedfileSupportDocViewObj1Iterator.estimatedRowCount >0}"
+                    rendered="#{pageFlowScope.formType ne 'PV'}"
+                    partialTriggers="::cb6 ::cb29 ::cb28"
+                    columnStretching="column:c39">
+            <af:column sortProperty="#{bindings.AttachedfileSupportDocViewObj11.hints.documentName.name}"
+                       sortable="false"
+                       headerText="#{bindings.AttachedfileSupportDocViewObj11.hints.documentName.label}"
+                       id="c39">
+              <af:outputText value="#{row.documentName}" id="ot39"/>
+            </af:column>
+            <af:column sortProperty="#{bindings.AttachedfileSupportDocViewObj11.hints.type.name}"
+                       sortable="false"
+                       headerText="#{bindings.AttachedfileSupportDocViewObj11.hints.type.label}"
+                       id="c38">
+              <af:outputText value="#{row.type}" id="ot38"/>
+            </af:column>
+          </af:table>
+          <af:selectOneChoice value="#{bindings.approverId.inputValue}"
+                              label="Approver"
+                              readOnly="#{pageFlowScope.formType eq 'PV'}"
+                              visible="#{pageFlowScope.formType ne 'PV'}"
+                              rendered="#{sessionScope.rhSession.isInternalExternal ne 'EX'}"
+                              shortDesc="#{bindings.approverId.hints.tooltip}"
+                              binding="#{backingBeanScope.backBean_PolicyPublishing.soc4}"
+                              id="soc4">
+            <f:selectItems value="#{bindings.approverId.items}" id="si8"/>
+          </af:selectOneChoice>
+          <af:panelGroupLayout id="pgl28">
+            <af:spacer width="50" height="10" id="s19"/>
+            <af:commandButton text="Save as Draft" id="cb25"
+                              action="#{backingBeanScope.backBean_PolicyPublishing.doDraft}"
+                              rendered="#{bindings.RecordStatus.inputValue eq null or bindings.RecordStatus.inputValue eq '' or bindings.RecordStatus.inputValue eq 'DRAFT'}"
+                              disabled="#{backingBeanScope.backBean_PolicyPublishing.isDataSaved}"/>
+            <af:spacer width="20" height="10" id="s5"/>
+            <af:commandButton text="Submit" id="cb4"
+                              action="#{backingBeanScope.backBean_PolicyPublishing.doSubmit}"
+                              rendered="#{pageFlowScope.formType ne 'PV'}"
+                              disabled="#{backingBeanScope.backBean_PolicyPublishing.isDataSaved}"/>
+            <af:spacer width="20" height="10" id="s6"/>
+            <af:resetButton text="Reset" id="rb2"
+                            rendered="#{pageFlowScope.formType  eq 'PP'}"
+                            disabled="#{backingBeanScope.backBean_PolicyPublishing.isDataSaved}"/>
+          </af:panelGroupLayout>
+        </af:panelFormLayout>
+      </af:panelGroupLayout>
+    </f:facet>
+    <f:facet name="bottom">
+      <af:panelGroupLayout xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                           id="pgl6" layout="horizontal">
+        <af:commandLink text="Back" id="cl12" action="back" partialSubmit="true"
+                        rendered="#{adfFacesContext.outputMode ne 'printable' and bindings.RecordStatus.inputValue ne null and bindings.RecordStatus.inputValue ne ''}">
+          <af:setPropertyListener type="action"
+                                  from="#{pageFlowScope.openTabVal}"
+                                  to="#{pageFlowScope.openTab}"/>
+          <af:setPropertyListener type="action"
+                                  from="#{pageFlowScope.oldItemId}"
+                                  to="#{pageFlowScope.itemId}"/>
+        </af:commandLink>
+        <af:spacer width="20" height="10" id="s4"/>
+        <af:commandLink text="Preview" id="cl9" partialTriggers="pgl1">
+          <af:showPrintablePageBehavior/>
+        </af:commandLink>
+      </af:panelGroupLayout>
+    </f:facet>
+    <f:facet name="top">
+      <af:panelGroupLayout layout="scroll"
+                           xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                           id="pgl7">
+        <af:outputText value="DOCUMENT PUBLISHING" id="ot1"
+                       rendered="#{pageFlowScope.formType eq 'PP'}"
+                       styleClass="pageTitleHeaderLeft"/>
+        <af:outputText value="DOCUMENT AMENDMENT" id="ot50"
+                       rendered="#{pageFlowScope.formType eq 'PA'}"
+                       styleClass="pageTitleHeaderLeft"/>
+        <af:outputText value="SUPERSEEDED DOCUMENT DETAILS" id="ot25"
+                       rendered="#{pageFlowScope.sup eq 'Y'}"
+                       styleClass="pageTitleHeaderLeft"/>
+        <af:outputText value="AMEND DOCUMENT DETAILS" id="ot8"
+                       rendered="#{pageFlowScope.formType eq 'PV'  and pageFlowScope.sup ne 'Y'}"
+                       styleClass="pageTitleHeaderLeft"/>
+      </af:panelGroupLayout>
+    </f:facet>
+  </af:panelStretchLayout>
+</jsp:root>

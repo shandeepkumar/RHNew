@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="btf_RH_ManageFunction">
+    <template-reference>
+      <document id="__2">/WEB-INF/PageFlows/template/RH-task-flow-templateForException.xml</document>
+      <id id="__1">RH-task-flow-templateForException</id>
+    </template-reference>
+    <default-activity id="__5">checkUserToken</default-activity>
+    <input-parameter-definition id="__7">
+      <name id="__20">fldTokenId</name>
+      <value id="__29">#{pageFlowScope.fldTokenId}</value>
+    </input-parameter-definition>
+    <input-parameter-definition id="__31">
+      <name id="__22">fldUserid</name>
+      <value id="__23">#{pageFlowScope.fldUserid}</value>
+    </input-parameter-definition>
+    <input-parameter-definition id="__21">
+      <name id="__50">fldFiid</name>
+      <value id="__26">#{pageFlowScope.fldFiid}</value>
+    </input-parameter-definition>
+    <input-parameter-definition id="__46">
+      <name id="__52">fldFitype</name>
+      <value id="__28">#{pageFlowScope.fldFitype}</value>
+    </input-parameter-definition>
+    <input-parameter-definition id="__47">
+      <name id="__24">fldUserAction</name>
+      <value id="__54">#{pageFlowScope.fldUserAction}</value>
+    </input-parameter-definition>
+    <input-parameter-definition id="__34">
+      <name id="__35">fldPolicyId</name>
+      <value id="__30">#{pageFlowScope.fldPolicyId}</value>
+    </input-parameter-definition>
+    <input-parameter-definition id="__43">
+      <name id="__42">fldUserType</name>
+      <value id="__25">#{pageFlowScope.fldUserType}</value>
+    </input-parameter-definition>
+    <input-parameter-definition id="__44">
+      <name id="__45">fldUserTask</name>
+      <value id="__32">#{pageFlowScope.fldUserTask}</value>
+    </input-parameter-definition>
+    <input-parameter-definition id="__19">
+      <name id="__6">fldDepartmentId</name>
+      <value>#{pageFlowScope.fldDepartmentId}</value>
+    </input-parameter-definition>
+    <managed-bean id="__8">
+      <managed-bean-name id="__10">backingBean_UnathorisedUser</managed-bean-name>
+      <managed-bean-class>gov.bnm.view.rh.backingBeans.UnathorisedUser</managed-bean-class>
+      <managed-bean-scope id="__9">backingBean</managed-bean-scope>
+    </managed-bean>
+    <router id="checkUserToken">
+      <case>
+        <expression>#{rhSession.userToken eq 'valid'}</expression>
+        <outcome id="__4">valid</outcome>
+      </case>
+      <default-outcome id="__3">invalid</default-outcome>
+    </router>
+    <view id="unathorisedUser">
+      <page>/jsff/unathorisedUser.jsff</page>
+    </view>
+    <task-flow-call id="btf_RH_ManageAppForm">
+      <task-flow-reference>
+        <document>/WEB-INF/PageFlows/taskFlow/btf_RH_ManageAppForm.xml</document>
+        <id>btf_RH_ManageAppForm</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <control-flow-rule id="__11">
+      <from-activity-id id="__12">checkUserToken</from-activity-id>
+      <control-flow-case id="__14">
+        <from-outcome id="__13">invalid</from-outcome>
+        <to-activity-id id="__15">unathorisedUser</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__16">
+        <from-outcome id="__18">valid</from-outcome>
+        <to-activity-id id="__17">btf_RH_ManageAppForm</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

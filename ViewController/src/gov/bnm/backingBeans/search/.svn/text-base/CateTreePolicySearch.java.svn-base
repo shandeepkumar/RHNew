@@ -1,0 +1,582 @@
+package gov.bnm.backingBeans.search;
+
+import gov.bnm.rh.views.CategoriesViewRowImpl;
+import gov.bnm.rh.views.searchfn.CategoryChildLevel2ViewObjRowImpl;
+import gov.bnm.rh.views.searchfn.CategoryChildLevel3ViewObjRowImpl;
+import gov.bnm.rh.views.searchfn.CategoryParentLevelViewObjRowImpl;
+import gov.bnm.rh.views.searchfn.PolicyPartitionCompViewObjRowImpl;
+import gov.bnm.view.rh.constant.Constants;
+import gov.bnm.view.rh.servlet.PageRedirectServlet;
+import gov.bnm.view.rh.session.RHSession;
+import gov.bnm.view.rh.utils.ADFUtils;
+
+import gov.bnm.view.rh.utils.BaseUtil;
+import gov.bnm.view.rh.utils.CommonRHUtil;
+import gov.bnm.view.rh.utils.FileUploadUtils;
+import gov.bnm.view.rh.utils.JSFUtils;
+
+
+import gov.view.common.validation.ValidatorUtil;
+
+import java.io.OutputStream;
+
+import java.util.Iterator;
+import java.util.List;
+
+import javax.faces.component.ContextCallback;
+import javax.faces.component.UIComponent;
+import javax.faces.component.UIViewRoot;
+import javax.faces.context.FacesContext;
+import javax.faces.event.ActionEvent;
+import javax.faces.event.ValueChangeEvent;
+
+import oracle.adf.model.BindingContext;
+import oracle.adf.model.binding.DCIteratorBinding;
+import oracle.adf.view.rich.component.rich.data.RichTree;
+import oracle.adf.view.rich.component.rich.data.RichTreeTable;
+
+import oracle.adf.view.rich.component.rich.nav.RichCommandButton;
+import oracle.adf.view.rich.component.rich.nav.RichCommandLink;
+import oracle.adf.view.rich.context.AdfFacesContext;
+
+import oracle.binding.BindingContainer;
+
+import oracle.jbo.Row;
+import oracle.jbo.ViewObject;
+import oracle.jbo.uicli.binding.JUCtrlHierNodeBinding;
+
+import oracle.jbo.uicli.binding.JUCtrlListBinding;
+
+import org.apache.log4j.Logger;
+import org.apache.myfaces.trinidad.component.UIXTree;
+import org.apache.myfaces.trinidad.event.RowDisclosureEvent;
+import org.apache.myfaces.trinidad.event.SelectionEvent;
+import org.apache.myfaces.trinidad.model.ModelUtils;
+import org.apache.myfaces.trinidad.model.RowKeySet;
+import org.apache.myfaces.trinidad.model.RowKeySetTreeImpl;
+
+public class CateTreePolicySearch {
+
+    static Logger log = Logger.getLogger(CateTreePolicySearch.class);
+    private transient UIXTree _localTree;
+    RHSession rhSession =
+        (RHSession)JSFUtils.resolveExpression("#{rhSession}");
+
+    public CateTreePolicySearch() {
+    }
+
+    private RichTreeTable tt1;
+    private RichTree t1;
+    private RichCommandButton cb1;
+    private RichCommandLink cl2;
+
+    public void onOpenPolFileSelected(ActionEvent actionEvent) {
+        boolean isDownload = true;
+        //rhSession.setIsInternalExternal("EX");
+        if (Constants.IS_INTERNAL_OR_EXTERNAL_EX.equalsIgnoreCase(rhSession.getIsInternalExternal())) {
+            /**
+             *  CateTreepolicy search validate authorised policy.
+             *  Add new CR Dec 6th 2017 by shankar .. 
+             *  change CommonRHUtil.isAuthorisedToViewPolicy() into CommonRHUtil.isAuthorisedToViewPolicyMultiOrgInst()
+             */
+            if (!CommonRHUtil.isAuthorisedToViewPolicyMultiOrgInst()) {
+                isDownload = false;
+                ADFUtils.showInfoMessage("You are not Authorised To View this Policy ");
+            }
+        }
+        if (isDownload) {
+            BindingContainer bindings = ADFUtils.getBindingContainer();
+            RichCommandLink comp = (RichCommandLink)actionEvent.getComponent();
+            String rowKey =
+                BaseUtil.getStr(comp.getAttributes().get("rowKey"));
+
+            log.info("rowKey::" + rowKey);
+            DCIteratorBinding iterBindings =
+                (DCIteratorBinding)bindings.get("AttachmentDownloadViewObj1Iterator");
+            ViewObject vo = iterBindings.getViewObject();
+            vo.setNamedWhereClauseParam("bindFileId", rowKey);
+            vo.executeQuery();
+            log.info("getEstimatedRowCount::" + vo.getEstimatedRowCount());
+            Row currentRow = vo.first();
+            //file name and Download buttion getter
+            FileUploadUtils.setOpenFileName(BaseUtil.getStr(currentRow.getAttribute("filenameStore")),
+                                            BaseUtil.getStr(currentRow.getAttribute("filenameOrig")),
+                                            getCb1().getClientId(FacesContext.getCurrentInstance()));
+        }
+    }
+
+    public void doDownload(FacesContext facesContext, OutputStream out) {
+        try {
+            FileUploadUtils.downloadFile(out);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public String linkClickFromPolicyListingTable() {
+        log.info("came inside to link click policy listing table .." +
+                 rhSession.getFldUserid());
+
+        DCIteratorBinding dcIter =
+            ADFUtils.getDcIteratorBinding("PolicyPartitionCompViewObj1Iterator");
+        PolicyPartitionCompViewObjRowImpl policyRowImpl =
+            (PolicyPartitionCompViewObjRowImpl)dcIter.getCurrentRow();
+
+        if (ValidatorUtil.isNotNull(policyRowImpl)) {
+            log.info("Policy Id  : " + policyRowImpl.getitemId());
+
+            rhSession.setFldPolicyId(policyRowImpl.getitemId());
+        }
+
+
+        return gov.view.common.configuration.Constants.STATUS_SUCCESS;
+    }
+
+    public String linkClickAction() {
+        String categoryId = this.displaySelectedItemFromTree();
+        ViewObject vo =
+            ADFUtils.findIterator("PolicyPartitionCompViewObj1Iterator").getViewObject();
+        vo.setNamedWhereClauseParam("bindCategoryId", categoryId);
+        vo.executeQuery();
+
+        //this.displaySelectedList();
+        return gov.view.common.configuration.Constants.STATUS_SUCCESS;
+    }
+
+    /**
+     * Exapnd all tree nodes
+     * @param act
+     */
+    public void expandAllTreeNodes(ActionEvent act) {
+
+        UIXTree tree = this.getT1();
+        RowKeySet _disclosedRowKeys = new RowKeySetTreeImpl(true);
+        _disclosedRowKeys.setCollectionModel(ModelUtils.toTreeModel(tree.getValue()));
+        tree.setDisclosedRowKeys(_disclosedRowKeys);
+
+    }
+
+    /**
+     *Collapse all tree nodes
+     * @param act
+     */
+    public void collapseAllTreeNodes(ActionEvent act) {
+        UIXTree tree = this.getT1();
+        RowKeySet _disclosedRowKeys = tree.getDisclosedRowKeys();
+        if (_disclosedRowKeys != null && _disclosedRowKeys.size() > 0) {
+            _disclosedRowKeys.clear();
+        }
+        tree.setDisclosedRowKeys(_disclosedRowKeys);
+    }
+
+    public void checkBoxValueChange(ValueChangeEvent valueChangeEvent) {
+
+        log.info("old value : " + valueChangeEvent.getOldValue() +
+                 "   New Value  :  " + valueChangeEvent.getNewValue());
+
+        //
+        //        DCIteratorBinding dcIb =
+        //            ADFUtils.findIterator("CategoriesView1Iterator");
+        //        CategoriesViewRowImpl cateRegion =
+        //            (CategoriesViewRowImpl)dcIb.getCurrentRow();
+        //
+        //        CategoriesLevelViewObjRowImpl region =
+        //            (CategoriesLevelViewObjRowImpl)cateRegion.getCategoriesLevelViewObj();
+        //        RowIterator ri = cateRegion.getCategoriesLevelViewObj();
+        //
+        //
+        //        if (((Boolean)valueChangeEvent.getOldValue()) != null) {
+        //            Boolean check = (Boolean)valueChangeEvent.getNewValue();
+        //
+        //            //            if (check == true) {
+        //            //                region.setisCheckedCategory(true);
+        //            //            } else {
+        //            //                region.setisCheckedCategory(false);
+        //            //            }
+        //
+        //            while (ri.hasNext()) {
+        //                CategoriesLevelViewObjRowImpl categoriesLevelViewObjRowImpl =
+        //                    (CategoriesLevelViewObjRowImpl)ri.next();
+        //                if (check == true) {
+        //                    categoriesLevelViewObjRowImpl.setisCheckedCategory(true);
+        //                } else {
+        //                    categoriesLevelViewObjRowImpl.setisCheckedCategory(false);
+        //                }
+        //            }
+        //
+        //        }
+        //
+
+        RichTreeTable treeTable = this.getTt1();
+        //get all selected row keys
+        RowKeySet rks = treeTable.getSelectedRowKeys();
+        Iterator keys = rks.iterator();
+        //if the treeTable is configured to support single selection or
+        //multiple selection doesn't matter as the routine below works with
+        //all cases
+        while (keys.hasNext()) {
+            //the treeTable path is defined as a List of keys
+            List key = (List)keys.next();
+            //set the treeTable current row to the row defined by the key
+            treeTable.setRowKey(key);
+            //Using ADF, a treeTable row is represented by the
+            //JUCtrlHierNodeBinding class, which is an ADF Faces binding
+            //object that wraps the row of the ADF model
+            JUCtrlHierNodeBinding node =
+                (JUCtrlHierNodeBinding)treeTable.getRowData();
+            //The row in the model, when using ADF BC, is of type
+            //oracle.jbo.Row
+            if (ValidatorUtil.isNotNull(node)) {
+                Row rw = node.getRow();
+
+                if (rw instanceof CategoryParentLevelViewObjRowImpl) {
+
+                    CategoryParentLevelViewObjRowImpl categoriesLevelViewRowImpl =
+                        (CategoryParentLevelViewObjRowImpl)rw;
+
+                    if (((Boolean)valueChangeEvent.getOldValue()) != null) {
+                        Boolean check =
+                            (Boolean)valueChangeEvent.getNewValue();
+
+                        //                        if (check == true) {
+                        //                            categoriesLevelViewRowImpl.setisCheckedCategory(true);
+                        //                        } else {
+                        //                            categoriesLevelViewRowImpl.setisCheckedCategory(false);
+                        //                        }
+                    }
+
+                    //                    log.info(" After assign  :  " +
+                    //                                       categoriesLevelViewRowImpl.getCategoryID() +
+                    //                                       "  name " +
+                    //                                       categoriesLevelViewRowImpl.getCategoryName() +
+                    //                                       "   :  " +
+                    //                                       categoriesLevelViewRowImpl.getisCheckedCategory());
+                }
+            }
+        }
+
+        //        log.info(region.getCategoryName() + " :  status  -   " +
+        //                           region.getisCheckedCategory());
+
+
+    }
+
+    public String displaySelectedItemFromTree() {
+
+        String categoryId = null;
+        //RichTreeTable treeTable = this.getTt1();
+        RichTree treeTable = this.getT1();
+        //get all selected row keys
+        RowKeySet rks = treeTable.getSelectedRowKeys();
+        Iterator keys = rks.iterator();
+        //if the treeTable is configured to support single selection or
+        //multiple selection doesn't matter as the routine below works with
+        //all cases
+        while (keys.hasNext()) {
+            //the treeTable path is defined as a List of keys
+            List key = (List)keys.next();
+            //set the treeTable current row to the row defined by the key
+            treeTable.setRowKey(key);
+            //Using ADF, a treeTable row is represented by the
+            //JUCtrlHierNodeBinding class, which is an ADF Faces binding
+            //object that wraps the row of the ADF model
+            JUCtrlHierNodeBinding node =
+                (JUCtrlHierNodeBinding)treeTable.getRowData();
+            //The row in the model, when using ADF BC, is of type
+            //oracle.jbo.Row
+            if (ValidatorUtil.isNotNull(node)) {
+                Row rw = node.getRow();
+                if (rw instanceof CategoriesViewRowImpl) {
+
+                    CategoriesViewRowImpl categoriesViewRowImpl =
+                        (CategoriesViewRowImpl)rw;
+                    log.info("Category Parent Level Id  :  " +
+                             categoriesViewRowImpl.getCategoryID());
+
+                    categoryId =
+                            String.valueOf(categoriesViewRowImpl.getCategoryID());
+
+
+                } else if (rw instanceof CategoryParentLevelViewObjRowImpl) {
+
+                    CategoryParentLevelViewObjRowImpl categoriesLevelViewRowImpl =
+                        (CategoryParentLevelViewObjRowImpl)rw;
+
+                    log.info(" categoriesLevelViewRowImpl   :  " +
+                             categoriesLevelViewRowImpl);
+                    categoryId =
+                            String.valueOf(categoriesLevelViewRowImpl.getCategoryID());
+
+                } else if (rw instanceof CategoryChildLevel2ViewObjRowImpl) {
+
+                    CategoryChildLevel2ViewObjRowImpl categoriesLevelViewRowImpl =
+                        (CategoryChildLevel2ViewObjRowImpl)rw;
+
+                    log.info(" categoriesLevelViewRowImpl   :  " +
+                             categoriesLevelViewRowImpl);
+                    categoryId =
+                            String.valueOf(categoriesLevelViewRowImpl.getCategoryID());
+
+                } else if (rw instanceof CategoryChildLevel3ViewObjRowImpl) {
+
+                    CategoryChildLevel3ViewObjRowImpl categoriesLevelViewRowImpl =
+                        (CategoryChildLevel3ViewObjRowImpl)rw;
+
+                    log.info(" categoriesLevelViewRowImpl   :  " +
+                             categoriesLevelViewRowImpl);
+                    categoryId =
+                            String.valueOf(categoriesLevelViewRowImpl.getCategoryID());
+
+                }
+            } else {
+
+            }
+            //Lets read and print from the row ..
+        }
+        return categoryId;
+    }
+
+    public void displaySelectedList() {
+
+        String categoryId = displaySelectedItemFromTree();
+        UIXTree tree = this.getT1();
+        if (tree != null && tree.getValue() != null) {
+            RowKeySet _disclosedRowKeys = tree.getDisclosedRowKeys();
+
+            if (_disclosedRowKeys == null) {
+                System.out.println("tree.getDisclosedRowKeys return null!!!");
+                //will it happen??
+                return;
+            }
+
+
+            log.info("_disclosedRowKeys : " + _disclosedRowKeys.size());
+            if (_disclosedRowKeys.size() > 0) {
+                _disclosedRowKeys.clear();
+            }
+            /**
+             * Get the selected value from the drop down
+             */
+            //            BindingContainer bindings =
+            //                BindingContext.getCurrent().getCurrentBindingsEntry();
+            //            JUCtrlListBinding listBinding =
+            //                (JUCtrlListBinding)bindings.get("CategoriesView71");
+            //            listBinding.setSelectedIndex(Integer.parseInt("4"));
+            /**
+             * Pass the value to the discloseNodes for keeping the node exanded
+             */
+            discloseNodes(tree, categoryId);
+
+        }
+
+    }
+
+    public void rowDisclosureListener(RowDisclosureEvent rowDisclosureEvent) {
+        System.out.println(":::: RowDisclosureListener Invoked");
+        int depth = this.getT1().getDepth();
+        if (depth > 0) {
+            return;
+        }
+        RowKeySet discloseRowKeySet = this.getT1().getDisclosedRowKeys();
+        RowKeySet addedRowKeySet = rowDisclosureEvent.getAddedSet();
+        Iterator addedRowKeySetIter = addedRowKeySet.iterator();
+        if (addedRowKeySetIter.hasNext()) {
+            discloseRowKeySet.clear();
+            Object firstKey = addedRowKeySetIter.next();
+            discloseRowKeySet.add(firstKey);
+            this.getT1().setSelectedRowKeys(addedRowKeySet);
+            this.getT1().setRowKey(firstKey);
+            AdfFacesContext adfFacesContext = null;
+            adfFacesContext = AdfFacesContext.getCurrentInstance();
+            adfFacesContext.addPartialTarget(this.getT1().getParent());
+        }
+    }
+
+
+    private boolean discloseNodes(UIXTree tree, String nodeValueToBeExapnded) {
+
+        boolean isFound = false;
+
+        log.info("tree row count : " + tree.getRowCount() +
+                 "nodeValueToBeExapnded  : " + nodeValueToBeExapnded);
+        for (int i = 0; i < tree.getRowCount(); i++) {
+            tree.setRowIndex(i);
+            if (tree.isContainer()) {
+
+                tree.enterContainer();
+
+                if (tree.getRowCount() > 0 &&
+                    discloseNodes(tree, nodeValueToBeExapnded)) {
+                    tree.exitContainer();
+                    tree.getDisclosedRowKeys().add();
+                    log.info("go inside to count");
+                    isFound = true;
+                } else {
+                    tree.exitContainer();
+                }
+            } else {
+                log.info("varlue : " + tree.getRowData().toString());
+                if (tree.getRowData() != null &&
+                    tree.getRowData().toString().contains(nodeValueToBeExapnded)) {
+                    log.info("go inside to nodeValueToBeExapnded");
+                    isFound = true;
+                }
+
+            }
+        }
+
+        return isFound;
+    }
+
+
+    // back for tree table ..
+    /*
+    public String displaySelectedItemFromTree() {
+
+        String categoryId = null;
+        RichTreeTable treeTable = this.getTt1();
+        //get all selected row keys
+        RowKeySet rks = treeTable.getSelectedRowKeys();
+        Iterator keys = rks.iterator();
+        //if the treeTable is configured to support single selection or
+        //multiple selection doesn't matter as the routine below works with
+        //all cases
+        while (keys.hasNext()) {
+            //the treeTable path is defined as a List of keys
+            List key = (List)keys.next();
+            //set the treeTable current row to the row defined by the key
+            treeTable.setRowKey(key);
+            //Using ADF, a treeTable row is represented by the
+            //JUCtrlHierNodeBinding class, which is an ADF Faces binding
+            //object that wraps the row of the ADF model
+            JUCtrlHierNodeBinding node =
+                (JUCtrlHierNodeBinding)treeTable.getRowData();
+            //The row in the model, when using ADF BC, is of type
+            //oracle.jbo.Row
+            if (ValidatorUtil.isNotNull(node)) {
+                Row rw = node.getRow();
+                if (rw instanceof CategoriesViewRowImpl) {
+
+                    CategoriesViewRowImpl categoriesViewRowImpl =
+                        (CategoriesViewRowImpl)rw;
+                    log.info("Category Parent Level Id  :  " +
+                                       categoriesViewRowImpl.getCategoryID());
+
+                    categoryId =
+                            String.valueOf(categoriesViewRowImpl.getCategoryID());
+
+
+                } else if (rw instanceof CategoryParentLevelViewObjRowImpl) {
+
+                    CategoryParentLevelViewObjRowImpl categoriesLevelViewRowImpl =
+                        (CategoryParentLevelViewObjRowImpl)rw;
+
+                    log.info(" categoriesLevelViewRowImpl   :  " +
+                                       categoriesLevelViewRowImpl);
+                    categoryId =
+                            String.valueOf(categoriesLevelViewRowImpl.getCategoryID());
+
+                } else if (rw instanceof CategoryChildLevel2ViewObjRowImpl) {
+
+                    CategoryChildLevel2ViewObjRowImpl categoriesLevelViewRowImpl =
+                        (CategoryChildLevel2ViewObjRowImpl)rw;
+
+                    log.info(" categoriesLevelViewRowImpl   :  " +
+                                       categoriesLevelViewRowImpl);
+                    categoryId =
+                            String.valueOf(categoriesLevelViewRowImpl.getCategoryID());
+
+                } else if (rw instanceof CategoryChildLevel3ViewObjRowImpl) {
+
+                    CategoryChildLevel3ViewObjRowImpl categoriesLevelViewRowImpl =
+                        (CategoryChildLevel3ViewObjRowImpl)rw;
+
+                    log.info(" categoriesLevelViewRowImpl   :  " +
+                                       categoriesLevelViewRowImpl);
+                    categoryId =
+                            String.valueOf(categoriesLevelViewRowImpl.getCategoryID());
+
+                }
+            } else {
+
+            }
+            //Lets read and print from the row ..
+        }
+        return categoryId;
+    }
+*/
+
+    public String clickPolicyLink() {
+        RHSession rhSession = (RHSession)JSFUtils.getFromSession("rhSession");
+        try {
+            if (Constants.IS_INTERNAL_OR_EXTERNAL_IN.equalsIgnoreCase(rhSession.getIsInternalExternal())) {
+                if (CommonRHUtil.getDepInString()) {
+                    rhSession.setPageType("ISSDP");
+                    return "issDepartment";
+                }
+            }
+            rhSession.setPageType("CTPS");
+        } catch (Exception e) {
+            // TODO: Add catch code
+            e.printStackTrace();
+        }
+        return "policyPreface";
+    }
+
+    private UIXTree getTree() {
+        findTreeInView();
+        return _localTree;
+    }
+
+    private void findTreeInView() {
+
+        FacesContext fctx = FacesContext.getCurrentInstance();
+        UIViewRoot root = fctx.getViewRoot();
+        root.invokeOnComponent(fctx, "t1", new ContextCallback() {
+                public void invokeContextCallback(FacesContext facesContext,
+                                                  UIComponent uiComponent) {
+                    _localTree = (UIXTree)uiComponent;
+                }
+            });
+
+    }
+
+
+    public void itemSelectionEvent(SelectionEvent selectionEvent) {
+        // Add event code here...
+        this.displaySelectedItemFromTree();
+    }
+
+    public void setTt1(RichTreeTable tt1) {
+        this.tt1 = tt1;
+    }
+
+    public RichTreeTable getTt1() {
+        return tt1;
+    }
+
+
+    public void setT1(RichTree t1) {
+        this.t1 = t1;
+    }
+
+    public RichTree getT1() {
+        return t1;
+    }
+
+    public void setCb1(RichCommandButton cb1) {
+        this.cb1 = cb1;
+    }
+
+    public RichCommandButton getCb1() {
+        return cb1;
+    }
+
+    public void setCl2(RichCommandLink cl2) {
+        this.cl2 = cl2;
+    }
+
+    public RichCommandLink getCl2() {
+        return cl2;
+    }
+}

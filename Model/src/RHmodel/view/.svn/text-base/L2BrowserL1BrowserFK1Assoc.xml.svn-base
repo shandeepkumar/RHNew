@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="L2BrowserL1BrowserFK1Assoc"
+  Version="11.1.1.64.93"
+  InheritPersonalization="true">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="L1browser"
+    Cardinality="1"
+    Source="true"
+    Owner="RHmodel.view.L1browser">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="L1browser"/>
+      <Attr Name="_foreignKey" Value="RHmodel.view.L1browser.L1BrowserPK"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="RHmodel.view.L1browser.Brid"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="L2browser"
+    Cardinality="-1"
+    Owner="RHmodel.view.L2browser">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="L2browser"/>
+      <Attr Name="_foreignKey"
+        Value="RHmodel.view.L2browser.L2BrowserL1BrowserFK1"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="RHmodel.view.L2browser.parentId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

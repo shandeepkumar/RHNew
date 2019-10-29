@@ -1,0 +1,289 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<table xmlns="http://xmlns.oracle.com/jdeveloper/1111/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <identifier class="java.lang.String">79495103-c762-4b16-ac54-a35782d56537</identifier>
+  </ID>
+  <name>L2Browser</name>
+  <columns>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">8ed9c8a7-db64-47f7-a94c-5dbcfc3e38eb</identifier>
+      </ID>
+      <name>Brid</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">2856504b-4ce0-4795-b1bc-53abb6febfa6</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>identity</key>
+          </entry>
+          <entry>
+            <key>precision</key>
+          </entry>
+          <entry>
+            <key>scale</key>
+          </entry>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">50</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.SQLServer.SQLServerDatabaseImpl</providerClass>
+          <typeName>VARCHAR</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">af3fb38c-2bc3-4fa8-84f5-7db998427bf3</identifier>
+      </ID>
+      <name>Type</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">4577edb9-ba21-4d15-a899-bb78f1f831f6</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">25</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.SQLServer.SQLServerDatabaseImpl</providerClass>
+          <typeName>VARCHAR</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">8ffd91bc-7fe7-4e30-bac6-e23b06bac216</identifier>
+      </ID>
+      <name>System</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">05d2e730-afb0-4b6a-a054-e90cf5b6a182</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">25</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.SQLServer.SQLServerDatabaseImpl</providerClass>
+          <typeName>VARCHAR</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">ef460e22-965a-4d71-9447-9d92af850429</identifier>
+      </ID>
+      <name>itemid</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">daf5d223-9d83-4c32-80c6-79c3726e974b</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+          </entry>
+          <entry>
+            <key>scale</key>
+          </entry>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">50</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.SQLServer.SQLServerDatabaseImpl</providerClass>
+          <typeName>VARCHAR</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">5527d39a-25f7-4959-914d-01ce86387074</identifier>
+      </ID>
+      <name>createDate</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">e5272bdb-1d18-47e0-8cba-b0e97978d62c</identifier>
+        </ID>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.SQLServer.SQLServerDatabaseImpl</providerClass>
+          <typeName>DATETIME</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">b0c2726b-a167-4335-9bfd-11c8c0b0e70d</identifier>
+      </ID>
+      <name>isActive</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">63a43ce7-54f9-4e3a-8e69-b46d813feac7</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">1</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.SQLServer.SQLServerDatabaseImpl</providerClass>
+          <typeName>VARCHAR</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">5f27c710-c2f0-4950-88b0-f79c1e003aa2</identifier>
+      </ID>
+      <name>entryId</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">a6e2a85a-cdfd-4861-85c0-ac0af5446439</identifier>
+        </ID>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.SQLServer.SQLServerDatabaseImpl</providerClass>
+          <typeName>INTEGER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">a261b35a-6064-4545-ae94-76c12be65e8d</identifier>
+      </ID>
+      <name>parentId</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">ca8f8060-30f5-4d25-afef-ef6c64f51cda</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+          </entry>
+          <entry>
+            <key>scale</key>
+          </entry>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">50</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.SQLServer.SQLServerDatabaseImpl</providerClass>
+          <typeName>VARCHAR</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+    </column>
+  </columns>
+  <constraints>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">b5803854-637f-43bd-8e7b-717fc5c9a664</identifier>
+      </ID>
+      <name>L2Browser_L1Browser_FK</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>parentId</name>
+          <identifier class="java.lang.String">a261b35a-6064-4545-ae94-76c12be65e8d</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>L2Browser</name>
+            <identifier class="java.lang.String">79495103-c762-4b16-ac54-a35782d56537</identifier>
+            <schemaName>dbo</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <referenceID class="oracle.javatools.db.IdentifierBasedID">
+        <name>L1Browser_PK</name>
+        <identifier class="java.lang.String">d04ded25-8726-4310-a20b-aef08ae261be</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>L1Browser</name>
+          <identifier class="java.lang.String">32bebf5b-a302-4fd6-a518-8028edadeb4c</identifier>
+          <schemaName>dbo</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">97b0baa5-dcef-4452-95b0-5ee8362c5be2</identifier>
+      </ID>
+      <name>L2Browser_itemList_FK</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>itemid</name>
+          <identifier class="java.lang.String">ef460e22-965a-4d71-9447-9d92af850429</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>L2Browser</name>
+            <identifier class="java.lang.String">79495103-c762-4b16-ac54-a35782d56537</identifier>
+            <schemaName>dbo</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <referenceID class="oracle.javatools.db.IdentifierBasedID">
+        <name>itemList_PK</name>
+        <identifier class="java.lang.String">ad84b565-405c-435b-bc74-b6c61e158d81</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>itemList</name>
+          <identifier class="java.lang.String">8d73fabd-5644-4936-8762-a42ecb0cff6f</identifier>
+          <schemaName>dbo</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.PKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">45940f8d-66da-4bc2-8658-972141419be3</identifier>
+      </ID>
+      <name>L2Browser_PK</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>Brid</name>
+          <identifier class="java.lang.String">8ed9c8a7-db64-47f7-a94c-5dbcfc3e38eb</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>L2Browser</name>
+            <identifier class="java.lang.String">79495103-c762-4b16-ac54-a35782d56537</identifier>
+            <schemaName>dbo</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+    </constraint>
+  </constraints>
+  <properties>
+    <entry>
+      <key>TableType</key>
+      <value class="oracle.javatools.db.Table$TableType">NORMAL</value>
+    </entry>
+  </properties>
+  <schema>
+    <name>dbo</name>
+  </schema>
+</table>

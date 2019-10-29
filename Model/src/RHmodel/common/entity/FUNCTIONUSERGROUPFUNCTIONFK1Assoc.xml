@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FUNCTIONUSERGROUPFUNCTIONFK1Assoc"
+  Version="11.1.1.64.93"
+  InheritPersonalization="true">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="Function1"
+    Cardinality="1"
+    Source="true"
+    Owner="RHmodel.common.entity.Function1">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Function1"/>
+      <Attr Name="_foreignKey"
+        Value="RHmodel.common.entity.Function1.FUNCTIONPK"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="FunctionUsergroup"
+    Cardinality="-1"
+    Owner="RHmodel.common.entity.FunctionUsergroup">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="FunctionUsergroup"/>
+      <Attr Name="_foreignKey"
+        Value="RHmodel.common.entity.FunctionUsergroup.FUNCTIONUSERGROUPFUNCTIONFK1"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="RHmodel.common.entity.FunctionUsergroup.FUNCTIONID"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

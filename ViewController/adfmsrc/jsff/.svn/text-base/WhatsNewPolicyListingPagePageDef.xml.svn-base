@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.64.93" id="WhatsNewPolicyListingPagePageDef"
+                Package="jsff">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="PolicyActiveOnlyViewObj1"
+              DataControl="RegBookAppModuleDataControl"
+              id="PolicyActiveOnlyViewObj1Iterator" />
+  </executables>
+  <bindings>
+    <tree IterBinding="PolicyActiveOnlyViewObj1Iterator"
+          id="PolicyActiveOnlyViewObj1">
+      <nodeDefinition DefName="gov.bnm.rh.views.PolicyActiveOnlyViewObj"
+                      Name="PolicyActiveOnlyViewObj10">
+        <AttrNames>
+          <Item Value="GuidelineTitle"/>
+          <Item Value="NewIssuanceDate"/>
+          <Item Value="Sectors"/>
+          <Item Value="Category"/>
+          <Item Value="IssuingDepartment"/>
+          <Item Value="InstitutionTypes"/>
+          <Item Value="itemId"/>
+          <Item Value="EffectiveDate"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

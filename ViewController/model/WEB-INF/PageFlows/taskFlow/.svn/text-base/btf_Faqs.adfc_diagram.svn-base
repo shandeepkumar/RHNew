@@ -1,0 +1,49 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">FaqsPage</property>
+      <property
+         name="page">/jsff/FaqsPage.jsff</property>
+      <property
+         name="start">false</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>FaqsPage&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">169.49414</property>
+      <property
+         name="x">505.0</property>
+      <property
+         name="pageFragment">true</property>
+   </View>
+   <MethodCall
+      id="MethodCall3">
+      <property
+         name="activityId">getFaqManagementDetails</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>getFaqManagementDetails&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">187.34473</property>
+      <property
+         name="x">176.04102</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="MethodCall3"
+      to="View2">
+      <property
+         name="fromOutcome">getFaqManagementDetails</property>
+      <property
+         name="sdm:polyPoints">R50,217.04102,186.99414,464.0,169.14355,L50</property>
+   </ControlFlowCase>
+</SDM>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.64.93" id="EnquiryResponsePagePageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator id="EnquiryfaqForEnqViewObj1Iterator"
+              Binds="EnquiryfaqForEnqViewObj1"
+              DataControl="RegBookAppModuleDataControl" RangeSize="25"/>
+    <iterator id="AttachedfileForEnqQueView1Iterator"
+              Binds="AttachedfileForEnqQueView1"
+              DataControl="RegBookAppModuleDataControl" RangeSize="25"/>
+    <iterator id="AttachedfileForEnqAnsView1Iterator"
+              Binds="AttachedfileForEnqAnsView1"
+              DataControl="RegBookAppModuleDataControl" RangeSize="25"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="EnquiryfaqForEnqViewObj1Iterator"
+                     id="Title">
+      <AttrNames>
+        <Item Value="Title"/>
+      </AttrNames>
+    </attributeValues>  
+    <action id="Commit" DataControl="RegBookAppModuleDataControl"
+            RequiresUpdateModel="true" Action="commitTransaction"/>
+    <attributeValues IterBinding="EnquiryfaqForEnqViewObj1Iterator"
+                     id="enquiryStatus">
+      <AttrNames>
+        <Item Value="enquiryStatus"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EnquiryfaqForEnqViewObj1Iterator"
+                     id="Abstract11">
+      <AttrNames>
+        <Item Value="Abstract11"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EnquiryfaqForEnqViewObj1Iterator"
+                     id="PolicyTitle">
+      <AttrNames>
+        <Item Value="PolicyTitle"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EnquiryfaqForEnqViewObj1Iterator"
+                     id="InternalUserName">
+      <AttrNames>
+        <Item Value="InternalUserName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EnquiryfaqForEnqViewObj1Iterator"
+                     id="InternalUserDepName">
+      <AttrNames>
+        <Item Value="InternalUserDepName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EnquiryfaqForEnqViewObj1Iterator"
+                     id="ExternalUserName">
+      <AttrNames>
+        <Item Value="ExternalUserName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EnquiryfaqForEnqViewObj1Iterator"
+                     id="ExternalUserOrgName">
+      <AttrNames>
+        <Item Value="ExternalUserOrgName"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="AttachedfileForEnqQueView1Iterator"
+          id="AttachedfileForEnqQueView1">
+      <nodeDefinition DefName="gov.bnm.rh.views.AttachedfileForEnqQueView"
+                      Name="AttachedfileForEnqQueView10">
+        <AttrNames>
+          <Item Value="fileId"/>
+          <Item Value="filenameOrig"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="AttachedfileForEnqAnsView1Iterator"
+          id="AttachedfileForEnqAnsView1">
+      <nodeDefinition DefName="gov.bnm.rh.views.AttachedfileForEnqAnsView"
+                      Name="AttachedfileForEnqAnsView10">
+        <AttrNames>
+          <Item Value="fileId"/>
+          <Item Value="filenameOrig"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="EnquiryfaqForEnqViewObj1Iterator" id="itemId">
+      <AttrNames>
+        <Item Value="itemId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EnquiryfaqForEnqViewObj1Iterator"
+                     id="EnquiryFAQId">
+      <AttrNames>
+        <Item Value="EnquiryFAQId"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

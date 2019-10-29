@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.64.93"
+                id="btf_InternalFaqs_btf_InternalFaqs_getInsernalUserFaqManagementDetailsPageDef"
+                Package="PageFlows.taskFlow" SkipValidation="true">
+  <parameters/>
+  <executables/>
+  <bindings>
+    <methodAction id="getInsernalUserFaqManagementDetails"
+                  RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="getInsernalUserFaqManagementDetails"
+                  IsViewObjectMethod="false"
+                  DataControl="RegBookAppModuleDataControl"
+                  InstanceName="RegBookAppModuleDataControl.dataProvider">
+      <NamedData NDName="departmentId" NDValue="#{rhSession.fldDepartmentId}"
+                 NDType="java.lang.String"/>
+    </methodAction>
+  </bindings>
+</pageDefinition>

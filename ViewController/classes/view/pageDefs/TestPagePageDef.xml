@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.64.93" id="TestPagePageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="PolicyActiveOnlyViewObj1" RangeSize="5"
+              DataControl="RegBookAppModuleDataControl"
+              id="PolicyActiveOnlyViewObj1Iterator"/>
+    <searchRegion id="PolicyActiveOnlyViewObj1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="PolicyActiveOnlyViewObj1Iterator"
+          id="PolicyActiveOnlyViewObj1">
+      <nodeDefinition DefName="gov.bnm.rh.views.PolicyActiveOnlyViewObj"
+                      Name="PolicyActiveOnlyViewObj10">
+        <AttrNames>
+          <Item Value="ApplicabilityManualEntry"/>
+          <Item Value="Classification"/>
+          <Item Value="CreatedDate"/>
+          <Item Value="DisplayInWhatsNew"/>
+          <Item Value="DocCategory"/>
+          <Item Value="EffectiveDate"/>
+          <Item Value="ExpiryDate"/>
+          <Item Value="FirstIssuanceDate"/>
+          <Item Value="GuidelineTitle"/>
+          <Item Value="Highlights"/>
+          <Item Value="LastUpdated"/>
+          <Item Value="NewIssuanceDate"/>
+          <Item Value="PolicyURL"/>
+          <Item Value="PriorPublishEmailFlag"/>
+          <Item Value="PublishToBNM"/>
+          <Item Value="PublishedEmailFlag"/>
+          <Item Value="PublishedURL"/>
+          <Item Value="ReasonForRejection"/>
+          <Item Value="RecordStatus"/>
+          <Item Value="RefNum"/>
+          <Item Value="SectionInCharge"/>
+          <Item Value="SenderEmail"/>
+          <Item Value="Summary"/>
+          <Item Value="WhatsNewMonths"/>
+          <Item Value="approverId"/>
+          <Item Value="createdBy"/>
+          <Item Value="isActive"/>
+          <Item Value="isAmendmentRecord"/>
+          <Item Value="itemId"/>
+          <Item Value="keywords"/>
+          <Item Value="partitionTypeId"/>
+          <Item Value="policyId"/>
+          <Item Value="system"/>
+          <Item Value="updatedBy"/>
+          <Item Value="Sectors"/>
+          <Item Value="InstitutionTypes"/>
+          <Item Value="IssuingDepartment"/>
+          <Item Value="RelavantAct"/>
+          <Item Value="AttachmentId"/>
+          <Item Value="Category"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

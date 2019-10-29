@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <managed-bean id="__3">
+    <managed-bean-name id="__2">rhSession</managed-bean-name>
+    <managed-bean-class id="__4">gov.bnm.view.rh.session.RHSession</managed-bean-class>
+    <managed-bean-scope id="__1">session</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__5">
+    <managed-bean-name id="__7">backBean_Shuttle</managed-bean-name>
+    <managed-bean-class id="__6">gov.bnm.view.rh.common.ShuttleBean</managed-bean-class>
+    <managed-bean-scope id="__8">backingBean</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__20">
+    <managed-bean-name id="__18">backing_jspx_main</managed-bean-name>
+    <managed-bean-class id="__17">view.backing.jspx.Main</managed-bean-class>
+    <managed-bean-scope id="__19">backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1jspx/main.jspx-->
+  </managed-bean>
+  <managed-bean id="__14">
+    <managed-bean-name id="__16">pageFlow_GuidPojo</managed-bean-name>
+    <managed-bean-class id="__15">gov.bnm.view.rh.common.GuidPojo</managed-bean-class>
+    <managed-bean-scope id="__13">pageFlow</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__9">
+    <managed-bean-name id="__10">backBean_PolicyPublishing</managed-bean-name>
+    <managed-bean-class id="__11">gov.bnm.view.rh.backingBeans.PolicyPublishing</managed-bean-class>
+    <managed-bean-scope id="__12">backingBean</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__23">
+    <managed-bean-name id="__24">backing_jspx_PolicyMaintenanceNavigationPage</managed-bean-name>
+    <managed-bean-class id="__22">view.backing.jspx.PolicyMaintenanceNavigationPage</managed-bean-class>
+    <managed-bean-scope id="__21">backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1jspx/PolicyMaintenanceNavigationPage.jspx-->
+  </managed-bean>
+  <managed-bean id="__27">
+    <managed-bean-name id="__28">backing_jspx_EnquiriesNavigationPage</managed-bean-name>
+    <managed-bean-class id="__25">view.backing.jspx.EnquiriesNavigationPage</managed-bean-class>
+    <managed-bean-scope id="__26">backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1jspx/EnquiriesNavigationPage.jspx-->
+  </managed-bean>
+  <managed-bean id="__29">
+    <managed-bean-name id="__31">backing_jspx_PolicyPublishingNavigationPage</managed-bean-name>
+    <managed-bean-class id="__32">view.backing.jspx.PolicyPublishingNavigationPage</managed-bean-class>
+    <managed-bean-scope id="__30">backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1jspx/PolicyPublishingNavigationPage.jspx-->
+  </managed-bean>
+  <managed-bean id="__37">
+    <managed-bean-name id="__40">backing_jspx_FaqsNavigationPage</managed-bean-name>
+    <managed-bean-class id="__38">view.backing.jspx.FaqsNavigationPage</managed-bean-class>
+    <managed-bean-scope id="__39">backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1jspx/FaqsNavigationPage.jspx-->
+  </managed-bean>
+  <managed-bean id="__33">
+    <managed-bean-name id="__36">backing_jspx_PolicyPrefaceNavigationPage</managed-bean-name>
+    <managed-bean-class id="__34">view.backing.jspx.PolicyPrefaceNavigationPage</managed-bean-class>
+    <managed-bean-scope id="__35">backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1jspx/PolicyPrefaceNavigationPage.jspx-->
+  </managed-bean>
+  <managed-bean id="__42">
+    <managed-bean-name id="__43">backing_jspx_FaqsInternalNavigationPage</managed-bean-name>
+    <managed-bean-class id="__44">view.backing.jspx.FaqsInternalNavigationPage</managed-bean-class>
+    <managed-bean-scope id="__41">backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1jspx/FaqsInternalNavigationPage.jspx-->
+  </managed-bean>
+  <managed-bean id="__45">
+    <managed-bean-name id="__48">backing_jspx_AgingReportNavigationPage</managed-bean-name>
+    <managed-bean-class id="__47">view.backing.jspx.AgingReportNavigationPage</managed-bean-class>
+    <managed-bean-scope id="__46">backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1jspx/AgingReportNavigationPage.jspx-->
+  </managed-bean>
+  <managed-bean id="__50">
+    <managed-bean-name id="__52">backing_jsff_AgingReportPage</managed-bean-name>
+    <managed-bean-class id="__51">gov.bnm.view.rh.backingBeans.AgingReportPage</managed-bean-class>
+    <managed-bean-scope id="__49">backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1jsff/AgingReportPage.jsff-->
+  </managed-bean>
+  <managed-bean id="__53">
+    <managed-bean-name id="__55">backing_jspx_PolicyAgingConfirmationPage</managed-bean-name>
+    <managed-bean-class id="__56">gov.bnm.view.rh.backingBeans.PolicyAgingConfirmationPage</managed-bean-class>
+    <managed-bean-scope id="__54">backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1jsff/PolicyAgingConfirmationPage.jsff-->
+  </managed-bean>
+  <managed-bean id="__63">
+    <managed-bean-name id="__64">backing_jspx_AgingResponseInternalNavigationPage</managed-bean-name>
+    <managed-bean-class id="__61">view.backing.jspx.AgingResponseInternalNavigationPage</managed-bean-class>
+    <managed-bean-scope id="__62">backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1jspx/AgingResponseInternalNavigationPage.jspx-->
+  </managed-bean>
+  <managed-bean id="__57">
+    <managed-bean-name id="__60">backing_jspx_AgingResponseAdminNavigationPage</managed-bean-name>
+    <managed-bean-class id="__59">view.backing.jspx.AgingResponseAdminNavigationPage</managed-bean-class>
+    <managed-bean-scope id="__58">backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1jspx/AgingResponseAdminNavigationPage.jspx-->
+  </managed-bean>
+  <managed-bean id="__67">
+    <managed-bean-name id="__68">loginBean</managed-bean-name>
+    <managed-bean-class id="__66">gov.bnm.view.rh.common.LoginBean</managed-bean-class>
+    <managed-bean-scope id="__65">request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__72">
+    <managed-bean-name id="__71">backing_jspx_SuppDocReqInternalNavigationPage</managed-bean-name>
+    <managed-bean-class id="__70">view.backing.jspx.SuppDocReqInternalNavigationPage</managed-bean-class>
+    <managed-bean-scope id="__69">backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1jspx/SuppDocReqInternalNavigationPage.jspx-->
+  </managed-bean>
+  <managed-bean id="__73">
+    <managed-bean-name id="__75">backing_jspx_SuppDocReqAdminNavigationPage</managed-bean-name>
+    <managed-bean-class id="__76">view.backing.jspx.SuppDocReqAdminNavigationPage</managed-bean-class>
+    <managed-bean-scope id="__74">backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1jspx/SuppDocReqAdminNavigationPage.jspx-->
+  </managed-bean>
+  <managed-bean id="__88">
+    <managed-bean-name id="__87">backing_jsff_IssuingDepartmentEnquiryPage</managed-bean-name>
+    <managed-bean-class id="__86">view.backing.jsff.IssuingDepartmentEnquiryPage</managed-bean-class>
+    <managed-bean-scope id="__85">backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1jsff/IssuingDepartmentEnquiryPage.jsff-->
+  </managed-bean>
+  <managed-bean id="__130">
+    <managed-bean-name id="__128">backing_jspx_EnquiriesInternalNavigationPage</managed-bean-name>
+    <managed-bean-class id="__127">view.backing.jspx.EnquiriesInternalNavigationPage</managed-bean-class>
+    <managed-bean-scope id="__129">backingBean</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__78">
+    <managed-bean-name id="__77">backing_jspx_AdminAgingReportNavigationPage</managed-bean-name>
+    <managed-bean-class id="__79">view.backing.jspx.AdminAgingReportNavigationPage</managed-bean-class>
+    <managed-bean-scope id="__80">backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1jspx/AdminAgingReportNavigationPage.jspx-->
+  </managed-bean>
+  <managed-bean id="__200">
+      <managed-bean-name id="__201">backing_jsff_WhatsNewPage</managed-bean-name>
+      <managed-bean-class id="__202">gov.bnm.view.rh.backingBeans.WhatsNewPage</managed-bean-class>
+      <managed-bean-scope id="__203">backingBean</managed-bean-scope>
+      <!--oracle-jdev-comment:managed-bean-jsp-link:1jsff/WhatsNewPage.jsff-->
+    </managed-bean>
+     <managed-bean id="__204">
+      <managed-bean-name id="__205">backing_jsff_IssuingDepartmentWelcomePage</managed-bean-name>
+      <managed-bean-class id="__206">view.backing.jsff.IssuingDepartmentWelcomePage</managed-bean-class>
+      <managed-bean-scope id="__207">backingBean</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__208">
+      <managed-bean-name id="__209">backing_jsff_WhatsNewPolicyListingPage</managed-bean-name>
+      <managed-bean-class id="__210">gov.bnm.view.rh.backingBeans.WhatsNewPolicyListingPage</managed-bean-class>
+      <managed-bean-scope id="__211">backingBean</managed-bean-scope>
+    </managed-bean>
+</adfc-config>

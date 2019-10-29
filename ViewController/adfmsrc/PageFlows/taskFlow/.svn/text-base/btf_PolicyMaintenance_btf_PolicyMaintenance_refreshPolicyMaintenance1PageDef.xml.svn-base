@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.64.93"
+                id="btf_PolicyMaintenance_btf_PolicyMaintenance_refreshPolicyMaintenance1PageDef"
+                Package="PageFlows.taskFlow" SkipValidation="true">
+  <parameters/>
+  <executables/>
+  <bindings>
+    <action id="refreshPolicyMaintenance" RequiresUpdateModel="true"
+            Action="invokeMethod" MethodName="refreshPolicyMaintenance"
+            IsViewObjectMethod="false" DataControl="RegBookAppModuleDataControl"
+            InstanceName="RegBookAppModuleDataControl.dataProvider"/>
+  </bindings>
+</pageDefinition>

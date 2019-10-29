@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<schema xmlns="http://xmlns.oracle.com/jdeveloper/1111/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <identifier class="java.lang.String">c9a7392f-c0f9-4a6e-a34a-2b97100090dd</identifier>
+  </ID>
+  <name>JOCELYNDB</name>
+</schema>

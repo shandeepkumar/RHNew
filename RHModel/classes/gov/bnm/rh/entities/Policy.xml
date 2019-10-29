@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Policy"
+  Version="11.1.1.64.93"
+  InheritPersonalization="true"
+  DBObjectType="table"
+  DBObjectName="dbo.Policy"
+  AliasName="Policy"
+  BindingStyle="JDBC"
+  UseGlueCode="false"
+  RowClass="gov.bnm.rh.entities.PolicyImpl">
+  <DesignTime>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="itemId"
+    IsNotNull="true"
+    Precision="50"
+    ColumnName="itemId"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="varchar"
+    TableName="dbo.Policy"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="policyId"
+    IsNotNull="true"
+    Precision="50"
+    ColumnName="policyId"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="varchar"
+    TableName="dbo.Policy">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="GuidelineTitle"
+    Precision="255"
+    ColumnName="GuidelineTitle"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="varchar"
+    TableName="dbo.Policy">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="255"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="EffectiveDate"
+    Precision="5000"
+    ColumnName="EffectiveDate"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="varchar"
+    TableName="dbo.Policy">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="255"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="PolicyURL"
+    Precision="255"
+    ColumnName="PolicyURL"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="varchar"
+    TableName="dbo.Policy">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="255"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Summary"
+    Precision="2147483647"
+    ColumnName="Summary"
+    Type="java.lang.String"
+    ColumnType="text"
+    TableName="dbo.Policy">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="5000"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Classification"
+    Precision="255"
+    ColumnName="Classification"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="varchar"
+    TableName="dbo.Policy">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="255"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ApplicabilityManualEntry"
+    Precision="255"
+    ColumnName="ApplicabilityManualEntry"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="varchar"
+    TableName="dbo.Policy">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="255"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DisplayInWhatsNew"
+    Precision="1"
+    Scale="0"
+    ColumnName="DisplayInWhatsNew"
+    SQLType="BIT"
+    Type="java.lang.Boolean"
+    ColumnType="bit"
+    TableName="dbo.Policy"
+    PrecisionRule="false">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ExpiryDate"
+    ColumnName="ExpiryDate"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="datetime"
+    TableName="dbo.Policy">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="23"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedDate"
+    ColumnName="CreatedDate"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="datetime"
+    TableName="dbo.Policy">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="23"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdated"
+    ColumnName="LastUpdated"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="datetime"
+    TableName="dbo.Policy">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="23"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="keywords"
+    Precision="4000"
+    ColumnName="keywords"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="varchar"
+    TableName="dbo.Policy">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="500"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="partitionTypeId"
+    Precision="10"
+    Scale="0"
+    ColumnName="partitionTypeId"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="int"
+    TableName="dbo.Policy">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="11"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="system"
+    Precision="25"
+    ColumnName="system"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="varchar"
+    TableName="dbo.Policy">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="25"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="PublishedURL"
+    Precision="255"
+    ColumnName="PublishedURL"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="varchar"
+    TableName="dbo.Policy">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="255"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="isActive"
+    Precision="1"
+    Scale="0"
+    ColumnName="isActive"
+    SQLType="BIT"
+    Type="java.lang.Boolean"
+    ColumnType="bit"
+    TableName="dbo.Policy"
+    PrecisionRule="false">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="RefNum"
+    Precision="100"
+    ColumnName="RefNum"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="varchar"
+    TableName="dbo.Policy">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="SenderEmail"
+    Precision="255"
+    ColumnName="SenderEmail"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="varchar"
+    TableName="dbo.Policy">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="255"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="NewIssuanceDate"
+    ColumnName="NewIssuanceDate"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="datetime"
+    TableName="dbo.Policy">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="23"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="RecordStatus"
+    Precision="50"
+    ColumnName="RecordStatus"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="varchar"
+    TableName="dbo.Policy">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="FirstIssuanceDate"
+    ColumnName="FirstIssuanceDate"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="datetime"
+    TableName="dbo.Policy">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="23"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="PublishToBNM"
+    Precision="10"
+    ColumnName="PublishToBNM"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="varchar"
+    TableName="dbo.Policy">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Highlights"
+    Precision="2147483647"
+    ColumnName="Highlights"
+    Type="java.lang.String"
+    ColumnType="text"
+    TableName="dbo.Policy">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="5000"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="PriorPublishEmailFlag"
+    Precision="1"
+    Scale="0"
+    ColumnName="PriorPublishEmailFlag"
+    SQLType="BIT"
+    Type="java.lang.Boolean"
+    ColumnType="bit"
+    TableName="dbo.Policy"
+    PrecisionRule="false">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="PublishedEmailFlag"
+    Precision="1"
+    Scale="0"
+    ColumnName="PublishedEmailFlag"
+    SQLType="BIT"
+    Type="java.lang.Boolean"
+    ColumnType="bit"
+    TableName="dbo.Policy"
+    PrecisionRule="false">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ReasonForRejection"
+    Precision="255"
+    ColumnName="ReasonForRejection"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="varchar"
+    TableName="dbo.Policy">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="255"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="isAmendmentRecord"
+    Precision="1"
+    Scale="0"
+    ColumnName="isAmendmentRecord"
+    SQLType="BIT"
+    Type="java.lang.Boolean"
+    ColumnType="bit"
+    TableName="dbo.Policy"
+    PrecisionRule="false">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="createdBy"
+    Precision="255"
+    ColumnName="createdBy"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="varchar"
+    TableName="dbo.Policy">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="255"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="updatedBy"
+    Precision="255"
+    ColumnName="updatedBy"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="varchar"
+    TableName="dbo.Policy">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="255"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="approverId"
+    Precision="255"
+    ColumnName="approverId"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="varchar"
+    TableName="dbo.Policy">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="255"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="WhatsNewMonths"
+    Precision="18"
+    Scale="0"
+    ColumnName="WhatsNewMonths"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="numeric"
+    TableName="dbo.Policy">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DocCategory"
+    Precision="19"
+    Scale="0"
+    ColumnName="DocCategory"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="bigint"
+    TableName="dbo.Policy">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="SectionInCharge"
+    Precision="255"
+    ColumnName="SectionInCharge"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="varchar"
+    TableName="dbo.Policy">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="255"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="NewEffectiveDate"
+    ColumnName="NewEffectiveDate"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="datetime"
+    TableName="dbo.Policy">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="23"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="Partitiontypelist"
+    Association="gov.bnm.rh.entities.assoc.PolicyPartitionTypeListFKAssoc"
+    AssociationEnd="gov.bnm.rh.entities.assoc.PolicyPartitionTypeListFKAssoc.Partitiontypelist"
+    AssociationOtherEnd="gov.bnm.rh.entities.assoc.PolicyPartitionTypeListFKAssoc.Policy"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Policydepartmentpartition"
+    Association="gov.bnm.rh.entities.assoc.PolicyDepartmentPartitionFKAssoc"
+    AssociationEnd="gov.bnm.rh.entities.assoc.PolicyDepartmentPartitionFKAssoc.Policydepartmentpartition"
+    AssociationOtherEnd="gov.bnm.rh.entities.assoc.PolicyDepartmentPartitionFKAssoc.Policy"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Policyinstitutiontypepartition"
+    Association="gov.bnm.rh.entities.assoc.PolicyInstitutionTypePartiFK1Assoc"
+    AssociationEnd="gov.bnm.rh.entities.assoc.PolicyInstitutionTypePartiFK1Assoc.Policyinstitutiontypepartition"
+    AssociationOtherEnd="gov.bnm.rh.entities.assoc.PolicyInstitutionTypePartiFK1Assoc.Policy"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Policysectorcategory"
+    Association="gov.bnm.rh.entities.assoc.PolicySectorCategoryPolicyFK1Assoc"
+    AssociationEnd="gov.bnm.rh.entities.assoc.PolicySectorCategoryPolicyFK1Assoc.Policysectorcategory"
+    AssociationOtherEnd="gov.bnm.rh.entities.assoc.PolicySectorCategoryPolicyFK1Assoc.Policy"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Attachedfile"
+    Association="gov.bnm.rh.entities.assoc.attachedFilePolicyFKAssoc"
+    AssociationEnd="gov.bnm.rh.entities.assoc.attachedFilePolicyFKAssoc.Attachedfile"
+    AssociationOtherEnd="gov.bnm.rh.entities.assoc.attachedFilePolicyFKAssoc.Policy"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Itemlist"
+    Association="gov.bnm.rh.entities.assoc.PolicyitemListFKAssoc"
+    AssociationEnd="gov.bnm.rh.entities.assoc.PolicyitemListFKAssoc.Itemlist"
+    AssociationOtherEnd="gov.bnm.rh.entities.assoc.PolicyitemListFKAssoc.Policy"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Policybusinesssectorpartition1"
+    Association="gov.bnm.rh.entities.assoc.PolicyBusinessSectorPartitiFKAssoc"
+    AssociationEnd="gov.bnm.rh.entities.assoc.PolicyBusinessSectorPartitiFKAssoc.Policybusinesssectorpartition1"
+    AssociationOtherEnd="gov.bnm.rh.entities.assoc.PolicyBusinessSectorPartitiFKAssoc.Policy"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Policyorganizationpartition"
+    Association="gov.bnm.rh.entities.assoc.PolicyOrganizationPartitionFKAssoc"
+    AssociationEnd="gov.bnm.rh.entities.assoc.PolicyOrganizationPartitionFKAssoc.Policyorganizationpartition"
+    AssociationOtherEnd="gov.bnm.rh.entities.assoc.PolicyOrganizationPartitionFKAssoc.Policy"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Enquiryfaq"
+    Association="gov.bnm.rh.entities.assoc.EnquiryfaqPolicyFK1Assoc"
+    AssociationEnd="gov.bnm.rh.entities.assoc.EnquiryfaqPolicyFK1Assoc.Enquiryfaq"
+    AssociationOtherEnd="gov.bnm.rh.entities.assoc.EnquiryfaqPolicyFK1Assoc.Policy"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="EnquiryfaqForFaq"
+    Association="gov.bnm.rh.entities.assoc.EnquiryfaqForFaqPolicyFK1Assoc"
+    AssociationEnd="gov.bnm.rh.entities.assoc.EnquiryfaqForFaqPolicyFK1Assoc.EnquiryfaqForFaq"
+    AssociationOtherEnd="gov.bnm.rh.entities.assoc.EnquiryfaqForFaqPolicyFK1Assoc.Policy"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Policybnmuserspartition"
+    Association="gov.bnm.rh.entities.assoc.PolicyBnmUsersPartitionPolicyFK1Assoc"
+    AssociationEnd="gov.bnm.rh.entities.assoc.PolicyBnmUsersPartitionPolicyFK1Assoc.Policybnmuserspartition"
+    AssociationOtherEnd="gov.bnm.rh.entities.assoc.PolicyBnmUsersPartitionPolicyFK1Assoc.Policy"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="PolicyRelavantActPartition"
+    Association="gov.bnm.rh.entities.assoc.PolicyRelavantActPartitionFKAssoc"
+    AssociationEnd="gov.bnm.rh.entities.assoc.PolicyRelavantActPartitionFKAssoc.PolicyRelavantActPartition"
+    AssociationOtherEnd="gov.bnm.rh.entities.assoc.PolicyRelavantActPartitionFKAssoc.Policy"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="PolicyIssuringDepartPartition"
+    Association="gov.bnm.rh.entities.assoc.PolicyIssuringDepartPartitionItemIdAssoc"
+    AssociationEnd="gov.bnm.rh.entities.assoc.PolicyIssuringDepartPartitionItemIdAssoc.PolicyIssuringDepartPartition"
+    AssociationOtherEnd="gov.bnm.rh.entities.assoc.PolicyIssuringDepartPartitionItemIdAssoc.Policy"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="PolicyPK"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="Policy_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="gov.bnm.rh.entities.Policy.itemId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="PolicyPartitionTypeListFK">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PartitionTypeList_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="Policy_PartitionTypeList_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="gov.bnm.rh.entities.Policy.partitionTypeId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="PolicyitemListFK">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="itemList_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="Policy_itemList_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="gov.bnm.rh.entities.Policy.itemId"/>
+    </AttrArray>
+  </Key>
+</Entity>

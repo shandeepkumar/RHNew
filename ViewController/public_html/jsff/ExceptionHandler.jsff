@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:tr="http://myfaces.apache.org/trinidad"
+          xmlns:h="http://java.sun.com/jsf/html">
+ 
+      <af:panelFormLayout id="pfl1">
+        <af:inputText label="Error Message" id="it1" inlineStyle="width:300.0cm;"
+                      readOnly="true"
+                      value="#{controllerContext.currentViewPort.exceptionData.message}"/>
+        <af:spacer width="10" height="10" id="s1"/>
+        <af:inputText label="Stack Trace" id="it2" readOnly="true"
+                      value="#{controllerContext.currentViewPort.exceptionData.stackTrace}"/>
+      </af:panelFormLayout>
+    
+</jsp:root>

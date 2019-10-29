@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.64.93" id="cateTreePolicySearchPageDef"
+                Package="search">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="CategoriesView7" RangeSize="25"
+              DataControl="RegBookAppModuleDataControl"
+              id="CategoriesView7Iterator"/>
+    <iterator Binds="PolicyPartitionCompViewObj1" RangeSize="25"
+              DataControl="RegBookAppModuleDataControl"
+              id="PolicyPartitionCompViewObj1Iterator"/>
+    <taskFlow id="btf_PolicyPreface1"
+              taskFlowId="/WEB-INF/PageFlows/taskFlow/btf_PolicyPreface.xml#btf_PolicyPreface"
+              activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <iterator id="AttachmentDownloadViewObj1Iterator"
+              Binds="AttachmentDownloadViewObj1"
+              DataControl="RegBookAppModuleDataControl" RangeSize="25"/>
+    <iterator id="CategoryParentLevelViewObj2Iterator"
+              Binds="CategoryParentLevelViewObj2"
+              DataControl="RegBookAppModuleDataControl" RangeSize="25"/>
+    <iterator id="CategoryChildLevel2Iterator" Binds="CategoryChildLevel2"
+              DataControl="RegBookAppModuleDataControl" RangeSize="25"/>
+    <iterator id="CategoryChildLevel3Iterator" Binds="CategoryChildLevel3"
+              DataControl="RegBookAppModuleDataControl" RangeSize="25"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="PolicyPartitionCompViewObj1Iterator"
+          id="PolicyPartitionCompViewObj1">
+      <nodeDefinition DefName="gov.bnm.rh.views.searchfn.PolicyPartitionCompViewObj"
+                      Name="PolicyPartitionCompViewObj10">
+        <AttrNames>
+          <Item Value="CategoryID"/>
+          <Item Value="itemId"/>
+          <Item Value="GuidelineTitle"/>
+          <Item Value="NewIssuanceDate"/>
+          <Item Value="Sectors"/>
+          <Item Value="AttachmentId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="CategoriesView7Iterator" id="CategoriesView71">
+      <nodeDefinition DefName="gov.bnm.rh.views.CategoriesView"
+                      Name="CategoriesView710">
+        <AttrNames>
+          <Item Value="CategoryID"/>
+          <Item Value="CategoryName"/>
+          <Item Value="CategoryDescription"/>
+          <Item Value="ParentNodeID"/>
+          <Item Value="PolicyCount"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="CategoryParentLevelViewObj"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="gov.bnm.rh.views.searchfn.CategoryParentLevelViewObj"
+                      Name="CategoriesView711">
+        <AttrNames>
+          <Item Value="CategoryID"/>
+          <Item Value="CategoryName"/>
+          <Item Value="CategoryDescription"/>
+          <Item Value="ParentNodeID"/>
+          <Item Value="PolicyCount"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="CategoryChildLevel2ViewObj"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="gov.bnm.rh.views.searchfn.CategoryChildLevel2ViewObj"
+                      Name="CategoriesView712">
+        <AttrNames>
+          <Item Value="CategoryID"/>
+          <Item Value="CategoryName"/>
+          <Item Value="CategoryDescription"/>
+          <Item Value="ParentNodeID"/>
+          <Item Value="PolicyCount"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="CategoryChildLevel3ViewObj"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="gov.bnm.rh.views.searchfn.CategoryChildLevel3ViewObj"
+                      Name="CategoriesView713">
+        <AttrNames>
+          <Item Value="CategoryID"/>
+          <Item Value="CategoryName"/>
+          <Item Value="CategoryDescription"/>
+          <Item Value="ParentNodeID"/>
+          <Item Value="PolicyCount"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

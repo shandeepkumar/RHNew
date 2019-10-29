@@ -1,0 +1,307 @@
+package gov.bnm.view.rh.backingBeans;
+
+import gov.bnm.rh.views.PolicyPendingViewObjRowImpl;
+import gov.bnm.view.rh.constant.Constants;
+import gov.bnm.view.rh.session.RHSession;
+import gov.bnm.view.rh.utils.ADFUtils;
+import gov.bnm.view.rh.utils.BaseUtil;
+import gov.bnm.view.rh.utils.DateUtils;
+import gov.bnm.view.rh.utils.EmailUtils;
+import gov.bnm.view.rh.utils.JSFUtils;
+
+import java.text.ParseException;
+
+import java.util.Properties;
+
+import oracle.adf.model.binding.DCIteratorBinding;
+import oracle.adf.view.rich.component.rich.data.RichTable;
+import oracle.adf.view.rich.component.rich.input.RichInputDate;
+import oracle.adf.view.rich.component.rich.input.RichInputText;
+import oracle.adf.view.rich.component.rich.input.RichSelectOneRadio;
+import oracle.adf.view.rich.component.rich.layout.RichPanelFormLayout;
+import oracle.adf.view.rich.component.rich.layout.RichPanelGroupLayout;
+import oracle.adf.view.rich.component.rich.layout.RichPanelStretchLayout;
+import oracle.adf.view.rich.component.rich.nav.RichCommandButton;
+import oracle.adf.view.rich.component.rich.output.RichOutputText;
+import oracle.adf.view.rich.context.AdfFacesContext;
+
+import oracle.binding.BindingContainer;
+import oracle.binding.OperationBinding;
+
+import oracle.jbo.ViewObject;
+
+import org.apache.log4j.Logger;
+
+
+public class PolicyDecisionPage {
+
+    static Logger log = Logger.getLogger(PolicyDecisionPage.class);
+    private RichPanelStretchLayout psl1;
+    private RichPanelGroupLayout pgl1;
+    private RichTable t1;
+    private RichInputDate id1;
+    private RichPanelFormLayout pfl1;
+    private RichPanelGroupLayout pgl2;
+    private RichCommandButton cb1;
+    private RichCommandButton cb2;
+    private RichOutputText ot5;
+    private RichSelectOneRadio sor1;
+    private RichInputText it1;
+    private RichTable t2;
+    private RichInputDate id2;
+    private RichTable t3;
+    private RichInputDate id3;
+
+    public void setPsl1(RichPanelStretchLayout psl1) {
+        this.psl1 = psl1;
+    }
+
+    public RichPanelStretchLayout getPsl1() {
+        return psl1;
+    }
+
+    public void setPgl1(RichPanelGroupLayout pgl1) {
+        this.pgl1 = pgl1;
+    }
+
+    public RichPanelGroupLayout getPgl1() {
+        return pgl1;
+    }
+
+    public void setT1(RichTable t1) {
+        this.t1 = t1;
+    }
+
+    public RichTable getT1() {
+        return t1;
+    }
+
+    public void setId1(RichInputDate id1) {
+        this.id1 = id1;
+    }
+
+    public RichInputDate getId1() {
+        return id1;
+    }
+
+    public void setPfl1(RichPanelFormLayout pfl1) {
+        this.pfl1 = pfl1;
+    }
+
+    public RichPanelFormLayout getPfl1() {
+        return pfl1;
+    }
+
+    public void setPgl2(RichPanelGroupLayout pgl2) {
+        this.pgl2 = pgl2;
+    }
+
+    public RichPanelGroupLayout getPgl2() {
+        return pgl2;
+    }
+
+    public void setCb1(RichCommandButton cb1) {
+        this.cb1 = cb1;
+    }
+
+    public RichCommandButton getCb1() {
+        return cb1;
+    }
+
+    public void setCb2(RichCommandButton cb2) {
+        this.cb2 = cb2;
+    }
+
+    public RichCommandButton getCb2() {
+        return cb2;
+    }
+
+    public void setOt5(RichOutputText ot5) {
+        this.ot5 = ot5;
+    }
+
+    public RichOutputText getOt5() {
+        return ot5;
+    }
+
+    public void setSor1(RichSelectOneRadio sor1) {
+        this.sor1 = sor1;
+    }
+
+    public RichSelectOneRadio getSor1() {
+        return sor1;
+    }
+
+    public void setIt1(RichInputText it1) {
+        this.it1 = it1;
+    }
+
+    public RichInputText getIt1() {
+        return it1;
+    }
+
+    public String submitDecision() {
+        RHSession rhSession = (RHSession)JSFUtils.getFromSession("rhSession");
+        String status = BaseUtil.getStr(this.getSor1().getValue());
+        boolean proceed = validateFields();
+        log.info("status::" + status);
+        if (proceed) {
+            DCIteratorBinding polIter =
+                ADFUtils.findIterator("PolicyPendingViewObj1Iterator");
+            PolicyPendingViewObjRowImpl row =
+                (PolicyPendingViewObjRowImpl)polIter.getViewObject().getCurrentRow();
+            row.setLastUpdated(DateUtils.getCurrentTimestamp());
+            row.setRecordStatus(status);
+
+            if (status.equals(Constants.RECORD_STATUS_REJECTED)) {
+                row.setReasonForRejection(BaseUtil.getStr(this.getIt1().getValue()));
+                row.setisActive(false);
+                EmailUtils.sendMailPolicyPublishRejectionPen(row);
+            } else {
+                row.setisActive(true);
+            }
+            try {
+                if (status.equals(Constants.RECORD_STATUS_ACTIVE)) {
+                    if (row.getDisplayInWhatsNew()) {
+                        int whatsNewMonths =
+                            BaseUtil.getInt(row.getWhatsNewMonths());
+                        try {
+                            row.setExpiryDate(DateUtils.getNextMonthTimeStamp(whatsNewMonths));
+                        } catch (ParseException e) {
+                            log.error("error:" + e.getMessage());
+                        }
+                    }
+                    
+                    Properties props = rhSession.getProps();
+                    String conditionOfExpiryDateSet = BaseUtil.getStr(props.getProperty("conditionOfExpiryDateSet"));
+
+                    long days;
+                    if(conditionOfExpiryDateSet.equals("IssuranceDate")) {
+                        days = DateUtils.getTimeDifferent(DateUtils.getCurrentDateTime(), row.getNewIssuanceDate().toString());
+                    }
+                    else {
+                        days = DateUtils.getTimeDifferent(DateUtils.getCurrentDateTime(), row.getNewEffectiveDate().toString());
+                    }
+                    
+                    log.info("conditon check for Expiry Date decision --> " + conditionOfExpiryDateSet + " Decision day --> " + days);
+                    
+                        
+                    log.info("days::" + days);
+                    if (days == 1) {
+                        EmailUtils.sendMailPolicyPriorIssuancePen(row);
+                        row.setPriorPublishEmailFlag(true);
+                    } else if (days == 0) {
+                        EmailUtils.sendMailPolicyOnIssuancePen(row);
+                        row.setPublishedEmailFlag(true);
+                    }
+                }
+            } catch (ParseException e) {
+                log.error("error:" + e.getMessage());
+            }
+            this.commitAction();
+            ViewObject vo = polIter.getViewObject();
+            vo.setNamedWhereClauseParam("bindApproverId",
+                                        rhSession.getFldUserid());
+            //      vo.setWhereClause("approverId= '" + rhSession.getFldUserid() +
+            //                        "' AND isActive =0 AND RecordStatus IN ('" +
+            //                        Constants.RECORD_STATUS_PENDING + "')");
+            vo.executeQuery();
+            DCIteratorBinding actIter =
+                ADFUtils.findIterator("PolicyActiveOnlyViewObj1Iterator");
+            ViewObject actVO = actIter.getViewObject();
+            actVO.setWhereClause("approverId= '" + rhSession.getFldUserid() +
+                                 "' AND isActive =1 AND RecordStatus IN ('" +
+                                 Constants.RECORD_STATUS_ACTIVE + "')");
+            actVO.executeQuery();
+            DCIteratorBinding rejIter =
+                ADFUtils.findIterator("PolicyRejectedViewObj1Iterator");
+            ViewObject rejVO = rejIter.getViewObject();
+            rejVO.setNamedWhereClauseParam("bindApproverId",
+                                           rhSession.getFldUserid());
+            rejVO.executeQuery();
+            AdfFacesContext.getCurrentInstance().addPartialTarget(this.getT1());
+            AdfFacesContext.getCurrentInstance().addPartialTarget(this.getT2());
+            AdfFacesContext.getCurrentInstance().addPartialTarget(this.getT3());
+        }
+        return null;
+    }
+
+    public String cancelDecision() {
+        BindingContainer bindings = ADFUtils.getBindingContainer();
+        OperationBinding operationBinding =
+            bindings.getOperationBinding("Rollback");
+        Object result = operationBinding.execute();
+        if (!operationBinding.getErrors().isEmpty()) {
+            log.error(operationBinding.getErrors());
+        } else {
+            log.info("Rolback");
+        }
+        return null;
+    }
+
+    public boolean validateFields() {
+        boolean status = true;
+        if (this.getSor1().getValue() == null ||
+            this.getSor1().getValue().equals("")) {
+            ADFUtils.showErrorMessage("Decision is mandatory.");
+            status = false;
+        } else if (this.getIt1().getValue() == null &&
+                   this.getSor1().getValue().equals(Constants.RECORD_STATUS_REJECTED)) {
+            ADFUtils.showErrorMessage("Reason For Rejection is mandatory.");
+            status = false;
+        }
+        return status;
+    }
+
+    private String commitAction() {
+        BindingContainer bindings = ADFUtils.getBindingContainer();
+        OperationBinding operationBinding =
+            bindings.getOperationBinding("Commit");
+        Object result = operationBinding.execute();
+        if (!operationBinding.getErrors().isEmpty()) {
+            ADFUtils.showInfoMessage(Constants.ERROR_MESSAGE_CONTACT);
+            log.error(" ... " + operationBinding.getErrors());
+        } else {
+            if (this.getSor1().getValue().equals(Constants.RECORD_STATUS_REJECTED)) {
+                ADFUtils.showInfoMessage("The document has been rejected");
+            } else {
+                ADFUtils.showInfoMessage("The document has been approved for publishing");
+            }
+            // ADFUtils.showInfoMessage(Constants.DATA_SAVE_SUCCESSFULLY);
+        }
+        return null;
+    }
+
+    public void setT2(RichTable t2) {
+        this.t2 = t2;
+    }
+
+    public RichTable getT2() {
+        return t2;
+    }
+
+    public void setId2(RichInputDate id2) {
+        this.id2 = id2;
+    }
+
+    public RichInputDate getId2() {
+        return id2;
+    }
+
+    public void setT3(RichTable t3) {
+        this.t3 = t3;
+    }
+
+    public RichTable getT3() {
+        return t3;
+    }
+
+    public void setId3(RichInputDate id3) {
+        this.id3 = id3;
+    }
+
+    public RichInputDate getId3() {
+        return id3;
+    }
+
+}

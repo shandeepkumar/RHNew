@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="OrganizationView"
+  Version="11.1.1.64.93"
+  InheritPersonalization="true"
+  SelectList="Organization.id, 
+       Organization.Name, 
+       Organization.Emaildomain, 
+       Organization.Sectorid, 
+       Organization.Type, 
+       Organization.Status, 
+       Organization.INSTTYPE"
+  FromList="dbo.Organization Organization"
+  BindingStyle="JDBC"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+  </DesignTime>
+  <EntityUsage
+    Name="Organization"
+    Entity="RHmodel.common.entity.Organization"/>
+  <ViewAttribute
+    Name="id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="id"
+    EntityUsage="Organization"
+    AliasName="id"/>
+  <ViewAttribute
+    Name="Name"
+    PrecisionRule="true"
+    EntityAttrName="Name"
+    EntityUsage="Organization"
+    AliasName="Name"/>
+  <ViewAttribute
+    Name="Emaildomain"
+    PrecisionRule="true"
+    EntityAttrName="Emaildomain"
+    EntityUsage="Organization"
+    AliasName="Emaildomain"/>
+  <ViewAttribute
+    Name="Sectorid"
+    PrecisionRule="true"
+    EntityAttrName="Sectorid"
+    EntityUsage="Organization"
+    AliasName="Sectorid"/>
+  <ViewAttribute
+    Name="Type"
+    PrecisionRule="true"
+    EntityAttrName="Type"
+    EntityUsage="Organization"
+    AliasName="Type"/>
+  <ViewAttribute
+    Name="Status"
+    PrecisionRule="true"
+    EntityAttrName="Status"
+    EntityUsage="Organization"
+    AliasName="Status"/>
+  <ViewAttribute
+    Name="INSTTYPE"
+    PrecisionRule="true"
+    EntityAttrName="INSTTYPE"
+    EntityUsage="Organization"
+    AliasName="INSTTYPE"/>
+  <ViewLinkAccessor
+    Name="ExternaluserView"
+    ViewLink="RHmodel.common.view.EXTERNALUSEROrganizationFK1Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

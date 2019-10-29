@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE JboProject SYSTEM "jbo_03_01.dtd">
+<!---->
+<JboProject xmlns="http://xmlns.oracle.com/bc4j" Name="RHModel"
+            Version="11.1.1.64.93" SeparateXMLFiles="true"
+            PackageName="gov.bnm.rh">
+   <DesignTime>
+      <Attr Name="_jprName" Value="../../../../RHModel.jpr"/>
+      <Attr Name="_jbo.SQLBuilder" Value="SQLServer"/>
+      <Attr Name="_appModuleNames0" Value="gov.bnm.rh.RegBookAppModule"/>
+      <Attr Name="_jbo.TypeMapEntries" Value="Java"/>
+      <Attr Name="_NamedConnection" Value="MSSQl"/>
+   </DesignTime>
+   <Containee Name="assoc" PackageName="gov.bnm.rh.entities.assoc"
+              ObjectType="JboPackage">
+      <DesignTime>
+         <Attr Name="_AS" Value="true"/>
+      </DesignTime>
+   </Containee>
+   <Containee Name="search" ObjectType="JboPackage"
+              PackageName="gov.bnm.rh.entities.assoc.search">
+      <DesignTime>
+         <Attr Name="_AS" Value="true"/>
+      </DesignTime>
+   </Containee>
+   <Containee Name="entities" PackageName="gov.bnm.rh.entities"
+              ObjectType="JboPackage">
+      <DesignTime>
+         <Attr Name="_EO" Value="true"/>
+         <Attr Name="_AS" Value="true"/>
+         <Attr Name="_VO" Value="true"/>
+      </DesignTime>
+   </Containee>
+   <Containee Name="rh" PackageName="gov.bnm.rh" ObjectType="JboPackage">
+      <DesignTime>
+         <Attr Name="_AM" Value="true"/>
+      </DesignTime>
+   </Containee>
+   <Containee Name="links" PackageName="gov.bnm.rh.views.links"
+              ObjectType="JboPackage">
+      <DesignTime>
+         <Attr Name="_VL" Value="true"/>
+      </DesignTime>
+   </Containee>
+   <Containee Name="search" ObjectType="JboPackage"
+              PackageName="gov.bnm.rh.views.links.search">
+      <DesignTime>
+         <Attr Name="_VL" Value="true"/>
+      </DesignTime>
+   </Containee>
+   <Containee
+      Name="searchfn"
+      PackageName="gov.bnm.rh.views.links.searchfn"
+      ObjectType="JboPackage">
+      <DesignTime>
+         <Attr Name="_VL" Value="true"/>
+      </DesignTime>
+   </Containee>
+   <Containee Name="search" ObjectType="JboPackage"
+              PackageName="gov.bnm.rh.views.search">
+      <DesignTime>
+         <Attr Name="_VO" Value="true"/>
+      </DesignTime>
+   </Containee>
+   <Containee
+      Name="searchfn"
+      PackageName="gov.bnm.rh.views.searchfn"
+      ObjectType="JboPackage">
+      <DesignTime>
+         <Attr Name="_VO" Value="true"/>
+      </DesignTime>
+   </Containee>
+   <Containee Name="views" PackageName="gov.bnm.rh.views"
+              ObjectType="JboPackage">
+      <DesignTime>
+         <Attr Name="_VO" Value="true"/>
+      </DesignTime>
+   </Containee>
+</JboProject>

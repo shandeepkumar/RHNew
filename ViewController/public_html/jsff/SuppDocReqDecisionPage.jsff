@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+ 
+  <af:panelStretchLayout binding="#{backingBeanScope.backing_jsff_SuppDocReqDecisionPage.psl1}"
+                         id="psl1">
+    <f:facet name="center">
+      <af:panelFormLayout binding="#{backingBeanScope.backing_jsff_SuppDocReqDecisionPage.pfl1}"
+                          id="pfl1">
+        <af:outputText value="This Supporting Document has been Approved"
+                       binding="#{backingBeanScope.backing_jsff_SuppDocReqDecisionPage.ot9}"
+                       visible="#{bindings.status.inputValue eq 'APPROVED'}"
+                       inlineStyle="color:Red; font-size:large;" id="ot9"/>
+        <af:outputText value="This Supporting Document has been Rejected"
+                       binding="#{backingBeanScope.backing_jsff_SuppDocReqDecisionPage.ot10}"
+                       visible="#{bindings.status.inputValue eq 'REJECTED'}"
+                       inlineStyle="color:Red; font-size:large;" id="ot10"/>
+        <af:panelLabelAndMessage label="#{bindings.requestId.hints.label}"
+                                 binding="#{backingBeanScope.backing_jsff_SuppDocReqDecisionPage.plam1}"
+                                 id="plam1">
+          <af:outputText value="#{bindings.requestId.inputValue}"
+                         binding="#{backingBeanScope.backing_jsff_SuppDocReqDecisionPage.ot1}"
+                         id="ot1"/>
+        </af:panelLabelAndMessage>
+        <af:spacer width="10" height="10" id="s1"/>
+        <af:panelLabelAndMessage label="#{bindings.GuidelineTitle.hints.label}"
+                                 binding="#{backingBeanScope.backing_jsff_SuppDocReqDecisionPage.plam2}"
+                                 id="plam2">
+          <af:outputText value="#{bindings.GuidelineTitle.inputValue}"
+                         binding="#{backingBeanScope.backing_jsff_SuppDocReqDecisionPage.ot2}"
+                         id="ot2"/>
+        </af:panelLabelAndMessage>
+        <af:spacer width="10" height="10" id="s2"/>
+        <af:panelLabelAndMessage label="#{bindings.typeOfReqName.hints.label}"
+                                 binding="#{backingBeanScope.backing_jsff_SuppDocReqDecisionPage.plam3}"
+                                 id="plam3">
+          <af:outputText value="#{bindings.typeOfReqName.inputValue}"
+                         binding="#{backingBeanScope.backing_jsff_SuppDocReqDecisionPage.ot3}"
+                         id="ot3"/>
+        </af:panelLabelAndMessage>
+        <af:spacer width="10" height="10" id="s3"/>
+        <af:panelLabelAndMessage label="#{bindings.reasonForRequest.hints.label}"
+                                 binding="#{backingBeanScope.backing_jsff_SuppDocReqDecisionPage.plam4}"
+                                 id="plam4">
+          <af:outputText value="#{bindings.reasonForRequest.inputValue}"
+                         binding="#{backingBeanScope.backing_jsff_SuppDocReqDecisionPage.ot4}"
+                         id="ot4"/>
+        </af:panelLabelAndMessage>
+        <af:spacer width="10" height="10" id="s4"/>
+        <af:panelLabelAndMessage label="#{bindings.RequestorName.hints.label}"
+                                 binding="#{backingBeanScope.backing_jsff_SuppDocReqDecisionPage.plam5}"
+                                 id="plam5">
+          <af:outputText value="#{bindings.RequestorName.inputValue}"
+                         binding="#{backingBeanScope.backing_jsff_SuppDocReqDecisionPage.ot5}"
+                         id="ot5"/>
+        </af:panelLabelAndMessage>
+        <af:spacer width="10" height="10" id="s5"/>
+        <af:panelLabelAndMessage label="#{bindings.RequestorDepartmentName.hints.label}"
+                                 binding="#{backingBeanScope.backing_jsff_SuppDocReqDecisionPage.plam6}"
+                                 id="plam6">
+          <af:outputText value="#{bindings.RequestorDepartmentName.inputValue}"
+                         binding="#{backingBeanScope.backing_jsff_SuppDocReqDecisionPage.ot6}"
+                         id="ot6"/>
+        </af:panelLabelAndMessage>
+        <af:spacer width="10" height="10" id="s6"/>
+        <af:panelLabelAndMessage label="#{bindings.createDate.hints.label}"
+                                 binding="#{backingBeanScope.backing_jsff_SuppDocReqDecisionPage.plam7}"
+                                 id="plam7">
+          <af:outputText value="#{bindings.createDate.inputValue}"
+                         binding="#{backingBeanScope.backing_jsff_SuppDocReqDecisionPage.ot7}"
+                         id="ot7">
+            <af:convertDateTime pattern="#{bindings.createDate.format}"/>
+          </af:outputText>
+        </af:panelLabelAndMessage>
+        <af:spacer width="10" height="10" id="s7"/>
+        <af:panelLabelAndMessage label="Decision"
+                                 visible="#{bindings.status.inputValue ne 'PENDING'}"
+                                 id="plam8">
+          <af:outputText value="#{bindings.status.inputValue}" id="ot12"/>
+        </af:panelLabelAndMessage>
+        <af:selectOneRadio label="Decision" id="sor1"
+                           binding="#{backingBeanScope.backing_jsff_SuppDocReqDecisionPage.sor1}"
+                           value="#{pageFlowScope.decision}"
+                           visible="#{bindings.status.inputValue eq 'PENDING'}"
+                           autoSubmit="true">
+          <af:selectItem label="Approve" value="APPROVED" id="si1"/>
+          <af:selectItem label="Reject" value="REJECTED" id="si2"/>
+        </af:selectOneRadio>
+        <af:spacer width="10" height="10" id="s8"/>
+        <af:panelLabelAndMessage label="Reason For Rejection"
+                                 visible="#{bindings.status.inputValue eq 'REJECTED'}"
+                                 id="plam9">
+          <af:outputText value="#{bindings.reasonForRejection.inputValue}"
+                         id="ot11"/>
+        </af:panelLabelAndMessage>
+        <af:inputText label="Reason For Rejection"
+                      binding="#{backingBeanScope.backing_jsff_SuppDocReqDecisionPage.it1}"
+                      id="it1" visible="#{pageFlowScope.decision eq 'REJECTED'}"
+                      readOnly="#{bindings.status.inputValue ne 'PENDING'}"
+                      value="#{bindings.reasonForRejection.inputValue}"
+                      partialTriggers="sor1"/>
+        <af:spacer width="10" height="10" id="s9"/>
+        <f:facet name="footer">
+          <af:panelGroupLayout binding="#{backingBeanScope.backing_jsff_SuppDocReqDecisionPage.pgl1}"
+                               id="pgl1" layout="horizontal">
+            <af:spacer width="10" height="10" id="s10"/>
+            <af:commandButton text="Submit"
+                              binding="#{backingBeanScope.backing_jsff_SuppDocReqDecisionPage.cb1}"
+                              disabled="#{bindings.status.inputValue ne 'PENDING'}"
+                              id="cb1"
+                              action="#{backingBeanScope.backing_jsff_SuppDocReqDecisionPage.submitDecision}"/>
+            <af:spacer width="10" height="10" id="s11"/>
+            <af:commandButton text="Cancel"
+                              binding="#{backingBeanScope.backing_jsff_SuppDocReqDecisionPage.cb2}"
+                              id="cb2"
+                              action="#{backingBeanScope.backing_jsff_SuppDocReqDecisionPage.closePage}">
+            </af:commandButton>
+          </af:panelGroupLayout>
+        </f:facet>
+      </af:panelFormLayout>
+    </f:facet>
+    <f:facet name="top">
+      <af:outputText value="Supporting Document Decision"
+                     binding="#{backingBeanScope.backing_jsff_SuppDocReqDecisionPage.ot8}"
+                     inlineStyle="color:Navy; font-family:Arial, Helvetica, sans-serif; font-size:x-large; font-weight:bold; text-align:center;"
+                     id="ot8"/>
+    </f:facet>
+  </af:panelStretchLayout>
+  <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_jsff_SuppDocReqDecisionPage-->
+</jsp:root>

@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/RegulatoryHandbook/!svn/ver/42/branches/NewRegulatoryHandbook/ViewController/public_html/WEB-INF
+END
+IssuingDepartment.xml
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/ViewController/public_html/WEB-INF/IssuingDepartment.xml
+END
+faces-config.xml
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/ViewController/public_html/WEB-INF/faces-config.xml
+END
+trinidad-skins.xml
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/ViewController/public_html/WEB-INF/trinidad-skins.xml
+END
+weblogic.xml
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/ViewController/public_html/WEB-INF/weblogic.xml
+END
+trinidad-config.xml
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/ViewController/public_html/WEB-INF/trinidad-config.xml
+END
+adfc-config.xml
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/ViewController/public_html/WEB-INF/adfc-config.xml
+END
+web.xml
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/RegulatoryHandbook/!svn/ver/52/branches/NewRegulatoryHandbook/ViewController/public_html/WEB-INF/web.xml
+END

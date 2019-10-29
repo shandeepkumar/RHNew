@@ -1,0 +1,11 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="gov.bnm.rh.RegBookAppModule">
+      <AppModuleConfig name="16DE3D5014B" DBconnection="jdbc/RHDBDS" ApplicationName="gov.bnm.rh.RegBookAppModule" DeployPlatform="LOCAL" IsLazyLoadingTrue="true" java.naming.factory.initial="oracle.jbo.common.JboInitialContextFactory" JDBCName="Connection1" BC4JConfigName="RegBookAppModuleLocal" jbo.project="gov.bnm.rh.RHModel">
+         <Database jbo.locking.mode="optimistic" jbo.TypeMapEntries="Java" jbo.SQLBuilder="SQLServer"/>
+         <Security AppModuleJndiName="gov.bnm.rh.RegBookAppModule"/>
+         <Tester FullProxyInterfaceName="gov.bnm.rh.common.RegBookAppModule"/>
+         <Custom LastUsedConfiguration="RegBookAppModuleLocal" JDBCDataSource="jdbc/RHDBDS"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

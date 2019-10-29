@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:pageTemplate viewId="/Templates/RHTemplate.jspx"
+                   value="#{bindings.pageTemplateBinding}" id="pt1">
+    <f:facet name="top"/>
+    <f:facet name="body">
+      <af:group id="g1">
+        <af:commandButton text="commandButton 1" id="cb1"/>
+        <af:outputText value="wrong  page" id="ot1"/>
+      </af:group>
+      <af:outputText value="wrong  page 344" id="ot2"/>
+    </f:facet>
+  </af:pageTemplate>
+</jsp:root>

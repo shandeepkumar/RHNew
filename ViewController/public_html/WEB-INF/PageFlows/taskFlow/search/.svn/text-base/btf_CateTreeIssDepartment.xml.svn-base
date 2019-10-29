@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="btf_CateTreeIssDepartment">
+    <default-activity id="__1">IssuingDepartmentWelcomePage</default-activity>
+    <managed-bean id="__8">
+      <managed-bean-name id="__10">backing_jsff_IssuingDepartmentWelcomePage</managed-bean-name>
+      <managed-bean-class id="__11">view.backing.jsff.IssuingDepartmentWelcomePage</managed-bean-class>
+      <managed-bean-scope id="__9">backingBean</managed-bean-scope>
+    </managed-bean>
+    <view id="IssuingDepartmentWelcomePage">
+      <page>/jsff/IssuingDepartmentWelcomePage.jsff</page>
+    </view>
+    <task-flow-return id="backCateTreePolicySearch">
+      <outcome id="__2">
+        <name>backCateTreePolicySearch</name>
+      </outcome>
+    </task-flow-return>
+    <control-flow-rule id="__3">
+      <from-activity-id id="__4">IssuingDepartmentWelcomePage</from-activity-id>
+      <control-flow-case id="__6">
+        <from-outcome id="__7">*backCateTreePolicySearch</from-outcome>
+        <to-activity-id id="__5">backCateTreePolicySearch</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

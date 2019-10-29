@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="btf_Faqs">
+    <template-reference>
+      <document id="__1">/WEB-INF/PageFlows/template/RH-task-flow-templateForException.xml</document>
+      <id id="__2">RH-task-flow-templateForException</id>
+    </template-reference>
+    <default-activity id="__3">getFaqManagementDetails</default-activity>
+    <managed-bean id="__6">
+      <managed-bean-name id="__5">backing_FaqsPage</managed-bean-name>
+      <managed-bean-class id="__7">gov.bnm.view.rh.backingBeans.FaqsPage</managed-bean-class>
+      <managed-bean-scope id="__4">backingBean</managed-bean-scope>
+      <!--oracle-jdev-comment:managed-bean-jsp-link:1jsff/FaqsPage.jsff-->
+    </managed-bean>
+    <view id="FaqsPage">
+      <page>/jsff/FaqsPage.jsff</page>
+      <input-page-parameter>
+        <from-value>AM</from-value>
+        <to-value>#{pageFlowScope.faqFromType}</to-value>
+      </input-page-parameter>
+    </view>
+    <method-call id="getFaqManagementDetails">
+      <method>#{bindings.getFaqManagementDetails.execute}</method>
+      <outcome id="__8">
+        <fixed-outcome>getFaqManagementDetails</fixed-outcome>
+      </outcome>
+    </method-call>
+    <control-flow-rule id="__9">
+      <from-activity-id id="__10">getFaqManagementDetails</from-activity-id>
+      <control-flow-case id="__13">
+        <from-outcome id="__11">getFaqManagementDetails</from-outcome>
+        <to-activity-id id="__12">FaqsPage</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

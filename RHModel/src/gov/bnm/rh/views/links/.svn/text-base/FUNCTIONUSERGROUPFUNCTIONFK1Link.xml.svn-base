@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FUNCTIONUSERGROUPFUNCTIONFK1Link"
+  Version="11.1.1.64.93"
+  InheritPersonalization="true">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewLinkDefEnd
+    Name="UserfunctionView"
+    Cardinality="1"
+    Owner="gov.bnm.rh.views.UserfunctionView"
+    Source="true">
+    <DesignTime>
+      <Attr Name="_finderName" Value="UserfunctionView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="gov.bnm.rh.views.UserfunctionView.ID"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="FunctionUsergroupView"
+    Cardinality="-1"
+    Owner="gov.bnm.rh.views.FunctionUsergroupView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="FunctionUsergroupView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="gov.bnm.rh.views.FunctionUsergroupView.FUNCTIONID"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

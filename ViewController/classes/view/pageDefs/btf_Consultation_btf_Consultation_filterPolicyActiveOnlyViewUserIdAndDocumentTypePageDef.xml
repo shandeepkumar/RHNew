@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.64.93"
+                id="btf_Consultation_btf_Consultation_filterPolicyActiveOnlyViewUserIdAndDocumentTypePageDef"
+                Package="view.pageDefs" SkipValidation="true">
+  <parameters/>
+  <executables/>
+  <bindings>
+    <methodAction id="filterPolicyActiveOnlyViewUserIdAndDocumentType"
+                  RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="filterPolicyActiveOnlyViewUserIdAndDocumentType"
+                  IsViewObjectMethod="false"
+                  DataControl="RegBookAppModuleDataControl"
+                  InstanceName="RegBookAppModuleDataControl.dataProvider">
+      <NamedData NDName="userId" NDValue="{sessionScope.rhSession.fldUserid}"
+                 NDType="java.lang.String"/>
+      <NamedData NDName="isInternalExternal"
+                 NDValue="{sessionScope.rhSession.isInternalExternal}"
+                 NDType="java.lang.String"/>
+      <NamedData NDName="consultId"
+                 NDValue="{sessionScope.rhSession.fldConsultId}"
+                 NDType="java.lang.String"/>
+      <NamedData NDName="openStatus"
+                 NDValue="{sessionScope.rhSession.fldOpenStatus}"
+                 NDType="java.lang.String"/>
+      <NamedData NDName="closeStatus"
+                 NDValue="{sessionScope.rhSession.fldCloseStatus}"
+                 NDType="java.lang.String"/>
+    </methodAction>
+  </bindings>
+</pageDefinition>

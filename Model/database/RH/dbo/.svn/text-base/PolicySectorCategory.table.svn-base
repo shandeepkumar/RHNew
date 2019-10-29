@@ -1,0 +1,567 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<table xmlns="http://xmlns.oracle.com/jdeveloper/1111/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <identifier class="java.lang.String">c8c39dd5-aa67-4763-8616-9e33dc5d86ff</identifier>
+  </ID>
+  <name>PolicySectorCategory</name>
+  <columns>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">2b27882b-1903-4c98-bd80-55284835714f</identifier>
+      </ID>
+      <name>PolicyID</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">d34ac37f-948e-407d-bf86-48346d122e77</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+          </entry>
+          <entry>
+            <key>scale</key>
+          </entry>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">50</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.SQLServer.SQLServerDatabaseImpl</providerClass>
+          <typeName>VARCHAR</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>PolicyID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PolicySectorCategory</name>
+              <schemaName>dbo</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">4dd423e5-40c8-46f4-b833-b43cb527420b</identifier>
+      </ID>
+      <name>SectorID</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">80106dad-f301-489c-a425-b5484640e840</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.Long">18</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.SQLServer.SQLServerDatabaseImpl</providerClass>
+          <typeName>DECIMAL</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>SectorID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>PolicySectorCategory</name>
+                  <schemaName>dbo</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>SectorID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PolicySectorCategory</name>
+              <schemaName>dbo</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">9d4914fa-bedf-4b34-b8d5-288accb4276b</identifier>
+      </ID>
+      <name>CategoryID</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">5935c863-9ef1-41cd-a98f-732f6bbe2d70</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.Long">18</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.SQLServer.SQLServerDatabaseImpl</providerClass>
+          <typeName>DECIMAL</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>CategoryID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>PolicySectorCategory</name>
+                  <schemaName>dbo</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CategoryID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PolicySectorCategory</name>
+              <schemaName>dbo</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">fb702e1f-421b-4fb7-83db-ac36aad509a7</identifier>
+      </ID>
+      <name>CreatedDate</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">22fa7bfa-6b13-4044-b14f-a7e0895cb5ce</identifier>
+        </ID>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.SQLServer.SQLServerDatabaseImpl</providerClass>
+          <typeName>DATETIME</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>CreatedDate</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>PolicySectorCategory</name>
+                  <schemaName>dbo</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CreatedDate</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PolicySectorCategory</name>
+              <schemaName>dbo</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+  </columns>
+  <constraints>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">a91626ad-7f9c-434f-b80a-13a04ec116ed</identifier>
+      </ID>
+      <name>FK_PolicySectorCategory_Categories</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>CategoryID</name>
+          <identifier class="java.lang.String">9d4914fa-bedf-4b34-b8d5-288accb4276b</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>PolicySectorCategory</name>
+            <identifier class="java.lang.String">c8c39dd5-aa67-4763-8616-9e33dc5d86ff</identifier>
+            <schemaName>dbo</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>FK_PolicySectorCategory_Categories</name>
+            <childObjectNames>
+              <childObjectName>CategoryID</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PolicySectorCategory</name>
+              <schemaName>dbo</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>FKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+      <referenceID class="oracle.javatools.db.IdentifierBasedID">
+        <name>PK_Categories</name>
+        <identifier class="java.lang.String">e862947b-bc77-4c27-a6ea-95ed448df327</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>Categories</name>
+          <identifier class="java.lang.String">2bf175da-8f29-42b3-bcd6-2dc1412ec06d</identifier>
+          <schemaName>dbo</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>dbo</schemaName>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">6a6bc24a-e094-4320-a2ad-59762cc4f124</identifier>
+      </ID>
+      <name>FK_PolicySectorCategory_Sectors</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>SectorID</name>
+          <identifier class="java.lang.String">4dd423e5-40c8-46f4-b833-b43cb527420b</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>PolicySectorCategory</name>
+            <identifier class="java.lang.String">c8c39dd5-aa67-4763-8616-9e33dc5d86ff</identifier>
+            <schemaName>dbo</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>FK_PolicySectorCategory_Sectors</name>
+            <childObjectNames>
+              <childObjectName>SectorID</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PolicySectorCategory</name>
+              <schemaName>dbo</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>FKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+      <referenceID class="oracle.javatools.db.IdentifierBasedID">
+        <name>PK_Sectors</name>
+        <identifier class="java.lang.String">27f89cd9-31dc-42a0-84c5-730e64e1262d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>Sectors</name>
+          <identifier class="java.lang.String">dfc81377-327c-427f-a998-e423e5551de2</identifier>
+          <schemaName>dbo</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>dbo</schemaName>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">7f9435b5-0715-4df7-83ad-197e71cf0ffb</identifier>
+      </ID>
+      <name>PolicySectorCategory_Policy_FK1</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>PolicyID</name>
+          <identifier class="java.lang.String">2b27882b-1903-4c98-bd80-55284835714f</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>PolicySectorCategory</name>
+            <identifier class="java.lang.String">c8c39dd5-aa67-4763-8616-9e33dc5d86ff</identifier>
+            <schemaName>dbo</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <referenceID class="oracle.javatools.db.IdentifierBasedID">
+        <name>Policy_PK</name>
+        <identifier class="java.lang.String">6a1efef6-4042-47d2-960e-acd362515500</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>Policy</name>
+          <identifier class="java.lang.String">9116cf98-9374-42b7-87f5-20377e39ce23</identifier>
+          <schemaName>dbo</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.PKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">7337b639-9ca8-49ac-ad6d-36fa3b969805</identifier>
+      </ID>
+      <name>PolicySectorCategory_PK</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>PolicyID</name>
+          <identifier class="java.lang.String">2b27882b-1903-4c98-bd80-55284835714f</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>PolicySectorCategory</name>
+            <identifier class="java.lang.String">c8c39dd5-aa67-4763-8616-9e33dc5d86ff</identifier>
+            <schemaName>dbo</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>SectorID</name>
+          <identifier class="java.lang.String">4dd423e5-40c8-46f4-b833-b43cb527420b</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>PolicySectorCategory</name>
+            <identifier class="java.lang.String">c8c39dd5-aa67-4763-8616-9e33dc5d86ff</identifier>
+            <schemaName>dbo</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>CategoryID</name>
+          <identifier class="java.lang.String">9d4914fa-bedf-4b34-b8d5-288accb4276b</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>PolicySectorCategory</name>
+            <identifier class="java.lang.String">c8c39dd5-aa67-4763-8616-9e33dc5d86ff</identifier>
+            <schemaName>dbo</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+    </constraint>
+  </constraints>
+  <indexes>
+    <indexe>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">e92c6594-f7c3-41e1-9ac8-502cf8cdf723</identifier>
+      </ID>
+      <name>GetPolicyBySector</name>
+      <columnExpressions>
+        <columnExpression>
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">8a9bda47-ee54-4cba-8189-8a11026ec683</identifier>
+          </ID>
+          <expression class="oracle.javatools.db.sql.ColumnUsage">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">3e605e2f-04a3-41ce-bd95-0df76723c061</identifier>
+            </ID>
+            <objectID class="oracle.javatools.db.IdentifierBasedID">
+              <name>SectorID</name>
+              <identifier class="java.lang.String">4dd423e5-40c8-46f4-b833-b43cb527420b</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>PolicySectorCategory</name>
+                <identifier class="java.lang.String">c8c39dd5-aa67-4763-8616-9e33dc5d86ff</identifier>
+                <schemaName>dbo</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <type>COLUMN</type>
+            </objectID>
+            <outerJoin>false</outerJoin>
+            <properties>
+              <entry>
+                <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                <value class="oracle.javatools.db.ReferenceID">
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <parent class="oracle.javatools.db.ReferenceID">
+                      <name>GetPolicyBySector</name>
+                      <parent class="oracle.javatools.db.ReferenceID">
+                        <name>PolicySectorCategory</name>
+                        <schemaName>dbo</schemaName>
+                        <type>TABLE</type>
+                      </parent>
+                      <schemaName>dbo</schemaName>
+                      <type>INDEX</type>
+                    </parent>
+                    <type>IndexObject</type>
+                  </parent>
+                  <type>SQLFragment</type>
+                </value>
+              </entry>
+            </properties>
+            <qualified>true</qualified>
+          </expression>
+          <order>ASC</order>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>GetPolicyBySector</name>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>PolicySectorCategory</name>
+                    <schemaName>dbo</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>dbo</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+        <columnExpression>
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">3cae7876-296e-45f3-bb43-817edbe16a66</identifier>
+          </ID>
+          <expression class="oracle.javatools.db.sql.ColumnUsage">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">be437809-a315-44f4-954d-7359ba143222</identifier>
+            </ID>
+            <objectID class="oracle.javatools.db.IdentifierBasedID">
+              <name>CategoryID</name>
+              <identifier class="java.lang.String">9d4914fa-bedf-4b34-b8d5-288accb4276b</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>PolicySectorCategory</name>
+                <identifier class="java.lang.String">c8c39dd5-aa67-4763-8616-9e33dc5d86ff</identifier>
+                <schemaName>dbo</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <type>COLUMN</type>
+            </objectID>
+            <outerJoin>false</outerJoin>
+            <properties>
+              <entry>
+                <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                <value class="oracle.javatools.db.ReferenceID">
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <parent class="oracle.javatools.db.ReferenceID">
+                      <name>GetPolicyBySector</name>
+                      <parent class="oracle.javatools.db.ReferenceID">
+                        <name>PolicySectorCategory</name>
+                        <schemaName>dbo</schemaName>
+                        <type>TABLE</type>
+                      </parent>
+                      <schemaName>dbo</schemaName>
+                      <type>INDEX</type>
+                    </parent>
+                    <type>IndexObject</type>
+                  </parent>
+                  <type>SQLFragment</type>
+                </value>
+              </entry>
+            </properties>
+            <qualified>true</qualified>
+          </expression>
+          <order>ASC</order>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>GetPolicyBySector</name>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>PolicySectorCategory</name>
+                    <schemaName>dbo</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>dbo</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+      </columnExpressions>
+      <indexType>NORMAL</indexType>
+      <parallelDegree>1</parallelDegree>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>GetPolicyBySector</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PolicySectorCategory</name>
+              <schemaName>dbo</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <schemaName>dbo</schemaName>
+            <type>INDEX</type>
+          </value>
+        </entry>
+      </properties>
+      <schema>
+        <name>dbo</name>
+      </schema>
+    </indexe>
+  </indexes>
+  <properties>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_CONNECTION</key>
+      <value class="java.lang.String">b2fifd</value>
+    </entry>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+      <value class="oracle.javatools.db.ReferenceID">
+        <name>PolicySectorCategory</name>
+        <schemaName>dbo</schemaName>
+        <type>TABLE</type>
+      </value>
+    </entry>
+    <entry>
+      <key>TableType</key>
+      <value class="oracle.javatools.db.Table$TableType">NORMAL</value>
+    </entry>
+  </properties>
+  <schema>
+    <name>dbo</name>
+  </schema>
+</table>

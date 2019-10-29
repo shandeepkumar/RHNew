@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="RHmodel.view.AppModule2">
+      <AppModuleConfig name="AppModule2Local" ApplicationName="RHmodel.view.AppModule2" jbo.project="model.Model" DeployPlatform="LOCAL">
+         <Database jbo.SQLBuilder="SQLServer" jbo.TypeMapEntries="Java"/>
+         <Security AppModuleJndiName="RHmodel.view.AppModule2"/>
+         <Custom JDBCDataSource="java:comp/env/jdbc/Connection1DS"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="AppModule2Shared" ApplicationName="RHmodel.view.AppModule2" jbo.project="model.Model" DeployPlatform="LOCAL">
+         <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+         <Database jbo.SQLBuilder="SQLServer" jbo.TypeMapEntries="Java"/>
+         <Security AppModuleJndiName="RHmodel.view.AppModule2"/>
+         <Custom JDBCDataSource="java:comp/env/jdbc/Connection1DS"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

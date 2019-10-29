@@ -1,0 +1,386 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<table xmlns="http://xmlns.oracle.com/jdeveloper/1111/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <identifier class="java.lang.String">c7635e8c-6ac6-4bdc-930b-95d6b848a07c</identifier>
+  </ID>
+  <name>INTERNALUSER_USERGROUP</name>
+  <columns>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">f17aee30-4c5e-4f69-821e-0d0c350a7dad</identifier>
+      </ID>
+      <name>USERID</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">1b4c5763-bc19-4851-abaa-1666844476ab</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">50</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.SQLServer.SQLServerDatabaseImpl</providerClass>
+          <typeName>VARCHAR</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>USERID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>BNMUSER_USERGROUP</name>
+              <identifier class="java.math.BigDecimal">32921</identifier>
+              <schemaName>JOCELYNDB</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">69995594-fe79-4ac8-b3b5-b59c33488c4b</identifier>
+      </ID>
+      <name>GROUPID</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">fd8b837c-6b71-4e65-a287-77596e2d9455</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">20</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.SQLServer.SQLServerDatabaseImpl</providerClass>
+          <typeName>VARCHAR</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>GROUPID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>BNMUSER_USERGROUP</name>
+              <identifier class="java.math.BigDecimal">32921</identifier>
+              <schemaName>JOCELYNDB</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">4bd89a55-74dc-413e-9705-486ea3bedfc7</identifier>
+      </ID>
+      <name>LASTUPDATE</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">14ed4e6d-b75d-4e8d-9620-7cbbfeebfe63</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>scale</key>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.SQLServer.SQLServerDatabaseImpl</providerClass>
+          <typeName>DATETIME</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>LASTUPDATE</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>BNMUSER_USERGROUP</name>
+              <identifier class="java.math.BigDecimal">32921</identifier>
+              <schemaName>JOCELYNDB</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">1ec4d491-2f2e-4bf5-bad9-23d22cc9cf40</identifier>
+      </ID>
+      <name>CREATOR</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">b657260e-b7da-4335-807f-88224fbaae94</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">100</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.SQLServer.SQLServerDatabaseImpl</providerClass>
+          <typeName>VARCHAR</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CREATOR</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>BNMUSER_USERGROUP</name>
+              <identifier class="java.math.BigDecimal">32921</identifier>
+              <schemaName>JOCELYNDB</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">b9b5491a-309c-422b-917a-5238496d8822</identifier>
+      </ID>
+      <name>ISPRIMARY</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">dd6a1900-b8bd-44e7-9e96-ebeb54e6fd2a</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">20</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.SQLServer.SQLServerDatabaseImpl</providerClass>
+          <typeName>VARCHAR</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <default class="java.lang.String">0</default>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">0,1,2 ( 0 = standard, 1 = primary user, 2  - secondar user ( not used))</value>
+        </entry>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>ISPRIMARY</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>BNMUSER_USERGROUP</name>
+              <identifier class="java.math.BigDecimal">32921</identifier>
+              <schemaName>JOCELYNDB</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">c3de0d0f-8084-4249-9317-3b7345ef1408</identifier>
+      </ID>
+      <name>SYSTEM</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">a6d4299a-a3c6-4bf7-b3c4-a25c97625fd9</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">20</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.SQLServer.SQLServerDatabaseImpl</providerClass>
+          <typeName>VARCHAR</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+    </column>
+  </columns>
+  <constraints>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">fe49032b-119f-4550-b35b-306cbea49691</identifier>
+      </ID>
+      <name>BNMUSER_USERGROUP_BNMUSER_FK1</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>USERID</name>
+          <identifier class="java.lang.String">f17aee30-4c5e-4f69-821e-0d0c350a7dad</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>BNMUSER_USERGROUP</name>
+            <identifier class="java.lang.String">c7635e8c-6ac6-4bdc-930b-95d6b848a07c</identifier>
+            <schemaName>dbo</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <referenceID class="oracle.javatools.db.IdentifierBasedID">
+        <name>INTERNALUSER_PK</name>
+        <identifier class="java.lang.String">c78bcbd4-54c2-474b-a6d8-2a9ea88fdd71</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>INTERNALUSER</name>
+          <identifier class="java.lang.String">4928d9bb-1686-4a2c-a4cf-c1bfe1c4d952</identifier>
+          <schemaName>dbo</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>dbo</schemaName>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">eb20c2fa-90c3-484b-ba2d-9d75dd7a9c57</identifier>
+      </ID>
+      <name>BNMUSER_USERGROUP_USERGROUP_FK1</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>GROUPID</name>
+          <identifier class="java.lang.String">69995594-fe79-4ac8-b3b5-b59c33488c4b</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>BNMUSER_USERGROUP</name>
+            <identifier class="java.lang.String">c7635e8c-6ac6-4bdc-930b-95d6b848a07c</identifier>
+            <schemaName>dbo</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <referenceID class="oracle.javatools.db.IdentifierBasedID">
+        <name>SYS_C0011090</name>
+        <identifier class="java.lang.String">41cfc219-b92c-4d52-b625-55b6f813d215</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>USERGROUP</name>
+          <identifier class="java.lang.String">e261f969-2939-48b3-b7de-0ca537ffeb85</identifier>
+          <schemaName>dbo</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>JOCELYNDB</schemaName>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.PKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">b2a2d49b-6621-40da-9ec3-fba3d077f4c0</identifier>
+      </ID>
+      <name>BNMUSER_USERGROUP_PK</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>USERID</name>
+          <identifier class="java.lang.String">f17aee30-4c5e-4f69-821e-0d0c350a7dad</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>INTERNALUSER_USERGROUP</name>
+            <identifier class="java.lang.String">c7635e8c-6ac6-4bdc-930b-95d6b848a07c</identifier>
+            <schemaName>dbo</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>GROUPID</name>
+          <identifier class="java.lang.String">69995594-fe79-4ac8-b3b5-b59c33488c4b</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>INTERNALUSER_USERGROUP</name>
+            <identifier class="java.lang.String">c7635e8c-6ac6-4bdc-930b-95d6b848a07c</identifier>
+            <schemaName>dbo</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+    </constraint>
+  </constraints>
+  <properties>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_CONNECTION</key>
+      <value class="java.lang.String">Oracle</value>
+    </entry>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+      <value class="oracle.javatools.db.ReferenceID">
+        <name>BNMUSER_USERGROUP</name>
+        <identifier class="java.math.BigDecimal">32921</identifier>
+        <schemaName>JOCELYNDB</schemaName>
+        <type>TABLE</type>
+      </value>
+    </entry>
+    <entry>
+      <key>OracleStorageProperties</key>
+      <value class="oracle.javatools.db.ora.OracleStorageProperties">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">c4b7454c-3d47-4d25-9efd-e009095257bd</identifier>
+        </ID>
+        <bufferMode>DEFAULT</bufferMode>
+        <initialExtent>65536</initialExtent>
+        <initrans>1</initrans>
+        <logging>true</logging>
+        <maxExtent>2147483645</maxExtent>
+        <minExtent>1</minExtent>
+        <percentFree>10</percentFree>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>BNMUSER_USERGROUP</name>
+                <identifier class="java.math.BigDecimal">32921</identifier>
+                <schemaName>JOCELYNDB</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <type>OracleStorageProperties</type>
+            </value>
+          </entry>
+        </properties>
+        <tablespaceID class="oracle.javatools.db.ReferenceID">
+          <name>USERS</name>
+          <type>TABLESPACE</type>
+        </tablespaceID>
+      </value>
+    </entry>
+    <entry>
+      <key>TableType</key>
+      <value class="oracle.javatools.db.Table$TableType">NORMAL</value>
+    </entry>
+  </properties>
+  <schema>
+    <name>dbo</name>
+  </schema>
+</table>

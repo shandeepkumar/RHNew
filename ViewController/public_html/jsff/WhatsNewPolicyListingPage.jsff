@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core"> 
+  <af:panelBox text="Document (current page: #{backingBeanScope.backing_jsff_WhatsNewPolicyListingPage.currentPageNumber} / #{backingBeanScope.backing_jsff_WhatsNewPolicyListingPage.totalPages}) Showing #{backingBeanScope.backing_jsff_WhatsNewPolicyListingPage.recordFrom} to #{backingBeanScope.backing_jsff_WhatsNewPolicyListingPage.recordTo} of #{backingBeanScope.backing_jsff_WhatsNewPolicyListingPage.totalRows} records"
+               binding="#{backingBeanScope.backing_jsff_WhatsNewPolicyListingPage.pb1}"
+               id="pb1" partialTriggers="ctb3 ctb1 ctb2 ctb4" >
+    <f:facet name="toolbar">
+      <af:toolbar id="t1">
+        <af:commandToolbarButton text="First" id="ctb3"
+                                 actionListener="#{backingBeanScope.backing_jsff_WhatsNewPolicyListingPage.firstActionListener}"
+                                 disabled="#{backingBeanScope.backing_jsff_WhatsNewPolicyListingPage.beforeDisabled}"/>
+        <af:commandToolbarButton text="Previous" id="ctb1"
+                                 actionListener="#{backingBeanScope.backing_jsff_WhatsNewPolicyListingPage.previousActionListener}"
+                                 disabled="#{backingBeanScope.backing_jsff_WhatsNewPolicyListingPage.beforeDisabled}"/>
+        <af:commandToolbarButton text="Next" id="ctb2"
+                                 actionListener="#{backingBeanScope.backing_jsff_WhatsNewPolicyListingPage.nextActionListener}"
+                                 disabled="#{backingBeanScope.backing_jsff_WhatsNewPolicyListingPage.afterDisabled}"/>
+        <af:commandToolbarButton text="Last" id="ctb4"
+                                 actionListener="#{backingBeanScope.backing_jsff_WhatsNewPolicyListingPage.lastActionListener}"
+                                 disabled="#{backingBeanScope.backing_jsff_WhatsNewPolicyListingPage.afterDisabled}"/>
+      </af:toolbar>
+    </f:facet>
+    <af:panelGroupLayout binding="#{backingBeanScope.backing_jsff_WhatsNewPolicyListingPage.pgl1}"
+                         id="pgl1" layout="scroll">
+      <af:spacer width="10" height="10" id="s1"/>
+      <af:panelGroupLayout binding="#{backingBeanScope.backing_jsff_WhatsNewPolicyListingPage.pgl2}"
+                           id="pgl2" layout="horizontal"
+                           styleClass="tableHeaderHeaderLeft AFStretchWidth">
+        <af:spacer width="10" height="10" id="s19"/>
+        <af:panelGroupLayout inlineStyle="width:20px;" layout="horizontal"
+                             id="pgl19">
+          <af:outputText value="No." inlineStyle="font-weight:bold;" id="ot14"/>
+        </af:panelGroupLayout>
+        <af:spacer width="10" height="10" id="s9"/>
+        <af:panelGroupLayout id="pgl10" inlineStyle="width:75px;"
+                             layout="horizontal">
+          <af:outputText value="#{bindings.PolicyActiveOnlyViewObj1.hints.Sectors.label}"
+                         id="ot1" inlineStyle="font-weight:bold;"/>
+        </af:panelGroupLayout>
+        <af:spacer width="10" height="10" id="s10" rendered="false"/>
+        <af:panelGroupLayout id="pgl11" inlineStyle="width:175px;"
+                             layout="horizontal" rendered="false">
+          <af:outputText value="#{bindings.PolicyActiveOnlyViewObj1.hints.InstitutionTypes.label}"
+                         id="ot4" inlineStyle="font-weight:bold;"/>
+        </af:panelGroupLayout>
+        <af:spacer width="10" height="10" id="s11"/>
+        <af:panelGroupLayout id="pgl12" inlineStyle="width:75px;"
+                             layout="horizontal">
+          <af:outputText value="#{bindings.PolicyActiveOnlyViewObj1.hints.Category.label}"
+                         id="ot7" inlineStyle="font-weight:bold;"/>
+        </af:panelGroupLayout>
+        <af:spacer width="10" height="10" id="s12"/>
+        <af:panelGroupLayout id="pgl13" inlineStyle="width:200px;"
+                             layout="horizontal">
+          <af:outputText value="#{bindings.PolicyActiveOnlyViewObj1.hints.GuidelineTitle.label}"
+                         id="ot8" inlineStyle="font-weight:bold;"/>
+        </af:panelGroupLayout>
+        <af:spacer width="10" height="10" id="s13"/>
+        <af:panelGroupLayout id="pgl14" inlineStyle="width:175px;"
+                             layout="horizontal">
+          <af:outputText value="#{bindings.PolicyActiveOnlyViewObj1.hints.EffectiveDate.label}"
+                         id="ot9" inlineStyle="font-weight:bold;"/>
+        </af:panelGroupLayout>
+        <af:spacer width="10" height="10" id="s14"/>
+        <af:panelGroupLayout id="pgl15" inlineStyle="width:100px;"
+                             layout="horizontal">
+          <af:outputText value="#{bindings.PolicyActiveOnlyViewObj1.hints.NewIssuanceDate.label}"
+                         id="ot10" inlineStyle="font-weight:bold;"/>
+        </af:panelGroupLayout>
+        <af:spacer width="10" height="10" id="s17"/>
+        <af:panelGroupLayout id="pgl17" inlineStyle="width:175px;"
+                             layout="horizontal">
+          <af:outputText value="#{bindings.PolicyActiveOnlyViewObj1.hints.IssuingDepartment.label}"
+                         id="ot12" inlineStyle="font-weight:bold;"/>
+        </af:panelGroupLayout>
+      </af:panelGroupLayout>
+      <af:separator id="s2"/>
+      <af:spacer width="10" height="2" id="s3"/>
+      <af:iterator id="i1" var="row"
+                   value="#{bindings.PolicyActiveOnlyViewObj1.collectionModel}"
+                   binding="#{backingBeanScope.backing_jsff_WhatsNewPolicyListingPage.policyTableIterator}"
+                   rows="#{rhSession.policyListingRecord}" varStatus="vs">
+        <af:panelGroupLayout layout="horizontal" id="pgl16"
+                             styleClass="AFStretchWidth"
+                             inlineStyle="#{(vs.index + 1)%2 ==0 ? 'background-color:InactiveCaption;' : null}"
+                             valign="top">
+          <af:spacer width="10" height="10" id="s18"/>
+          <af:panelGroupLayout layout="horizontal" inlineStyle="width:20px;"
+                               id="pgl18">
+            <af:outputText value="#{(vs.index + 1)}" id="ot13"/>
+          </af:panelGroupLayout>
+          <af:spacer width="10" height="10" id="s15"/>
+          <af:panelGroupLayout id="pgl3" layout="horizontal"
+                               inlineStyle="width:75px; ">
+            <af:outputText value="#{row.Sectors}" id="ot5"/>
+          </af:panelGroupLayout>
+          <af:spacer width="10" height="10" id="s4" rendered="false"/>
+          <af:panelGroupLayout id="pgl4" layout="horizontal"
+                               inlineStyle="width:175px;" rendered="false">
+            <af:outputText value="#{row.InstitutionTypes}" id="ot2"/>
+          </af:panelGroupLayout>
+          <af:spacer width="10" height="10" id="s6"/>
+          <af:panelGroupLayout id="pgl5" layout="horizontal"
+                               inlineStyle="width:75px;">
+            <af:outputText value="#{row.Category}" id="ot6"/>
+          </af:panelGroupLayout>
+          <af:spacer width="10" height="10" id="s5"/>
+          <af:panelGroupLayout id="pgl6" inlineStyle="width:200px;"
+                               layout="horizontal">
+            <af:commandLink text="#{row.GuidelineTitle}" id="cl2"
+                            action="#{sessionScope.rhSession.clickPolicyLink}"
+                            inlineStyle="font-weight:bold;">
+              <af:setPropertyListener type="action" from="#{row.itemId}"
+                                      to="#{sessionScope.rhSession.fldPolicyId}"/>
+            </af:commandLink>
+          </af:panelGroupLayout>
+          <af:spacer width="10" height="10" id="s7"/>
+          <af:panelGroupLayout id="pgl7" layout="horizontal"
+                               inlineStyle="width:175px;">
+            <af:outputText value="#{row.EffectiveDate}" escape="false"
+                           id="ot15"/>
+          </af:panelGroupLayout>
+          <af:spacer width="10" height="10" id="s8"/>
+          <af:panelGroupLayout id="pgl8" inlineStyle="width:100px;"
+                               layout="horizontal">
+            <af:outputText value="#{row.NewIssuanceDate}" id="ot3">
+              <af:convertDateTime pattern="#{bindings.PolicyActiveOnlyViewObj1.hints.NewIssuanceDate.format}"/>
+            </af:outputText>
+          </af:panelGroupLayout>
+          <af:panelGroupLayout id="pgl9" inlineStyle="width:175px;"
+                               layout="horizontal">
+            <af:outputText value="#{row.IssuingDepartment}" id="ot11"></af:outputText>
+          </af:panelGroupLayout>
+        </af:panelGroupLayout>
+        <af:spacer width="10" height="10" id="s16"/>
+      </af:iterator>
+    </af:panelGroupLayout>
+  </af:panelBox>
+ 
+  <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_jsff_WhatsNewPolicyListingPage-->
+</jsp:root>

@@ -1,0 +1,764 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelStretchLayout binding="#{backingBeanScope.backing_PolicyMaintenancePage.psl1}"
+                         id="psl1" topHeight="300px" startWidth="0px"
+                         endWidth="0px" bottomHeight="0px">
+    <f:facet name="center">
+      <af:panelGroupLayout layout="scroll"
+                           xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                           binding="#{backingBeanScope.backing_PolicyMaintenancePage.pgl3}"
+                           id="pgl3">
+        <af:spacer width="10" height="20" id="s113"/>
+        <af:panelTabbed binding="#{backingBeanScope.backing_PolicyMaintenancePage.pt2}"
+                        id="pt2" dimensionsFrom="auto"
+                        partialTriggers="cl12 cl11">
+          <af:showDetailItem text="Preface"
+                             binding="#{backingBeanScope.backing_PolicyMaintenancePage.sdi1}"
+                             dontPersist="false" id="sdi1"
+                             disclosureListener="#{backingBeanScope.backing_PolicyMaintenancePage.prefaceOnDisclosure}">
+            <af:panelFormLayout binding="#{backingBeanScope.backing_PolicyMaintenancePage.pfl5}"
+                                id="pfl5">
+              <af:outputText value="#{bindings.ReasonForRejection.hints.label}"
+                             visible="#{bindings.RecordStatus eq 'REJECTED'}"
+                             binding="#{backingBeanScope.backing_PolicyMaintenancePage.ot38}"
+                             id="ot38" inlineStyle="font-weight:bold;"/>
+              <af:spacer width="10" height="10" id="s39"
+                         visible="#{bindings.RecordStatus eq 'REJECTED'}"
+                         binding="#{backingBeanScope.backing_PolicyMaintenancePage.s39}"/>
+              <af:outputText binding="#{backingBeanScope.backing_PolicyMaintenancePage.ot51}"
+                             id="ot51"
+                             visible="#{bindings.RecordStatus eq 'REJECTED'}"
+                             value="#{bindings.ReasonForRejection.inputValue}"
+                             inlineStyle="color:Red; border-width:thin; border-style:solid; padding:5px; border-color:Red; width:300px;"/>
+              <af:spacer width="10" height="30" id="s40"
+                         visible="#{bindings.RecordStatus eq 'REJECTED'}"
+                         binding="#{backingBeanScope.backing_PolicyMaintenancePage.s40}"/>
+              <af:outputText value="#{bindings.GuidelineTitle.hints.label}"
+                             binding="#{backingBeanScope.backing_PolicyMaintenancePage.ot52}"
+                             id="ot52" inlineStyle="font-weight:bold;"/>
+              <af:iterator id="i2"
+                           value="#{bindings.AttachedFileOnlyPdfViewObj1.collectionModel}"
+                           var="row" varStatus="vs"
+                           binding="#{backingBeanScope.backing_PolicyMaintenancePage.i2}">
+                <af:commandLink text="#{bindings.GuidelineTitle.inputValue}"
+                                binding="#{backingBeanScope.backing_PolicyMaintenancePage.cl8}"
+                                id="cl8"
+                                actionListener="#{backingBeanScope.backing_PolicyMaintenancePage.onOpenPolPrefaceFileSelected}"
+                                disabled="#{bindings.AttachedFileOnlyPdfViewObj1Iterator.estimatedRowCount &lt; 1}">
+                  <f:attribute name="rowKey" value="#{vs.index}"/>
+                </af:commandLink>
+              </af:iterator>
+              <af:outputText value="#{bindings.GuidelineTitle.inputValue}"
+                             binding="#{backingBeanScope.backing_PolicyMaintenancePage.ot53}"
+                             id="ot53"
+                             visible="#{bindings.AttachedFileOnlyPdfViewObj1.estimatedRowCount &lt; 1}"/>
+              <af:spacer width="10" height="10" id="s4"
+                         binding="#{backingBeanScope.backing_PolicyMaintenancePage.s4}"/>
+              <af:outputText value="#{bindings.NewIssuanceDate.hints.label}"
+                             binding="#{backingBeanScope.backing_PolicyMaintenancePage.ot54}"
+                             id="ot54" inlineStyle="font-weight:bold;"/>
+              <af:outputText value="#{bindings.NewIssuanceDate.inputValue}"
+                             binding="#{backingBeanScope.backing_PolicyMaintenancePage.ot55}"
+                             id="ot55">
+                <af:convertDateTime pattern="#{bindings.NewIssuanceDate.format}"/>
+              </af:outputText>
+              <af:spacer width="10" height="10" id="s1"
+                         binding="#{backingBeanScope.backing_PolicyMaintenancePage.s1}"/>
+              <af:outputText value="#{bindings.EffectiveDate.hints.label}"
+                             binding="#{backingBeanScope.backing_PolicyMaintenancePage.ot56}"
+                             id="ot56" inlineStyle="font-weight:bold;"/>
+              <af:outputText value="#{bindings.EffectiveDate.inputValue}"
+                             escape="false" id="ot4"/>
+              <af:spacer width="10" height="10" id="s5"
+                         binding="#{backingBeanScope.backing_PolicyMaintenancePage.s5}"/>
+              <af:outputText value="#{bindings.Summary.hints.label}"
+                             binding="#{backingBeanScope.backing_PolicyMaintenancePage.ot57}"
+                             id="ot57" inlineStyle="font-weight:bold;"/>
+              <af:outputText value="#{bindings.Summary.inputValue}"
+                             escape="false" id="ot5"/>
+              <af:spacer width="10" height="10" id="s6"
+                         binding="#{backingBeanScope.backing_PolicyMaintenancePage.s6}"/>
+              <af:outputText value="#{bindings.Highlights.hints.label}"
+                             binding="#{backingBeanScope.backing_PolicyMaintenancePage.ot59}"
+                             id="ot59" inlineStyle="font-weight:bold;"
+                             visible="#{bindings.Highlights.inputValue  ne '' and bindings.Highlights.inputValue  ne null}"/>
+              <af:outputText value="#{bindings.Highlights.inputValue}"
+                             escape="false" id="ot6"
+                             visible="#{bindings.Highlights.inputValue  ne '' and bindings.Highlights.inputValue  ne null}"/>
+              <af:spacer width="10" height="10" id="s7"
+                         visible="#{bindings.Highlights.inputValue  ne '' and bindings.Highlights.inputValue  ne null}"
+                         binding="#{backingBeanScope.backing_PolicyMaintenancePage.s7}"/>
+              <af:outputText value="Applicability"
+                             binding="#{backingBeanScope.backing_PolicyMaintenancePage.ot60}"
+                             id="ot60" inlineStyle="font-weight:bold;"/>
+              <af:iterator id="i6"
+                           value="#{bindings.Policybusinesssectorpartition1View1.collectionModel}"
+                           var="row" varStatus="vs"
+                           binding="#{backingBeanScope.backing_PolicyMaintenancePage.i6}">
+                <af:outputText value="#{row.SectorName}" id="ot13"
+                               binding="#{backingBeanScope.backing_PolicyMaintenancePage.ot13}"/>
+              </af:iterator>
+              <af:iterator id="i7"
+                           value="#{bindings.PolicyinstitutiontypepartitionView1.collectionModel}"
+                           var="row" varStatus="vs"
+                           binding="#{backingBeanScope.backing_PolicyMaintenancePage.i7}">
+                <af:outputText value="#{row.InstitutiontypeName}" id="ot14"
+                               binding="#{backingBeanScope.backing_PolicyMaintenancePage.ot14}"/>
+              </af:iterator>
+              <af:iterator id="i8"
+                           value="#{bindings.PolicyorganizationpartitionView1.collectionModel}"
+                           var="row" varStatus="vs"
+                           binding="#{backingBeanScope.backing_PolicyMaintenancePage.i8}">
+                <af:outputText value="#{row.OrgName}" id="ot15"
+                               binding="#{backingBeanScope.backing_PolicyMaintenancePage.ot15}"/>
+              </af:iterator>
+              <af:spacer width="10" height="10" id="s9"
+                         binding="#{backingBeanScope.backing_PolicyMaintenancePage.s9}"/>
+              <af:outputText value="Section in Charge" id="ot61"
+                             inlineStyle="font-weight:bold;"
+                             binding="#{backingBeanScope.backing_PolicyMaintenancePage.ot61}"/>
+              <af:outputText value="#{bindings.SectionInCharge.inputValue}"
+                             id="ot62"
+                             binding="#{backingBeanScope.backing_PolicyMaintenancePage.ot62}"/>
+              <af:spacer width="10" height="10" id="s33"
+                         binding="#{backingBeanScope.backing_PolicyMaintenancePage.s33}"/>
+              <af:outputText value="Issuing Department"
+                             binding="#{backingBeanScope.backing_PolicyMaintenancePage.ot67}"
+                             id="ot67" inlineStyle="font-weight:bold;"/>
+              <af:iterator id="i9"
+                           value="#{bindings.PolicydepartmentpartitionView1.collectionModel}"
+                           var="row" varStatus="vs"
+                           binding="#{backingBeanScope.backing_PolicyMaintenancePage.i9}">
+                <af:outputText value="#{row.DepartmentName}" id="ot10"
+                               binding="#{backingBeanScope.backing_PolicyMaintenancePage.ot10}"/>
+              </af:iterator>
+              <af:spacer width="10" height="10" id="s8"
+                         binding="#{backingBeanScope.backing_PolicyMaintenancePage.s8}"/>
+              <af:outputText value="Attachment"
+                             binding="#{backingBeanScope.backing_PolicyMaintenancePage.ot68}"
+                             id="ot68" inlineStyle="font-weight:bold;"/>
+              <af:table value="#{bindings.AttachedfileEx1View1.collectionModel}"
+                        var="row"
+                        rows="#{bindings.AttachedfileEx1View1.rangeSize}"
+                        emptyText="#{bindings.AttachedfileEx1View1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                        fetchSize="#{bindings.AttachedfileEx1View1.rangeSize}"
+                        rowBandingInterval="1"
+                        selectedRowKeys="#{bindings.AttachedfileEx1View1.collectionModel.selectedRow}"
+                        selectionListener="#{bindings.AttachedfileEx1View1.collectionModel.makeCurrent}"
+                        rowSelection="single"
+                        binding="#{backingBeanScope.backing_PolicyMaintenancePage.t2}"
+                        id="t2"
+                        visible="#{bindings.AttachedfileEx1View1Iterator.estimatedRowCount >0}"
+                        inlineStyle="height:60px; border-style:none; outline-style:none;"
+                        columnStretching="column:c11">
+                <af:column sortProperty="#{bindings.AttachedfileEx1View1.hints.filenameOrig.name}"
+                           sortable="false" id="c11">
+                  <af:commandLink text="#{row.filenameOrig}" id="cl3"
+                                  actionListener="#{backingBeanScope.backing_PolicyMaintenancePage.onOpenPolOthFileSelected}">
+                    <f:attribute name="rowKey" value="#{row.rowKey}"/>
+                  </af:commandLink>
+                </af:column>
+              </af:table>
+              <af:outputText value="Category"
+                             binding="#{backingBeanScope.backing_PolicyMaintenancePage.ot69}"
+                             id="ot69" inlineStyle="font-weight:bold;"/>
+              <af:iterator id="i10"
+                           value="#{bindings.PolicycategoriespartitionView1.collectionModel}"
+                           var="row" varStatus="vs"
+                           binding="#{backingBeanScope.backing_PolicyMaintenancePage.i10}">
+                <af:outputText value="#{row.CategoryName}" id="ot20"
+                               binding="#{backingBeanScope.backing_PolicyMaintenancePage.ot20}"/>
+              </af:iterator>
+              <af:spacer width="10" height="10" id="s10"
+                         binding="#{backingBeanScope.backing_PolicyMaintenancePage.s10}"/>
+              <af:outputText value="Superseded Policies"
+                             binding="#{backingBeanScope.backing_PolicyMaintenancePage.ot70}"
+                             id="ot70" inlineStyle="font-weight:bold;"/>
+              <af:iterator id="i5"
+                           value="#{bindings.SuperseededpoliciesView1.collectionModel}"
+                           var="row" varStatus="vs"
+                           binding="#{backingBeanScope.backing_PolicyMaintenancePage.i5}">
+                <af:commandLink text="#{row.PolicyName}" id="cl5"
+                                action="#{backingBeanScope.backing_PolicyMaintenancePage.gotoSuperseededViewPolicy}"
+                                binding="#{backingBeanScope.backing_PolicyMaintenancePage.cl5}">
+                  <af:setPropertyListener type="action" from="#{row.itemIdSup}"
+                                          to="#{pageFlowScope.itemIdSup}"/>
+                  <af:setPropertyListener type="action" from="pre"
+                                          to="#{pageFlowScope.openTabVal}"/>
+                </af:commandLink>
+              </af:iterator>
+              <af:spacer width="10" height="10" id="s11"
+                         binding="#{backingBeanScope.backing_PolicyMaintenancePage.s11}"/>
+              <af:outputText value="Policy Document"
+                             binding="#{backingBeanScope.backing_PolicyMaintenancePage.ot71}"
+                             id="ot71" inlineStyle="font-weight:bold;"
+                             rendered="false"/>
+              <af:table value="#{bindings.AttachedfileView2_1.collectionModel}"
+                        var="row"
+                        rows="#{bindings.AttachedfileView2_1.rangeSize}"
+                        emptyText="#{bindings.AttachedfileView2_1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                        fetchSize="#{bindings.AttachedfileView2_1.rangeSize}"
+                        rowBandingInterval="1"
+                        selectedRowKeys="#{bindings.AttachedfileView2_1.collectionModel.selectedRow}"
+                        selectionListener="#{bindings.AttachedfileView2_1.collectionModel.makeCurrent}"
+                        rowSelection="single"
+                        binding="#{backingBeanScope.backing_PolicyMaintenancePage.t3}"
+                        id="t3" columnStretching="column:c10"
+                        inlineStyle="height:50px;"
+                        visible="#{bindings.AttachedfileView2_1Iterator.estimatedRowCount > 0}"
+                        rendered="false">
+                <af:column sortProperty="#{bindings.AttachedfileView2_1.hints.filenameOrig.name}"
+                           sortable="false" id="c10">
+                  <af:commandLink text="#{row.filenameOrig}" id="cl2"
+                                  actionListener="#{backingBeanScope.backing_PolicyMaintenancePage.onOpenPolDocFileSelected}">
+                    <f:attribute name="rowKey" value="#{row.rowKey}"/>
+                  </af:commandLink>
+                </af:column>
+              </af:table>
+              <af:commandLink text="Add new FAQ"
+                              binding="#{backingBeanScope.backing_PolicyMaintenancePage.cl12}"
+                              id="cl12"
+                              action="#{backingBeanScope.backing_PolicyMaintenancePage.showDetailItemForFAQ}"
+                              partialSubmit="true"
+                              visible="#{pageFlowScope.itemId ne null  and pageFlowScope.itemId ne '' }"/>
+              <af:spacer width="10" height="10" id="s35"
+                         binding="#{backingBeanScope.backing_PolicyMaintenancePage.s35}"/>
+              <af:commandLink text="View Enquiries" id="cl11"
+                              action="#{backingBeanScope.backing_PolicyMaintenancePage.showDetailItemForEnq}"
+                              partialSubmit="true"
+                              visible="#{pageFlowScope.itemId ne null  and pageFlowScope.itemId ne '' }"
+                              binding="#{backingBeanScope.backing_PolicyMaintenancePage.cl11}"/>
+              <af:panelLabelAndMessage label="#{bindings.Classification.hints.label}"
+                                       binding="#{backingBeanScope.backing_PolicyMaintenancePage.plam1}"
+                                       id="plam1" rendered="false">
+                <af:outputText value="#{bindings.Classification.inputValue}"
+                               binding="#{backingBeanScope.backing_PolicyMaintenancePage.ot72}"
+                               id="ot72" partialTriggers="t1"/>
+              </af:panelLabelAndMessage>
+              <af:commandButton text="Download"
+                                binding="#{backingBeanScope.backing_PolicyMaintenancePage.cb1}"
+                                id="cb1" visible="false" immediate="true">
+                <af:fileDownloadActionListener method="#{backingBeanScope.backing_PolicyMaintenancePage.doDownload}"
+                                               filename="#{pageFlowScope.filenameOrig}"/>
+              </af:commandButton>
+              <af:panelLabelAndMessage label="#{bindings.partitionTypeId.hints.label}"
+                                       binding="#{backingBeanScope.backing_PolicyMaintenancePage.plam2}"
+                                       id="plam2" visible="false">
+                <af:outputText value="#{bindings.partitionTypeId.inputValue}"
+                               binding="#{backingBeanScope.backing_PolicyMaintenancePage.ot73}"
+                               id="ot73" partialTriggers="t1" visible="false">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.partitionTypeId.format}"/>
+                </af:outputText>
+              </af:panelLabelAndMessage>
+            </af:panelFormLayout>
+          </af:showDetailItem>
+          <af:showDetailItem text="FAQ"
+                             binding="#{backingBeanScope.backing_PolicyMaintenancePage.sdi2}"
+                             dontPersist="true" id="sdi2">
+            <af:panelFormLayout binding="#{backingBeanScope.backing_PolicyMaintenancePage.pfl1}"
+                                id="pfl1"
+                                inlineStyle="border-style:solid; border-width:1px; border-color:Gray;">
+              <f:facet name="footer"/>
+              <af:outputText value="Frequently Asked Questions (FAQs) "
+                             binding="#{backingBeanScope.backing_PolicyMaintenancePage.ot77}"
+                             id="ot77"
+                             inlineStyle="color:Navy; font-family:Arial, Helvetica, sans-serif; font-size:medium; font-weight:bold; text-align:left;"/>
+              <af:outputText value="     #{bindings.GuidelineTitle.hints.label}"
+                             binding="#{backingBeanScope.backing_PolicyMaintenancePage.ot74}"
+                             id="ot74" inlineStyle="font-weight:bold;"/>
+              <af:outputText value="     #{bindings.GuidelineTitle.inputValue}"
+                             binding="#{backingBeanScope.backing_PolicyMaintenancePage.ot75}"
+                             id="ot75"/>
+              <af:spacer width="10" height="10" id="s13"
+                         binding="#{backingBeanScope.backing_PolicyMaintenancePage.s13}"/>
+              <af:iterator id="i1"
+                           value="#{bindings.EnquiryfaqForFaqView1.collectionModel}"
+                           varStatus="vs" var="row"
+                           rows="#{bindings.EnquiryfaqForFaqView1.rangeSize}"
+                           binding="#{backingBeanScope.backing_PolicyMaintenancePage.i1}">
+                <af:outputText value=" #{vs.index + 1} . #{row.Title}"
+                               binding="#{backingBeanScope.backing_PolicyMaintenancePage.ot76}"
+                               id="ot76" inlineStyle="font-weight:bold;"/>
+                <af:outputText value="#{row.Abstract11}" escape="false"
+                               id="ot7"/>
+                <af:spacer width="10" height="10" id="s14"
+                           binding="#{backingBeanScope.backing_PolicyMaintenancePage.s14}"/>
+              </af:iterator>
+              <af:commandButton text="Add new FAQ"
+                                binding="#{backingBeanScope.backing_PolicyMaintenancePage.cb17}"
+                                id="cb17"
+                                visible="#{pageFlowScope.itemId ne null  and pageFlowScope.itemId ne '' }"
+                                action="#{backingBeanScope.backing_PolicyMaintenancePage.actionAddFaq}"
+                                partialSubmit="true"/>
+            </af:panelFormLayout>
+            <af:panelFormLayout binding="#{backingBeanScope.backing_PolicyMaintenancePage.pfl6}"
+                                id="pfl6"
+                                visible="#{backingBeanScope.backing_PolicyMaintenancePage.faqAction eq 'Y'}"
+                                inlineStyle="border-style:solid; border-width:1px; border-color:Gray;">
+              <f:facet name="footer">
+                <af:panelGroupLayout binding="#{backingBeanScope.backing_PolicyMaintenancePage.pgl10}"
+                                     id="pgl10" layout="horizontal">
+                  <af:commandButton text="Save Draft"
+                                    binding="#{backingBeanScope.backing_PolicyMaintenancePage.cb7}"
+                                    id="cb7"
+                                    action="#{backingBeanScope.backing_PolicyMaintenancePage.draftFaq}"/>
+                  <af:spacer width="20" height="10" id="s17"/>
+                  <af:commandButton text="Submit"
+                                    binding="#{backingBeanScope.backing_PolicyMaintenancePage.cb13}"
+                                    id="cb13"
+                                    action="#{backingBeanScope.backing_PolicyMaintenancePage.submitFaq}"/>
+                  <af:spacer width="20" height="10" id="s18"/>
+                  <af:commandButton text="Cancel"
+                                    binding="#{backingBeanScope.backing_PolicyMaintenancePage.cb16}"
+                                    id="cb16"/>
+                </af:panelGroupLayout>
+              </f:facet>
+              <af:inputText label="Question"
+                            binding="#{backingBeanScope.backing_PolicyMaintenancePage.it3}"
+                            id="it3" columns="100" rows="3"/>
+              <af:spacer width="10" height="10" id="s15"
+                         binding="#{backingBeanScope.backing_PolicyMaintenancePage.s15}"/>
+              <af:richTextEditor label="Answer"
+                                 binding="#{backingBeanScope.backing_PolicyMaintenancePage.rte2}"
+                                 rows="3" columns="100" id="rte2"
+                                 toolboxLayout="history formatAll justify list indent"/>
+              <af:spacer width="10" height="10" id="s16"
+                         binding="#{backingBeanScope.backing_PolicyMaintenancePage.s16}"/>
+            </af:panelFormLayout>
+          </af:showDetailItem>
+          <af:showDetailItem text="Enquiries"
+                             binding="#{backingBeanScope.backing_PolicyMaintenancePage.sdi3}"
+                             dontPersist="true" id="sdi3">
+            <af:outputText value="Policy Enquiry"
+                           binding="#{backingBeanScope.backing_PolicyMaintenancePage.ot79}"
+                           id="ot79"
+                           inlineStyle="color:Navy; font-family:Arial, Helvetica, sans-serif; font-size:medium; font-weight:bold; text-align:left;"/>
+            <af:outputText value="     #{bindings.GuidelineTitle.hints.label}"
+                           id="ot41" inlineStyle="font-weight:bold;"
+                           binding="#{backingBeanScope.backing_PolicyMaintenancePage.ot41}"/>
+            <af:outputText value="     #{bindings.GuidelineTitle.inputValue}"
+                           id="ot42"
+                           binding="#{backingBeanScope.backing_PolicyMaintenancePage.ot42}"/>
+            <af:spacer width="10" height="10"
+                       binding="#{backingBeanScope.backing_PolicyMaintenancePage.s12}"
+                       id="s12"/>
+            <af:table value="#{bindings.EnquiryfaqForEnqPolicyViewObj1.collectionModel}"
+                      var="row"
+                      rows="#{bindings.EnquiryfaqForEnqPolicyViewObj1.rangeSize}"
+                      emptyText="#{bindings.EnquiryfaqForEnqPolicyViewObj1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                      fetchSize="#{bindings.EnquiryfaqForEnqPolicyViewObj1.rangeSize}"
+                      rowBandingInterval="1"
+                      filterModel="#{bindings.EnquiryfaqForEnqPolicyViewObj1Query.queryDescriptor}"
+                      queryListener="#{bindings.EnquiryfaqForEnqPolicyViewObj1Query.processQuery}"
+                      filterVisible="true" varStatus="vs"
+                      rowSelection="single"
+                      binding="#{backingBeanScope.backing_PolicyMaintenancePage.t4}"
+                      id="t4" inlineStyle="height:200px;"
+                      columnStretching="column:c17" width="70%"
+                      selectionListener="#{backingBeanScope.backing_PolicyMaintenancePage.enquiryTableSelectionListener}">
+              <af:column headerText="No" id="c19" width="30">
+                <af:outputText value="#{vs.index + 1}" id="ot40"/>
+              </af:column>
+              <af:column sortProperty="#{bindings.EnquiryfaqForEnqPolicyViewObj1.hints.Title.name}"
+                         sortable="true" headerText="Enquiry" id="c17">
+                <af:outputText value="#{row.Title}" id="ot39"/>
+              </af:column>
+              <af:column sortProperty="#{bindings.EnquiryfaqForEnqPolicyViewObj1.hints.createDate.name}"
+                         filterable="true" sortable="true"
+                         filterFeatures="caseInsensitive"
+                         headerText="Enquiry Date" id="c18">
+                <f:facet name="filter">
+                  <af:inputDate value="#{vs.filterCriteria.createDate}"
+                                binding="#{backingBeanScope.backing_PolicyMaintenancePage.id1}"
+                                id="id1">
+                    <af:convertDateTime pattern="#{bindings.EnquiryfaqForEnqPolicyViewObj1.hints.createDate.format}"/>
+                  </af:inputDate>
+                </f:facet>
+                <af:outputText value="#{row.createDate}" id="ot36">
+                  <af:convertDateTime pattern="#{bindings.EnquiryfaqForEnqPolicyViewObj1.hints.createDate.format}"/>
+                </af:outputText>
+              </af:column>
+            </af:table>
+            <af:spacer width="10" height="10" id="s20"
+                       binding="#{backingBeanScope.backing_PolicyMaintenancePage.s20}"/>
+            <af:panelFormLayout binding="#{backingBeanScope.backing_PolicyMaintenancePage.pfl7}"
+                                partialTriggers="t4" id="pfl7"
+                                inlineStyle="border-style:solid; border-width:1px; border-color:Gray;"
+                                visible="#{backingBeanScope.backing_PolicyMaintenancePage.viewEnqStatus}">
+              <af:outputText value="#{bindings.Title.hints.label}" id="ot45"
+                             inlineStyle="font-weight:bold;"
+                             binding="#{backingBeanScope.backing_PolicyMaintenancePage.ot45}"/>
+              <af:outputText value="#{bindings.Title.inputValue}"
+                             binding="#{backingBeanScope.backing_PolicyMaintenancePage.ot78}"
+                             id="ot78"/>
+              <af:spacer id="s3" width="10" height="10"
+                         visible="#{bindings.AttachedfileForEnqQueView1Iterator.estimatedRowCount >0}"/>
+              <af:outputText value="Enquirer Attachment" id="ot11"
+                             inlineStyle="font-weight:bold;"
+                             visible="#{bindings.AttachedfileForEnqQueView1Iterator.estimatedRowCount >0}"/>
+              <af:iterator id="i3"
+                           value="#{bindings.AttachedfileForEnqQueView1.collectionModel}"
+                           var="row" varStatus="vs">
+                <af:commandLink text="#{row.filenameOrig}" id="cl13"
+                                actionListener="#{backingBeanScope.backing_PolicyMaintenancePage.onOpenEnqQueFileSelected}"
+                                visible="#{bindings.AttachedfileForEnqQueView1Iterator.estimatedRowCount >0}">
+                  <f:attribute name="rowKey" value="#{vs.index}"/>
+                </af:commandLink>
+              </af:iterator>
+              <af:spacer width="10" height="10" id="s21"
+                         binding="#{backingBeanScope.backing_PolicyMaintenancePage.s21}"/>
+              <af:outputText value="#{bindings.Abstract11.hints.label}" id="ot8"
+                             inlineStyle="font-weight:bold;"/>
+              <af:outputText value="#{bindings.Abstract11.inputValue}"
+                             escape="false" id="ot46"
+                             binding="#{backingBeanScope.backing_PolicyMaintenancePage.ot46}"/>
+              <af:spacer id="s19" width="10" height="10"
+                         visible="#{bindings.AttachedfileForEnqAnsView1Iterator.estimatedRowCount >0}"/>
+              <af:outputText value="Responder Attachment"
+                             visible="#{bindings.AttachedfileForEnqAnsView1Iterator.estimatedRowCount >0}"
+                             id="ot12" inlineStyle="font-weight:bold;"/>
+              <af:iterator id="i11"
+                           value="#{bindings.AttachedfileForEnqAnsView1.collectionModel}"
+                           var="row" varStatus="vs">
+                <af:commandLink text="#{row.filenameOrig}" id="cl14"
+                                actionListener="#{backingBeanScope.backing_PolicyMaintenancePage.onOpenEnqAnsFileSelected}"
+                                visible="#{bindings.AttachedfileForEnqAnsView1Iterator.estimatedRowCount >0}">
+                  <f:attribute name="rowKey" value="#{vs.index}"/>
+                </af:commandLink>
+              </af:iterator>
+              <af:commandButton text="Download"
+                                      binding="#{backingBeanScope.backing_PolicyMaintenancePage.cb10}"
+                                      id="cb10" visible="false"
+                                      immediate="true">
+                      <af:fileDownloadActionListener method="#{backingBeanScope.backing_PolicyMaintenancePage.doDownload}"
+                                                     filename="#{pageFlowScope.filenameOrig}"/>
+                    </af:commandButton>
+            </af:panelFormLayout>
+          </af:showDetailItem>
+          <af:showDetailItem text="Supporting Documents"
+                             binding="#{backingBeanScope.backing_PolicyMaintenancePage.sdi4}"
+                             dontPersist="true" id="sdi4">
+            <af:outputText value="Supporting Documents"
+                           binding="#{backingBeanScope.backing_PolicyMaintenancePage.ot80}"
+                           id="ot80"
+                           inlineStyle="color:Navy; font-family:Arial, Helvetica, sans-serif; font-size:medium; font-weight:bold; text-align:left;"/>
+            <af:outputText value="     #{bindings.GuidelineTitle.hints.label}"
+                           id="ot47" inlineStyle="font-weight:bold;"
+                           binding="#{backingBeanScope.backing_PolicyMaintenancePage.ot47}"/>
+            <af:outputText value="     #{bindings.GuidelineTitle.inputValue}"
+                           id="ot48"
+                           binding="#{backingBeanScope.backing_PolicyMaintenancePage.ot48}"/>
+            <af:spacer width="10" height="10" id="s22"
+                       binding="#{backingBeanScope.backing_PolicyMaintenancePage.s22}"/>
+            <af:outputText value="Supporting Documents" id="ot49"
+                           inlineStyle="font-weight:bold;"
+                           binding="#{backingBeanScope.backing_PolicyMaintenancePage.ot49}"/>
+            <af:popup binding="#{backingBeanScope.backing_PolicyMaintenancePage.p1}"
+                      id="p1">
+              <af:dialog id="d2"
+                         dialogListener="#{backingBeanScope.backing_PolicyMaintenancePage.doDeleteSuppDoc}"
+                         type="yesNo"
+                         binding="#{backingBeanScope.backing_PolicyMaintenancePage.d2}">
+                <af:outputText value="Selected Supporting Document will be Deleted,do you want to proceed? "
+                               id="ot50"
+                               binding="#{backingBeanScope.backing_PolicyMaintenancePage.ot50}"/>
+              </af:dialog>
+            </af:popup>
+            <af:commandButton text="Download"
+                              binding="#{backingBeanScope.backing_PolicyMaintenancePage.cb18}"
+                              visible="false" immediate="true" id="cb18">
+              <af:fileDownloadActionListener filename="#{pageFlowScope.filenameOrig}"
+                                             method="#{backingBeanScope.backing_PolicyMaintenancePage.doDownload}"/>
+            </af:commandButton>
+            <af:table value="#{bindings.AttachedfileSupportDocViewObj1.collectionModel}"
+                      var="row"
+                      rows="#{bindings.AttachedfileSupportDocViewObj1.rangeSize}"
+                      emptyText="#{bindings.AttachedfileSupportDocViewObj1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                      fetchSize="#{bindings.AttachedfileSupportDocViewObj1.rangeSize}"
+                      rowBandingInterval="1"
+                      filterModel="#{bindings.AttachedfileSupportDocViewObj1Query.queryDescriptor}"
+                      queryListener="#{bindings.AttachedfileSupportDocViewObj1Query.processQuery}"
+                      filterVisible="true" varStatus="vs"
+                      selectedRowKeys="#{bindings.AttachedfileSupportDocViewObj1.collectionModel.selectedRow}"
+                      selectionListener="#{bindings.AttachedfileSupportDocViewObj1.collectionModel.makeCurrent}"
+                      rowSelection="single"
+                      binding="#{backingBeanScope.backing_PolicyMaintenancePage.t5}"
+                      id="t5" width="70%" inlineStyle="height:250px;"
+                      columnStretching="column:c20">
+              <af:column sortProperty="#{bindings.AttachedfileSupportDocViewObj1.hints.documentName.name}"
+                         filterable="true" sortable="true"
+                         filterFeatures="caseInsensitive"
+                         headerText="#{bindings.AttachedfileSupportDocViewObj1.hints.documentName.label}"
+                         id="c20">
+                <af:outputText value="#{row.documentName}" id="ot21"/>
+              </af:column>
+              <af:column sortProperty="#{bindings.AttachedfileSupportDocViewObj1.hints.type.name}"
+                         filterable="true" sortable="true"
+                         filterFeatures="caseInsensitive"
+                         headerText="#{bindings.AttachedfileSupportDocViewObj1.hints.type.label}"
+                         id="c21">
+                <af:outputText value="#{row.type}" id="ot44"/>
+              </af:column>
+              <af:column headerText="Action" id="c22">
+                <af:commandLink text="View" id="cl7"
+                                actionListener="#{backingBeanScope.backing_PolicyMaintenancePage.onOpenSuppDocFileSelected}">
+                  <f:attribute name="rowKey" value="#{row.rowKey}"/>
+                </af:commandLink>
+              </af:column>
+            </af:table>
+            <af:spacer width="10" height="10" id="s23"
+                       binding="#{backingBeanScope.backing_PolicyMaintenancePage.s23}"/>
+            <af:panelGroupLayout binding="#{backingBeanScope.backing_PolicyMaintenancePage.pgl15}"
+                                 id="pgl15" layout="horizontal">
+              <af:commandButton text="Add New Supporting Document"
+                                binding="#{backingBeanScope.backing_PolicyMaintenancePage.cb19}"
+                                id="cb19"
+                                action="#{backingBeanScope.backing_PolicyMaintenancePage.actionAddSupportDoc}"
+                                disabled="#{pageFlowScope.itemId eq null  or pageFlowScope.itemId eq '' }"
+                                partialSubmit="true"/>
+              <af:spacer width="10" height="10" id="s24"
+                         binding="#{backingBeanScope.backing_PolicyMaintenancePage.s24}"/>
+              <af:commandButton text="Remove Selected Supporting Document"
+                                binding="#{backingBeanScope.backing_PolicyMaintenancePage.cb20}"
+                                id="cb20"
+                                disabled="#{bindings.AttachedfileSupportDocViewObj1Iterator.estimatedRowCount &lt;1}">
+                <af:showPopupBehavior popupId="p1" triggerType="click"/>
+              </af:commandButton>
+            </af:panelGroupLayout>
+            <af:spacer width="10" height="10" id="s28"
+                       binding="#{backingBeanScope.backing_PolicyMaintenancePage.s28}"/>
+            <af:panelFormLayout binding="#{backingBeanScope.backing_PolicyMaintenancePage.pfl8}"
+                                id="pfl8"
+                                visible="#{backingBeanScope.backing_PolicyMaintenancePage.suppDocAction}"
+                                inlineStyle="border-style:solid; border-width:1px; border-color:Gray;">
+              <f:facet name="footer">
+                <af:panelGroupLayout binding="#{backingBeanScope.backing_PolicyMaintenancePage.pgl16}"
+                                     id="pgl16" layout="horizontal">
+                  <af:commandButton text="Save"
+                                    binding="#{backingBeanScope.backing_PolicyMaintenancePage.cb21}"
+                                    id="cb21"
+                                    action="#{backingBeanScope.backing_PolicyMaintenancePage.submitSuppdoc}"/>
+                  <af:spacer width="10" height="10" id="s25"
+                             binding="#{backingBeanScope.backing_PolicyMaintenancePage.s25}"/>
+                  <af:commandButton text="Cancel"
+                                    binding="#{backingBeanScope.backing_PolicyMaintenancePage.cb22}"
+                                    id="cb22"
+                                    visible="#{backingBeanScope.backing_PolicyMaintenancePage.suppDocAction}"/>
+                </af:panelGroupLayout>
+              </f:facet>
+              <af:inputText label="Title"
+                            binding="#{backingBeanScope.backing_PolicyMaintenancePage.it4}"
+                            id="it4"/>
+              <af:spacer width="10" height="10" id="s26"
+                         binding="#{backingBeanScope.backing_PolicyMaintenancePage.s26}"/>
+              <af:selectOneChoice value="#{bindings.ClassificationView1.inputValue}"
+                                  label="Security Classification"
+                                  required="#{bindings.ClassificationView1.hints.mandatory}"
+                                  shortDesc="#{bindings.ClassificationView1.hints.tooltip}"
+                                  binding="#{backingBeanScope.backing_PolicyMaintenancePage.soc2}"
+                                  id="soc2">
+                <f:selectItems value="#{bindings.ClassificationView1.items}"
+                               binding="#{backingBeanScope.backing_PolicyMaintenancePage.si2}"
+                               id="si2"/>
+              </af:selectOneChoice>
+              <af:spacer width="10" height="10" id="s27"
+                         binding="#{backingBeanScope.backing_PolicyMaintenancePage.s27}"/>
+              <af:inputFile label="Attach File"
+                            binding="#{backingBeanScope.backing_PolicyMaintenancePage.if2}"
+                            id="if2"
+                            valueChangeListener="#{backingBeanScope.backing_PolicyMaintenancePage.suppDocAction}"/>
+              <af:spacer width="10" height="10" id="s29"
+                         binding="#{backingBeanScope.backing_PolicyMaintenancePage.s29}"/>
+            </af:panelFormLayout>
+          </af:showDetailItem>
+          <af:showDetailItem text="Amendment History "
+                             binding="#{backingBeanScope.backing_PolicyMaintenancePage.sdi5}"
+                             id="sdi5" dontPersist="true">
+            <af:outputText value="     Amendment History"
+                           binding="#{backingBeanScope.backing_PolicyMaintenancePage.ot81}"
+                           id="ot81"
+                           inlineStyle="color:Navy; font-family:Arial, Helvetica, sans-serif; font-size:medium; font-weight:bold; text-align:left;"/>
+            <af:outputText value="     #{bindings.GuidelineTitle.hints.label}"
+                           binding="#{backingBeanScope.backing_PolicyMaintenancePage.ot82}"
+                           id="ot82" inlineStyle="font-weight:bold;"/>
+            <af:outputText value="     #{bindings.GuidelineTitle.inputValue}"
+                           binding="#{backingBeanScope.backing_PolicyMaintenancePage.ot83}"
+                           id="ot83"/>
+            <af:spacer width="10" height="10" id="s34"
+                       binding="#{backingBeanScope.backing_PolicyMaintenancePage.s34}"/>
+            <af:outputText value="Superseded Policies" id="ot64"
+                           inlineStyle="font-weight:bold;"
+                           binding="#{backingBeanScope.backing_PolicyMaintenancePage.ot64}"/>
+            <af:iterator id="i4"
+                         value="#{bindings.SuperseededpoliciesView1.collectionModel}"
+                         var="row" varStatus="vs"
+                         binding="#{backingBeanScope.backing_PolicyMaintenancePage.i4}">
+              <af:commandLink text="#{row.PolicyName}" id="cl10"
+                              action="#{backingBeanScope.backing_PolicyMaintenancePage.gotoSuperseededViewPolicy}"
+                              binding="#{backingBeanScope.backing_PolicyMaintenancePage.cl10}">
+                <af:setPropertyListener type="action" from="#{row.itemIdSup}"
+                                        to="#{pageFlowScope.itemIdSup}"/>
+                <af:setPropertyListener type="action" from="Ament"
+                                        to="#{pageFlowScope.openTabVal}"/>
+              </af:commandLink>
+            </af:iterator>
+            <af:spacer width="10" height="10" id="s2"
+                       binding="#{backingBeanScope.backing_PolicyMaintenancePage.s2}"/>
+            <af:outputText value="Amendment History"
+                           binding="#{backingBeanScope.backing_PolicyMaintenancePage.ot84}"
+                           id="ot84" inlineStyle="font-weight:bold;"/>
+            <af:table value="#{bindings.PolicyamendmentHistoryViewObj1.collectionModel}"
+                      var="row"
+                      rows="#{bindings.PolicyamendmentHistoryViewObj1.rangeSize}"
+                      emptyText="#{bindings.PolicyamendmentHistoryViewObj1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                      fetchSize="#{bindings.PolicyamendmentHistoryViewObj1.rangeSize}"
+                      rowBandingInterval="1"
+                      selectedRowKeys="#{bindings.PolicyamendmentHistoryViewObj1.collectionModel.selectedRow}"
+                      selectionListener="#{bindings.PolicyamendmentHistoryViewObj1.collectionModel.makeCurrent}"
+                      rowSelection="single"
+                      binding="#{backingBeanScope.backing_PolicyMaintenancePage.t6}"
+                      id="t6" inlineStyle="height:250px;" width="650"
+                      columnStretching="column:c14">
+              <af:column sortProperty="#{bindings.PolicyamendmentHistoryViewObj1.hints.version.name}"
+                         sortable="true"
+                         headerText="#{bindings.PolicyamendmentHistoryViewObj1.hints.version.label}"
+                         id="c13" width="70">
+                <af:outputText value="#{row.version}" id="ot24">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.PolicyamendmentHistoryViewObj1.hints.version.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column sortProperty="#{bindings.PolicyamendmentHistoryViewObj1.hints.AmendmentHighlights.name}"
+                         sortable="true"
+                         headerText="#{bindings.PolicyamendmentHistoryViewObj1.hints.AmendmentHighlights.label}"
+                         id="c14" width="140">
+                <af:outputText value="#{row.AmendmentHighlights}" escape="false"
+                               id="ot9"/>
+              </af:column>
+              <af:column sortProperty="#{bindings.PolicyamendmentHistoryViewObj1.hints.CreatedDate.name}"
+                         sortable="true"
+                         headerText="#{bindings.PolicyamendmentHistoryViewObj1.hints.CreatedDate.label}"
+                         id="c12" width="90">
+                <af:outputText value="#{row.CreatedDate}" id="ot2">
+                  <af:convertDateTime pattern="#{bindings.PolicyamendmentHistoryViewObj1.hints.CreatedDate.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column sortProperty="#{bindings.PolicyamendmentHistoryViewObj1.hints.ViewPolicyId.name}"
+                         sortable="true"
+                         headerText="#{bindings.PolicyamendmentHistoryViewObj1.hints.ViewPolicyId.label}"
+                         id="c15" width="80">
+                <af:commandLink text="View" id="cl4"
+                                action="#{backingBeanScope.backing_PolicyMaintenancePage.gotoViewPolicy}">
+                  <af:setPropertyListener type="action"
+                                          from="#{row.ViewPolicyId}"
+                                          to="#{pageFlowScope.ViewPolicyId}"/>
+                  <af:setPropertyListener type="action" from="#{row.version}"
+                                          to="#{pageFlowScope.version}"/>
+                  <af:setPropertyListener type="action" from="Ament"
+                                          to="#{pageFlowScope.openTabVal}"/>
+                </af:commandLink>
+              </af:column>
+            </af:table>
+          </af:showDetailItem>
+        </af:panelTabbed>
+      </af:panelGroupLayout>
+    </f:facet>
+    <f:facet name="top">
+      <af:panelGroupLayout layout="scroll"
+                           xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                           binding="#{backingBeanScope.backing_PolicyMaintenancePage.pgl11}"
+                           id="pgl11">
+        <af:outputText value="Document Maintenance"
+                       binding="#{backingBeanScope.backing_PolicyMaintenancePage.ot1}"
+                       id="ot1" styleClass="pageTitleHeaderLeft"/>
+        <af:table value="#{bindings.PolicyActiveOnlyViewObj1.collectionModel}"
+                  var="row"
+                  rows="#{bindings.PolicyActiveOnlyViewObj1.rangeSize}"
+                  emptyText="#{bindings.PolicyActiveOnlyViewObj1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                  fetchSize="#{bindings.PolicyActiveOnlyViewObj1.rangeSize}"
+                  rowBandingInterval="1"
+                  selectedRowKeys="#{bindings.PolicyActiveOnlyViewObj1.collectionModel.selectedRow}"
+                  selectionListener="#{bindings.PolicyActiveOnlyViewObj1.collectionModel.makeCurrent}"
+                  queryListener="#{bindings.PolicyViewQuery.processQuery}"
+                  filterVisible="true" varStatus="vs" rowSelection="single"
+                  binding="#{backingBeanScope.backing_PolicyMaintenancePage.t1}"
+                  id="t1" inlineStyle="height:240px;" width="99%"
+                  columnStretching="column:c2"
+                  filterModel="#{bindings.PolicyViewQuery.queryDescriptor}">
+          <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.itemId.name}"
+                     headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.itemId.label}"
+                     id="c3" rendered="true" visible="false">
+            <af:outputText value="#{row.itemId}" id="ot32"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.GuidelineTitle.name}"
+                     filterable="true" sortable="true"
+                     filterFeatures="caseInsensitive"
+                     headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.GuidelineTitle.label}"
+                     id="c2" width="200">
+            <af:commandLink text="#{row.GuidelineTitle}" id="cl1"
+                            action="#{backingBeanScope.backing_PolicyMaintenancePage.getPolicyOtherDetails}">
+              <af:setPropertyListener from="#{row.itemId}"
+                                      to="#{pageFlowScope.itemId}"
+                                      type="action"/>
+              <af:setPropertyListener from="#{row.RecordStatus}"
+                                      to="#{pageFlowScope.RecordStatus}"
+                                      type="action"/>
+              <af:setPropertyListener from="#{row.NewIssuanceDate}"
+                                      to="#{pageFlowScope.NewIssuanceDate}"
+                                      type="action"/>
+            </af:commandLink>
+          </af:column>
+          <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.NewIssuanceDate.name}"
+                     filterable="true" sortable="true"
+                     filterFeatures="caseInsensitive"
+                     headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.NewIssuanceDate.label}"
+                     id="c1" width="100">
+            <af:outputText value="#{row.NewIssuanceDate}" id="ot3">
+              <af:convertDateTime pattern="#{bindings.PolicyActiveOnlyViewObj1.hints.NewIssuanceDate.format}"/>
+            </af:outputText>
+          </af:column>
+          <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.RecordStatus.name}"
+                     filterable="true" sortable="true"
+                     filterFeatures="caseInsensitive"
+                     headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.RecordStatus.label}"
+                     id="c16" width="70">
+            <af:outputText value="#{row.RecordStatus}" id="ot37"/>
+          </af:column>
+        </af:table>
+        <af:spacer width="10" height="10" id="s111"
+                   binding="#{backingBeanScope.backing_PolicyMaintenancePage.s111}"/>
+        <af:panelGroupLayout binding="#{backingBeanScope.backing_PolicyMaintenancePage.pgl12}"
+                             id="pgl12" layout="horizontal">
+          <af:commandButton text="Amend Selected Document"
+                            binding="#{backingBeanScope.backing_PolicyMaintenancePage.cb14}"
+                            id="cb14"
+                            action="#{backingBeanScope.backing_PolicyMaintenancePage.gotoAmendmentPolicy}"
+                            disabled="#{bindings.RecordStatus eq 'ARCHIVE'}"/>
+          <af:spacer width="20" height="10" id="s36"
+                     binding="#{backingBeanScope.backing_PolicyMaintenancePage.s36}"/>
+          <af:popup binding="#{backingBeanScope.backing_PolicyMaintenancePage.p3}"
+                    id="p3">
+            <af:dialog binding="#{backingBeanScope.backing_PolicyMaintenancePage.d3}"
+                       id="d3"
+                       dialogListener="#{backingBeanScope.backing_PolicyMaintenancePage.doArchivePolicy}"
+                       type="yesNo">
+              <af:outputText value="Selected policy will be archived,do you want to proceed? "
+                             binding="#{backingBeanScope.backing_PolicyMaintenancePage.ot58}"
+                             id="ot58"/>
+            </af:dialog>
+          </af:popup>
+          <af:commandButton text="Archive Selected Document"
+                            binding="#{backingBeanScope.backing_PolicyMaintenancePage.cb15}"
+                            id="cb15"
+                            disabled="#{bindings.RecordStatus ne 'ACTIVE' }">
+            <af:showPopupBehavior popupId="p3" triggerType="click"/>
+          </af:commandButton>
+        </af:panelGroupLayout>
+      </af:panelGroupLayout>
+    </f:facet>
+  </af:panelStretchLayout>
+  <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_PolicyMaintenancePage-->
+</jsp:root>

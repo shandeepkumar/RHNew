@@ -1,0 +1,165 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<table xmlns="http://xmlns.oracle.com/jdeveloper/1111/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <identifier class="java.lang.String">af007c45-dccc-4da1-9b48-b3f1d2a1cd23</identifier>
+  </ID>
+  <name>PolicyDepartmentPartition</name>
+  <columns>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">1996bac9-4c38-46eb-974b-2f8a7c80c1c5</identifier>
+      </ID>
+      <name>departmentId</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">a0f270b4-f85f-4364-8f7e-d00dafa4b9a9</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">20</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.SQLServer.SQLServerDatabaseImpl</providerClass>
+          <typeName>VARCHAR</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">199139b9-2caa-4f26-86f4-a055bba01a7c</identifier>
+      </ID>
+      <name>itemId</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">857f7da7-d7db-44d7-8ad0-8de93bd74171</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+          </entry>
+          <entry>
+            <key>scale</key>
+          </entry>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">50</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.SQLServer.SQLServerDatabaseImpl</providerClass>
+          <typeName>VARCHAR</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+    </column>
+  </columns>
+  <constraints>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">53e689ee-d896-45cc-b9fb-7f7baf8329df</identifier>
+      </ID>
+      <name>PolicyDepartmentPartition_DEPARTMENT_FK1</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>departmentId</name>
+          <identifier class="java.lang.String">1996bac9-4c38-46eb-974b-2f8a7c80c1c5</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>PolicyDepartmentPartition</name>
+            <identifier class="java.lang.String">af007c45-dccc-4da1-9b48-b3f1d2a1cd23</identifier>
+            <schemaName>dbo</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <referenceID class="oracle.javatools.db.IdentifierBasedID">
+        <name>SYS_C005256</name>
+        <identifier class="java.lang.String">4a4bee1e-98bf-4259-9e5d-a631cb6fcdbd</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>DEPARTMENT</name>
+          <identifier class="java.lang.String">99ef6830-b912-493e-ad19-2d917662500c</identifier>
+          <schemaName>dbo</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">4b315eb4-80a5-43fb-b220-1f25097883fe</identifier>
+      </ID>
+      <name>PolicyDepartmentPartition_FK</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>itemId</name>
+          <identifier class="java.lang.String">199139b9-2caa-4f26-86f4-a055bba01a7c</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>PolicyDepartmentPartition</name>
+            <identifier class="java.lang.String">af007c45-dccc-4da1-9b48-b3f1d2a1cd23</identifier>
+            <schemaName>dbo</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <referenceID class="oracle.javatools.db.IdentifierBasedID">
+        <name>Policy_PK</name>
+        <identifier class="java.lang.String">6a1efef6-4042-47d2-960e-acd362515500</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>Policy</name>
+          <identifier class="java.lang.String">9116cf98-9374-42b7-87f5-20377e39ce23</identifier>
+          <schemaName>dbo</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.PKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">1d8792b8-17bd-49da-b031-a97e4364157d</identifier>
+      </ID>
+      <name>PolicyDepartmentPartition_PK</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>departmentId</name>
+          <identifier class="java.lang.String">1996bac9-4c38-46eb-974b-2f8a7c80c1c5</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>PolicyDepartmentPartition</name>
+            <identifier class="java.lang.String">af007c45-dccc-4da1-9b48-b3f1d2a1cd23</identifier>
+            <schemaName>dbo</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>itemId</name>
+          <identifier class="java.lang.String">199139b9-2caa-4f26-86f4-a055bba01a7c</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>PolicyDepartmentPartition</name>
+            <identifier class="java.lang.String">af007c45-dccc-4da1-9b48-b3f1d2a1cd23</identifier>
+            <schemaName>dbo</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+    </constraint>
+  </constraints>
+  <properties>
+    <entry>
+      <key>TableType</key>
+      <value class="oracle.javatools.db.Table$TableType">NORMAL</value>
+    </entry>
+  </properties>
+  <schema>
+    <name>dbo</name>
+  </schema>
+</table>

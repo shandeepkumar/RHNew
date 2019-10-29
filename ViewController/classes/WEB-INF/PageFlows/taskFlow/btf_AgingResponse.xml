@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="btf_AgingResponse">
+    <template-reference>
+      <document id="__2">/WEB-INF/PageFlows/template/RH-task-flow-templateForException.xml</document>
+      <id id="__1">RH-task-flow-templateForException</id>
+    </template-reference>
+    <default-activity id="__3">getAgingResponseManagementDetails</default-activity>
+    <managed-bean id="__11">
+      <managed-bean-name id="__14">backing_jsff_agingResponse</managed-bean-name>
+      <managed-bean-class id="__12">gov.bnm.view.rh.backingBeans.AgingResponse</managed-bean-class>
+      <managed-bean-scope id="__13">backingBean</managed-bean-scope>
+      <!--oracle-jdev-comment:managed-bean-jsp-link:1jsff/AgingResponse.jsff-->
+    </managed-bean>
+    <managed-bean id="__39">
+      <managed-bean-name id="__41">backing_jspx_PolicyAgingConfirmationPage</managed-bean-name>
+      <managed-bean-class id="__40">gov.bnm.view.rh.backingBeans.PolicyAgingConfirmationPage</managed-bean-class>
+      <managed-bean-scope id="__38">backingBean</managed-bean-scope>
+    </managed-bean>
+    <method-call id="getAgingResponseManagementDetails">
+      <method>#{bindings.getAgingResponseManagementDetails.execute}</method>
+      <outcome id="__4">
+        <fixed-outcome>getAgingResponseManagementDetails</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="filterByPolicyIdOnlyPolicyTable">
+      <method>#{bindings.filterByPolicyIdOnlyPolicyTable.execute}</method>
+      <outcome id="__15">
+        <fixed-outcome>filterByPolicyIdOnlyPolicyTable</fixed-outcome>
+      </outcome>
+    </method-call>
+    <view id="PolicyAgingConfirmationPage">
+      <page>/jsff/PolicyAgingConfirmationPage.jsff</page>
+      <input-page-parameter>
+        <from-value>AR</from-value>
+        <to-value>#{pageFlowScope.formType}</to-value>
+      </input-page-parameter>
+    </view>
+    <view id="AgingResponse1">
+      <page>/jsff/AgingResponse.jsff</page>
+    </view>
+    <control-flow-rule id="__6">
+      <from-activity-id id="__7">getAgingResponseManagementDetails</from-activity-id>
+      <control-flow-case id="__8">
+        <from-outcome id="__9">getAgingResponseManagementDetails</from-outcome>
+        <to-activity-id id="__10">AgingResponse1</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__28">
+      <from-activity-id id="__29">filterByPolicyIdOnlyPolicyTable</from-activity-id>
+      <control-flow-case id="__31">
+        <from-outcome id="__32">filterByPolicyIdOnlyPolicyTable</from-outcome>
+        <to-activity-id id="__30">PolicyAgingConfirmationPage</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__33">
+      <from-activity-id id="__34">PolicyAgingConfirmationPage</from-activity-id>
+      <control-flow-case id="__36">
+        <from-outcome id="__37">back</from-outcome>
+        <to-activity-id id="__35">AgingResponse1</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__21">
+        <from-outcome id="__22">submit</from-outcome>
+        <to-activity-id id="__20">getAgingResponseManagementDetails</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__5">
+      <from-activity-id id="__16">AgingResponse1</from-activity-id>
+      <control-flow-case id="__17">
+        <from-outcome id="__18">gotoExtension</from-outcome>
+        <to-activity-id id="__19">filterByPolicyIdOnlyPolicyTable</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

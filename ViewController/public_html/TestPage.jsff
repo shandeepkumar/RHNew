@@ -1,0 +1,602 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelCollection id="pc1" styleClass="AFStretchWidth">
+    <af:table value="#{bindings.RelavantActView1.collectionModel}" 
+              var="row"
+              rows="#{bindings.RelavantActView1.rangeSize}"
+              emptyText="#{bindings.RelavantActView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+              rowBandingInterval="0" 
+              selectedRowKeys="#{bindings.RelavantActView1.collectionModel.selectedRow}"
+              selectionListener="#{bindings.RelavantActView1.collectionModel.makeCurrent}" 
+              rowSelection="single"
+              fetchSize="#{bindings.RelavantActView1.rangeSize}"
+              filterModel="#{bindings.RelavantActView1Query.queryDescriptor}"
+              queryListener="#{bindings.RelavantActView1Query.processQuery}" 
+              varStatus="vs"
+              id="t1" 
+              scrollPolicy="page"
+              columnStretching="column:c2"
+              contentDelivery="immediate"
+              first="#{pageFlowScope.rangeStart eq null ? 0 : pageFlowScope.rangeStart}"
+              autoHeightRows="0">
+      <af:column sortProperty="#{bindings.RelavantActView1.hints.id.name}" filterable="true" sortable="true"
+                 headerText="#{bindings.RelavantActView1.hints.id.label}" 
+                 id="c1">
+        <af:outputText value="#{row.id}" shortDesc="#{bindings.RelavantActView1.hints.id.tooltip}"
+                       id="ot1">
+        </af:outputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.RelavantActView1.hints.relavantName.name}" filterable="true" sortable="true"
+                 headerText="#{bindings.RelavantActView1.hints.relavantName.label}"
+                 id="c2">
+        <af:outputText value="#{row.relavantName}" shortDesc="#{bindings.RelavantActView1.hints.relavantName.tooltip}"
+                       id="ot2">
+        </af:outputText>
+      </af:column>
+    </af:table>
+    <af:table value="#{bindings.PolicyActiveOnlyViewObj1.collectionModel}"
+              var="row" rows="#{bindings.PolicyActiveOnlyViewObj1.rangeSize}"
+              emptyText="#{bindings.PolicyActiveOnlyViewObj1.viewable ? 'No data to display.' : 'Access Denied.'}"
+              fetchSize="#{bindings.PolicyActiveOnlyViewObj1.rangeSize}"
+              rowBandingInterval="0" id="t2">
+      <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.ApplicabilityManualEntry.name}"
+                 sortable="false"
+                 headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.ApplicabilityManualEntry.label}"
+                 id="c10">
+        <af:inputText value="#{row.bindings.ApplicabilityManualEntry.inputValue}"
+                      label="#{bindings.PolicyActiveOnlyViewObj1.hints.ApplicabilityManualEntry.label}"
+                      required="#{bindings.PolicyActiveOnlyViewObj1.hints.ApplicabilityManualEntry.mandatory}"
+                      columns="#{bindings.PolicyActiveOnlyViewObj1.hints.ApplicabilityManualEntry.displayWidth}"
+                      maximumLength="#{bindings.PolicyActiveOnlyViewObj1.hints.ApplicabilityManualEntry.precision}"
+                      shortDesc="#{bindings.PolicyActiveOnlyViewObj1.hints.ApplicabilityManualEntry.tooltip}"
+                      id="it19">
+          <f:validator binding="#{row.bindings.ApplicabilityManualEntry.validator}"/>
+        </af:inputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.Classification.name}"
+                 sortable="false"
+                 headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.Classification.label}"
+                 id="c3">
+        <af:inputText value="#{row.bindings.Classification.inputValue}"
+                      label="#{bindings.PolicyActiveOnlyViewObj1.hints.Classification.label}"
+                      required="#{bindings.PolicyActiveOnlyViewObj1.hints.Classification.mandatory}"
+                      columns="#{bindings.PolicyActiveOnlyViewObj1.hints.Classification.displayWidth}"
+                      maximumLength="#{bindings.PolicyActiveOnlyViewObj1.hints.Classification.precision}"
+                      shortDesc="#{bindings.PolicyActiveOnlyViewObj1.hints.Classification.tooltip}"
+                      id="it10">
+          <f:validator binding="#{row.bindings.Classification.validator}"/>
+        </af:inputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.CreatedDate.name}"
+                 sortable="false"
+                 headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.CreatedDate.label}"
+                 id="c36">
+        <af:inputDate value="#{row.bindings.CreatedDate.inputValue}"
+                      label="#{bindings.PolicyActiveOnlyViewObj1.hints.CreatedDate.label}"
+                      required="#{bindings.PolicyActiveOnlyViewObj1.hints.CreatedDate.mandatory}"
+                      shortDesc="#{bindings.PolicyActiveOnlyViewObj1.hints.CreatedDate.tooltip}"
+                      id="id1">
+          <f:validator binding="#{row.bindings.CreatedDate.validator}"/>
+          <af:convertDateTime pattern="#{bindings.PolicyActiveOnlyViewObj1.hints.CreatedDate.format}"/>
+        </af:inputDate>
+      </af:column>
+      <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.DisplayInWhatsNew.name}"
+                 sortable="false"
+                 headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.DisplayInWhatsNew.label}"
+                 id="c24">
+        <af:inputText value="#{row.bindings.DisplayInWhatsNew.inputValue}"
+                      label="#{bindings.PolicyActiveOnlyViewObj1.hints.DisplayInWhatsNew.label}"
+                      required="#{bindings.PolicyActiveOnlyViewObj1.hints.DisplayInWhatsNew.mandatory}"
+                      columns="#{bindings.PolicyActiveOnlyViewObj1.hints.DisplayInWhatsNew.displayWidth}"
+                      maximumLength="#{bindings.PolicyActiveOnlyViewObj1.hints.DisplayInWhatsNew.precision}"
+                      shortDesc="#{bindings.PolicyActiveOnlyViewObj1.hints.DisplayInWhatsNew.tooltip}"
+                      id="it13">
+          <f:validator binding="#{row.bindings.DisplayInWhatsNew.validator}"/>
+        </af:inputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.DocCategory.name}"
+                 sortable="false"
+                 headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.DocCategory.label}"
+                 id="c14">
+        <af:inputText value="#{row.bindings.DocCategory.inputValue}"
+                      label="#{bindings.PolicyActiveOnlyViewObj1.hints.DocCategory.label}"
+                      required="#{bindings.PolicyActiveOnlyViewObj1.hints.DocCategory.mandatory}"
+                      columns="#{bindings.PolicyActiveOnlyViewObj1.hints.DocCategory.displayWidth}"
+                      maximumLength="#{bindings.PolicyActiveOnlyViewObj1.hints.DocCategory.precision}"
+                      shortDesc="#{bindings.PolicyActiveOnlyViewObj1.hints.DocCategory.tooltip}"
+                      id="it29">
+          <f:validator binding="#{row.bindings.DocCategory.validator}"/>
+        </af:inputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.EffectiveDate.name}"
+                 sortable="false"
+                 headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.EffectiveDate.label}"
+                 id="c34">
+        <af:inputText value="#{row.bindings.EffectiveDate.inputValue}"
+                      label="#{bindings.PolicyActiveOnlyViewObj1.hints.EffectiveDate.label}"
+                      required="#{bindings.PolicyActiveOnlyViewObj1.hints.EffectiveDate.mandatory}"
+                      columns="#{bindings.PolicyActiveOnlyViewObj1.hints.EffectiveDate.displayWidth}"
+                      maximumLength="#{bindings.PolicyActiveOnlyViewObj1.hints.EffectiveDate.precision}"
+                      shortDesc="#{bindings.PolicyActiveOnlyViewObj1.hints.EffectiveDate.tooltip}"
+                      id="it21">
+          <f:validator binding="#{row.bindings.EffectiveDate.validator}"/>
+        </af:inputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.ExpiryDate.name}"
+                 sortable="false"
+                 headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.ExpiryDate.label}"
+                 id="c32">
+        <af:inputDate value="#{row.bindings.ExpiryDate.inputValue}"
+                      label="#{bindings.PolicyActiveOnlyViewObj1.hints.ExpiryDate.label}"
+                      required="#{bindings.PolicyActiveOnlyViewObj1.hints.ExpiryDate.mandatory}"
+                      shortDesc="#{bindings.PolicyActiveOnlyViewObj1.hints.ExpiryDate.tooltip}"
+                      id="id2">
+          <f:validator binding="#{row.bindings.ExpiryDate.validator}"/>
+          <af:convertDateTime pattern="#{bindings.PolicyActiveOnlyViewObj1.hints.ExpiryDate.format}"/>
+        </af:inputDate>
+      </af:column>
+      <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.FirstIssuanceDate.name}"
+                 sortable="false"
+                 headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.FirstIssuanceDate.label}"
+                 id="c41">
+        <af:inputDate value="#{row.bindings.FirstIssuanceDate.inputValue}"
+                      label="#{bindings.PolicyActiveOnlyViewObj1.hints.FirstIssuanceDate.label}"
+                      required="#{bindings.PolicyActiveOnlyViewObj1.hints.FirstIssuanceDate.mandatory}"
+                      shortDesc="#{bindings.PolicyActiveOnlyViewObj1.hints.FirstIssuanceDate.tooltip}"
+                      id="id3">
+          <f:validator binding="#{row.bindings.FirstIssuanceDate.validator}"/>
+          <af:convertDateTime pattern="#{bindings.PolicyActiveOnlyViewObj1.hints.FirstIssuanceDate.format}"/>
+        </af:inputDate>
+      </af:column>
+      <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.GuidelineTitle.name}"
+                 sortable="false"
+                 headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.GuidelineTitle.label}"
+                 id="c38">
+        <af:inputText value="#{row.bindings.GuidelineTitle.inputValue}"
+                      label="#{bindings.PolicyActiveOnlyViewObj1.hints.GuidelineTitle.label}"
+                      required="#{bindings.PolicyActiveOnlyViewObj1.hints.GuidelineTitle.mandatory}"
+                      columns="#{bindings.PolicyActiveOnlyViewObj1.hints.GuidelineTitle.displayWidth}"
+                      maximumLength="#{bindings.PolicyActiveOnlyViewObj1.hints.GuidelineTitle.precision}"
+                      shortDesc="#{bindings.PolicyActiveOnlyViewObj1.hints.GuidelineTitle.tooltip}"
+                      id="it8">
+          <f:validator binding="#{row.bindings.GuidelineTitle.validator}"/>
+        </af:inputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.Highlights.name}"
+                 sortable="false"
+                 headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.Highlights.label}"
+                 id="c33">
+        <af:inputText value="#{row.bindings.Highlights.inputValue}"
+                      label="#{bindings.PolicyActiveOnlyViewObj1.hints.Highlights.label}"
+                      required="#{bindings.PolicyActiveOnlyViewObj1.hints.Highlights.mandatory}"
+                      columns="#{bindings.PolicyActiveOnlyViewObj1.hints.Highlights.displayWidth}"
+                      maximumLength="#{bindings.PolicyActiveOnlyViewObj1.hints.Highlights.precision}"
+                      shortDesc="#{bindings.PolicyActiveOnlyViewObj1.hints.Highlights.tooltip}"
+                      id="it7">
+          <f:validator binding="#{row.bindings.Highlights.validator}"/>
+        </af:inputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.LastUpdated.name}"
+                 sortable="false"
+                 headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.LastUpdated.label}"
+                 id="c12">
+        <af:inputDate value="#{row.bindings.LastUpdated.inputValue}"
+                      label="#{bindings.PolicyActiveOnlyViewObj1.hints.LastUpdated.label}"
+                      required="#{bindings.PolicyActiveOnlyViewObj1.hints.LastUpdated.mandatory}"
+                      shortDesc="#{bindings.PolicyActiveOnlyViewObj1.hints.LastUpdated.tooltip}"
+                      id="id4">
+          <f:validator binding="#{row.bindings.LastUpdated.validator}"/>
+          <af:convertDateTime pattern="#{bindings.PolicyActiveOnlyViewObj1.hints.LastUpdated.format}"/>
+        </af:inputDate>
+      </af:column>
+      <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.NewIssuanceDate.name}"
+                 sortable="false"
+                 headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.NewIssuanceDate.label}"
+                 id="c29">
+        <af:inputDate value="#{row.bindings.NewIssuanceDate.inputValue}"
+                      label="#{bindings.PolicyActiveOnlyViewObj1.hints.NewIssuanceDate.label}"
+                      required="#{bindings.PolicyActiveOnlyViewObj1.hints.NewIssuanceDate.mandatory}"
+                      shortDesc="#{bindings.PolicyActiveOnlyViewObj1.hints.NewIssuanceDate.tooltip}"
+                      id="id5">
+          <f:validator binding="#{row.bindings.NewIssuanceDate.validator}"/>
+          <af:convertDateTime pattern="#{bindings.PolicyActiveOnlyViewObj1.hints.NewIssuanceDate.format}"/>
+        </af:inputDate>
+      </af:column>
+      <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.PolicyURL.name}"
+                 sortable="false"
+                 headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.PolicyURL.label}"
+                 id="c21">
+        <af:inputText value="#{row.bindings.PolicyURL.inputValue}"
+                      label="#{bindings.PolicyActiveOnlyViewObj1.hints.PolicyURL.label}"
+                      required="#{bindings.PolicyActiveOnlyViewObj1.hints.PolicyURL.mandatory}"
+                      columns="#{bindings.PolicyActiveOnlyViewObj1.hints.PolicyURL.displayWidth}"
+                      maximumLength="#{bindings.PolicyActiveOnlyViewObj1.hints.PolicyURL.precision}"
+                      shortDesc="#{bindings.PolicyActiveOnlyViewObj1.hints.PolicyURL.tooltip}"
+                      id="it14">
+          <f:validator binding="#{row.bindings.PolicyURL.validator}"/>
+        </af:inputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.PriorPublishEmailFlag.name}"
+                 sortable="false"
+                 headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.PriorPublishEmailFlag.label}"
+                 id="c30">
+        <af:inputText value="#{row.bindings.PriorPublishEmailFlag.inputValue}"
+                      label="#{bindings.PolicyActiveOnlyViewObj1.hints.PriorPublishEmailFlag.label}"
+                      required="#{bindings.PolicyActiveOnlyViewObj1.hints.PriorPublishEmailFlag.mandatory}"
+                      columns="#{bindings.PolicyActiveOnlyViewObj1.hints.PriorPublishEmailFlag.displayWidth}"
+                      maximumLength="#{bindings.PolicyActiveOnlyViewObj1.hints.PriorPublishEmailFlag.precision}"
+                      shortDesc="#{bindings.PolicyActiveOnlyViewObj1.hints.PriorPublishEmailFlag.tooltip}"
+                      id="it26">
+          <f:validator binding="#{row.bindings.PriorPublishEmailFlag.validator}"/>
+        </af:inputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.PublishToBNM.name}"
+                 sortable="false"
+                 headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.PublishToBNM.label}"
+                 id="c37">
+        <af:inputText value="#{row.bindings.PublishToBNM.inputValue}"
+                      label="#{bindings.PolicyActiveOnlyViewObj1.hints.PublishToBNM.label}"
+                      required="#{bindings.PolicyActiveOnlyViewObj1.hints.PublishToBNM.mandatory}"
+                      columns="#{bindings.PolicyActiveOnlyViewObj1.hints.PublishToBNM.displayWidth}"
+                      maximumLength="#{bindings.PolicyActiveOnlyViewObj1.hints.PublishToBNM.precision}"
+                      shortDesc="#{bindings.PolicyActiveOnlyViewObj1.hints.PublishToBNM.tooltip}"
+                      id="it27">
+          <f:validator binding="#{row.bindings.PublishToBNM.validator}"/>
+        </af:inputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.PublishedEmailFlag.name}"
+                 sortable="false"
+                 headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.PublishedEmailFlag.label}"
+                 id="c22">
+        <af:inputText value="#{row.bindings.PublishedEmailFlag.inputValue}"
+                      label="#{bindings.PolicyActiveOnlyViewObj1.hints.PublishedEmailFlag.label}"
+                      required="#{bindings.PolicyActiveOnlyViewObj1.hints.PublishedEmailFlag.mandatory}"
+                      columns="#{bindings.PolicyActiveOnlyViewObj1.hints.PublishedEmailFlag.displayWidth}"
+                      maximumLength="#{bindings.PolicyActiveOnlyViewObj1.hints.PublishedEmailFlag.precision}"
+                      shortDesc="#{bindings.PolicyActiveOnlyViewObj1.hints.PublishedEmailFlag.tooltip}"
+                      id="it9">
+          <f:validator binding="#{row.bindings.PublishedEmailFlag.validator}"/>
+        </af:inputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.PublishedURL.name}"
+                 sortable="false"
+                 headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.PublishedURL.label}"
+                 id="c20">
+        <af:inputText value="#{row.bindings.PublishedURL.inputValue}"
+                      label="#{bindings.PolicyActiveOnlyViewObj1.hints.PublishedURL.label}"
+                      required="#{bindings.PolicyActiveOnlyViewObj1.hints.PublishedURL.mandatory}"
+                      columns="#{bindings.PolicyActiveOnlyViewObj1.hints.PublishedURL.displayWidth}"
+                      maximumLength="#{bindings.PolicyActiveOnlyViewObj1.hints.PublishedURL.precision}"
+                      shortDesc="#{bindings.PolicyActiveOnlyViewObj1.hints.PublishedURL.tooltip}"
+                      id="it24">
+          <f:validator binding="#{row.bindings.PublishedURL.validator}"/>
+        </af:inputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.ReasonForRejection.name}"
+                 sortable="false"
+                 headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.ReasonForRejection.label}"
+                 id="c9">
+        <af:inputText value="#{row.bindings.ReasonForRejection.inputValue}"
+                      label="#{bindings.PolicyActiveOnlyViewObj1.hints.ReasonForRejection.label}"
+                      required="#{bindings.PolicyActiveOnlyViewObj1.hints.ReasonForRejection.mandatory}"
+                      columns="#{bindings.PolicyActiveOnlyViewObj1.hints.ReasonForRejection.displayWidth}"
+                      maximumLength="#{bindings.PolicyActiveOnlyViewObj1.hints.ReasonForRejection.precision}"
+                      shortDesc="#{bindings.PolicyActiveOnlyViewObj1.hints.ReasonForRejection.tooltip}"
+                      id="it23">
+          <f:validator binding="#{row.bindings.ReasonForRejection.validator}"/>
+        </af:inputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.RecordStatus.name}"
+                 sortable="false"
+                 headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.RecordStatus.label}"
+                 id="c8">
+        <af:inputText value="#{row.bindings.RecordStatus.inputValue}"
+                      label="#{bindings.PolicyActiveOnlyViewObj1.hints.RecordStatus.label}"
+                      required="#{bindings.PolicyActiveOnlyViewObj1.hints.RecordStatus.mandatory}"
+                      columns="#{bindings.PolicyActiveOnlyViewObj1.hints.RecordStatus.displayWidth}"
+                      maximumLength="#{bindings.PolicyActiveOnlyViewObj1.hints.RecordStatus.precision}"
+                      shortDesc="#{bindings.PolicyActiveOnlyViewObj1.hints.RecordStatus.tooltip}"
+                      id="it16">
+          <f:validator binding="#{row.bindings.RecordStatus.validator}"/>
+        </af:inputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.RefNum.name}"
+                 sortable="false"
+                 headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.RefNum.label}"
+                 id="c15">
+        <af:inputText value="#{row.bindings.RefNum.inputValue}"
+                      label="#{bindings.PolicyActiveOnlyViewObj1.hints.RefNum.label}"
+                      required="#{bindings.PolicyActiveOnlyViewObj1.hints.RefNum.mandatory}"
+                      columns="#{bindings.PolicyActiveOnlyViewObj1.hints.RefNum.displayWidth}"
+                      maximumLength="#{bindings.PolicyActiveOnlyViewObj1.hints.RefNum.precision}"
+                      shortDesc="#{bindings.PolicyActiveOnlyViewObj1.hints.RefNum.tooltip}"
+                      id="it2">
+          <f:validator binding="#{row.bindings.RefNum.validator}"/>
+        </af:inputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.SectionInCharge.name}"
+                 sortable="false"
+                 headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.SectionInCharge.label}"
+                 id="c5">
+        <af:inputText value="#{row.bindings.SectionInCharge.inputValue}"
+                      label="#{bindings.PolicyActiveOnlyViewObj1.hints.SectionInCharge.label}"
+                      required="#{bindings.PolicyActiveOnlyViewObj1.hints.SectionInCharge.mandatory}"
+                      columns="#{bindings.PolicyActiveOnlyViewObj1.hints.SectionInCharge.displayWidth}"
+                      maximumLength="#{bindings.PolicyActiveOnlyViewObj1.hints.SectionInCharge.precision}"
+                      shortDesc="#{bindings.PolicyActiveOnlyViewObj1.hints.SectionInCharge.tooltip}"
+                      id="it12">
+          <f:validator binding="#{row.bindings.SectionInCharge.validator}"/>
+        </af:inputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.SenderEmail.name}"
+                 sortable="false"
+                 headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.SenderEmail.label}"
+                 id="c35">
+        <af:inputText value="#{row.bindings.SenderEmail.inputValue}"
+                      label="#{bindings.PolicyActiveOnlyViewObj1.hints.SenderEmail.label}"
+                      required="#{bindings.PolicyActiveOnlyViewObj1.hints.SenderEmail.mandatory}"
+                      columns="#{bindings.PolicyActiveOnlyViewObj1.hints.SenderEmail.displayWidth}"
+                      maximumLength="#{bindings.PolicyActiveOnlyViewObj1.hints.SenderEmail.precision}"
+                      shortDesc="#{bindings.PolicyActiveOnlyViewObj1.hints.SenderEmail.tooltip}"
+                      id="it18">
+          <f:validator binding="#{row.bindings.SenderEmail.validator}"/>
+        </af:inputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.Summary.name}"
+                 sortable="false"
+                 headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.Summary.label}"
+                 id="c6">
+        <af:inputText value="#{row.bindings.Summary.inputValue}"
+                      label="#{bindings.PolicyActiveOnlyViewObj1.hints.Summary.label}"
+                      required="#{bindings.PolicyActiveOnlyViewObj1.hints.Summary.mandatory}"
+                      columns="#{bindings.PolicyActiveOnlyViewObj1.hints.Summary.displayWidth}"
+                      maximumLength="#{bindings.PolicyActiveOnlyViewObj1.hints.Summary.precision}"
+                      shortDesc="#{bindings.PolicyActiveOnlyViewObj1.hints.Summary.tooltip}"
+                      id="it33">
+          <f:validator binding="#{row.bindings.Summary.validator}"/>
+        </af:inputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.WhatsNewMonths.name}"
+                 sortable="false"
+                 headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.WhatsNewMonths.label}"
+                 id="c23">
+        <af:inputText value="#{row.bindings.WhatsNewMonths.inputValue}"
+                      label="#{bindings.PolicyActiveOnlyViewObj1.hints.WhatsNewMonths.label}"
+                      required="#{bindings.PolicyActiveOnlyViewObj1.hints.WhatsNewMonths.mandatory}"
+                      columns="#{bindings.PolicyActiveOnlyViewObj1.hints.WhatsNewMonths.displayWidth}"
+                      maximumLength="#{bindings.PolicyActiveOnlyViewObj1.hints.WhatsNewMonths.precision}"
+                      shortDesc="#{bindings.PolicyActiveOnlyViewObj1.hints.WhatsNewMonths.tooltip}"
+                      id="it17">
+          <f:validator binding="#{row.bindings.WhatsNewMonths.validator}"/>
+        </af:inputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.approverId.name}"
+                 sortable="false"
+                 headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.approverId.label}"
+                 id="c17">
+        <af:inputText value="#{row.bindings.approverId.inputValue}"
+                      label="#{bindings.PolicyActiveOnlyViewObj1.hints.approverId.label}"
+                      required="#{bindings.PolicyActiveOnlyViewObj1.hints.approverId.mandatory}"
+                      columns="#{bindings.PolicyActiveOnlyViewObj1.hints.approverId.displayWidth}"
+                      maximumLength="#{bindings.PolicyActiveOnlyViewObj1.hints.approverId.precision}"
+                      shortDesc="#{bindings.PolicyActiveOnlyViewObj1.hints.approverId.tooltip}"
+                      id="it1">
+          <f:validator binding="#{row.bindings.approverId.validator}"/>
+        </af:inputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.createdBy.name}"
+                 sortable="false"
+                 headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.createdBy.label}"
+                 id="c11">
+        <af:inputText value="#{row.bindings.createdBy.inputValue}"
+                      label="#{bindings.PolicyActiveOnlyViewObj1.hints.createdBy.label}"
+                      required="#{bindings.PolicyActiveOnlyViewObj1.hints.createdBy.mandatory}"
+                      columns="#{bindings.PolicyActiveOnlyViewObj1.hints.createdBy.displayWidth}"
+                      maximumLength="#{bindings.PolicyActiveOnlyViewObj1.hints.createdBy.precision}"
+                      shortDesc="#{bindings.PolicyActiveOnlyViewObj1.hints.createdBy.tooltip}"
+                      id="it31">
+          <f:validator binding="#{row.bindings.createdBy.validator}"/>
+        </af:inputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.isActive.name}"
+                 sortable="false"
+                 headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.isActive.label}"
+                 id="c42">
+        <af:inputText value="#{row.bindings.isActive.inputValue}"
+                      label="#{bindings.PolicyActiveOnlyViewObj1.hints.isActive.label}"
+                      required="#{bindings.PolicyActiveOnlyViewObj1.hints.isActive.mandatory}"
+                      columns="#{bindings.PolicyActiveOnlyViewObj1.hints.isActive.displayWidth}"
+                      maximumLength="#{bindings.PolicyActiveOnlyViewObj1.hints.isActive.precision}"
+                      shortDesc="#{bindings.PolicyActiveOnlyViewObj1.hints.isActive.tooltip}"
+                      id="it35">
+          <f:validator binding="#{row.bindings.isActive.validator}"/>
+        </af:inputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.isAmendmentRecord.name}"
+                 sortable="false"
+                 headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.isAmendmentRecord.label}"
+                 id="c27">
+        <af:inputText value="#{row.bindings.isAmendmentRecord.inputValue}"
+                      label="#{bindings.PolicyActiveOnlyViewObj1.hints.isAmendmentRecord.label}"
+                      required="#{bindings.PolicyActiveOnlyViewObj1.hints.isAmendmentRecord.mandatory}"
+                      columns="#{bindings.PolicyActiveOnlyViewObj1.hints.isAmendmentRecord.displayWidth}"
+                      maximumLength="#{bindings.PolicyActiveOnlyViewObj1.hints.isAmendmentRecord.precision}"
+                      shortDesc="#{bindings.PolicyActiveOnlyViewObj1.hints.isAmendmentRecord.tooltip}"
+                      id="it4">
+          <f:validator binding="#{row.bindings.isAmendmentRecord.validator}"/>
+        </af:inputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.itemId.name}"
+                 sortable="false"
+                 headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.itemId.label}"
+                 id="c16">
+        <af:inputText value="#{row.bindings.itemId.inputValue}"
+                      label="#{bindings.PolicyActiveOnlyViewObj1.hints.itemId.label}"
+                      required="#{bindings.PolicyActiveOnlyViewObj1.hints.itemId.mandatory}"
+                      columns="#{bindings.PolicyActiveOnlyViewObj1.hints.itemId.displayWidth}"
+                      maximumLength="#{bindings.PolicyActiveOnlyViewObj1.hints.itemId.precision}"
+                      shortDesc="#{bindings.PolicyActiveOnlyViewObj1.hints.itemId.tooltip}"
+                      id="it30">
+          <f:validator binding="#{row.bindings.itemId.validator}"/>
+        </af:inputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.keywords.name}"
+                 sortable="false"
+                 headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.keywords.label}"
+                 id="c40">
+        <af:inputText value="#{row.bindings.keywords.inputValue}"
+                      label="#{bindings.PolicyActiveOnlyViewObj1.hints.keywords.label}"
+                      required="#{bindings.PolicyActiveOnlyViewObj1.hints.keywords.mandatory}"
+                      columns="#{bindings.PolicyActiveOnlyViewObj1.hints.keywords.displayWidth}"
+                      maximumLength="#{bindings.PolicyActiveOnlyViewObj1.hints.keywords.precision}"
+                      shortDesc="#{bindings.PolicyActiveOnlyViewObj1.hints.keywords.tooltip}"
+                      id="it34">
+          <f:validator binding="#{row.bindings.keywords.validator}"/>
+        </af:inputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.partitionTypeId.name}"
+                 sortable="false"
+                 headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.partitionTypeId.label}"
+                 id="c28">
+        <af:inputText value="#{row.bindings.partitionTypeId.inputValue}"
+                      label="#{bindings.PolicyActiveOnlyViewObj1.hints.partitionTypeId.label}"
+                      required="#{bindings.PolicyActiveOnlyViewObj1.hints.partitionTypeId.mandatory}"
+                      columns="#{bindings.PolicyActiveOnlyViewObj1.hints.partitionTypeId.displayWidth}"
+                      maximumLength="#{bindings.PolicyActiveOnlyViewObj1.hints.partitionTypeId.precision}"
+                      shortDesc="#{bindings.PolicyActiveOnlyViewObj1.hints.partitionTypeId.tooltip}"
+                      id="it22">
+          <f:validator binding="#{row.bindings.partitionTypeId.validator}"/>
+          <af:convertNumber groupingUsed="false"
+                            pattern="#{bindings.PolicyActiveOnlyViewObj1.hints.partitionTypeId.format}"/>
+        </af:inputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.policyId.name}"
+                 sortable="false"
+                 headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.policyId.label}"
+                 id="c19">
+        <af:inputText value="#{row.bindings.policyId.inputValue}"
+                      label="#{bindings.PolicyActiveOnlyViewObj1.hints.policyId.label}"
+                      required="#{bindings.PolicyActiveOnlyViewObj1.hints.policyId.mandatory}"
+                      columns="#{bindings.PolicyActiveOnlyViewObj1.hints.policyId.displayWidth}"
+                      maximumLength="#{bindings.PolicyActiveOnlyViewObj1.hints.policyId.precision}"
+                      shortDesc="#{bindings.PolicyActiveOnlyViewObj1.hints.policyId.tooltip}"
+                      id="it15">
+          <f:validator binding="#{row.bindings.policyId.validator}"/>
+        </af:inputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.system.name}"
+                 sortable="false"
+                 headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.system.label}"
+                 id="c7">
+        <af:inputText value="#{row.bindings.system.inputValue}"
+                      label="#{bindings.PolicyActiveOnlyViewObj1.hints.system.label}"
+                      required="#{bindings.PolicyActiveOnlyViewObj1.hints.system.mandatory}"
+                      columns="#{bindings.PolicyActiveOnlyViewObj1.hints.system.displayWidth}"
+                      maximumLength="#{bindings.PolicyActiveOnlyViewObj1.hints.system.precision}"
+                      shortDesc="#{bindings.PolicyActiveOnlyViewObj1.hints.system.tooltip}"
+                      id="it6">
+          <f:validator binding="#{row.bindings.system.validator}"/>
+        </af:inputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.updatedBy.name}"
+                 sortable="false"
+                 headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.updatedBy.label}"
+                 id="c39">
+        <af:inputText value="#{row.bindings.updatedBy.inputValue}"
+                      label="#{bindings.PolicyActiveOnlyViewObj1.hints.updatedBy.label}"
+                      required="#{bindings.PolicyActiveOnlyViewObj1.hints.updatedBy.mandatory}"
+                      columns="#{bindings.PolicyActiveOnlyViewObj1.hints.updatedBy.displayWidth}"
+                      maximumLength="#{bindings.PolicyActiveOnlyViewObj1.hints.updatedBy.precision}"
+                      shortDesc="#{bindings.PolicyActiveOnlyViewObj1.hints.updatedBy.tooltip}"
+                      id="it5">
+          <f:validator binding="#{row.bindings.updatedBy.validator}"/>
+        </af:inputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.Sectors.name}"
+                 sortable="false"
+                 headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.Sectors.label}"
+                 id="c4">
+        <af:inputText value="#{row.bindings.Sectors.inputValue}"
+                      label="#{bindings.PolicyActiveOnlyViewObj1.hints.Sectors.label}"
+                      required="#{bindings.PolicyActiveOnlyViewObj1.hints.Sectors.mandatory}"
+                      columns="#{bindings.PolicyActiveOnlyViewObj1.hints.Sectors.displayWidth}"
+                      maximumLength="#{bindings.PolicyActiveOnlyViewObj1.hints.Sectors.precision}"
+                      shortDesc="#{bindings.PolicyActiveOnlyViewObj1.hints.Sectors.tooltip}"
+                      id="it20">
+          <f:validator binding="#{row.bindings.Sectors.validator}"/>
+        </af:inputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.InstitutionTypes.name}"
+                 sortable="false"
+                 headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.InstitutionTypes.label}"
+                 id="c18">
+        <af:inputText value="#{row.bindings.InstitutionTypes.inputValue}"
+                      label="#{bindings.PolicyActiveOnlyViewObj1.hints.InstitutionTypes.label}"
+                      required="#{bindings.PolicyActiveOnlyViewObj1.hints.InstitutionTypes.mandatory}"
+                      columns="#{bindings.PolicyActiveOnlyViewObj1.hints.InstitutionTypes.displayWidth}"
+                      maximumLength="#{bindings.PolicyActiveOnlyViewObj1.hints.InstitutionTypes.precision}"
+                      shortDesc="#{bindings.PolicyActiveOnlyViewObj1.hints.InstitutionTypes.tooltip}"
+                      id="it32">
+          <f:validator binding="#{row.bindings.InstitutionTypes.validator}"/>
+        </af:inputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.IssuingDepartment.name}"
+                 sortable="false"
+                 headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.IssuingDepartment.label}"
+                 id="c25">
+        <af:inputText value="#{row.bindings.IssuingDepartment.inputValue}"
+                      label="#{bindings.PolicyActiveOnlyViewObj1.hints.IssuingDepartment.label}"
+                      required="#{bindings.PolicyActiveOnlyViewObj1.hints.IssuingDepartment.mandatory}"
+                      columns="#{bindings.PolicyActiveOnlyViewObj1.hints.IssuingDepartment.displayWidth}"
+                      maximumLength="#{bindings.PolicyActiveOnlyViewObj1.hints.IssuingDepartment.precision}"
+                      shortDesc="#{bindings.PolicyActiveOnlyViewObj1.hints.IssuingDepartment.tooltip}"
+                      id="it25">
+          <f:validator binding="#{row.bindings.IssuingDepartment.validator}"/>
+        </af:inputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.RelavantAct.name}"
+                 sortable="false"
+                 headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.RelavantAct.label}"
+                 id="c26">
+        <af:inputText value="#{row.bindings.RelavantAct.inputValue}"
+                      label="#{bindings.PolicyActiveOnlyViewObj1.hints.RelavantAct.label}"
+                      required="#{bindings.PolicyActiveOnlyViewObj1.hints.RelavantAct.mandatory}"
+                      columns="#{bindings.PolicyActiveOnlyViewObj1.hints.RelavantAct.displayWidth}"
+                      maximumLength="#{bindings.PolicyActiveOnlyViewObj1.hints.RelavantAct.precision}"
+                      shortDesc="#{bindings.PolicyActiveOnlyViewObj1.hints.RelavantAct.tooltip}"
+                      id="it3">
+          <f:validator binding="#{row.bindings.RelavantAct.validator}"/>
+        </af:inputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.AttachmentId.name}"
+                 sortable="false"
+                 headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.AttachmentId.label}"
+                 id="c13">
+        <af:inputText value="#{row.bindings.AttachmentId.inputValue}"
+                      label="#{bindings.PolicyActiveOnlyViewObj1.hints.AttachmentId.label}"
+                      required="#{bindings.PolicyActiveOnlyViewObj1.hints.AttachmentId.mandatory}"
+                      columns="#{bindings.PolicyActiveOnlyViewObj1.hints.AttachmentId.displayWidth}"
+                      maximumLength="#{bindings.PolicyActiveOnlyViewObj1.hints.AttachmentId.precision}"
+                      shortDesc="#{bindings.PolicyActiveOnlyViewObj1.hints.AttachmentId.tooltip}"
+                      id="it28">
+          <f:validator binding="#{row.bindings.AttachmentId.validator}"/>
+        </af:inputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.Category.name}"
+                 sortable="false"
+                 headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.Category.label}"
+                 id="c31">
+        <af:inputText value="#{row.bindings.Category.inputValue}"
+                      label="#{bindings.PolicyActiveOnlyViewObj1.hints.Category.label}"
+                      required="#{bindings.PolicyActiveOnlyViewObj1.hints.Category.mandatory}"
+                      columns="#{bindings.PolicyActiveOnlyViewObj1.hints.Category.displayWidth}"
+                      maximumLength="#{bindings.PolicyActiveOnlyViewObj1.hints.Category.precision}"
+                      shortDesc="#{bindings.PolicyActiveOnlyViewObj1.hints.Category.tooltip}"
+                      id="it11">
+          <f:validator binding="#{row.bindings.Category.validator}"/>
+        </af:inputText>
+      </af:column>
+    </af:table>
+  </af:panelCollection>
+</ui:composition>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="btf_InternalFaqs">
+    <template-reference>
+      <document id="__2">/WEB-INF/PageFlows/template/RH-task-flow-templateForException.xml</document>
+      <id id="__1">RH-task-flow-templateForException</id>
+    </template-reference>
+    <default-activity id="__3">getInsernalUserFaqManagementDetails</default-activity>
+    <managed-bean id="__12">
+      <managed-bean-name id="__11">backing_FaqsPage</managed-bean-name>
+      <managed-bean-class id="__10">gov.bnm.view.rh.backingBeans.FaqsPage</managed-bean-class>
+      <managed-bean-scope id="__13">backingBean</managed-bean-scope>
+    </managed-bean>
+    <method-call id="getInsernalUserFaqManagementDetails">
+      <method>#{bindings.getInsernalUserFaqManagementDetails.execute}</method>
+      <outcome id="__4">
+        <fixed-outcome>getInsernalUserFaqManagementDetails</fixed-outcome>
+      </outcome>
+    </method-call>
+    <view id="FaqsPage">
+      <page>/jsff/FaqsPage.jsff</page>
+      <input-page-parameter>
+        <from-value>IM</from-value>
+        <to-value>#{pageFlowScope.faqFromType}</to-value>
+      </input-page-parameter>
+    </view>
+    <control-flow-rule id="__5">
+      <from-activity-id id="__6">getInsernalUserFaqManagementDetails</from-activity-id>
+      <control-flow-case id="__8">
+        <from-outcome id="__7">getInsernalUserFaqManagementDetails</from-outcome>
+        <to-activity-id id="__9">FaqsPage</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

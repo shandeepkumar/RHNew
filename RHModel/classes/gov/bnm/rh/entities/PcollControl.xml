@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="PcollControl"
+  Version="11.1.1.64.93"
+  InheritPersonalization="true"
+  DBObjectType="table"
+  DBObjectName="dbo.PCOLL_CONTROL"
+  AliasName="PcollControl"
+  BindingStyle="JDBC"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <AttrArray Name="_publishEvents"/>
+  </DesignTime>
+  <Attribute
+    Name="tabname"
+    IsNotNull="true"
+    Precision="128"
+    ColumnName="tabname"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="varchar"
+    TableName="dbo.PCOLL_CONTROL"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="128"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="rowcreatedate"
+    ColumnName="rowcreatedate"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="datetime"
+    TableName="dbo.PCOLL_CONTROL">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="23"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="createdate"
+    ColumnName="createdate"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="datetime"
+    TableName="dbo.PCOLL_CONTROL">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="23"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="updatedate"
+    ColumnName="updatedate"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="datetime"
+    TableName="dbo.PCOLL_CONTROL">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="23"/>
+    </DesignTime>
+  </Attribute>
+  <Key
+    Name="PCOLLCONTROLpk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PCOLL_CONTROL_pk"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="gov.bnm.rh.entities.PcollControl.tabname"/>
+    </AttrArray>
+  </Key>
+</Entity>

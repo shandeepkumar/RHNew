@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <MethodCall
+      id="MethodCall4">
+      <property
+         name="activityId">getSupportingDocumentsRequests</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>getSupportingDocumentsRequests&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">125.09766</property>
+      <property
+         name="x">138.05566</property>
+   </MethodCall>
+   <View
+      id="View5">
+      <property
+         name="activityId">SupportingDocumentsRequests</property>
+      <property
+         name="page">/jsff/SupportingDocumentsRequests.jsff</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>SupportingDocumentsRequests&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">107.74121</property>
+      <property
+         name="x">408.0</property>
+      <property
+         name="pageFragment">true</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase6"
+      from="MethodCall4"
+      to="View5">
+      <property
+         name="fromOutcome">getSupportingDocumentsRequests</property>
+      <property
+         name="sdm:polyPoints">R50,179.05566,124.74707,367.0,107.390625,L50</property>
+   </ControlFlowCase>
+</SDM>

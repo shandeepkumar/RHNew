@@ -1,0 +1,405 @@
+package gov.bnm.view.rh.backingBeans;
+
+import gov.bnm.rh.views.EnquiryfaqForFaqManViewRowImpl;
+import gov.bnm.view.rh.constant.Constants;
+import gov.bnm.view.rh.utils.ADFUtils;
+
+import gov.bnm.view.rh.utils.BaseUtil;
+
+import gov.bnm.view.rh.utils.CommonRHUtil;
+
+import gov.bnm.view.rh.utils.JSFUtils;
+
+import gov.view.common.utils.UtilCommon;
+
+import oracle.adf.model.binding.DCIteratorBinding;
+import oracle.adf.view.rich.component.rich.data.RichTable;
+import oracle.adf.view.rich.component.rich.input.RichChooseDate;
+import oracle.adf.view.rich.component.rich.input.RichInputDate;
+import oracle.adf.view.rich.component.rich.input.RichInputText;
+import oracle.adf.view.rich.component.rich.input.RichTextEditor;
+import oracle.adf.view.rich.component.rich.layout.RichPanelFormLayout;
+import oracle.adf.view.rich.component.rich.layout.RichPanelGroupLayout;
+import oracle.adf.view.rich.component.rich.layout.RichPanelLabelAndMessage;
+import oracle.adf.view.rich.component.rich.layout.RichPanelStretchLayout;
+import oracle.adf.view.rich.component.rich.layout.RichPanelTabbed;
+import oracle.adf.view.rich.component.rich.layout.RichShowDetailItem;
+import oracle.adf.view.rich.component.rich.nav.RichCommandButton;
+import oracle.adf.view.rich.component.rich.output.RichOutputFormatted;
+import oracle.adf.view.rich.component.rich.output.RichOutputText;
+import oracle.adf.view.rich.component.rich.output.RichSpacer;
+
+import oracle.adf.view.rich.context.AdfFacesContext;
+
+import oracle.binding.BindingContainer;
+import oracle.binding.OperationBinding;
+
+import oracle.jbo.Row;
+import oracle.jbo.ViewObject;
+
+import org.apache.log4j.Logger;
+import org.apache.myfaces.trinidad.component.UIXGroup;
+import org.apache.myfaces.trinidad.event.SelectionEvent;
+
+public class FaqsPage {
+    static Logger log = Logger.getLogger(FaqsPage.class);
+
+    private RichPanelStretchLayout psl1;
+    private RichPanelGroupLayout pgl1;
+    private RichPanelGroupLayout pgl2;
+    private RichOutputText ot1;
+    private RichSpacer s1;
+    private RichTable t1;
+    private RichSpacer s2;
+    private RichInputText it1;
+    private RichPanelGroupLayout pgl3;
+    private RichSpacer s3;
+    private RichCommandButton cb1;
+    private RichCommandButton cb2;
+    private RichSpacer s4;
+    private RichInputText it2;
+    private RichTextEditor rte1;
+    private RichCommandButton cb3;
+    private RichPanelGroupLayout pgl4;
+    private RichCommandButton cb4;
+    private RichCommandButton cb5;
+    private RichTable t2;
+    private RichOutputFormatted of1;
+    private RichPanelFormLayout pfl1;
+    private RichPanelLabelAndMessage plam1;
+    private RichOutputText ot2;
+    private RichPanelLabelAndMessage plam2;
+    private RichPanelTabbed pt1;
+    private RichShowDetailItem sdi1;
+    
+    public void faqTableSelectionListener(SelectionEvent selectionEvent) {
+        JSFUtils.invokeEL("#{bindings.EnquiryfaqForFaqManView1.collectionModel.makeCurrent}",
+                          new Class[] { SelectionEvent.class },
+                          new Object[] { selectionEvent });
+        // get the selected row , by this you can get any attribute of that row
+        Row selectedRow =
+            (Row)JSFUtils.evaluateEL("#{bindings.EnquiryfaqForFaqManView1.currentRow}"); // get the current selected row
+        try {
+        
+            String Abstract11 =
+                BaseUtil.getStr(selectedRow.getAttribute("Abstract11"));
+                        log.info("abstract1 before::"+Abstract11);
+//            this.getRte1().setValue(UtilCommon.decryptSpecialChar(Abstract11));
+                selectedRow.setAttribute("Abstract11",
+                                         UtilCommon.decryptSpecialChar(Abstract11));
+                        log.info("abstract1 after::"+selectedRow.getAttribute("Abstract11"));
+        } catch (Exception e) {
+            log.info("Exception @notOperationTableSelectionListener .. " + e);
+        }
+    }
+    public void setPsl1(RichPanelStretchLayout psl1) {
+        this.psl1 = psl1;
+    }
+
+    public RichPanelStretchLayout getPsl1() {
+        return psl1;
+    }
+
+    public void setPgl1(RichPanelGroupLayout pgl1) {
+        this.pgl1 = pgl1;
+    }
+
+    public RichPanelGroupLayout getPgl1() {
+        return pgl1;
+    }
+
+    public void setPgl2(RichPanelGroupLayout pgl2) {
+        this.pgl2 = pgl2;
+    }
+
+    public RichPanelGroupLayout getPgl2() {
+        return pgl2;
+    }
+
+    public void setOt1(RichOutputText ot1) {
+        this.ot1 = ot1;
+    }
+
+    public RichOutputText getOt1() {
+        return ot1;
+    }
+
+    public void setS1(RichSpacer s1) {
+        this.s1 = s1;
+    }
+
+    public RichSpacer getS1() {
+        return s1;
+    }
+
+
+    public void setT1(RichTable t1) {
+        this.t1 = t1;
+    }
+
+    public RichTable getT1() {
+        return t1;
+    }
+
+    public void setS2(RichSpacer s2) {
+        this.s2 = s2;
+    }
+
+    public RichSpacer getS2() {
+        return s2;
+    }
+
+
+    public void setIt1(RichInputText it1) {
+        this.it1 = it1;
+    }
+
+    public RichInputText getIt1() {
+        return it1;
+    }
+
+    public void setPgl3(RichPanelGroupLayout pgl3) {
+        this.pgl3 = pgl3;
+    }
+
+    public RichPanelGroupLayout getPgl3() {
+        return pgl3;
+    }
+
+    public void setS3(RichSpacer s3) {
+        this.s3 = s3;
+    }
+
+    public RichSpacer getS3() {
+        return s3;
+    }
+
+    public void setCb1(RichCommandButton cb1) {
+        this.cb1 = cb1;
+    }
+
+    public RichCommandButton getCb1() {
+        return cb1;
+    }
+
+    public void setCb2(RichCommandButton cb2) {
+        this.cb2 = cb2;
+    }
+
+    public RichCommandButton getCb2() {
+        return cb2;
+    }
+
+    public void setS4(RichSpacer s4) {
+        this.s4 = s4;
+    }
+
+    public RichSpacer getS4() {
+        return s4;
+    }
+
+    public String doPublishFaq() {
+        doFaqCommit(Constants.RECORD_STATUS_ACTIVE);
+        return null;
+    }
+
+    public String doArchiveFaq() {
+        doFaqCommit(Constants.RECORD_STATUS_ARCHIVE);
+        return null;
+    }
+
+    public String doFaqUpdate() {
+        doFaqCommit("UPDATE");
+        AdfFacesContext.getCurrentInstance().getPageFlowScope().put("updateSts",
+                                                                    "N");
+        return null;
+    }
+
+    public String getUpdateStatus() {
+        AdfFacesContext.getCurrentInstance().getPageFlowScope().put("updateSts",
+                                                                    "Y");
+        AdfFacesContext.getCurrentInstance().addPartialTarget(this.getIt2());
+        AdfFacesContext.getCurrentInstance().addPartialTarget(this.getRte1());
+        return null;
+    }
+
+    public String doCancel() {
+
+        BindingContainer bindings = ADFUtils.getBindingContainer();
+        OperationBinding operationBinding =
+            bindings.getOperationBinding("Rollback");
+        Object result = operationBinding.execute();
+        AdfFacesContext.getCurrentInstance().getPageFlowScope().put("updateSts",
+                                                                    "N");
+        AdfFacesContext.getCurrentInstance().addPartialTarget(this.getIt2());
+        AdfFacesContext.getCurrentInstance().addPartialTarget(this.getRte1());
+        return null;
+    }
+
+    private void doFaqCommit(String recordStatus) {
+        DCIteratorBinding enquiryfaqForFaqManView1Iterator =
+            ADFUtils.findIterator("EnquiryfaqForFaqManView1Iterator");
+        
+        
+        //EnquiryfaqForFaqManViewRowImpl faqRowImpl =(EnquiryfaqForFaqManViewRowImpl)enquiryfaqForFaqManView1Iterator.getViewObject().getCurrentRow();
+        if (!recordStatus.equals("UPDATE")) {
+            ViewObject vo = enquiryfaqForFaqManView1Iterator.getViewObject();
+            EnquiryfaqForFaqManViewRowImpl rr = null;
+            int i = 0;
+            int j = 0;
+            boolean flag = false;
+            long rowc = vo.getEstimatedRowCount();
+            for (int f = 1; f <= rowc; f++) {
+                if (i == 0) {
+                    rr = (EnquiryfaqForFaqManViewRowImpl)vo.first();
+                } else {
+                    rr = (EnquiryfaqForFaqManViewRowImpl)vo.next();
+                }
+                i++;
+                flag = false;
+                if (rr.getMark() != null) {
+                    flag = (Boolean)rr.getMark();
+                    if (flag) {
+                        rr.setfaqStatus(recordStatus);
+                    }
+                }
+            }
+            //faqRowImpl.setfaqStatus(recordStatus);
+        } else {
+            EnquiryfaqForFaqManViewRowImpl faqRowImpl =
+                (EnquiryfaqForFaqManViewRowImpl)enquiryfaqForFaqManView1Iterator.getViewObject().getCurrentRow();
+            faqRowImpl.setAbstract11(CommonRHUtil.alignHtml(faqRowImpl.getAbstract11()));
+        }
+        //    faqRowImpl.setupdatedBy("login username");
+        commitAction();
+
+    }
+
+    private String commitAction() {
+        BindingContainer bindings = ADFUtils.getBindingContainer();
+        OperationBinding operationBinding =
+            bindings.getOperationBinding("Commit");
+        Object result = operationBinding.execute();
+        if (!operationBinding.getErrors().isEmpty()) {
+            ADFUtils.showInfoMessage(Constants.ERROR_MESSAGE_CONTACT);
+            log.error(" ... " + operationBinding.getErrors());
+        } else {
+            ADFUtils.showInfoMessage(Constants.DATA_SAVE_SUCCESSFULLY);
+        }
+        return null;
+    }
+
+    public void setIt2(RichInputText it2) {
+        this.it2 = it2;
+    }
+
+    public RichInputText getIt2() {
+        return it2;
+    }
+
+
+    public void setRte1(RichTextEditor rte1) {
+        this.rte1 = rte1;
+    }
+
+    public RichTextEditor getRte1() {
+        return rte1;
+    }
+
+
+    public void setCb3(RichCommandButton cb3) {
+        this.cb3 = cb3;
+    }
+
+    public RichCommandButton getCb3() {
+        return cb3;
+    }
+
+    public void setPgl4(RichPanelGroupLayout pgl4) {
+        this.pgl4 = pgl4;
+    }
+
+    public RichPanelGroupLayout getPgl4() {
+        return pgl4;
+    }
+
+    public void setCb4(RichCommandButton cb4) {
+        this.cb4 = cb4;
+    }
+
+    public RichCommandButton getCb4() {
+        return cb4;
+    }
+
+    public void setCb5(RichCommandButton cb5) {
+        this.cb5 = cb5;
+    }
+
+    public RichCommandButton getCb5() {
+        return cb5;
+    }
+
+    public void setT2(RichTable t2) {
+        this.t2 = t2;
+    }
+
+    public RichTable getT2() {
+        return t2;
+    }
+
+    public void setOf1(RichOutputFormatted of1) {
+        this.of1 = of1;
+    }
+
+    public RichOutputFormatted getOf1() {
+        return of1;
+    }
+
+    public void setPfl1(RichPanelFormLayout pfl1) {
+        this.pfl1 = pfl1;
+    }
+
+    public RichPanelFormLayout getPfl1() {
+        return pfl1;
+    }
+
+    public void setPlam1(RichPanelLabelAndMessage plam1) {
+        this.plam1 = plam1;
+    }
+
+    public RichPanelLabelAndMessage getPlam1() {
+        return plam1;
+    }
+
+    public void setOt2(RichOutputText ot2) {
+        this.ot2 = ot2;
+    }
+
+    public RichOutputText getOt2() {
+        return ot2;
+    }
+
+    public void setPlam2(RichPanelLabelAndMessage plam2) {
+        this.plam2 = plam2;
+    }
+
+    public RichPanelLabelAndMessage getPlam2() {
+        return plam2;
+    }
+
+    public void setPt1(RichPanelTabbed pt1) {
+        this.pt1 = pt1;
+    }
+
+    public RichPanelTabbed getPt1() {
+        return pt1;
+    }
+
+    public void setSdi1(RichShowDetailItem sdi1) {
+        this.sdi1 = sdi1;
+    }
+
+    public RichShowDetailItem getSdi1() {
+        return sdi1;
+    }
+}

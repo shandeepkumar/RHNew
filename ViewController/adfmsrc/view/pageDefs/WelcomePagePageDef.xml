@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.64.93" id="WelcomePagePageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="Templates.RHTemplateOthPageDef" id="pageTemplateBinding"
+          Refresh="ifNeeded"/>
+    <taskFlow id="btf_PolicyPreface1"
+              taskFlowId="/WEB-INF/PageFlows/taskFlow/btf_PolicyPreface.xml#btf_PolicyPreface"
+              activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+  </executables>
+  <bindings/>
+</pageDefinition>

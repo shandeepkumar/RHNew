@@ -1,0 +1,71 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<task-flow-registry xmlns="http://xmlns.oracle.com/adf/controller/rc">
+   <task-flow-descriptor path="META-INF/adfc-config.xml" id="" type="" uses-page-fragments="false" library-internal="false" remote-invocable="false" train="false"/>
+   <task-flow-descriptor path="WEB-INF/PageFlows/taskFlow/btf_TestTask.xml" id="btf_TestTask" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false"/>
+   <task-flow-descriptor path="WEB-INF/PageFlows/taskFlow/navigation/nav_AdminAgingReportPage.xml" id="nav_AdminAgingReportPage" type="task-flow-definition" uses-page-fragments="false" library-internal="false" remote-invocable="false" train="false"/>
+   <task-flow-descriptor path="WEB-INF/PageFlows/taskFlow/btf_InternalFaqs.xml" id="btf_InternalFaqs" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false"/>
+   <task-flow-descriptor path="WEB-INF/PageFlows/taskFlow/navigation/nav_FaqPage.xml" id="nav_FaqPage" type="task-flow-definition" uses-page-fragments="false" library-internal="false" remote-invocable="false" train="false"/>
+   <task-flow-descriptor path="WEB-INF/PageFlows/taskFlow/btf_PolicyApproval.xml" id="btf_PolicyApproval" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false"/>
+   <task-flow-descriptor path="WEB-INF/PageFlows/taskFlow/navigation/nav_PolicyExpiryInternalPage.xml" id="nav_PolicyExpiryInternalPage" type="task-flow-definition" uses-page-fragments="false" library-internal="false" remote-invocable="false" train="false"/>
+   <task-flow-descriptor path="WEB-INF/PageFlows/taskFlow/btf_PolicyMaintenance.xml" id="btf_PolicyMaintenance" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false"/>
+   <task-flow-descriptor path="WEB-INF/PageFlows/taskFlow/search/btf_KeywordPolicySearch.xml" id="btf_KeywordPolicySearch" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false"/>
+   <task-flow-descriptor path="WEB-INF/PageFlows/taskFlow/navigation/nav_PolicyMaintenancePage.xml" id="nav_PolicyMaintenancePage" type="task-flow-definition" uses-page-fragments="false" library-internal="false" remote-invocable="false" train="false"/>
+   <task-flow-descriptor path="WEB-INF/PageFlows/taskFlow/search/btf_CateTreeIssDepartment.xml" id="btf_CateTreeIssDepartment" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false"/>
+   <task-flow-descriptor path="WEB-INF/PageFlows/taskFlow/navigation/nav_AgingReportPage.xml" id="nav_AgingReportPage" type="task-flow-definition" uses-page-fragments="false" library-internal="false" remote-invocable="false" train="false"/>
+   <task-flow-descriptor path="WEB-INF/PageFlows/taskFlow/btf_RH_ManageAppForm.xml" id="btf_RH_ManageAppForm" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false">
+      <input-parameter name="fldTokenId"/>
+      <input-parameter name="fldPolicyId"/>
+      <input-parameter name="fldUserType"/>
+      <input-parameter name="fldUserTask"/>
+      <input-parameter name="fldFiid"/>
+      <input-parameter name="fldUserid"/>
+      <input-parameter name="fldFitype"/>
+      <input-parameter name="fldUserAction"/>
+   </task-flow-descriptor>
+   <task-flow-descriptor path="WEB-INF/PageFlows/taskFlow/navigation/nav_SupportDocAdminPage.xml" id="nav_SupportDocAdminPage" type="task-flow-definition" uses-page-fragments="false" library-internal="false" remote-invocable="false" train="false"/>
+   <task-flow-descriptor path="WEB-INF/PageFlows/taskFlow/search/CateTreePolicySearch.xml" id="CateTreePolicySearch" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false">
+      <input-parameter name="pageType"/>
+   </task-flow-descriptor>
+   <task-flow-descriptor path="WEB-INF/PageFlows/taskFlow/btf_AgingReport.xml" id="btf_AgingReport" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false"/>
+   <task-flow-descriptor path="WEB-INF/PageFlows/template/RH-task-flow-templateForException.xml" id="RH-task-flow-templateForException" type="task-flow-template" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false"/>
+   <task-flow-descriptor path="WEB-INF/PageFlows/taskFlow/btf_SupportingDocumentsRequests.xml" id="btf_SupportingDocumentsRequests" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false"/>
+   <task-flow-descriptor path="WEB-INF/PageFlows/taskFlow/btf_Enquiries.xml" id="btf_Enquiries" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false"/>
+   <task-flow-descriptor path="WEB-INF/btf_Consultation.xml" id="btf_Consultation" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false"/>
+   <task-flow-descriptor path="WEB-INF/PageFlows/taskFlow/navigation/nav_PrefixPage.xml" id="nav_PrefixPage" type="task-flow-definition" uses-page-fragments="false" library-internal="false" remote-invocable="false" train="false"/>
+   <task-flow-descriptor path="WEB-INF/PageFlows/taskFlow/search/btf_PolicyListing.xml" id="btf_PolicyListing" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false"/>
+   <task-flow-descriptor path="WEB-INF/PageFlows/taskFlow/btf_PolicyPublishing.xml" id="btf_PolicyPublishing" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false"/>
+   <task-flow-descriptor path="WEB-INF/PageFlows/taskFlow/navigation/nav_FaqInternalPage.xml" id="nav_FaqInternalPage" type="task-flow-definition" uses-page-fragments="false" library-internal="false" remote-invocable="false" train="false"/>
+   <task-flow-descriptor path="WEB-INF/PageFlows/taskFlow/btf_WhatsNewPolicy.xml" id="btf_WhatsNewPolicy" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false"/>
+   <task-flow-descriptor path="WEB-INF/PageFlows/taskFlow/btf_PolicyPreface.xml" id="btf_PolicyPreface" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false">
+      <input-parameter name="pageType"/>
+      <input-parameter name="openTap"/>
+   </task-flow-descriptor>
+   <task-flow-descriptor path="WEB-INF/PageFlows/taskFlow/btf_RH_ManageFunction.xml" id="btf_RH_ManageFunction" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false">
+      <input-parameter name="fldDepartmentId"/>
+      <input-parameter name="fldTokenId"/>
+      <input-parameter name="fldPolicyId"/>
+      <input-parameter name="fldUserType"/>
+      <input-parameter name="fldUserTask"/>
+      <input-parameter name="fldFiid"/>
+      <input-parameter name="fldUserid"/>
+      <input-parameter name="fldFitype"/>
+      <input-parameter name="fldUserAction"/>
+   </task-flow-descriptor>
+   <task-flow-descriptor path="WEB-INF/PageFlows/taskFlow/navigation/nav_EnquiriesInternalPage.xml" id="nav_EnquiriesInternalPage" type="task-flow-definition" uses-page-fragments="false" library-internal="false" remote-invocable="false" train="false"/>
+   <task-flow-descriptor path="WEB-INF/PageFlows/taskFlow/btf_Faqs.xml" id="btf_Faqs" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false"/>
+   <task-flow-descriptor path="WEB-INF/PageFlows/taskFlow/btf_RHMain.xml" id="btf_RHMain" type="task-flow-definition" uses-page-fragments="false" library-internal="false" remote-invocable="false" train="false">
+      <input-parameter name="fldDepartmentId"/>
+      <input-parameter name="fldTokenId"/>
+      <input-parameter name="fldPolicyId"/>
+      <input-parameter name="fldUserType"/>
+      <input-parameter name="fldFiid"/>
+      <input-parameter name="fldUserid"/>
+      <input-parameter name="fldFitype"/>
+      <input-parameter name="fldUserAction"/>
+   </task-flow-descriptor>
+   <task-flow-descriptor path="WEB-INF/PageFlows/taskFlow/navigation/nav_EnquiriesPage.xml" id="nav_EnquiriesPage" type="task-flow-definition" uses-page-fragments="false" library-internal="false" remote-invocable="false" train="false"/>
+   <task-flow-descriptor path="WEB-INF/PageFlows/taskFlow/navigation/nav_PolicyExpiryAdminPage.xml" id="nav_PolicyExpiryAdminPage" type="task-flow-definition" uses-page-fragments="false" library-internal="false" remote-invocable="false" train="false"/>
+   <task-flow-descriptor path="WEB-INF/PageFlows/taskFlow/navigation/nav_PolicyPublishingPage.xml" id="nav_PolicyPublishingPage" type="task-flow-definition" uses-page-fragments="false" library-internal="false" remote-invocable="false" train="false"/>
+   <task-flow-descriptor path="WEB-INF/PageFlows/taskFlow/btf_AgingResponse.xml" id="btf_AgingResponse" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false"/>
+   <task-flow-descriptor path="WEB-INF/PageFlows/taskFlow/navigation/nav_SupportDocInternalPage.xml" id="nav_SupportDocInternalPage" type="task-flow-definition" uses-page-fragments="false" library-internal="false" remote-invocable="false" train="false"/>
+</task-flow-registry>

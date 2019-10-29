@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/RHSchedulerViewController/src/gov/bnm/scheduler/job
+END
+PolicyOnDayPublishingJob.java
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/RHSchedulerViewController/src/gov/bnm/scheduler/job/PolicyOnDayPublishingJob.java
+END
+EnquiryJob.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/RHSchedulerViewController/src/gov/bnm/scheduler/job/EnquiryJob.java
+END
+PolicyExpiryJob.java
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/RHSchedulerViewController/src/gov/bnm/scheduler/job/PolicyExpiryJob.java
+END
+PolicyPublishingJob.java
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/RHSchedulerViewController/src/gov/bnm/scheduler/job/PolicyPublishingJob.java
+END
+SupportingDocumentsJob.java
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/RHSchedulerViewController/src/gov/bnm/scheduler/job/SupportingDocumentsJob.java
+END

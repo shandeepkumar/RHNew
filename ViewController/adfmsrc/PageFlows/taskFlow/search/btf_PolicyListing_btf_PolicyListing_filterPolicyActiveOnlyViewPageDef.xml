@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.64.93"
+                id="btf_PolicyListing_btf_PolicyListing_filterPolicyActiveOnlyViewPageDef"
+                Package="PageFlows.taskFlow.search" SkipValidation="true">
+  <parameters/>
+  <executables/>
+  <bindings>
+    <methodAction id="filterPolicyActiveOnlyView" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="filterPolicyActiveOnlyView"
+                  IsViewObjectMethod="false"
+                  DataControl="RegBookAppModuleDataControl"
+                  InstanceName="RegBookAppModuleDataControl.dataProvider">
+      <NamedData NDName="orgId" NDValue="#{sessionScope.rhSession.fldOrgId}"
+                 NDType="java.lang.String"/>
+      <NamedData NDName="isInternalExternal"
+                 NDValue="#{sessionScope.rhSession.isInternalExternal}"
+                 NDType="java.lang.String"/>
+    </methodAction>
+  </bindings>
+</pageDefinition>

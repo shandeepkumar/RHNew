@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="btf_PolicyPreface">
+    <template-reference>
+      <document id="__1">/WEB-INF/PageFlows/template/RH-task-flow-templateForException.xml</document>
+      <id id="__2">RH-task-flow-templateForException</id>
+    </template-reference>
+    <default-activity id="__34">filterByPolicyIdToPreface1</default-activity>
+    <input-parameter-definition id="__37">
+      <name id="__36">pageType</name>
+      <value>#{pageFlowScope.pageType}</value>
+      <class>java.lang.String</class>
+    </input-parameter-definition>
+    <input-parameter-definition id="__9">
+      <name id="__10">openTap</name>
+      <value>#{pageFlowScope.openTap}</value>
+      <class>java.lang.String</class>
+    </input-parameter-definition>
+    <managed-bean id="__7">
+      <managed-bean-name id="__8">backing_jsff_PolicyPreface</managed-bean-name>
+      <managed-bean-class id="__6">gov.bnm.view.rh.backingBeans.PolicyPreface</managed-bean-class>
+      <managed-bean-scope id="__5">backingBean</managed-bean-scope>
+      <!--oracle-jdev-comment:managed-bean-jsp-link:1jsff/PolicyPreface.jsff-->
+    </managed-bean>
+    <view id="PolicyPreface">
+      <page>/jsff/PolicyPreface.jsff</page>
+    </view>
+    <method-call id="filterByPolicyId">
+      <method>#{bindings.filterByPolicyId.execute}</method>
+      <outcome id="__4">
+        <fixed-outcome>filterByPolicyId</fixed-outcome>
+      </outcome>
+    </method-call>
+    <view id="PolicyPublishingPage">
+      <page>/jsff/PolicyPublishingPage.jsff</page>
+      <input-page-parameter>
+        <from-value>PV</from-value>
+        <to-value>#{pageFlowScope.formType}</to-value>
+      </input-page-parameter>
+    </view>
+    <task-flow-return id="backCateTreePolicySearch">
+      <outcome id="__30">
+        <name>backCateTreePolicySearch</name>
+      </outcome>
+    </task-flow-return>
+    <method-call id="filterByPolicyIdToPreface">
+      <method>#{bindings.filterByPolicyIdToPreface.execute}</method>
+      <outcome id="__11">
+        <fixed-outcome>filterByPolicyIdToPreface</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="filterByPolicyIdToPreface1">
+      <method>#{bindings.filterByPolicyIdToPreface.execute}</method>
+      <outcome id="__3">
+        <fixed-outcome>filterByPolicyIdToPreface</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="onPageLoad">
+      <method>#{backingBeanScope.backing_jsff_PolicyPreface.onPageLoad}</method>
+      <outcome id="__49">
+        <fixed-outcome>success</fixed-outcome>
+      </outcome>
+    </method-call>
+    <control-flow-rule id="__15">
+      <from-activity-id id="__16">PolicyPreface</from-activity-id>
+      <control-flow-case id="__17">
+        <from-outcome id="__19">policyView</from-outcome>
+        <to-activity-id id="__18">filterByPolicyId</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__32">
+        <from-outcome id="__33">backCateTreePolicySearch</from-outcome>
+        <to-activity-id id="__31">backCateTreePolicySearch</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__20">
+      <from-activity-id id="__21">filterByPolicyId</from-activity-id>
+      <control-flow-case id="__23">
+        <from-outcome id="__24">filterByPolicyId</from-outcome>
+        <to-activity-id id="__22">PolicyPublishingPage</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__25">
+      <from-activity-id id="__26">PolicyPublishingPage</from-activity-id>
+      <control-flow-case id="__27">
+        <from-outcome id="__29">back</from-outcome>
+        <to-activity-id id="__28">filterByPolicyIdToPreface</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__12">
+      <from-activity-id id="__13">filterByPolicyIdToPreface</from-activity-id>
+      <control-flow-case id="__43">
+        <from-outcome id="__14">filterByPolicyIdToPreface</from-outcome>
+        <to-activity-id id="__42">PolicyPreface</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__35">
+      <from-activity-id id="__38">filterByPolicyIdToPreface1</from-activity-id>
+      <control-flow-case id="__40">
+        <from-outcome id="__39">filterByPolicyIdToPreface</from-outcome>
+        <to-activity-id id="__41">onPageLoad</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__44">
+      <from-activity-id id="__45">onPageLoad</from-activity-id>
+      <control-flow-case id="__46">
+        <from-outcome id="__48">success</from-outcome>
+        <to-activity-id id="__47">PolicyPreface</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

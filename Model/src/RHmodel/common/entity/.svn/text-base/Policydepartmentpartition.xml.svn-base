@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Policydepartmentpartition"
+  Version="11.1.1.64.93"
+  InheritPersonalization="true"
+  DBObjectType="table"
+  DBObjectName="dbo.PolicyDepartmentPartition"
+  AliasName="Policydepartmentpartition"
+  BindingStyle="JDBC"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <AttrArray Name="_publishEvents"/>
+  </DesignTime>
+  <Attribute
+    Name="itemiId"
+    IsNotNull="true"
+    Precision="50"
+    ColumnName="itemiId"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="varchar"
+    TableName="dbo.PolicyDepartmentPartition"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="departmentId"
+    IsNotNull="true"
+    Precision="20"
+    ColumnName="departmentId"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="varchar"
+    TableName="dbo.PolicyDepartmentPartition"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="itemId"
+    Precision="50"
+    ColumnName="itemId"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="varchar"
+    TableName="dbo.PolicyDepartmentPartition">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="Department"
+    Association="RHmodel.common.entity.PolicyDepartmentPartitionDEPARTMENTFK1Assoc"
+    AssociationEnd="RHmodel.common.entity.PolicyDepartmentPartitionDEPARTMENTFK1Assoc.Department"
+    AssociationOtherEnd="RHmodel.common.entity.PolicyDepartmentPartitionDEPARTMENTFK1Assoc.Policydepartmentpartition"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Policy"
+    Association="RHmodel.common.entity.PolicyDepartmentPartitionFKAssoc"
+    AssociationEnd="RHmodel.common.entity.PolicyDepartmentPartitionFKAssoc.Policy"
+    AssociationOtherEnd="RHmodel.common.entity.PolicyDepartmentPartitionFKAssoc.Policydepartmentpartition"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="PolicyDepartmentPartitionPK"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PolicyDepartmentPartition_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="RHmodel.common.entity.Policydepartmentpartition.itemiId"/>
+      <Item
+        Value="RHmodel.common.entity.Policydepartmentpartition.departmentId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="PolicyDepartmentPartitionDEPARTMENTFK1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="SYS_C005256"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName"
+        Value="PolicyDepartmentPartition_DEPARTMENT_FK1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="RHmodel.common.entity.Policydepartmentpartition.departmentId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="PolicyDepartmentPartitionFK">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="Policy_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="PolicyDepartmentPartition_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="RHmodel.common.entity.Policydepartmentpartition.itemId"/>
+    </AttrArray>
+  </Key>
+</Entity>

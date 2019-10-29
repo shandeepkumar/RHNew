@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+<!-- always a good activate OnConsoleStatusListener -->
+  <statusListener class="ch.qos.logback.core.status.OnConsoleStatusListener" />  
+
+<!-- various types of appenders are concurrently possible. Here I am 
+restricting to file and Console Appender
+-->
+	<appender name="RootFileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<append>true</append>
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>DEBUG</level>
+		</filter>
+		<!-- 
+		I have changed the path for the log file to the current directory /logs folder to make easier to see the logs
+		in case of server, it will be in the ../logs folder -->
+		<file>./logs/email-job.log</file>
+	    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+	      <fileNamePattern>./logs/email.job.%d{yyyy-MM-dd}.log.zip</fileNamePattern>
+	    </rollingPolicy>
+	
+	    <!-- multiple encoders available. I am using plain pattern with text. can use html -->
+	    <encoder>
+	      <!--<pattern>combined</pattern> -->
+	      <pattern>%d{yyyy-MM-dd HH:mm:ss}, %p, %c, %t, %C{1}, %M %m%n</pattern>
+	    </encoder>
+	</appender>
+	
+	<appender name="RootConsoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>DEBUG</level>
+		</filter>
+		<encoder>
+			<pattern>%p, %c, %t, %C{1}, %M %m%n</pattern>
+		</encoder>
+	</appender>
+	<!-- 
+	Specify the level of logging on package level - overrides the 
+	specified in appenders if level in logger >level in appender
+	-->
+	<logger name="ch.qos.logback." level="ERROR"/>
+    <logger name="gov.bnm" level="DEBUG"/>
+	<!-- 
+	Can enable and disable any specific appender or all appenders here 
+	with different logging levels
+	-->	
+	<root>
+		<level value="DEBUG"/>
+<!--		<appender-ref ref="RootFileAppender"/>-->
+		 <appender-ref ref="RootConsoleAppender"/> 
+	</root>
+</configuration>

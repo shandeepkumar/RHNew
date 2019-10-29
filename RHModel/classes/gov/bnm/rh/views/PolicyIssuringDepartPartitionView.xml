@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="PolicyIssuringDepartPartitionView"
+  Version="11.1.1.64.93"
+  InheritPersonalization="true"
+  SelectList="PolicyIssuringDepartPartitio1.issuringDepartId, 
+       PolicyIssuringDepartPartitio1.itemId"
+  FromList="PolicyIssuringDepartPartition PolicyIssuringDepartPartitio1"
+  Where="PolicyIssuringDepartPartitio1.itemId = ?"
+  BindingStyle="JDBC"
+  CustomQuery="false"
+  RowClass="gov.bnm.rh.views.PolicyIssuringDepartPartitionViewRowImpl"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="gov.bnm.rh.views.PolicyIssuringDepartPartitionView_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <Variable
+    Name="bindItemId"
+    Kind="where"
+    Type="java.lang.String">
+    <AttrArray Name="ExtendedDataInts">
+      <Item Value="0"/>
+    </AttrArray>
+  </Variable>
+  <EntityUsage
+    Name="PolicyIssuringDepartPartitio1"
+    Entity="gov.bnm.rh.entities.PolicyIssuringDepartPartition"/>
+  <ViewAttribute
+    Name="issuringDepartId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="issuringDepartId"
+    EntityUsage="PolicyIssuringDepartPartitio1"
+    AliasName="issuringDepartId"/>
+  <ViewAttribute
+    Name="itemId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="itemId"
+    EntityUsage="PolicyIssuringDepartPartitio1"
+    AliasName="itemId"/>
+  <ViewAttribute
+    Name="IssuringDepartmentName"
+    IsUpdateable="false"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR">
+    <RecalcCondition><![CDATA[true]]></RecalcCondition>
+    <TransientExpression><![CDATA[IssuringDepartmentView.name]]></TransientExpression>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="gov.bnm.rh.views.IssuringDepartmentView_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewLinkAccessor
+    Name="IssuringDepartmentView"
+    ViewLink="gov.bnm.rh.views.links.PolicyIssuringDepartPartitionDepIdLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="gov.bnm.rh.RHModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

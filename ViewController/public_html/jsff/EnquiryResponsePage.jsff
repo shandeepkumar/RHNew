@@ -1,0 +1,156 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelStretchLayout binding="#{backingBeanScope.backing_EnquiryResponsePage.psl1}"
+                         id="psl1">
+    <f:facet name="center">
+      <af:panelFormLayout binding="#{backingBeanScope.backing_EnquiryResponsePage.pfl1}"
+                          id="pfl1">
+        <f:facet name="footer">
+        <af:panelGroupLayout id="pgl1" layout="horizontal">
+        <af:spacer id="s5" height="10" width="200" />
+          <af:commandButton text="Submit"
+                            binding="#{backingBeanScope.backing_EnquiryResponsePage.cb1}"
+                            id="cb1"
+                            action="#{backingBeanScope.backing_EnquiryResponsePage.submitRequest}"
+                            disabled="#{bindings.EnquiryfaqForEnqViewObj1Iterator.estimatedRowCount &lt; 1 or  bindings.enquiryStatus.inputValue eq 'ANSWERED'}"/>
+        </af:panelGroupLayout>
+        </f:facet>
+        <af:spacer width="10" height="10" id="s1"/>
+        <af:outputText value="This Enquiry has been Responded"
+                       binding="#{backingBeanScope.backing_EnquiryResponsePage.ot3}"
+                       rendered="#{bindings.enquiryStatus.inputValue eq 'ANSWERED'}"
+                       id="ot3" inlineStyle="color:Red; font-size:large;"/>
+        <af:spacer width="10" height="10" id="s4"
+                   rendered="#{bindings.enquiryStatus.inputValue eq 'ANSWERED'}"/>
+        <af:panelLabelAndMessage label="#{bindings.PolicyTitle.hints.label}"
+                                 id="plam23">
+          <af:outputText value="#{bindings.PolicyTitle.inputValue}" id="ot20"/>
+        </af:panelLabelAndMessage>
+        <af:spacer width="10" height="10" id="s9"/>
+        <af:panelLabelAndMessage label="Enquirer Name" id="plam3">
+          <af:outputText value="#{bindings.InternalUserName.inputValue}"
+                         id="ot21"/>
+          <af:outputText value="#{bindings.ExternalUserName.inputValue}"
+                         id="ot22"/>
+        </af:panelLabelAndMessage>
+        <af:spacer width="10" height="10" id="s8"/>
+        <af:panelLabelAndMessage label="Enquirer Department/ Organization Name"
+                                 id="plam4">
+          <af:outputText value="#{bindings.InternalUserDepName.inputValue}"
+                         id="ot23"/>
+          <af:outputText value="#{bindings.ExternalUserOrgName.inputValue}"
+                         id="ot24"/>
+        </af:panelLabelAndMessage>
+        <af:spacer width="10" height="10" id="s22"/>
+        <af:panelLabelAndMessage label="#{bindings.Title.hints.label}"
+                                 binding="#{backingBeanScope.backing_EnquiryResponsePage.plam1}"
+                                 id="plam1">
+          <af:outputText value="#{bindings.Title.inputValue}"
+                         binding="#{backingBeanScope.backing_EnquiryResponsePage.ot1}"
+                         id="ot1"/>
+        </af:panelLabelAndMessage>
+        <af:panelLabelAndMessage label="Enquirer Attachment" id="plam11"
+                                 visible="#{bindings.AttachedfileForEnqQueView1Iterator.estimatedRowCount >0}">
+          <af:iterator id="i7"
+                       value="#{bindings.AttachedfileForEnqQueView1.collectionModel}"
+                       var="row" varStatus="vs">
+            <af:commandLink text="#{row.filenameOrig}" id="cl13"
+                            actionListener="#{backingBeanScope.backing_EnquiryResponsePage.onOpenEnqQueFileSelected}"
+                            visible="#{bindings.AttachedfileForEnqQueView1Iterator.estimatedRowCount >0}">
+              <f:attribute name="rowKey" value="#{vs.index}"/>
+            </af:commandLink>
+            <af:outputText value="&lt;br/>" id="ot12" escape="false"/>
+          </af:iterator>
+        </af:panelLabelAndMessage>
+        <af:spacer width="10" height="10" id="s2"/>
+        <af:richTextEditor label="#{bindings.Abstract11.hints.label}" rows="8"
+                           columns="85" id="rte1"
+                           binding="#{backingBeanScope.backing_EnquiryResponsePage.rte1}"
+                           value="#{bindings.Abstract11.inputValue}"
+                           toolboxLayout="history formatAll justify list indent"
+                           rendered="#{bindings.enquiryStatus.inputValue ne 'ANSWERED'}"/>
+        <af:panelLabelAndMessage label="#{bindings.Abstract11.hints.label}"
+                                 binding="#{backingBeanScope.backing_EnquiryResponsePage.plam2}"
+                                 rendered="#{bindings.enquiryStatus.inputValue eq 'ANSWERED'}"
+                                 id="plam2">
+          <af:outputFormatted value="#{bindings.Abstract11.inputValue}"
+                              binding="#{backingBeanScope.backing_EnquiryResponsePage.of1}"
+                              id="of1"/>
+        </af:panelLabelAndMessage>
+        <af:spacer width="10" height="10" id="s3"/>
+         <af:inputFile label="Attachment"
+                      binding="#{backingBeanScope.backing_EnquiryResponsePage.if1}"
+                      id="if1" autoSubmit="true"
+                      value="#{backingBeanScope.backing_EnquiryResponsePage.ansUploadedFile}"
+                      rendered="#{bindings.enquiryStatus.inputValue ne 'ANSWERED'}"
+                      shortDesc="Please ensure the file is uploaded successfully before proceeding to upload the next file.">
+          <af:setPropertyListener type="valueChange" to="#{pageFlowScope.itemid}"
+                                  from="#{bindings.itemId.inputValue}"/>
+        <af:setPropertyListener type="valueChange" to="#{pageFlowScope.fldEnquiryFAQId}"
+                                  from="#{bindings.EnquiryFAQId.inputValue}"/>
+        </af:inputFile>
+        <af:table value="#{bindings.AttachedfileForEnqAnsView1.collectionModel}"
+                  var="row"
+                  rows="#{bindings.AttachedfileForEnqAnsView1.rangeSize}"
+                  emptyText="#{bindings.AttachedfileForEnqAnsView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                  fetchSize="#{bindings.AttachedfileForEnqAnsView1.rangeSize}"
+                  rowBandingInterval="0"
+                  selectedRowKeys="#{bindings.AttachedfileForEnqAnsView1.collectionModel.selectedRow}"
+                  selectionListener="#{bindings.AttachedfileForEnqAnsView1.collectionModel.makeCurrent}"
+                  rowSelection="single"
+                  binding="#{backingBeanScope.backing_EnquiryResponsePage.t3}"
+                  rendered="#{bindings.enquiryStatus.inputValue ne 'ANSWERED'}"
+                  id="t3"
+                  visible="#{bindings.AttachedfileForEnqAnsView1Iterator.estimatedRowCount >0}"
+                  inlineStyle="height:49px;" width="426"
+                  partialTriggers="::if1">
+          <af:column sortProperty="#{bindings.AttachedfileForEnqAnsView1.hints.fileId.name}"
+                     sortable="false" id="c4" width="30">
+            <af:commandLink text="X" id="cl11"
+                            actionListener="#{backingBeanScope.backing_EnquiryResponsePage.onDeleteAnsFileSelected}">
+              <f:attribute name="rowKeyDelete" value="#{row.rowKey}"/>
+            </af:commandLink>
+          </af:column>
+          <af:column sortProperty="#{bindings.AttachedfileForEnqAnsView1.hints.filenameOrig.name}"
+                     sortable="false" id="c7" width="370">
+            <af:commandLink text="#{row.filenameOrig}"
+                            actionListener="#{backingBeanScope.backing_EnquiryResponsePage.onOpenAnsFileSelected}"
+                            id="cl12">
+              <f:attribute name="rowKey" value="#{row.rowKey}"/>
+            </af:commandLink>
+          </af:column>
+        </af:table>
+        <af:panelLabelAndMessage label="Responder Attachment"
+                                 visible="#{bindings.AttachedfileForEnqAnsView1Iterator.estimatedRowCount >0}"
+                                 rendered="#{bindings.enquiryStatus.inputValue eq 'ANSWERED'}"
+                                 id="plam13">
+          <af:iterator id="i8"
+                       value="#{bindings.AttachedfileForEnqAnsView1.collectionModel}"
+                       var="row" varStatus="vs">
+            <af:commandLink text="#{row.filenameOrig}" id="cl14"
+                            actionListener="#{backingBeanScope.backing_EnquiryResponsePage.onOpenEnqAnsFileSelected}"
+                            visible="#{bindings.AttachedfileForEnqAnsView1Iterator.estimatedRowCount >0}">
+              <f:attribute name="rowKey" value="#{vs.index}"/>
+            </af:commandLink>
+            <af:outputText value="&lt;br/>" id="ot37" escape="false"/>
+          </af:iterator>
+        </af:panelLabelAndMessage>
+        <af:commandButton text="Download"
+                          binding="#{backingBeanScope.backing_EnquiryResponsePage.cb3}"
+                          id="cb3" visible="false" immediate="true">
+          <af:fileDownloadActionListener method="#{backingBeanScope.backing_EnquiryResponsePage.doDownload}"
+                                         filename="#{pageFlowScope.filenameOrig}"/>
+        </af:commandButton>
+      </af:panelFormLayout>
+    </f:facet>
+    <f:facet name="top">
+      <af:outputText value="Enquiry Response"
+                     binding="#{backingBeanScope.backing_EnquiryResponsePage.ot2}"
+                     id="ot2"
+                     inlineStyle="color:Navy; font-family:Arial, Helvetica, sans-serif; font-size:x-large; font-weight:bold; text-align:center;"/>
+    </f:facet>
+  </af:panelStretchLayout>
+  <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_EnquiryResponsePage-->
+</jsp:root>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.64.93" id="AgingReportPagePageDef"
+                Package="jsff">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables">
+      <variable Name="varDepartmentId" Type="java.lang.String"/>
+      <variable Name="varCategoryId" Type="java.math.BigDecimal"/>
+      <variable Type="java.math.BigDecimal" Name="varSectorId"/>
+      <variable Name="varRelavantActId1" Type="String"/>
+      <variable Name="DepartId" Type="String"/>
+      <variable Name="varDocTypeId1" Type="String"/>
+    </variableIterator>
+    <iterator Binds="PolicyAgingReportViewObj1" RangeSize="25"
+              DataControl="RegBookAppModuleDataControl"
+              id="PolicyAgingReportViewObj1Iterator"/>
+    <searchRegion Binds="PolicyAgingReportViewObj1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="PolicyAgingReportViewObj1Query"/>
+    <iterator Binds="SectorsView1" RangeSize="-1"
+              DataControl="RegBookAppModuleDataControl"
+              id="SectorsView1Iterator"/>
+    <iterator Binds="CategoryReadOnlyViewObj1" RangeSize="-1"
+              DataControl="RegBookAppModuleDataControl"
+              id="CategoryReadOnlyViewObj1Iterator"/>
+    <iterator id="DepartmentView1Iterator" Binds="DepartmentView1"
+              DataControl="RegBookAppModuleDataControl" RangeSize="-1"/>
+    <iterator Binds="DocCategoryReadOnlyViewObj1" RangeSize="-1"
+              DataControl="RegBookAppModuleDataControl"
+              id="DocCategoryReadOnlyViewObj1Iterator"/>
+    <iterator Binds="PolicycategoriespartitionView1" RangeSize="10"
+              DataControl="RegBookAppModuleDataControl"
+              id="PolicycategoriespartitionView1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="PolicyAgingReportViewObj1Iterator"
+          id="PolicyAgingReportViewObj1">
+      <nodeDefinition DefName="gov.bnm.rh.views.PolicyAgingReportViewObj"
+                      Name="PolicyAgingReportViewObj10">
+        <AttrNames>
+          <Item Value="RefNum"/>
+          <Item Value="GuidelineTitle"/>
+          <Item Value="NewIssuanceDate"/>
+          <Item Value="DueInYear"/>
+          <Item Value="DueInMonth"/>
+          <Item Value="FirstIssuanceDate"/>
+          <Item Value="EffectiveDate"/>
+          <Item Value="ageMonth"/>
+          <Item Value="ageYear"/>
+          <Item Value="daysDiff"/>
+          <Item Value="itemId"/>
+          <Item Value="monthDiff"/>
+          <Item Value="CategoryName"/>
+          <Item Value="DepartName"/>
+          <Item Value="DocType"/>
+          <Item Value="Sectors"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <list StaticList="false" IterBinding="variables"
+          ListIter="CategoryReadOnlyViewObj1Iterator"
+          id="varCategoryId1"
+          NullValueFlag="start" NullValueId="varCategoryId1_null">
+      <AttrNames>
+        <Item Value="varCategoryId"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="CategoryID"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="CategoryName"/>
+      </ListDisplayAttrNames>
+    </list>
+    <list StaticList="false" IterBinding="variables"
+          ListIter="SectorsView1Iterator"
+          id="varSectorId1"
+          NullValueId="varSectorId1_null"
+          NullValueFlag="start">
+      <AttrNames>
+        <Item Value="varSectorId"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="SectorID"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="SectorName"/>
+      </ListDisplayAttrNames>
+    </list>
+    <list StaticList="false" IterBinding="variables"
+          ListIter="DepartmentView1Iterator" id="varDepartmentId1"
+          NullValueId="varDepartmentId1_null" NullValueFlag="start">
+      <AttrNames>
+        <Item Value="varDepartmentId"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="ID"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="NAME"/>
+      </ListDisplayAttrNames>
+    </list>
+    <list StaticList="false" IterBinding="variables"
+          ListIter="DocCategoryReadOnlyViewObj1Iterator"
+          NullValueId="varDocTypeId11_null"
+          NullValueFlag="start" id="varDocTypeId11">
+      <AttrNames>
+        <Item Value="varDocTypeId1"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="IdDoCCat"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="DocCatDesc"/>
+      </ListDisplayAttrNames>
+    </list>
+    <tree IterBinding="PolicycategoriespartitionView1Iterator"
+          id="PolicycategoriespartitionView1">
+      <nodeDefinition DefName="gov.bnm.rh.views.PolicycategoriespartitionView"
+                      Name="PolicycategoriespartitionView10">
+        <AttrNames>
+          <Item Value="CategoryName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+  <ResourceBundle>
+    <PropertiesBundle xmlns="http://xmlns.oracle.com/adfm/resourcebundle"
+                      PropertiesFile="view.ViewControllerBundle"/>
+  </ResourceBundle>
+</pageDefinition>

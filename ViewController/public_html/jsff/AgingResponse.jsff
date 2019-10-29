@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelStretchLayout binding="#{backingBeanScope.backing_jsff_agingResponse.psl1}"
+                         id="psl1">
+    <f:facet name="center">
+      <af:panelGroupLayout binding="#{backingBeanScope.backing_jsff_agingResponse.pgl1}"
+                           id="pgl1" layout="scroll">
+        <af:table value="#{bindings.PolicyAgingEmailViewObj1.collectionModel}"
+                  var="row"
+                  rows="#{bindings.PolicyAgingEmailViewObj1.rangeSize}"
+                  emptyText="#{bindings.PolicyAgingEmailViewObj1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                  fetchSize="#{bindings.PolicyAgingEmailViewObj1.rangeSize}"
+                  rowBandingInterval="1"
+                  filterModel="#{bindings.PolicyAgingEmailViewObj1Query.queryDescriptor}"
+                  queryListener="#{bindings.PolicyAgingEmailViewObj1Query.processQuery}"
+                  filterVisible="#{securityContext.userInRole['01'] ? true : false}" varStatus="vs"
+                  selectedRowKeys="#{bindings.PolicyAgingEmailViewObj1.collectionModel.selectedRow}"
+                  selectionListener="#{bindings.PolicyAgingEmailViewObj1.collectionModel.makeCurrent}"
+                  rowSelection="single"
+                  binding="#{backingBeanScope.backing_jsff_agingResponse.t1}"
+                  id="t1" width="90%" columnStretching="column:c3">
+          <af:column sortProperty="#{bindings.PolicyAgingEmailViewObj1.hints.RefNum.name}"
+                     filterable="true" filterFeatures="caseInsensitive"
+                     sortable="true"
+                     headerText="#{bindings.PolicyAgingEmailViewObj1.hints.RefNum.label}"
+                     id="c4" width="200">
+            <af:outputText value="#{row.RefNum}" id="ot3"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.PolicyAgingEmailViewObj1.hints.GuidelineTitle.name}"
+                     filterable="true" filterFeatures="caseInsensitive"
+                     sortable="true"
+                     headerText="#{bindings.PolicyAgingEmailViewObj1.hints.GuidelineTitle.label}"
+                     id="c3" width="250">
+            <af:outputText value="#{row.GuidelineTitle}" id="ot5"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.PolicyAgingEmailViewObj1.hints.NewIssuanceDate.name}"
+                     filterable="true" filterFeatures="caseInsensitive"
+                     sortable="true"
+                     headerText="#{bindings.PolicyAgingEmailViewObj1.hints.NewIssuanceDate.label}"
+                     id="c1">
+            <f:facet name="filter">
+              <af:inputDate value="#{vs.filterCriteria.NewIssuanceDate}"
+                            binding="#{backingBeanScope.backing_jsff_agingResponse.id1}"
+                            id="id1">
+                <af:convertDateTime pattern="#{bindings.PolicyAgingEmailViewObj1.hints.NewIssuanceDate.format}"/>
+              </af:inputDate>
+            </f:facet>
+            <af:outputText value="#{row.NewIssuanceDate}" id="ot2">
+              <af:convertDateTime pattern="#{bindings.PolicyAgingEmailViewObj1.hints.NewIssuanceDate.format}"/>
+            </af:outputText>
+          </af:column>
+          <af:column headerText="Decision" id="c2">
+            <af:commandLink text="Action" id="cl1" action="gotoExtension">
+              <af:setPropertyListener type="action" from="#{row.itemId}"
+                                      to="#{pageFlowScope.itemId}"/>
+            </af:commandLink>
+          </af:column>
+        </af:table>
+      </af:panelGroupLayout>
+    </f:facet>
+    <f:facet name="top">
+      <af:outputText value="Document Expiry Management "
+                     binding="#{backingBeanScope.backing_jsff_agingResponse.ot1}"
+                     id="ot1" styleClass="pageTitleHeaderLeft"/>
+    </f:facet>
+  </af:panelStretchLayout>
+  <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_jsff_agingResponse-->
+</jsp:root>

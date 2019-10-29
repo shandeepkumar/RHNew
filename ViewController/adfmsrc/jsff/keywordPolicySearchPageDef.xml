@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.64.93" id="keywordPolicySearchPageDef"
+                Package="jsff">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="SectorsView4" RangeSize="25"
+              DataControl="RegBookAppModuleDataControl"
+              id="SectorsView4Iterator"/>
+    <iterator id="AttachmentDownloadViewObj1Iterator"
+              Binds="AttachmentDownloadViewObj1"
+              DataControl="RegBookAppModuleDataControl" RangeSize="25"/>
+  </executables>
+  <bindings>
+    <list IterBinding="SectorsView4Iterator" ListOperMode="multiSelect"
+          ListIter="SectorsView4Iterator" id="SectorsView4">
+      <AttrNames>
+        <Item Value="SectorID"/>
+      </AttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="SectorName"/>
+      </ListDisplayAttrNames>
+    </list>
+  </bindings>
+</pageDefinition>

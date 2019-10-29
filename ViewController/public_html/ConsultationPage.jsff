@@ -1,0 +1,589 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelTabbed id="pt1">
+    <af:showDetailItem text="Open Consultant" id="sdi1" stretchChildren="first">
+      <af:table value="#{bindings.PolicyActiveOnlyViewObj1.collectionModel}"
+                var="row" rows="#{bindings.PolicyActiveOnlyViewObj1.rangeSize}"
+                emptyText="#{bindings.PolicyActiveOnlyViewObj1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                fetchSize="#{bindings.PolicyActiveOnlyViewObj1.rangeSize}"
+                rowBandingInterval="0"
+                filterModel="#{bindings.PolicyActiveOnlyViewObj1Query.queryDescriptor}"
+                queryListener="#{bindings.PolicyActiveOnlyViewObj1Query.processQuery}"
+                filterVisible="true" varStatus="vs"
+                selectedRowKeys="#{bindings.PolicyActiveOnlyViewObj1.collectionModel.selectedRow}"
+                selectionListener="#{bindings.PolicyActiveOnlyViewObj1.collectionModel.makeCurrent}"
+                rowSelection="single" id="t1"
+                binding="#{bindings.PolicyActiveOnlyViewObj1.collectionModel}">
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.ApplicabilityManualEntry.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.ApplicabilityManualEntry.label}"
+                   id="c25">
+          <af:outputText value="#{row.ApplicabilityManualEntry}" id="ot20"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.Classification.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.Classification.label}"
+                   id="c26">
+          <af:outputText value="#{row.Classification}" id="ot21"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.CreatedDate.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.CreatedDate.label}"
+                   id="c28">
+          <f:facet name="filter">
+            <af:inputDate value="#{vs.filterCriteria.CreatedDate}" id="id2"/>
+          </f:facet>
+          <af:outputText value="#{row.CreatedDate}" id="ot11">
+            <af:convertDateTime pattern="#{bindings.PolicyActiveOnlyViewObj1.hints.CreatedDate.format}"/>
+          </af:outputText>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.DisplayInWhatsNew.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.DisplayInWhatsNew.label}"
+                   id="c8">
+          <af:outputText value="#{row.DisplayInWhatsNew}" id="ot31"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.DocCategory.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.DocCategory.label}"
+                   id="c36">
+          <af:outputText value="#{row.DocCategory}" id="ot32"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.EffectiveDate.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.EffectiveDate.label}"
+                   id="c17">
+          <af:outputText value="#{row.EffectiveDate}" id="ot6"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.ExpiryDate.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.ExpiryDate.label}"
+                   id="c12">
+          <f:facet name="filter">
+            <af:inputDate value="#{vs.filterCriteria.ExpiryDate}" id="id4"/>
+          </f:facet>
+          <af:outputText value="#{row.ExpiryDate}" id="ot30">
+            <af:convertDateTime pattern="#{bindings.PolicyActiveOnlyViewObj1.hints.ExpiryDate.format}"/>
+          </af:outputText>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.FirstIssuanceDate.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.FirstIssuanceDate.label}"
+                   id="c1">
+          <f:facet name="filter">
+            <af:inputDate value="#{vs.filterCriteria.FirstIssuanceDate}"
+                          id="id3"/>
+          </f:facet>
+          <af:outputText value="#{row.FirstIssuanceDate}" id="ot40">
+            <af:convertDateTime pattern="#{bindings.PolicyActiveOnlyViewObj1.hints.FirstIssuanceDate.format}"/>
+          </af:outputText>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.GuidelineTitle.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.GuidelineTitle.label}"
+                   id="c18">
+                    <af:commandLink text="#{row.GuidelineTitle}" id="cl2"
+                            action="#{sessionScope.rhSession.clickPolicyLink}"
+                            inlineStyle="font-weight:bold;">
+              <af:setPropertyListener type="action" from="#{row.itemId}"
+                                      to="#{sessionScope.rhSession.fldPolicyId}"/>
+            </af:commandLink>
+          <!--<af:outputText value="#{row.GuidelineTitle}" id="ot36"/>-->
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.Highlights.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.Highlights.label}"
+                   id="c21">
+          <af:outputText value="#{row.Highlights}" id="ot13"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.LastUpdated.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.LastUpdated.label}"
+                   id="c6">
+          <f:facet name="filter">
+            <af:inputDate value="#{vs.filterCriteria.LastUpdated}" id="id1"/>
+          </f:facet>
+          <af:outputText value="#{row.LastUpdated}" id="ot16">
+            <af:convertDateTime pattern="#{bindings.PolicyActiveOnlyViewObj1.hints.LastUpdated.format}"/>
+          </af:outputText>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.NewIssuanceDate.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.NewIssuanceDate.label}"
+                   id="c11">
+          <f:facet name="filter">
+            <af:inputDate value="#{vs.filterCriteria.NewIssuanceDate}"
+                          id="id5"/>
+          </f:facet>
+          <af:outputText value="#{row.NewIssuanceDate}" id="ot14">
+            <af:convertDateTime pattern="#{bindings.PolicyActiveOnlyViewObj1.hints.NewIssuanceDate.format}"/>
+          </af:outputText>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.PolicyURL.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.PolicyURL.label}"
+                   id="c24">
+          <af:outputText value="#{row.PolicyURL}" id="ot29"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.PriorPublishEmailFlag.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.PriorPublishEmailFlag.label}"
+                   id="c33">
+          <af:outputText value="#{row.PriorPublishEmailFlag}" id="ot37"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.PublishToBNM.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.PublishToBNM.label}"
+                   id="c7">
+          <af:outputText value="#{row.PublishToBNM}" id="ot22"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.PublishedEmailFlag.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.PublishedEmailFlag.label}"
+                   id="c23">
+          <af:outputText value="#{row.PublishedEmailFlag}" id="ot15"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.PublishedURL.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.PublishedURL.label}"
+                   id="c22">
+          <af:outputText value="#{row.PublishedURL}" id="ot3"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.ReasonForRejection.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.ReasonForRejection.label}"
+                   id="c14">
+          <af:outputText value="#{row.ReasonForRejection}" id="ot39"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.RecordStatus.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.RecordStatus.label}"
+                   id="c13">
+          <af:outputText value="#{row.RecordStatus}" id="ot27"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.RefNum.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.RefNum.label}"
+                   id="c35">
+          <af:outputText value="#{row.RefNum}" id="ot24"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.SectionInCharge.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.SectionInCharge.label}"
+                   id="c31">
+          <af:outputText value="#{row.SectionInCharge}" id="ot35"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.SenderEmail.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.SenderEmail.label}"
+                   id="c5">
+          <af:outputText value="#{row.SenderEmail}" id="ot9"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.Summary.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.Summary.label}"
+                   id="c29">
+          <af:outputText value="#{row.Summary}" id="ot10"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.WhatsNewMonths.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.WhatsNewMonths.label}"
+                   id="c4">
+          <af:outputText value="#{row.WhatsNewMonths}" id="ot2"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.approverId.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.approverId.label}"
+                   id="c10">
+          <af:outputText value="#{row.approverId}" id="ot23"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.createdBy.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.createdBy.label}"
+                   id="c30">
+          <af:outputText value="#{row.createdBy}" id="ot26"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.isActive.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.isActive.label}"
+                   id="c20">
+          <af:outputText value="#{row.isActive}" id="ot19"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.isAmendmentRecord.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.isAmendmentRecord.label}"
+                   id="c16">
+          <af:outputText value="#{row.isAmendmentRecord}" id="ot33"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.itemId.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.itemId.label}"
+                   id="c27">
+          <af:outputText value="#{row.itemId}" id="ot8"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.keywords.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.keywords.label}"
+                   id="c34">
+          <af:outputText value="#{row.keywords}" id="ot12"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.partitionTypeId.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.partitionTypeId.label}"
+                   id="c19">
+          <af:outputText value="#{row.partitionTypeId}" id="ot28">
+            <af:convertNumber groupingUsed="false"
+                              pattern="#{bindings.PolicyActiveOnlyViewObj1.hints.partitionTypeId.format}"/>
+          </af:outputText>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.policyId.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.policyId.label}"
+                   id="c38">
+          <af:outputText value="#{row.policyId}" id="ot25"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.system.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.system.label}"
+                   id="c40">
+          <af:outputText value="#{row.system}" id="ot5"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.updatedBy.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.updatedBy.label}"
+                   id="c3">
+          <af:outputText value="#{row.updatedBy}" id="ot18"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.Sectors.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.Sectors.label}"
+                   id="c15">
+          <af:outputText value="#{row.Sectors}" id="ot17"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.InstitutionTypes.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.InstitutionTypes.label}"
+                   id="c32">
+          <af:outputText value="#{row.InstitutionTypes}" id="ot34"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.IssuingDepartment.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.IssuingDepartment.label}"
+                   id="c37">
+          <af:outputText value="#{row.IssuingDepartment}" id="ot1"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.RelavantAct.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.RelavantAct.label}"
+                   id="c39">
+          <af:outputText value="#{row.RelavantAct}" id="ot38"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.AttachmentId.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.AttachmentId.label}"
+                   id="c2">
+          <af:outputText value="#{row.AttachmentId}" id="ot7"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj1.hints.Category.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj1.hints.Category.label}"
+                   id="c9">
+          <af:outputText value="#{row.Category}" id="ot4"/>
+        </af:column>
+      </af:table>
+    </af:showDetailItem>
+    <af:showDetailItem text="Close Consultant" id="sdi2" stretchChildren="first">
+      <af:table value="#{bindings.PolicyActiveOnlyViewObj2.collectionModel}"
+                var="row" rows="#{bindings.PolicyActiveOnlyViewObj2.rangeSize}"
+                emptyText="#{bindings.PolicyActiveOnlyViewObj2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                fetchSize="#{bindings.PolicyActiveOnlyViewObj2.rangeSize}"
+                rowBandingInterval="0"
+                filterModel="#{bindings.PolicyActiveOnlyViewObj2Query.queryDescriptor}"
+                queryListener="#{bindings.PolicyActiveOnlyViewObj2Query.processQuery}"
+                filterVisible="true" varStatus="vs"
+                selectedRowKeys="#{bindings.PolicyActiveOnlyViewObj2.collectionModel.selectedRow}"
+                selectionListener="#{bindings.PolicyActiveOnlyViewObj2.collectionModel.makeCurrent}"
+                rowSelection="single" id="t2">
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj2.hints.ApplicabilityManualEntry.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj2.hints.ApplicabilityManualEntry.label}"
+                   id="c45">
+          <af:outputText value="#{row.ApplicabilityManualEntry}" id="ot57"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj2.hints.Classification.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj2.hints.Classification.label}"
+                   id="c76">
+          <af:outputText value="#{row.Classification}" id="ot60"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj2.hints.CreatedDate.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj2.hints.CreatedDate.label}"
+                   id="c53">
+          <f:facet name="filter">
+            <af:inputDate value="#{vs.filterCriteria.CreatedDate}" id="id6"/>
+          </f:facet>
+          <af:outputText value="#{row.CreatedDate}" id="ot50">
+            <af:convertDateTime pattern="#{bindings.PolicyActiveOnlyViewObj2.hints.CreatedDate.format}"/>
+          </af:outputText>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj2.hints.DisplayInWhatsNew.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj2.hints.DisplayInWhatsNew.label}"
+                   id="c56">
+          <af:outputText value="#{row.DisplayInWhatsNew}" id="ot77"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj2.hints.DocCategory.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj2.hints.DocCategory.label}"
+                   id="c50">
+          <af:outputText value="#{row.DocCategory}" id="ot46"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj2.hints.EffectiveDate.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj2.hints.EffectiveDate.label}"
+                   id="c61">
+          <af:outputText value="#{row.EffectiveDate}" id="ot51"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj2.hints.ExpiryDate.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj2.hints.ExpiryDate.label}"
+                   id="c59">
+          <f:facet name="filter">
+            <af:inputDate value="#{vs.filterCriteria.ExpiryDate}" id="id8"/>
+          </f:facet>
+          <af:outputText value="#{row.ExpiryDate}" id="ot49">
+            <af:convertDateTime pattern="#{bindings.PolicyActiveOnlyViewObj2.hints.ExpiryDate.format}"/>
+          </af:outputText>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj2.hints.FirstIssuanceDate.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj2.hints.FirstIssuanceDate.label}"
+                   id="c57">
+          <f:facet name="filter">
+            <af:inputDate value="#{vs.filterCriteria.FirstIssuanceDate}"
+                          id="id10"/>
+          </f:facet>
+          <af:outputText value="#{row.FirstIssuanceDate}" id="ot42">
+            <af:convertDateTime pattern="#{bindings.PolicyActiveOnlyViewObj2.hints.FirstIssuanceDate.format}"/>
+          </af:outputText>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj2.hints.GuidelineTitle.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj2.hints.GuidelineTitle.label}"
+                   id="c80">
+                      <af:commandLink text="#{row.GuidelineTitle}" id="cl1"
+                            action="#{sessionScope.rhSession.clickPolicyLink}"
+                            inlineStyle="font-weight:bold;">
+              <af:setPropertyListener type="action" from="#{row.itemId}"
+                                      to="#{sessionScope.rhSession.fldPolicyId}"/>
+            </af:commandLink>
+          <!--<af:outputText value="#{row.GuidelineTitle}" id="ot44"/>-->
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj2.hints.Highlights.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj2.hints.Highlights.label}"
+                   id="c70">
+          <af:outputText value="#{row.Highlights}" id="ot56"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj2.hints.LastUpdated.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj2.hints.LastUpdated.label}"
+                   id="c42">
+          <f:facet name="filter">
+            <af:inputDate value="#{vs.filterCriteria.LastUpdated}" id="id7"/>
+          </f:facet>
+          <af:outputText value="#{row.LastUpdated}" id="ot79">
+            <af:convertDateTime pattern="#{bindings.PolicyActiveOnlyViewObj2.hints.LastUpdated.format}"/>
+          </af:outputText>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj2.hints.NewIssuanceDate.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj2.hints.NewIssuanceDate.label}"
+                   id="c69">
+          <f:facet name="filter">
+            <af:inputDate value="#{vs.filterCriteria.NewIssuanceDate}"
+                          id="id9"/>
+          </f:facet>
+          <af:outputText value="#{row.NewIssuanceDate}" id="ot69">
+            <af:convertDateTime pattern="#{bindings.PolicyActiveOnlyViewObj2.hints.NewIssuanceDate.format}"/>
+          </af:outputText>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj2.hints.PolicyURL.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj2.hints.PolicyURL.label}"
+                   id="c62">
+          <af:outputText value="#{row.PolicyURL}" id="ot67"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj2.hints.PriorPublishEmailFlag.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj2.hints.PriorPublishEmailFlag.label}"
+                   id="c78">
+          <af:outputText value="#{row.PriorPublishEmailFlag}" id="ot74"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj2.hints.PublishToBNM.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj2.hints.PublishToBNM.label}"
+                   id="c47">
+          <af:outputText value="#{row.PublishToBNM}" id="ot63"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj2.hints.PublishedEmailFlag.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj2.hints.PublishedEmailFlag.label}"
+                   id="c63">
+          <af:outputText value="#{row.PublishedEmailFlag}" id="ot58"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj2.hints.PublishedURL.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj2.hints.PublishedURL.label}"
+                   id="c60">
+          <af:outputText value="#{row.PublishedURL}" id="ot66"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj2.hints.ReasonForRejection.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj2.hints.ReasonForRejection.label}"
+                   id="c67">
+          <af:outputText value="#{row.ReasonForRejection}" id="ot47"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj2.hints.RecordStatus.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj2.hints.RecordStatus.label}"
+                   id="c54">
+          <af:outputText value="#{row.RecordStatus}" id="ot78"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj2.hints.RefNum.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj2.hints.RefNum.label}"
+                   id="c72">
+          <af:outputText value="#{row.RefNum}" id="ot64"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj2.hints.SectionInCharge.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj2.hints.SectionInCharge.label}"
+                   id="c49">
+          <af:outputText value="#{row.SectionInCharge}" id="ot61"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj2.hints.SenderEmail.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj2.hints.SenderEmail.label}"
+                   id="c64">
+          <af:outputText value="#{row.SenderEmail}" id="ot65"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj2.hints.Summary.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj2.hints.Summary.label}"
+                   id="c66">
+          <af:outputText value="#{row.Summary}" id="ot75"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj2.hints.WhatsNewMonths.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj2.hints.WhatsNewMonths.label}"
+                   id="c46">
+          <af:outputText value="#{row.WhatsNewMonths}" id="ot52"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj2.hints.approverId.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj2.hints.approverId.label}"
+                   id="c74">
+          <af:outputText value="#{row.approverId}" id="ot62"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj2.hints.createdBy.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj2.hints.createdBy.label}"
+                   id="c52">
+          <af:outputText value="#{row.createdBy}" id="ot45"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj2.hints.isActive.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj2.hints.isActive.label}"
+                   id="c41">
+          <af:outputText value="#{row.isActive}" id="ot70"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj2.hints.isAmendmentRecord.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj2.hints.isAmendmentRecord.label}"
+                   id="c51">
+          <af:outputText value="#{row.isAmendmentRecord}" id="ot55"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj2.hints.itemId.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj2.hints.itemId.label}"
+                   id="c44">
+          <af:outputText value="#{row.itemId}" id="ot68"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj2.hints.keywords.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj2.hints.keywords.label}"
+                   id="c58">
+          <af:outputText value="#{row.keywords}" id="ot54"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj2.hints.partitionTypeId.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj2.hints.partitionTypeId.label}"
+                   id="c73">
+          <af:outputText value="#{row.partitionTypeId}" id="ot41">
+            <af:convertNumber groupingUsed="false"
+                              pattern="#{bindings.PolicyActiveOnlyViewObj2.hints.partitionTypeId.format}"/>
+          </af:outputText>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj2.hints.policyId.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj2.hints.policyId.label}"
+                   id="c65">
+          <af:outputText value="#{row.policyId}" id="ot59"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj2.hints.system.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj2.hints.system.label}"
+                   id="c79">
+          <af:outputText value="#{row.system}" id="ot71"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj2.hints.updatedBy.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj2.hints.updatedBy.label}"
+                   id="c55">
+          <af:outputText value="#{row.updatedBy}" id="ot43"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj2.hints.Sectors.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj2.hints.Sectors.label}"
+                   id="c75">
+          <af:outputText value="#{row.Sectors}" id="ot76"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj2.hints.InstitutionTypes.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj2.hints.InstitutionTypes.label}"
+                   id="c71">
+          <af:outputText value="#{row.InstitutionTypes}" id="ot48"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj2.hints.IssuingDepartment.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj2.hints.IssuingDepartment.label}"
+                   id="c48">
+          <af:outputText value="#{row.IssuingDepartment}" id="ot73"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj2.hints.RelavantAct.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj2.hints.RelavantAct.label}"
+                   id="c68">
+          <af:outputText value="#{row.RelavantAct}" id="ot53"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj2.hints.AttachmentId.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj2.hints.AttachmentId.label}"
+                   id="c43">
+          <af:outputText value="#{row.AttachmentId}" id="ot72"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.PolicyActiveOnlyViewObj2.hints.Category.name}"
+                   filterable="true" sortable="true"
+                   headerText="#{bindings.PolicyActiveOnlyViewObj2.hints.Category.label}"
+                   id="c77">
+          <af:outputText value="#{row.Category}" id="ot80"/>
+        </af:column>
+      </af:table>
+    </af:showDetailItem>
+    
+  </af:panelTabbed>
+</jsp:root>

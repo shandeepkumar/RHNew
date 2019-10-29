@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+      <af:pageTemplate viewId="/Templates/RHTemplateInternalWithNav.jspx"
+                       value="#{bindings.pageTemplateBinding}" id="pt1">
+            <f:facet name="body">
+                  <af:panelStretchLayout binding="#{backingBeanScope.backing_jsff_IssuingDepartmentWelcomePage.psl1}"
+                                         id="psl1" startWidth="0px"
+                                         endWidth="0px" topHeight="50px"
+                                         bottomHeight="30px">
+                        <f:facet name="center">
+                              <af:region value="#{bindings.btf_PolicyPreface1.regionModel}"
+                                         id="r1"
+                                         binding="#{backingBeanScope.backing_jsff_IssuingDepartmentWelcomePage.r1}"
+                                         rendered="#{sessionScope.rhSession.fldUserAction eq 'ISSDP'}"/>
+                        </f:facet>
+                        <f:facet name="bottom">
+                              <af:panelFormLayout id="pfl3">
+                                    <af:commandButton text="Back" id="cl8"
+                                                      inlineStyle="text-align:left;"
+                                                      action="back"
+                                                      visible="#{rhSession.pageType eq 'ISSDP'}"/>
+                                    <af:spacer height="20px;" id="s42"/>
+                              </af:panelFormLayout>
+                        </f:facet>
+                        <f:facet name="top">
+                              <af:outputText value="Welcome to Issuance Department"
+                                             binding="#{backingBeanScope.backing_jsff_IssuingDepartmentWelcomePage.ot1}"
+                                             id="ot1"
+                                             rendered="#{sessionScope.rhSession.fldUserAction eq 'NISSDP' }"
+                                             inlineStyle="font-size:x-large; font-weight:bold; vertical-align:middle; text-align:center;"/>
+                        </f:facet>
+                  </af:panelStretchLayout>
+            </f:facet>
+      </af:pageTemplate>
+      <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_jsff_IssuingDepartmentWelcomePage-->
+</jsp:root>

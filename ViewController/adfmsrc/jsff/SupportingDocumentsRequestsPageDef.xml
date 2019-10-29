@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.64.93" id="SupportingDocumentsRequestsPageDef"
+                Package="jsff">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="RequestlistView1" RangeSize="25"
+              DataControl="RegBookAppModuleDataControl"
+              id="RequestlistView1Iterator"/>
+    <searchRegion Binds="RequestlistView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="RequestlistView1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="RequestlistView1Iterator" id="RequestlistView1">
+      <nodeDefinition DefName="gov.bnm.rh.views.RequestlistView"
+                      Name="RequestlistView10">
+        <AttrNames>
+          <Item Value="requestId"/>
+          <Item Value="typeOfReqName"/>
+          <Item Value="RequestorName"/>
+          <Item Value="createDate"/>
+          <Item Value="status"/>
+          <Item Value="suppDocfilenameOrig"/>
+          <Item Value="suppDocfilenameStore"/>
+          <Item Value="RequestDays"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="RequestlistView1Iterator" id="requestId">
+      <AttrNames>
+        <Item Value="requestId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="RequestlistView1Iterator" id="GuidelineTitle">
+      <AttrNames>
+        <Item Value="GuidelineTitle"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="RequestlistView1Iterator" id="typeOfReqName">
+      <AttrNames>
+        <Item Value="typeOfReqName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="RequestlistView1Iterator"
+                     id="reasonForRequest">
+      <AttrNames>
+        <Item Value="reasonForRequest"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="RequestlistView1Iterator" id="RequestorName">
+      <AttrNames>
+        <Item Value="RequestorName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="RequestlistView1Iterator"
+                     id="RequestorDepartmentName">
+      <AttrNames>
+        <Item Value="RequestorDepartmentName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="RequestlistView1Iterator" id="approverId">
+      <AttrNames>
+        <Item Value="approverId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="RequestlistView1Iterator" id="status">
+      <AttrNames>
+        <Item Value="status"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="RequestlistView1Iterator"
+                     id="reasonForRejection">
+      <AttrNames>
+        <Item Value="reasonForRejection"/>
+      </AttrNames>
+    </attributeValues>
+    <action id="Commit" DataControl="RegBookAppModuleDataControl"
+            RequiresUpdateModel="true" Action="commitTransaction"/>
+    <attributeValues IterBinding="RequestlistView1Iterator"
+                     id="DesignationName">
+      <AttrNames>
+        <Item Value="DesignationName"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

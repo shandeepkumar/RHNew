@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.64.93"
+                id="btf_Faqs_btf_Faqs_getFaqManagementDetailsPageDef"
+                Package="PageFlows.taskFlow" SkipValidation="true">
+  <parameters/>
+  <executables/>
+  <bindings>
+    <action id="getFaqManagementDetails" RequiresUpdateModel="true"
+            Action="invokeMethod" MethodName="getFaqManagementDetails"
+            IsViewObjectMethod="false" DataControl="RegBookAppModuleDataControl"
+            InstanceName="RegBookAppModuleDataControl.dataProvider"/>
+  </bindings>
+</pageDefinition>

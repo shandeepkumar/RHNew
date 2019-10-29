@@ -1,0 +1,49 @@
+10
+
+dir
+43
+https://ksadev.kgenapp:81/svn/RegulatoryHandbook/branches/NewRegulatoryHandbook/ViewController/adfmsrc
+https://ksadev.kgenapp:81/svn/RegulatoryHandbook
+
+
+
+2017-12-20T00:21:51.241647Z
+43
+shankar
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+e803787e-6818-5f4b-b703-dfc9fe35e977
+
+META-INF
+dir
+
+PageFlows
+dir
+
+Templates
+dir
+
+jsff
+dir
+
+jspx
+dir
+
+search
+dir
+
+view
+dir
+

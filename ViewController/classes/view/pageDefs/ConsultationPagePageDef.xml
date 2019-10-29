@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.64.93" id="ConsultationPagePageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <searchRegion Binds="PolicyActiveOnlyViewObj1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="PolicyActiveOnlyViewObj1Query"/>
+    <iterator Binds="PolicyOpenConsultantView1" RangeSize="25"
+              DataControl="RegBookAppModuleDataControl"
+              id="PolicyOpenConsultantView1Iterator"/>
+    <searchRegion Binds="PolicyOpenConsultantView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="PolicyOpenConsultantView1Query"/>
+    <iterator Binds="PolicyCloseConsultantView1" RangeSize="25"
+              DataControl="RegBookAppModuleDataControl"
+              id="PolicyCloseConsultantView1Iterator"/>
+    <iterator Binds="PolicyActiveOnlyViewObj1" RangeSize="25"
+              DataControl="RegBookAppModuleDataControl"
+              id="PolicyActiveOnlyViewObj1Iterator"/>
+    <iterator Binds="PolicyActiveOnlyViewObj2" RangeSize="25"
+              DataControl="RegBookAppModuleDataControl"
+              id="PolicyActiveOnlyViewObj2Iterator"/>
+    <searchRegion Binds="PolicyActiveOnlyViewObj2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="PolicyActiveOnlyViewObj2Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="PolicyOpenConsultantView1Iterator"
+          id="PolicyOpenConsultantView1">
+      <nodeDefinition DefName="gov.bnm.rh.views.PolicyOpenConsultantView"
+                      Name="PolicyOpenConsultantView10">
+        <AttrNames>
+          <Item Value="ApplicabilityManualEntry"/>
+          <Item Value="Classification"/>
+          <Item Value="CreatedDate"/>
+          <Item Value="DisplayInWhatsNew"/>
+          <Item Value="DocCategory"/>
+          <Item Value="EffectiveDate"/>
+          <Item Value="ExpiryDate"/>
+          <Item Value="FirstIssuanceDate"/>
+          <Item Value="GuidelineTitle"/>
+          <Item Value="Highlights"/>
+          <Item Value="LastUpdated"/>
+          <Item Value="NewEffectiveDate"/>
+          <Item Value="NewIssuanceDate"/>
+          <Item Value="PolicyURL"/>
+          <Item Value="PriorPublishEmailFlag"/>
+          <Item Value="PublishToBNM"/>
+          <Item Value="PublishedEmailFlag"/>
+          <Item Value="PublishedURL"/>
+          <Item Value="ReasonForRejection"/>
+          <Item Value="RecordStatus"/>
+          <Item Value="RefNum"/>
+          <Item Value="SectionInCharge"/>
+          <Item Value="SenderEmail"/>
+          <Item Value="Summary"/>
+          <Item Value="WhatsNewMonths"/>
+          <Item Value="approverId"/>
+          <Item Value="createdBy"/>
+          <Item Value="isActive"/>
+          <Item Value="isAmendmentRecord"/>
+          <Item Value="itemId"/>
+          <Item Value="keywords"/>
+          <Item Value="partitionTypeId"/>
+          <Item Value="policyId"/>
+          <Item Value="system"/>
+          <Item Value="updatedBy"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="PolicyCloseConsultantView1Iterator"
+          id="PolicyCloseConsultantView1">
+      <nodeDefinition DefName="gov.bnm.rh.views.PolicyCloseConsultantView"
+                      Name="PolicyCloseConsultantView10">
+        <AttrNames>
+          <Item Value="ApplicabilityManualEntry"/>
+          <Item Value="Classification"/>
+          <Item Value="CreatedDate"/>
+          <Item Value="DisplayInWhatsNew"/>
+          <Item Value="DocCategory"/>
+          <Item Value="EffectiveDate"/>
+          <Item Value="ExpiryDate"/>
+          <Item Value="FirstIssuanceDate"/>
+          <Item Value="GuidelineTitle"/>
+          <Item Value="Highlights"/>
+          <Item Value="LastUpdated"/>
+          <Item Value="NewEffectiveDate"/>
+          <Item Value="NewIssuanceDate"/>
+          <Item Value="PolicyURL"/>
+          <Item Value="PriorPublishEmailFlag"/>
+          <Item Value="PublishToBNM"/>
+          <Item Value="PublishedEmailFlag"/>
+          <Item Value="PublishedURL"/>
+          <Item Value="ReasonForRejection"/>
+          <Item Value="RecordStatus"/>
+          <Item Value="RefNum"/>
+          <Item Value="SectionInCharge"/>
+          <Item Value="SenderEmail"/>
+          <Item Value="Summary"/>
+          <Item Value="WhatsNewMonths"/>
+          <Item Value="approverId"/>
+          <Item Value="createdBy"/>
+          <Item Value="isActive"/>
+          <Item Value="isAmendmentRecord"/>
+          <Item Value="itemId"/>
+          <Item Value="keywords"/>
+          <Item Value="partitionTypeId"/>
+          <Item Value="policyId"/>
+          <Item Value="system"/>
+          <Item Value="updatedBy"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="PolicyActiveOnlyViewObj1Iterator"
+          id="PolicyActiveOnlyViewObj1">
+      <nodeDefinition DefName="gov.bnm.rh.views.PolicyActiveOnlyViewObj"
+                      Name="PolicyActiveOnlyViewObj10">
+        <AttrNames>
+          <Item Value="ApplicabilityManualEntry"/>
+          <Item Value="Classification"/>
+          <Item Value="CreatedDate"/>
+          <Item Value="DisplayInWhatsNew"/>
+          <Item Value="DocCategory"/>
+          <Item Value="EffectiveDate"/>
+          <Item Value="ExpiryDate"/>
+          <Item Value="FirstIssuanceDate"/>
+          <Item Value="GuidelineTitle"/>
+          <Item Value="Highlights"/>
+          <Item Value="LastUpdated"/>
+          <Item Value="NewIssuanceDate"/>
+          <Item Value="PolicyURL"/>
+          <Item Value="PriorPublishEmailFlag"/>
+          <Item Value="PublishToBNM"/>
+          <Item Value="PublishedEmailFlag"/>
+          <Item Value="PublishedURL"/>
+          <Item Value="ReasonForRejection"/>
+          <Item Value="RecordStatus"/>
+          <Item Value="RefNum"/>
+          <Item Value="SectionInCharge"/>
+          <Item Value="SenderEmail"/>
+          <Item Value="Summary"/>
+          <Item Value="WhatsNewMonths"/>
+          <Item Value="approverId"/>
+          <Item Value="createdBy"/>
+          <Item Value="isActive"/>
+          <Item Value="isAmendmentRecord"/>
+          <Item Value="itemId"/>
+          <Item Value="keywords"/>
+          <Item Value="partitionTypeId"/>
+          <Item Value="policyId"/>
+          <Item Value="system"/>
+          <Item Value="updatedBy"/>
+          <Item Value="Sectors"/>
+          <Item Value="InstitutionTypes"/>
+          <Item Value="IssuingDepartment"/>
+          <Item Value="RelavantAct"/>
+          <Item Value="AttachmentId"/>
+          <Item Value="Category"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="PolicyActiveOnlyViewObj2Iterator"
+          id="PolicyActiveOnlyViewObj2">
+      <nodeDefinition DefName="gov.bnm.rh.views.PolicyActiveOnlyViewObj"
+                      Name="PolicyActiveOnlyViewObj20">
+        <AttrNames>
+          <Item Value="ApplicabilityManualEntry"/>
+          <Item Value="Classification"/>
+          <Item Value="CreatedDate"/>
+          <Item Value="DisplayInWhatsNew"/>
+          <Item Value="DocCategory"/>
+          <Item Value="EffectiveDate"/>
+          <Item Value="ExpiryDate"/>
+          <Item Value="FirstIssuanceDate"/>
+          <Item Value="GuidelineTitle"/>
+          <Item Value="Highlights"/>
+          <Item Value="LastUpdated"/>
+          <Item Value="NewIssuanceDate"/>
+          <Item Value="PolicyURL"/>
+          <Item Value="PriorPublishEmailFlag"/>
+          <Item Value="PublishToBNM"/>
+          <Item Value="PublishedEmailFlag"/>
+          <Item Value="PublishedURL"/>
+          <Item Value="ReasonForRejection"/>
+          <Item Value="RecordStatus"/>
+          <Item Value="RefNum"/>
+          <Item Value="SectionInCharge"/>
+          <Item Value="SenderEmail"/>
+          <Item Value="Summary"/>
+          <Item Value="WhatsNewMonths"/>
+          <Item Value="approverId"/>
+          <Item Value="createdBy"/>
+          <Item Value="isActive"/>
+          <Item Value="isAmendmentRecord"/>
+          <Item Value="itemId"/>
+          <Item Value="keywords"/>
+          <Item Value="partitionTypeId"/>
+          <Item Value="policyId"/>
+          <Item Value="system"/>
+          <Item Value="updatedBy"/>
+          <Item Value="Sectors"/>
+          <Item Value="InstitutionTypes"/>
+          <Item Value="IssuingDepartment"/>
+          <Item Value="RelavantAct"/>
+          <Item Value="AttachmentId"/>
+          <Item Value="Category"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

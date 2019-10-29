@@ -1,0 +1,9 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<ProviderSettings xmlns="http://xmlns.oracle.com/ide/hash">
+   <hash n="dataTypeSettings">
+      <value n="sourceKey" v="oracle.javatools.db.SQLServer.SQLServerDatabaseImpl"/>
+   </hash>
+   <value n="id" v="2e1c0578-0143-1000-8008-a9fe1e4156f1"/>
+   <value n="name" v="RH"/>
+   <value n="offlineDBSchema"/>
+</ProviderSettings>

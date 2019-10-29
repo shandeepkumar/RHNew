@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.64.93"
+                id="btf_SupportingDocumentsRequests_btf_SupportingDocumentsRequests_getSupportingDocumentsRequestsPageDef"
+                Package="PageFlows.taskFlow" SkipValidation="true">
+  <parameters/>
+  <executables/>
+  <bindings>
+    <methodAction id="getSupportingDocumentsRequests" RequiresUpdateModel="true"
+                  Action="invokeMethod"
+                  MethodName="getSupportingDocumentsRequests"
+                  IsViewObjectMethod="false"
+                  DataControl="RegBookAppModuleDataControl"
+                  InstanceName="RegBookAppModuleDataControl.dataProvider">
+      <NamedData NDName="departmentId"
+                 NDValue="#{sessionScope.rhSession.fldDepartmentId}"
+                 NDType="java.lang.String"/>
+    </methodAction>
+  </bindings>
+</pageDefinition>

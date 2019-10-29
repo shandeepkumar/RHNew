@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="nav_PolicyExpiryInternalPage">
+    <default-activity id="__1">AgingResponseInternalNavigationPage</default-activity>
+    <view id="AgingResponseInternalNavigationPage">
+      <page>/jspx/AgingResponseInternalNavigationPage.jspx</page>
+    </view>
+  </task-flow-definition>
+</adfc-config>

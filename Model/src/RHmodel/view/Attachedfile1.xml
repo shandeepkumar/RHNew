@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Attachedfile1"
+  Version="11.1.1.64.93"
+  InheritPersonalization="true"
+  DBObjectType="table"
+  DBObjectName="dbo.attachedFile"
+  AliasName="Attachedfile1"
+  BindingStyle="JDBC"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <AttrArray Name="_publishEvents"/>
+  </DesignTime>
+  <Attribute
+    Name="fileId"
+    IsUpdateable="false"
+    IsNotNull="true"
+    Precision="18"
+    Scale="0"
+    ColumnName="fileId"
+    SQLType="DECIMAL"
+    Type="java.math.BigDecimal"
+    ColumnType="decimal"
+    TableName="dbo.attachedFile"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="filenameOrig"
+    Precision="255"
+    ColumnName="filenameOrig"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="varchar"
+    TableName="dbo.attachedFile">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="255"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="filenameStore"
+    Precision="255"
+    ColumnName="filenameStore"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="varchar"
+    TableName="dbo.attachedFile">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="255"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="filePath"
+    Precision="500"
+    ColumnName="filePath"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="varchar"
+    TableName="dbo.attachedFile">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="500"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="type"
+    Precision="100"
+    ColumnName="type"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="varchar"
+    TableName="dbo.attachedFile">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="parentPolicyId"
+    Precision="18"
+    Scale="0"
+    ColumnName="parentPolicyId"
+    SQLType="DECIMAL"
+    Type="java.math.BigDecimal"
+    ColumnType="decimal"
+    TableName="dbo.attachedFile">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="parentPolicyAmendment"
+    Precision="18"
+    Scale="0"
+    ColumnName="parentPolicyAmendment"
+    SQLType="DECIMAL"
+    Type="java.math.BigDecimal"
+    ColumnType="decimal"
+    TableName="dbo.attachedFile">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="polAmendmentId"
+    Precision="18"
+    Scale="0"
+    ColumnName="polAmendmentId"
+    SQLType="DECIMAL"
+    Type="java.math.BigDecimal"
+    ColumnType="decimal"
+    TableName="dbo.attachedFile">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="itemId"
+    Precision="18"
+    Scale="0"
+    ColumnName="itemId"
+    SQLType="DECIMAL"
+    Type="java.math.BigDecimal"
+    ColumnType="decimal"
+    TableName="dbo.attachedFile">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="Policy1"
+    Association="RHmodel.view.attachedFilePolicyFK1Assoc1"
+    AssociationEnd="RHmodel.view.attachedFilePolicyFK1Assoc1.Policy1"
+    AssociationOtherEnd="RHmodel.view.attachedFilePolicyFK1Assoc1.Attachedfile1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Policyamendments1"
+    Association="RHmodel.view.attachedFilePolicyAmendmentsFK1Assoc1"
+    AssociationEnd="RHmodel.view.attachedFilePolicyAmendmentsFK1Assoc1.Policyamendments1"
+    AssociationOtherEnd="RHmodel.view.attachedFilePolicyAmendmentsFK1Assoc1.Attachedfile1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="attachedFilePK"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="attachedFile_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="RHmodel.view.Attachedfile1.fileId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="attachedFilePolicyAmendmentsFK1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PolicyAmendments_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="attachedFile_PolicyAmendments_FK1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="RHmodel.view.Attachedfile1.polAmendmentId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="attachedFilePolicyFK1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="Policy_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="attachedFile_Policy_FK1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="RHmodel.view.Attachedfile1.itemId"/>
+    </AttrArray>
+  </Key>
+</Entity>

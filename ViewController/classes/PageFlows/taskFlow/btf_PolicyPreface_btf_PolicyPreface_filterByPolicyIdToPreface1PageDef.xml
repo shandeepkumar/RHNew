@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.64.93"
+                id="btf_PolicyPreface_btf_PolicyPreface_filterByPolicyIdToPreface1PageDef"
+                Package="PageFlows.taskFlow" SkipValidation="true">
+  <parameters/>
+  <executables/>
+  <bindings>
+    <methodAction id="filterByPolicyIdToPreface" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="filterByPolicyIdToPreface"
+                  IsViewObjectMethod="false"
+                  DataControl="RegBookAppModuleDataControl"
+                  InstanceName="RegBookAppModuleDataControl.dataProvider">
+      <NamedData NDName="itemid" NDValue="#{sessionScope.rhSession.fldPolicyId}"
+                 NDType="java.lang.String"/>
+      <NamedData NDName="userId" NDValue="#{sessionScope.rhSession.fldUserid}"
+                 NDType="java.lang.String"/>
+      <NamedData NDName="isInternalExternal"
+                 NDValue="#{sessionScope.rhSession.isInternalExternal}"
+                 NDType="java.lang.String"/>
+      <NamedData NDName="userRoleId"
+                 NDValue="#{sessionScope.rhSession.fldUserType}"
+                 NDType="java.lang.String"/>
+      <NamedData NDName="depOrOrg"
+                 NDValue="#{sessionScope.rhSession.userDepOrOrgId}"
+                 NDType="java.lang.String"/>
+    </methodAction>
+  </bindings>
+</pageDefinition>

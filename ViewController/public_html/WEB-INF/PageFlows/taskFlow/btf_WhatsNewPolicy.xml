@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="btf_WhatsNewPolicy">
+    <default-activity id="__1">getWhatsNewPolicysUserId</default-activity>
+    <managed-bean id="__2">
+      <managed-bean-name id="__3">backing_jsff_WhatsNewPage</managed-bean-name>
+      <managed-bean-class id="__5">gov.bnm.view.rh.backingBeans.WhatsNewPage</managed-bean-class>
+      <managed-bean-scope id="__4">backingBean</managed-bean-scope>
+      <!--oracle-jdev-comment:managed-bean-jsp-link:1jsff/WhatsNewPage.jsff-->
+    </managed-bean>
+    <managed-bean id="__33">
+      <managed-bean-name id="__32">backing_jsff_IssuingDepartmentWelcomePage</managed-bean-name>
+      <managed-bean-class id="__31">view.backing.jsff.IssuingDepartmentWelcomePage</managed-bean-class>
+      <managed-bean-scope id="__30">backingBean</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__42">
+      <managed-bean-name id="__45">backing_jsff_WhatsNewPolicyListingPage</managed-bean-name>
+      <managed-bean-class id="__44">gov.bnm.view.rh.backingBeans.WhatsNewPolicyListingPage</managed-bean-class>
+      <managed-bean-scope id="__43">backingBean</managed-bean-scope>
+    </managed-bean>
+    <view id="WhatsNewPage">
+      <page>/jsff/WhatsNewPage.jsff</page>
+    </view>
+    <method-call id="getWhatsNewPolicys">
+      <method>#{bindings.getWhatsNewPolicys.execute}</method>
+      <outcome id="__6">
+        <fixed-outcome>getWhatsNewPolicys</fixed-outcome>
+      </outcome>
+    </method-call>
+    <task-flow-call id="btf_PolicyPreface">
+      <task-flow-reference>
+        <document>/WEB-INF/PageFlows/taskFlow/btf_PolicyPreface.xml</document>
+        <id>btf_PolicyPreface</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <view id="IssuingDepartmentWelcomePage">
+      <page>/jsff/IssuingDepartmentWelcomePage.jsff</page>
+    </view>
+    <view id="WhatsNewPolicyListingPage">
+      <page>/jsff/WhatsNewPolicyListingPage.jsff</page>
+    </view>
+    <method-call id="getWhatsNewPolicysUserId">
+      <method>#{bindings.getWhatsNewPolicysUserId.execute}</method>
+      <outcome id="__34">
+        <fixed-outcome>getWhatsNewPolicysUserId</fixed-outcome>
+      </outcome>
+    </method-call>
+    <control-flow-rule id="__7">
+      <from-activity-id id="__8">getWhatsNewPolicys</from-activity-id>
+      <control-flow-case id="__9">
+        <from-outcome id="__11">getWhatsNewPolicys</from-outcome>
+        <to-activity-id id="__10">WhatsNewPage</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__17">
+      <from-activity-id id="__18">btf_PolicyPreface</from-activity-id>
+      <control-flow-case id="__20">
+        <from-outcome id="__19">backCateTreePolicySearch</from-outcome>
+        <to-activity-id id="__21">WhatsNewPage</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__25">
+      <from-activity-id id="__26">IssuingDepartmentWelcomePage</from-activity-id>
+      <control-flow-case id="__28">
+        <from-outcome id="__29">back</from-outcome>
+        <to-activity-id id="__27">WhatsNewPage</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__12">
+      <from-activity-id id="__13">WhatsNewPage</from-activity-id>
+      <control-flow-case id="__14">
+        <from-outcome id="__15">policyPreface</from-outcome>
+        <to-activity-id id="__16">btf_PolicyPreface</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__22">
+        <from-outcome id="__23">issDepartment</from-outcome>
+        <to-activity-id id="__24">IssuingDepartmentWelcomePage</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__35">
+      <from-activity-id id="__36">getWhatsNewPolicysUserId</from-activity-id>
+      <control-flow-case id="__37">
+        <from-outcome id="__38">getWhatsNewPolicysUserId</from-outcome>
+        <to-activity-id id="__39">WhatsNewPage</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

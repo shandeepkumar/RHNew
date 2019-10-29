@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Policyinstitutiontypepartition"
+  Version="11.1.1.64.93"
+  InheritPersonalization="true"
+  DBObjectType="table"
+  DBObjectName="dbo.PolicyInstitutionTypePartition"
+  AliasName="Policyinstitutiontypepartiti1"
+  BindingStyle="JDBC"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <AttrArray Name="_publishEvents"/>
+  </DesignTime>
+  <Attribute
+    Name="itemId"
+    IsNotNull="true"
+    Precision="50"
+    ColumnName="itemId"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="varchar"
+    TableName="dbo.PolicyInstitutionTypePartition"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="id"
+    Precision="20"
+    ColumnName="id"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="varchar"
+    TableName="dbo.PolicyInstitutionTypePartition"
+    IsNotNull="true"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="Policy"
+    Association="gov.bnm.rh.entities.assoc.PolicyInstitutionTypePartiFK1Assoc"
+    AssociationEnd="gov.bnm.rh.entities.assoc.PolicyInstitutionTypePartiFK1Assoc.Policy"
+    AssociationOtherEnd="gov.bnm.rh.entities.assoc.PolicyInstitutionTypePartiFK1Assoc.Policyinstitutiontypepartition"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Institutiontype"
+    Association="gov.bnm.rh.entities.assoc.PolicyInstitutionTypePartitFKAssoc"
+    AssociationEnd="gov.bnm.rh.entities.assoc.PolicyInstitutionTypePartitFKAssoc.Institutiontype"
+    AssociationOtherEnd="gov.bnm.rh.entities.assoc.PolicyInstitutionTypePartitFKAssoc.Policyinstitutiontypepartition"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="PolicyInstitutionTypePartitionPK"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PolicyInstitutionTypePartition_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="gov.bnm.rh.entities.Policyinstitutiontypepartition.itemId"/>
+      <Item Value="gov.bnm.rh.entities.Policyinstitutiontypepartition.id"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="PolicyInstitutionTypePartiFK1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="Policy_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="PolicyInstitutionTypeParti_FK1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="gov.bnm.rh.entities.Policyinstitutiontypepartition.itemId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="PolicyInstitutionTypePartitFK">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="INSTITUTIONTYPE_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="PolicyInstitutionTypePartit_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="gov.bnm.rh.entities.Policyinstitutiontypepartition.id"/>
+    </AttrArray>
+  </Key>
+</Entity>

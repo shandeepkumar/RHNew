@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html">
+  <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_jsff_PolicyDecisionEmailPage-->
+  <af:panelStretchLayout binding="#{backingBeanScope.backing_jsff_PolicyDecisionEmailPage.psl1}"
+                         id="psl1">
+    <f:facet name="center">
+      <af:panelGroupLayout layout="scroll"
+                           xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                           binding="#{backingBeanScope.backing_jsff_PolicyDecisionEmailPage.pgl1}"
+                           id="pgl1">
+        <af:panelFormLayout binding="#{backingBeanScope.backing_jsff_PolicyDecisionEmailPage.pfl1}"
+                            id="pfl1"
+                            visible="#{bindings.RecordStatus.inputValue eq 'PENDING'}">
+          <af:panelLabelAndMessage label="#{bindings.GuidelineTitle.hints.label}"
+                                   binding="#{backingBeanScope.backing_jsff_PolicyDecisionEmailPage.plam2}"
+                                   id="plam2">
+            <af:outputText value="#{bindings.GuidelineTitle.inputValue}"
+                           binding="#{backingBeanScope.backing_jsff_PolicyDecisionEmailPage.ot3}"
+                           id="ot3"/>
+          </af:panelLabelAndMessage>
+          <af:spacer width="10" height="10" id="s2"
+                     binding="#{backingBeanScope.backing_jsff_PolicyDecisionEmailPage.s2}"/>
+          <af:selectOneRadio label="Decision" id="sor1"
+                             binding="#{backingBeanScope.backing_jsff_PolicyDecisionEmailPage.sor1}"
+                             value="#{pageFlowScope.decision}"
+                             autoSubmit="true">
+            <af:selectItem label="Approve" value="ACTIVE" id="si1"
+                           binding="#{backingBeanScope.backing_jsff_PolicyDecisionEmailPage.si1}"/>
+            <af:selectItem label="Reject" value="REJECTED" id="si2"
+                           binding="#{backingBeanScope.backing_jsff_PolicyDecisionEmailPage.si2}"/>
+          </af:selectOneRadio>
+          <af:spacer width="10" height="10" id="s3"
+                     binding="#{backingBeanScope.backing_jsff_PolicyDecisionEmailPage.s3}"/>
+          <af:inputText label="#{bindings.ReasonForRejection.hints.label}"
+                        binding="#{backingBeanScope.backing_jsff_PolicyDecisionEmailPage.it1}"
+                        value="#{bindings.ReasonForRejection.inputValue}"
+                        visible="#{pageFlowScope.decision eq 'REJECTED'}"
+                        id="it1" partialTriggers="sor1" columns="60" rows="2"/>
+          <af:spacer width="10" height="10" id="s4"
+                     binding="#{backingBeanScope.backing_jsff_PolicyDecisionEmailPage.s4}"/>
+          <f:facet name="footer">
+            <af:panelGroupLayout id="pgl2"
+                                 binding="#{backingBeanScope.backing_jsff_PolicyDecisionEmailPage.pgl2}">
+              <af:spacer width="10" height="10" id="s5"
+                         binding="#{backingBeanScope.backing_jsff_PolicyDecisionEmailPage.s5}"/>
+              <af:commandButton text="Submit"
+                                binding="#{backingBeanScope.backing_jsff_PolicyDecisionEmailPage.cb3}"
+                                id="cb3"
+                                action="#{backingBeanScope.backing_jsff_PolicyDecisionEmailPage.submitDecision}"/>
+              <af:spacer width="10" height="10" id="s6"
+                         binding="#{backingBeanScope.backing_jsff_PolicyDecisionEmailPage.s6}"/>
+              <af:commandButton text="Cancel"
+                                binding="#{backingBeanScope.backing_jsff_PolicyDecisionEmailPage.cb4}"
+                                id="cb4"
+                                action="#{backingBeanScope.backing_jsff_PolicyDecisionEmailPage.closePage}"/>
+            </af:panelGroupLayout>
+          </f:facet>
+        </af:panelFormLayout>
+        <af:panelFormLayout binding="#{backingBeanScope.backing_jsff_PolicyDecisionEmailPage.pfl2}"
+                            id="pfl2"
+                            visible="#{bindings.RecordStatus.inputValue ne 'PENDING'}">
+          <f:facet name="footer">
+            <af:commandButton text="Close"
+                              binding="#{backingBeanScope.backing_jsff_PolicyDecisionEmailPage.cb1}"
+                              id="cb1"
+                              action="#{backingBeanScope.backing_jsff_PolicyDecisionEmailPage.closePage}"/>
+          </f:facet>
+          <af:outputText value="The document has been #{bindings.RecordStatus.inputValue ne 'ACTIVE' ? 'approved for publishing' : bindings.RecordStatus.inputValue ne 'REJECTED' ?'rejected':''}"
+                         binding="#{backingBeanScope.backing_jsff_PolicyDecisionEmailPage.ot1}"
+                         id="ot1" inlineStyle="font-size:large; color:Purple;"/>
+          <af:spacer width="10" height="10" id="s7"/>
+        </af:panelFormLayout>
+        <af:spacer height="10"
+                   binding="#{backingBeanScope.backing_jsff_PolicyDecisionEmailPage.s1}"
+                   id="s1"/>
+        <af:panelFormLayout id="pfl3">
+          <af:commandLink text="Click here to view preface"
+                          action="policyPreface" partialSubmit="true"
+                          binding="#{backingBeanScope.backing_jsff_PolicyDecisionEmailPage.cl1}"
+                          id="cl1"/>
+          <af:spacer height="10"
+                     binding="#{backingBeanScope.backing_jsff_PolicyDecisionEmailPage.s8}"
+                     id="s8"/>
+        </af:panelFormLayout>
+      </af:panelGroupLayout>
+    </f:facet>
+    <f:facet name="top">
+      <af:outputText value="Document Publishing Approval"
+                     binding="#{backingBeanScope.backing_jsff_PolicyDecisionEmailPage.ot2}"
+                     id="ot2"
+                     inlineStyle="color:Navy; font-family:Arial, Helvetica, sans-serif; font-size:x-large; font-weight:bold; text-align:center;"/>
+    </f:facet>
+  </af:panelStretchLayout>
+</jsp:root>

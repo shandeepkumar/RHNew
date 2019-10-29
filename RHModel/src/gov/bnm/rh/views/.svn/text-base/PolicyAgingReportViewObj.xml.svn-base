@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="PolicyAgingReportViewObj"
+  Version="11.1.1.64.93"
+  InheritPersonalization="true"
+  BindingStyle="JDBC"
+  CustomQuery="true"
+  PageIterMode="Full"
+  UseGlueCode="false"
+  RowClass="gov.bnm.rh.views.PolicyAgingReportViewObjRowImpl">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="gov.bnm.rh.views.PolicyAgingReportViewObj_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <Variable
+    Name="bindPolicyAge"
+    Kind="where"
+    Type="java.lang.Integer">
+    <AttrArray Name="ExtendedDataInts">
+      <Item Value="0"/>
+    </AttrArray>
+  </Variable>
+  <Variable
+    Name="bindPolicyAge1"
+    Kind="where"
+    Type="java.lang.Integer">
+    <AttrArray Name="ExtendedDataInts">
+      <Item Value="1"/>
+    </AttrArray>
+  </Variable>
+  <Variable
+    Name="bindItemId"
+    Kind="where"
+    Type="java.lang.String">
+    <AttrArray Name="ExtendedDataInts">
+      <Item Value="2"/>
+    </AttrArray>
+  </Variable>
+  <SQLQuery>
+    <![CDATA[SELECT sel.itemId,sel.RefNum ,sel.GuidelineTitle,sel.NewIssuanceDate,sel.monthDiff,sel.monthDiff /12 as DueInYear,
+(sel.monthDiff - ((sel.monthDiff /12) * 12 )) as DueInMonth, (60 - sel.monthDiff) /12 as ageYear, 
+ CASE WHEN  (60 - sel.monthDiff) >12 THEN ((60 - sel.monthDiff) - (((60 - sel.monthDiff)/12)*12))  ELSE (60 - sel.monthDiff) END as ageMonth,
+sel.daysDiff,sel.FirstIssuanceDate,sel.EffectiveDate,sel.PublishToBNM
+  FROM (SELECT p.itemId,p.GuidelineTitle,p.NewIssuanceDate,p.RefNum,p.FirstIssuanceDate,
+DATEDIFF(mm, getdate(), DATEADD(mm,CAST(? as int), p.NewIssuanceDate)) as monthDiff,
+DATEDIFF(dd, getdate(), DATEADD(mm,CAST(? as int), p.NewIssuanceDate)) as daysDiff,
+p.EffectiveDate,p.PublishToBNM
+FROM [dbo].[Policy] p
+where  p.itemId <> ? and p.RecordStatus IN ('ACTIVE','ARCHIVE') ) sel]]>
+  </SQLQuery>
+  <ViewAttribute
+    Name="itemId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    AliasName="itemId"
+    Expression="itemId"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="RefNum"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="100"
+    Type="java.lang.String"
+    ColumnType="varchar"
+    AliasName="RefNum"
+    Expression="RefNum"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="gov.bnm.rh.views.PolicyAgingReportViewObj.RefNum_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="GuidelineTitle"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="varchar"
+    AliasName="GuidelineTitle"
+    Expression="GuidelineTitle"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="255"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="gov.bnm.rh.views.PolicyAgingReportViewObj.GuidelineTitle_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="NewIssuanceDate"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.sql.Timestamp"
+    ColumnType="datetime"
+    AliasName="NewIssuanceDate"
+    Expression="NewIssuanceDate"
+    SQLType="TIMESTAMP">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="23"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMATTER
+          ResId="gov.bnm.rh.views.PolicyAgingReportViewObj.NewIssuanceDate_FMT_FORMATTER"/>
+        <FMT_FORMAT
+          ResId="gov.bnm.rh.views.PolicyAgingReportViewObj.NewIssuanceDate_FMT_FORMAT"/>
+        <LABEL
+          ResId="gov.bnm.rh.views.PolicyAgingReportViewObj.NewIssuanceDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="monthDiff"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="10"
+    Scale="0"
+    Type="java.lang.Integer"
+    ColumnType="int"
+    AliasName="monthDiff"
+    Expression="monthDiff"
+    SQLType="INTEGER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="11"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="DueInYear"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="10"
+    Scale="0"
+    Type="java.lang.Integer"
+    ColumnType="int"
+    AliasName="DueInYear"
+    Expression="DueInYear"
+    SQLType="INTEGER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="11"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="DueInMonth"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="10"
+    Scale="0"
+    Type="java.lang.Integer"
+    ColumnType="int"
+    AliasName="DueInMonth"
+    Expression="DueInMonth"
+    SQLType="INTEGER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="11"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ageYear"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="10"
+    Scale="0"
+    Type="java.lang.Integer"
+    ColumnType="int"
+    AliasName="ageYear"
+    Expression="ageYear"
+    SQLType="INTEGER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="11"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ageMonth"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="10"
+    Scale="0"
+    Type="java.lang.Integer"
+    ColumnType="int"
+    AliasName="ageMonth"
+    Expression="ageMonth"
+    SQLType="INTEGER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="11"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="daysDiff"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="10"
+    Scale="0"
+    Type="java.lang.Integer"
+    ColumnType="int"
+    AliasName="daysDiff"
+    Expression="daysDiff"
+    SQLType="INTEGER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="11"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="FirstIssuanceDate"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.sql.Timestamp"
+    ColumnType="datetime"
+    AliasName="FirstIssuanceDate"
+    Expression="FirstIssuanceDate"
+    SQLType="TIMESTAMP">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="23"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMATTER
+          ResId="gov.bnm.rh.views.PolicyAgingReportViewObj.FirstIssuanceDate_FMT_FORMATTER"/>
+        <FMT_FORMAT
+          ResId="gov.bnm.rh.views.PolicyAgingReportViewObj.FirstIssuanceDate_FMT_FORMAT"/>
+        <LABEL
+          ResId="gov.bnm.rh.views.PolicyAgingReportViewObj.FirstIssuanceDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="EffectiveDate"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="varchar"
+    AliasName="EffectiveDate"
+    Expression="EffectiveDate"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="255"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="gov.bnm.rh.views.PolicyAgingReportViewObj.EffectiveDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="PublishToBNM"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="10"
+    Type="java.lang.String"
+    ColumnType="varchar"
+    AliasName="PublishToBNM"
+    Expression="PublishToBNM"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="gov.bnm.rh.views.PolicyAgingReportViewObj.PublishToBNM_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="gov.bnm.rh.RHModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

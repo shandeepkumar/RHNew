@@ -1,0 +1,522 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+      <af:panelStretchLayout id="psl1">
+            <f:facet name="center">
+                  <af:panelGroupLayout id="pgl2" layout="scroll">
+                        <af:panelTabbed id="pt1" dimensionsFrom="auto">
+                              <af:showDetailItem text="Pending" id="sdi1">
+                                    <af:table value="#{bindings.EnquiryfaqForEnqPendingViewObj1.collectionModel}"
+                                              var="row"
+                                              rows="#{bindings.EnquiryfaqForEnqPendingViewObj1.rangeSize}"
+                                              emptyText="#{bindings.EnquiryfaqForEnqPendingViewObj1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                              fetchSize="#{bindings.EnquiryfaqForEnqPendingViewObj1.rangeSize}"
+                                              rowBandingInterval="1"
+                                              filterModel="#{bindings.EnquiryfaqForEnqPendingViewObj1Query.queryDescriptor}"
+                                              queryListener="#{bindings.EnquiryfaqForEnqPendingViewObj1Query.processQuery}"                                              
+                                              varStatus="vs"
+                                              selectionListener="#{backingBeanScope.backing_jsff_EnquiriesPage.pendingEnquiryTableSelectionListener}"
+                                              id="t1" width="99%"
+                                              columnStretching="column:c5"
+                                              rowSelection="single"
+                                              filterVisible="true">
+                                          <af:column headerText="No" id="c6"
+                                                     width="30"
+                                                     inlineStyle="#{row.EnquiryDays ge 3 ? 'background-color:#FF9B9B;': null}">
+                                                <af:outputText value="#{vs.index + 1}"
+                                                               id="ot7"/>
+                                          </af:column>
+                                          <af:column sortProperty="#{bindings.EnquiryfaqForEnqPendingViewObj1.hints.RefNo.name}"
+                                                     filterable="true"
+                                                     filterFeatures="caseInsensitive"
+                                                     sortable="true"
+                                                     headerText="#{bindings.EnquiryfaqForEnqPendingViewObj1.hints.RefNo.label}"
+                                                     id="c3" width="150"
+                                                     noWrap="false"
+                                                     inlineStyle="#{row.EnquiryDays ge 3 ? 'background-color:#FF9B9B;': null}">
+                                                <af:outputText value="#{row.RefNo}"
+                                                               id="ot5"/>
+                                          </af:column>
+                                          <af:column sortProperty="#{bindings.EnquiryfaqForEnqPendingViewObj1.hints.PolicyTitle.name}"
+                                                     filterable="true"
+                                                     filterFeatures="caseInsensitive"
+                                                     sortable="true"
+                                                     headerText="#{bindings.EnquiryfaqForEnqPendingViewObj1.hints.PolicyTitle.label}"
+                                                     id="c5" width="150"
+                                                     noWrap="false"
+                                                     inlineStyle="#{row.EnquiryDays ge 3 ? 'background-color:#FF9B9B;': null}">
+                                                <af:outputText value="#{row.PolicyTitle}"
+                                                               id="ot3"/>
+                                          </af:column>
+                                          <af:column sortProperty="#{bindings.EnquiryfaqForEnqPendingViewObj1.hints.IssuingDepartment.name}"
+                                                     filterable="true"
+                                                     filterFeatures="caseInsensitive"
+                                                     sortable="true"
+                                                     headerText="#{bindings.EnquiryfaqForEnqPendingViewObj1.hints.IssuingDepartment.label}"
+                                                     width="250" id="c13"
+                                                     rendered="#{sessionScope.rhSession.fldUserType ne '03'}"
+                                                     noWrap="false"
+                                                     inlineStyle="#{row.EnquiryDays ge 3 ? 'background-color:#FF9B9B;': null}">
+                                                <af:outputText value="#{row.IssuingDepartment}"
+                                                               id="ot15"/>
+                                          </af:column>
+                                          <af:column headerText="Enquirer Name"
+                                                     width="150" id="c15"
+                                                     noWrap="false"
+                                                     inlineStyle="#{row.EnquiryDays ge 3 ? 'background-color:#FF9B9B;': null}">
+                                                <af:outputText value="#{row.InternalUserName}"
+                                                               id="ot16"/>
+                                                <af:outputText value="#{row.ExternalUserName}"
+                                                               id="ot17"/>
+                                          </af:column>
+                                          <af:column headerText="Enquirer Department/ Organization Name"
+                                                     width="150" id="c14"
+                                                     noWrap="false"
+                                                     inlineStyle="#{row.EnquiryDays ge 3 ? 'background-color:#FF9B9B;': null}">
+                                                <af:outputText value="#{row.InternalUserDepName}"
+                                                               id="ot18"/>
+                                                <af:outputText value="#{row.ExternalUserOrgName}"
+                                                               id="ot19"/>
+                                          </af:column>
+                                          <af:column sortProperty="#{bindings.EnquiryfaqForEnqPendingViewObj1.hints.enquiryStatus.name}"
+                                                     filterable="true"
+                                                     filterFeatures="caseInsensitive"
+                                                     sortable="true"
+                                                     headerText="#{bindings.EnquiryfaqForEnqPendingViewObj1.hints.enquiryStatus.label}"
+                                                     id="c2" width="68"
+                                                     rendered="false"
+                                                     inlineStyle="#{row.EnquiryDays ge 3 ? 'background-color:#FF9B9B;': null}">
+                                                <af:outputText value="#{row.enquiryStatus}"
+                                                               id="ot6"/>
+                                          </af:column>
+                                          <af:column sortProperty="#{bindings.EnquiryfaqForEnqPendingViewObj1.hints.createDate.name}"
+                                                     filterable="true"
+                                                     filterFeatures="caseInsensitive"
+                                                     sortable="true"
+                                                     headerText="Enquiry Date"
+                                                     id="c1" width="68"
+                                                     inlineStyle="#{row.EnquiryDays ge 3 ? 'background-color:#FF9B9B;': null}">
+                                                <f:facet name="filter">
+                                                      <af:inputDate value="#{vs.filterCriteria.createDate}"
+                                                                    id="id1">
+                                                            <af:convertDateTime pattern="#{bindings.EnquiryfaqForEnqPendingViewObj1.hints.createDate.format}"/>
+                                                      </af:inputDate>
+                                                </f:facet>
+                                                <af:outputText value="#{row.createDate}"
+                                                               id="ot4">
+                                                      <af:convertDateTime pattern="#{bindings.EnquiryfaqForEnqPendingViewObj1.hints.createDate.format}"/>
+                                                </af:outputText>
+                                          </af:column>
+                                    </af:table>
+                                    <af:spacer width="10" height="20"
+                                               binding="#{backingBeanScope.backing_jsff_EnquiriesPage.s4}"
+                                               id="s4"/>
+                                    <af:panelTabbed binding="#{backingBeanScope.backing_jsff_EnquiriesPage.pt2}"
+                                                    id="pt2"
+                                                    dimensionsFrom="auto"
+                                                    visible="#{backingBeanScope.backing_jsff_EnquiriesPage.pendingDetailsStatus}"
+                                                    partialTriggers="t1">
+                                          <af:showDetailItem text="Details"
+                                                             binding="#{backingBeanScope.backing_jsff_EnquiriesPage.sdi3}"
+                                                             id="sdi3">
+                                                <af:panelFormLayout binding="#{backingBeanScope.backing_jsff_EnquiriesPage.pfl1}"
+                                                                    id="pfl1"
+                                                                    partialTriggers="t1"
+                                                                    visible="#{bindings.EnquiryfaqForEnqPendingViewObj1Iterator.estimatedRowCount >0}">
+                                                      <f:facet name="footer">
+                                                            <af:commandButton text="Submit"
+                                                                              binding="#{backingBeanScope.backing_jsff_EnquiriesPage.cb1}"
+                                                                              id="cb1"
+                                                                              rendered="#{sessionScope.rhSession.fldUserType eq '03' or sessionScope.rhSession.fldUserType eq '09'}"
+                                                                              action="#{backingBeanScope.backing_jsff_EnquiriesPage.submitRequest}"
+                                                                              disabled="#{bindings.EnquiryfaqForEnqPendingViewObj1Iterator.estimatedRowCount &lt;1}"/>
+                                                      </f:facet>
+                                                      <af:spacer width="10"
+                                                                 height="20"
+                                                                 id="s10"/>
+                                                      <af:panelLabelAndMessage label="#{bindings.PolicyTitlePending.hints.label}"
+                                                                               binding="#{backingBeanScope.backing_jsff_EnquiriesPage.plam2}"
+                                                                               id="plam2">
+                                                            <af:outputText value="#{bindings.PolicyTitlePending.inputValue}"
+                                                                           binding="#{backingBeanScope.backing_jsff_EnquiriesPage.ot20}"
+                                                                           id="ot20"/>
+                                                      </af:panelLabelAndMessage>
+                                                      <af:spacer width="10"
+                                                                 height="10"
+                                                                 id="s9"/>
+                                                      <af:panelLabelAndMessage label="Enquirer Name"
+                                                                               id="plam3">
+                                                            <af:outputText value="#{bindings.InternalUserNamePending.inputValue}"
+                                                                           id="ot21"/>
+                                                            <af:outputText value="#{bindings.ExternalUserNamePending.inputValue}"
+                                                                           id="ot22"/>
+                                                      </af:panelLabelAndMessage>
+                                                      <af:spacer width="10"
+                                                                 height="10"
+                                                                 id="s8"/>
+                                                      <af:panelLabelAndMessage label="Enquirer Department/ Organization Name"
+                                                                               id="plam4">
+                                                            <af:outputText value="#{bindings.InternalUserDepNamePending.inputValue}"
+                                                                           id="ot23"/>
+                                                            <af:outputText value="#{bindings.ExternalUserOrgNamePending.inputValue}"
+                                                                           id="ot24"/>
+                                                      </af:panelLabelAndMessage>
+                                                      <af:spacer width="10"
+                                                                 height="10"
+                                                                 id="s2"/>
+                                                      <af:panelLabelAndMessage label="#{bindings.TitlePending.hints.label}"
+                                                                               id="plam1">
+                                                            <af:outputText id="ot14"
+                                                                           value="#{bindings.TitlePending.inputValue}"/>
+                                                      </af:panelLabelAndMessage>
+                                                      <af:spacer id="s40"
+                                                                 width="10"
+                                                                 height="10"
+                                                                 visible="#{bindings.AttachedfileForEnqQueView1Iterator.estimatedRowCount >0}"/>
+                                                      <af:panelLabelAndMessage label="Enquirer Attachment"
+                                                                               id="plam11"
+                                                                               visible="#{bindings.AttachedfileForEnqQueView1Iterator.estimatedRowCount >0}">
+                                                            <af:iterator id="i7"
+                                                                         value="#{bindings.AttachedfileForEnqQueView1.collectionModel}"
+                                                                         var="row"
+                                                                         varStatus="vs">
+                                                                  <af:commandLink text="#{row.filenameOrig}"
+                                                                                  id="cl13"
+                                                                                  actionListener="#{backingBeanScope.backing_jsff_EnquiriesPage.onOpenEnqQueFileSelected}"
+                                                                                  visible="#{bindings.AttachedfileForEnqQueView1Iterator.estimatedRowCount >0}">
+                                                                        <f:attribute name="rowKey"
+                                                                                     value="#{vs.index}"/>
+                                                                  </af:commandLink>
+                                                                  <af:outputText value="&lt;br/>"
+                                                                                 id="ot12"
+                                                                                 escape="false"/>
+                                                            </af:iterator>
+                                                      </af:panelLabelAndMessage>
+                                                      <af:spacer width="10"
+                                                                 height="10"
+                                                                 id="s18"/>
+                                                      <af:richTextEditor label="Response"
+                                                                         rows="8"
+                                                                         columns="75"
+                                                                         id="rte1"
+                                                                         rendered="#{sessionScope.rhSession.fldUserType eq '03' or sessionScope.rhSession.fldUserType eq '09'}"
+                                                                         toolboxLayout="history formatAll justify list indent"
+                                                                         binding="#{backingBeanScope.backing_jsff_EnquiriesPage.rte1}"
+                                                                         value="#{bindings.AbstractPending.inputValue}"/>
+                                                      <af:spacer width="10"
+                                                                 height="10"
+                                                                 id="s15"/>
+                                                      <af:inputFile label="Attachment"
+                                                                    binding="#{backingBeanScope.backing_jsff_EnquiriesPage.if1}"
+                                                                    id="if1"
+                                                                    autoSubmit="true"
+                                                                    rendered="#{sessionScope.rhSession.fldUserType eq '03' or sessionScope.rhSession.fldUserType eq '09'}"
+                                                                    value="#{backingBeanScope.backing_jsff_EnquiriesPage.ansUploadedFile}"
+                                                                    shortDesc="Please ensure the file is uploaded successfully before proceeding to upload the next file."/>
+                                                      <af:commandButton text="Download"
+                                                                        binding="#{backingBeanScope.backing_jsff_EnquiriesPage.cb3}"
+                                                                        id="cb3"
+                                                                        visible="false"
+                                                                        immediate="true">
+                                                            <af:fileDownloadActionListener method="#{backingBeanScope.backing_jsff_EnquiriesPage.doDownload}"
+                                                                                           filename="#{pageFlowScope.filenameOrig}"/>
+                                                      </af:commandButton>
+                                                      <af:table value="#{bindings.AttachedfileForEnqAnsView1.collectionModel}"
+                                                                var="row"
+                                                                rows="#{bindings.AttachedfileForEnqAnsView1.rangeSize}"
+                                                                emptyText="#{bindings.AttachedfileForEnqAnsView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                                fetchSize="#{bindings.AttachedfileForEnqAnsView1.rangeSize}"
+                                                                rowBandingInterval="0"
+                                                                selectedRowKeys="#{bindings.AttachedfileForEnqAnsView1.collectionModel.selectedRow}"
+                                                                selectionListener="#{bindings.AttachedfileForEnqAnsView1.collectionModel.makeCurrent}"
+                                                                rowSelection="single"
+                                                                rendered="#{sessionScope.rhSession.fldUserType eq '03' or sessionScope.rhSession.fldUserType eq '09'}"
+                                                                binding="#{backingBeanScope.backing_jsff_EnquiriesPage.t3}"
+                                                                id="t3"
+                                                                partialTriggers="::if1"
+                                                                visible="#{bindings.AttachedfileForEnqAnsView1Iterator.estimatedRowCount >0}"
+                                                                inlineStyle="height:49px;"
+                                                                width="426">
+                                                            <af:column sortProperty="#{bindings.AttachedfileForEnqAnsView1.hints.fileId.name}"
+                                                                       sortable="false"
+                                                                       id="c4"
+                                                                       width="30">
+                                                                  <af:commandLink text="X"
+                                                                                  id="cl11"
+                                                                                  actionListener="#{backingBeanScope.backing_jsff_EnquiriesPage.onDeleteAnsFileSelected}">
+                                                                        <f:attribute name="rowKeyDelete"
+                                                                                     value="#{row.rowKey}"/>
+                                                                  </af:commandLink>
+                                                            </af:column>
+                                                            <af:column sortProperty="#{bindings.AttachedfileForEnqAnsView1.hints.filenameOrig.name}"
+                                                                       sortable="false"
+                                                                       id="c7"
+                                                                       width="370">
+                                                                  <af:commandLink text="#{row.filenameOrig}"
+                                                                                  actionListener="#{backingBeanScope.backing_jsff_EnquiriesPage.onOpenAnsFileSelected}"
+                                                                                  id="cl12">
+                                                                        <f:attribute name="rowKey"
+                                                                                     value="#{row.rowKey}"/>
+                                                                  </af:commandLink>
+                                                            </af:column>
+                                                      </af:table>
+                                                </af:panelFormLayout>
+                                          </af:showDetailItem>
+                                    </af:panelTabbed>
+                              </af:showDetailItem>
+                              <af:showDetailItem text="Answered" id="sdi2">
+                                    <af:table value="#{bindings.EnquiryfaqForEnqViewObj1.collectionModel}"
+                                              var="row"
+                                              rows="#{bindings.EnquiryfaqForEnqViewObj1.rangeSize}"
+                                              emptyText="#{bindings.EnquiryfaqForEnqViewObj1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                              fetchSize="#{bindings.EnquiryfaqForEnqViewObj1.rangeSize}"
+                                              rowBandingInterval="1"
+                                              filterModel="#{bindings.EnquiryfaqForEnqViewObj1Query.queryDescriptor}"
+                                              queryListener="#{bindings.EnquiryfaqForEnqViewObj1Query.processQuery}"
+                                              filterVisible="true"
+                                              varStatus="vs"
+                                              selectionListener="#{backingBeanScope.backing_jsff_EnquiriesPage.answeredEnquiryTableSelectionListener}"
+                                              rowSelection="single" id="t2"
+                                              columnStretching="column:c9"
+                                              width="99%">
+                                          <af:column headerText="No" id="c12"
+                                                     width="30">
+                                                <af:outputText value="#{vs.index + 1}"
+                                                               id="ot13"/>
+                                          </af:column>
+                                          <af:column sortProperty="#{bindings.EnquiryfaqForEnqViewObj1.hints.RefNo.name}"
+                                                     filterable="true"
+                                                     filterFeatures="caseInsensitive"
+                                                     sortable="true"
+                                                     headerText="#{bindings.EnquiryfaqForEnqViewObj1.hints.RefNo.label}"
+                                                     id="c11" noWrap="false"
+                                                     width="150">
+                                                <af:outputText value="#{row.RefNo}"
+                                                               id="ot9"/>
+                                          </af:column>
+                                          <af:column sortProperty="#{bindings.EnquiryfaqForEnqViewObj1.hints.PolicyTitle.name}"
+                                                     filterable="true"
+                                                     filterFeatures="caseInsensitive"
+                                                     sortable="true" width="200"
+                                                     headerText="#{bindings.EnquiryfaqForEnqViewObj1.hints.PolicyTitle.label}"
+                                                     id="c9" noWrap="false">
+                                                <af:outputText value="#{row.PolicyTitle}"
+                                                               id="ot8"/>
+                                          </af:column>
+                                          <af:column headerText="#{bindings.EnquiryfaqForEnqViewObj1.hints.IssuingDepartment.label}"
+                                                     width="250" id="c16"
+                                                     rendered="#{sessionScope.rhSession.fldUserType ne '03'}"
+                                                     noWrap="false">
+                                                <af:outputText value="#{row.IssuingDepartment}"
+                                                               id="ot25"/>
+                                          </af:column>
+                                          <af:column headerText="Enquirer Name"
+                                                     width="150" id="c17"
+                                                     noWrap="false">
+                                                <af:outputText value="#{row.InternalUserName}"
+                                                               id="ot26"/>
+                                                <af:outputText value="#{row.ExternalUserName}"
+                                                               id="ot27"/>
+                                          </af:column>
+                                          <af:column headerText="Enquirer Department/ Organization Name"
+                                                     width="150" id="c18"
+                                                     noWrap="false">
+                                                <af:outputText value="#{row.InternalUserDepName}"
+                                                               id="ot28"/>
+                                                <af:outputText value="#{row.ExternalUserOrgName}"
+                                                               id="ot29"/>
+                                          </af:column>
+                                          <af:column sortProperty="#{bindings.EnquiryfaqForEnqViewObj1.hints.enquiryStatus.name}"
+                                                     filterable="true"
+                                                     filterFeatures="caseInsensitive"
+                                                     sortable="true" width="68"
+                                                     headerText="#{bindings.EnquiryfaqForEnqViewObj1.hints.enquiryStatus.label}"
+                                                     id="c8" rendered="false">
+                                                <af:outputText value="#{row.enquiryStatus}"
+                                                               id="ot10"/>
+                                          </af:column>
+                                          <af:column sortProperty="#{bindings.EnquiryfaqForEnqViewObj1.hints.createDate.name}"
+                                                     filterable="true"
+                                                     filterFeatures="caseInsensitive"
+                                                     sortable="true" width="68"
+                                                     headerText="Enquiry Date"
+                                                     id="c10">
+                                                <f:facet name="filter">
+                                                      <af:inputDate value="#{vs.filterCriteria.createDate}"
+                                                                    id="id2"/>
+                                                </f:facet>
+                                                <af:outputText value="#{row.createDate}"
+                                                               id="ot11">
+                                                      <af:convertDateTime pattern="#{bindings.EnquiryfaqForEnqViewObj1.hints.createDate.format}"/>
+                                                </af:outputText>
+                                          </af:column>
+                                    </af:table>
+                                    <af:spacer width="10" height="10"
+                                               binding="#{backingBeanScope.backing_jsff_EnquiriesPage.s14}"
+                                               id="s14"/>
+                                    <af:panelTabbed binding="#{backingBeanScope.backing_jsff_EnquiriesPage.pt3}"
+                                                    id="pt3"
+                                                    dimensionsFrom="auto"
+                                                    visible="#{backingBeanScope.backing_jsff_EnquiriesPage.answeredDetailsStatus}"
+                                                    partialTriggers="t2">
+                                          <af:showDetailItem text="Details"
+                                                             binding="#{backingBeanScope.backing_jsff_EnquiriesPage.sdi4}"
+                                                             id="sdi4">
+                                                <af:panelFormLayout binding="#{backingBeanScope.backing_jsff_EnquiriesPage.pfl2}"
+                                                                    id="pfl2"
+                                                                    partialTriggers="t2"
+                                                                    visible="#{bindings.EnquiryfaqForEnqViewObj1Iterator.estimatedRowCount >0}">
+                                                      <f:facet name="footer">
+                                                            <af:commandButton text="Promote to FAQ"
+                                                                              binding="#{backingBeanScope.backing_jsff_EnquiriesPage.cb2}"
+                                                                              id="cb2"
+                                                                              rendered="#{sessionScope.rhSession.fldUserType eq '03'}"
+                                                                              action="#{backingBeanScope.backing_jsff_EnquiriesPage.promoteToFAQ}"
+                                                                              disabled="#{bindings.EnquiryfaqForEnqViewObj1Iterator.estimatedRowCount &lt;1}"/>
+                                                      </f:facet>
+                                                      <af:spacer width="10"
+                                                                 height="20"
+                                                                 id="s5"/>
+                                                      <af:panelLabelAndMessage label="#{bindings.PolicyTitle.hints.label}"
+                                                                               binding="#{backingBeanScope.backing_jsff_EnquiriesPage.plam5}"
+                                                                               id="plam5">
+                                                            <af:outputText value="#{bindings.PolicyTitle.inputValue}"
+                                                                           binding="#{backingBeanScope.backing_jsff_EnquiriesPage.ot30}"
+                                                                           id="ot30"/>
+                                                      </af:panelLabelAndMessage>
+                                                      <af:spacer width="10"
+                                                                 height="10"
+                                                                 id="s12"/>
+                                                      <af:panelLabelAndMessage label="Enquirer Name"
+                                                                               id="plam6">
+                                                            <af:outputText value="#{bindings.InternalUserName.inputValue}"
+                                                                           id="ot31"/>
+                                                            <af:outputText value="#{bindings.ExternalUserName.inputValue}"
+                                                                           id="ot32"/>
+                                                      </af:panelLabelAndMessage>
+                                                      <af:spacer width="10"
+                                                                 height="10"
+                                                                 id="s11"/>
+                                                      <af:panelLabelAndMessage label="Enquirer Department/ Organization Name"
+                                                                               id="plam7">
+                                                            <af:outputText value="#{bindings.InternalUserDepName.inputValue}"
+                                                                           id="ot33"/>
+                                                            <af:outputText value="#{bindings.ExternalUserOrgName.inputValue}"
+                                                                           id="ot34"/>
+                                                      </af:panelLabelAndMessage>
+                                                      <af:spacer width="10"
+                                                                 height="10"
+                                                                 id="s13"/>
+                                                      <af:panelLabelAndMessage label="Responded By"
+                                                                               id="plam10">
+                                                            <af:outputText value="#{bindings.RespondedBy.inputValue}"
+                                                                           id="ot2"/>
+                                                      </af:panelLabelAndMessage>
+                                                      <af:spacer width="10"
+                                                                 height="10"
+                                                                 id="s1"/>
+                                                      <af:inputText label="#{bindings.Title1.hints.label}"
+                                                                    binding="#{backingBeanScope.backing_jsff_EnquiriesPage.it1}"
+                                                                    rendered="#{sessionScope.rhSession.fldUserType eq '03'}"
+                                                                    value="#{bindings.Title1.inputValue}"
+                                                                    id="it1"/>
+                                                      <af:panelLabelAndMessage label="#{bindings.Title1.hints.label}"
+                                                                               rendered="#{sessionScope.rhSession.fldUserType ne '03'}"
+                                                                               id="plam8">
+                                                            <af:outputText value="#{bindings.Title1.inputValue}"
+                                                                           id="ot35"/>
+                                                      </af:panelLabelAndMessage>
+                                                      <af:commandButton text="Download"
+                                                                        binding="#{backingBeanScope.backing_jsff_EnquiriesPage.cb4}"
+                                                                        id="cb4"
+                                                                        visible="false"
+                                                                        immediate="true">
+                                                            <af:fileDownloadActionListener method="#{backingBeanScope.backing_jsff_EnquiriesPage.doDownload}"
+                                                                                           filename="#{pageFlowScope.filenameOrig}"/>
+                                                      </af:commandButton>
+                                                      <af:spacer id="s16"
+                                                                 width="10"
+                                                                 height="10"
+                                                                 visible="#{bindings.AttachedfileForEnqQueView1Iterator.estimatedRowCount >0}"/>
+                                                      <af:panelLabelAndMessage label="Enquirer Attachment"
+                                                                               visible="#{bindings.AttachedfileForEnqQueView1Iterator.estimatedRowCount >0}"
+                                                                               id="plam12">
+                                                            <af:iterator id="i1"
+                                                                         value="#{bindings.AttachedfileForEnqQueView1.collectionModel}"
+                                                                         var="row"
+                                                                         varStatus="vs">
+                                                                  <af:commandLink text="#{row.filenameOrig}"
+                                                                                  id="cl1"
+                                                                                  actionListener="#{backingBeanScope.backing_jsff_EnquiriesPage.onOpenAnsQueFileSelected}"
+                                                                                  visible="#{bindings.AttachedfileForEnqQueView1Iterator.estimatedRowCount >0}">
+                                                                        <f:attribute name="rowKey"
+                                                                                     value="#{vs.index}"/>
+                                                                  </af:commandLink>
+                                                                  <af:outputText value="&lt;br/>"
+                                                                                 id="ot36"
+                                                                                 escape="false"/>
+                                                            </af:iterator>
+                                                      </af:panelLabelAndMessage>
+                                                      <af:spacer width="10"
+                                                                 height="10"
+                                                                 id="s6"/>
+                                                      <af:panelLabelAndMessage label="#{bindings.Abstract111.hints.label}"
+                                                                               rendered="#{sessionScope.rhSession.fldUserType ne '03'}"
+                                                                               id="plam9">
+                                                            <af:outputFormatted value="#{bindings.Abstract111.inputValue}"
+                                                                                binding="#{backingBeanScope.backing_jsff_EnquiriesPage.of1}"
+                                                                                id="of1"
+                                                                                rendered="false"/>
+                                                                                <af:outputText value="#{bindings.Abstract111.inputValue}"
+                                                                                id="ot38" escape="false"/>
+                                                      </af:panelLabelAndMessage>
+                                                      <af:richTextEditor label="#{bindings.Abstract111.hints.label}"
+                                                                         rows="3"
+                                                                         columns="100"
+                                                                         id="rte2"
+                                                                         rendered="#{sessionScope.rhSession.fldUserType eq '03'}"
+                                                                         toolboxLayout="history formatAll justify list indent"
+                                                                         value="#{bindings.Abstract111.inputValue}"
+                                                                         binding="#{backingBeanScope.backing_jsff_EnquiriesPage.rte2}"/>
+                                                      <af:spacer id="s17"
+                                                                 width="10"
+                                                                 height="10"
+                                                                 visible="#{bindings.AttachedfileForEnqAnsView1Iterator.estimatedRowCount >0}"/>
+                                                      <af:panelLabelAndMessage label="Responder Attachment"
+                                                                               visible="#{bindings.AttachedfileForEnqAnsView1Iterator.estimatedRowCount >0}"
+                                                                               id="plam13">
+                                                            <af:iterator id="i8"
+                                                                         value="#{bindings.AttachedfileForEnqAnsView1.collectionModel}"
+                                                                         var="row"
+                                                                         varStatus="vs">
+                                                                  <af:commandLink text="#{row.filenameOrig}"
+                                                                                  id="cl14"
+                                                                                  actionListener="#{backingBeanScope.backing_jsff_EnquiriesPage.onOpenEnqAnsFileSelected}"
+                                                                                  visible="#{bindings.AttachedfileForEnqAnsView1Iterator.estimatedRowCount >0}">
+                                                                        <f:attribute name="rowKey"
+                                                                                     value="#{vs.index}"/>
+                                                                  </af:commandLink>
+                                                                  <af:outputText value="&lt;br/>"
+                                                                                 id="ot37"
+                                                                                 escape="false"/>
+                                                            </af:iterator>
+                                                      </af:panelLabelAndMessage>
+                                                      <af:spacer width="10"
+                                                                 height="10"
+                                                                 id="s7"/>
+                                                </af:panelFormLayout>
+                                          </af:showDetailItem>
+                                    </af:panelTabbed>
+                              </af:showDetailItem>
+                        </af:panelTabbed>
+                  </af:panelGroupLayout>
+            </f:facet>
+            <f:facet name="top">
+                  <af:outputText value="Enquiries Management"
+                                 binding="#{backingBeanScope.backing_jsff_EnquiriesPage.ot1}"
+                                 id="ot1" styleClass="pageTitleHeaderLeft"/>
+            </f:facet>
+      </af:panelStretchLayout>
+      <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_jsff_EnquiriesPage-->
+</jsp:root>

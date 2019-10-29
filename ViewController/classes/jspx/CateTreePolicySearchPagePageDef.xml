@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.64.93" id="CateTreePolicySearchPagePageDef"
+                Package="jspx">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <taskFlow id="CateTreePolicySearch1"
+              taskFlowId="/WEB-INF/PageFlows/taskFlow/search/CateTreePolicySearch.xml#CateTreePolicySearch"
+              activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding">
+      <parameters>
+        <parameter id="pageType" value="#{rhSession.pageType}"/>
+      </parameters>
+    </taskFlow>
+  </executables>
+  <bindings/>
+</pageDefinition>

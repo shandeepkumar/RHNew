@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.64.93" id="SuppDocReqDecisionPagePageDef"
+                Package="jsff">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="RequestlistView1" RangeSize="25"
+              DataControl="RegBookAppModuleDataControl"
+              id="RequestlistView1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="RequestlistView1Iterator" id="requestId">
+      <AttrNames>
+        <Item Value="requestId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="RequestlistView1Iterator" id="GuidelineTitle">
+      <AttrNames>
+        <Item Value="GuidelineTitle"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="RequestlistView1Iterator" id="typeOfReqName">
+      <AttrNames>
+        <Item Value="typeOfReqName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="RequestlistView1Iterator"
+                     id="reasonForRequest">
+      <AttrNames>
+        <Item Value="reasonForRequest"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="RequestlistView1Iterator" id="RequestorName">
+      <AttrNames>
+        <Item Value="RequestorName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="RequestlistView1Iterator"
+                     id="RequestorDepartmentName">
+      <AttrNames>
+        <Item Value="RequestorDepartmentName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="RequestlistView1Iterator" id="createDate">
+      <AttrNames>
+        <Item Value="createDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="RequestlistView1Iterator"
+                     id="reasonForRejection">
+      <AttrNames>
+        <Item Value="reasonForRejection"/>
+      </AttrNames>
+    </attributeValues>
+    <action id="Commit" DataControl="RegBookAppModuleDataControl"
+            RequiresUpdateModel="true" Action="commitTransaction"/>
+    <attributeValues IterBinding="RequestlistView1Iterator" id="status">
+      <AttrNames>
+        <Item Value="status"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

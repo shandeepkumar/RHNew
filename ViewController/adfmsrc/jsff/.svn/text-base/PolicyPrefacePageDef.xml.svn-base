@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.64.93" id="PolicyPrefacePageDef" Package="jsff">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="PolicyView1" RangeSize="25"
+              DataControl="RegBookAppModuleDataControl"
+              id="PolicyView3Iterator"/>
+    <iterator id="AttachedfileView2_1Iterator" Binds="AttachedfileView2_1"
+              DataControl="RegBookAppModuleDataControl" RangeSize="25"/>
+    <iterator Binds="PolicycategoriespartitionView1" RangeSize="25"
+              DataControl="RegBookAppModuleDataControl"
+              id="PolicycategoriespartitionView1Iterator"/>
+    <iterator Binds="PolicydepartmentpartitionView1" RangeSize="25"
+              DataControl="RegBookAppModuleDataControl"
+              id="PolicydepartmentpartitionView1Iterator"/>
+    <iterator Binds="Policybusinesssectorpartition1View1" RangeSize="25"
+              DataControl="RegBookAppModuleDataControl"
+              id="Policybusinesssectorpartition1View1Iterator"/>
+    <iterator Binds="PolicyinstitutiontypepartitionView1" RangeSize="25"
+              DataControl="RegBookAppModuleDataControl"
+              id="PolicyinstitutiontypepartitionView1Iterator"/>
+    <iterator Binds="PolicyorganizationpartitionView1" RangeSize="25"
+              DataControl="RegBookAppModuleDataControl"
+              id="PolicyorganizationpartitionView1Iterator"/>
+    <iterator Binds="SuperseededpoliciesView1" RangeSize="25"
+              DataControl="RegBookAppModuleDataControl"
+              id="SuperseededpoliciesView1Iterator"/>
+    <iterator Binds="AttachedfileEx1View1" RangeSize="25"
+              DataControl="RegBookAppModuleDataControl"
+              id="AttachedfileEx1View1Iterator"/>
+    <iterator id="EnquiryfaqForFaqView1Iterator" Binds="EnquiryfaqForFaqView1"
+              DataControl="RegBookAppModuleDataControl" RangeSize="25"/>
+    <iterator Binds="PolicyamendmentHistoryViewObj1" RangeSize="25"
+              DataControl="RegBookAppModuleDataControl"
+              id="PolicyamendmentHistoryViewObj1Iterator"/>
+    <searchRegion Binds="PolicyamendmentHistoryViewObj1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="PolicyamendmentHistoryViewObj1Query"/>
+    <iterator Binds="AttachedfileSupportDocViewObj1" RangeSize="25"
+              DataControl="RegBookAppModuleDataControl"
+              id="AttachedfileSupportDocViewObj1Iterator"/>
+    <iterator Binds="EnquiryfaqForEnqPolicyViewObj1" RangeSize="25"
+              DataControl="RegBookAppModuleDataControl"
+              id="EnquiryfaqForEnqPolicyViewObj1Iterator"/>
+    <searchRegion Binds="EnquiryfaqForEnqPolicyViewObj1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="EnquiryfaqForEnqPolicyViewObj1Query"/>
+    <iterator Binds="RequestlistView1" RangeSize="25"
+              DataControl="RegBookAppModuleDataControl"
+              id="RequestlistView1Iterator"/>
+    <searchRegion Binds="RequestlistView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="RequestlistView1Query"/>
+    <iterator id="PolicybnmuserspartitionView1Iterator"
+              Binds="PolicybnmuserspartitionView1"
+              DataControl="RegBookAppModuleDataControl" RangeSize="25"/>
+    <iterator id="InstitutiontypeView1Iterator" Binds="InstitutiontypeView1"
+              DataControl="RegBookAppModuleDataControl" RangeSize="25"/>
+    <iterator id="SectorDistinct1Iterator" Binds="SectorDistinct1"
+              DataControl="RegBookAppModuleDataControl" RangeSize="25"/>
+    <iterator Binds="LookuppropertiesView1" RangeSize="-1"
+              DataControl="RegBookAppModuleDataControl"
+              id="LookuppropertiesView1Iterator"/>
+    <iterator Binds="AttachedfileForEnqQueView1" RangeSize="25"
+              DataControl="RegBookAppModuleDataControl"
+              id="AttachedfileForEnqQueView1Iterator"/>
+    <iterator id="AttachedfileForEnqAnsView1Iterator"
+              Binds="AttachedfileForEnqAnsView1"
+              DataControl="RegBookAppModuleDataControl" RangeSize="25"/>
+    <iterator id="AttachedFileOnlyPdfViewObj1Iterator"
+              Binds="AttachedFileOnlyPdfViewObj1"
+              DataControl="RegBookAppModuleDataControl" RangeSize="25"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="PolicyView3Iterator" id="GuidelineTitle">
+      <AttrNames>
+        <Item Value="GuidelineTitle"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PolicyView3Iterator" id="NewIssuanceDate">
+      <AttrNames>
+        <Item Value="NewIssuanceDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PolicyView3Iterator" id="EffectiveDate">
+      <AttrNames>
+        <Item Value="EffectiveDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PolicyView3Iterator" id="Summary">
+      <AttrNames>
+        <Item Value="Summary"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PolicyView3Iterator" id="Highlights">
+      <AttrNames>
+        <Item Value="Highlights"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="AttachedfileView2_1Iterator" id="AttachedfileView2_1">
+      <nodeDefinition DefName="gov.bnm.rh.views.AttachedfileView2"
+                      Name="AttachedfileView2_10">
+        <AttrNames>
+          <Item Value="fileId"/>
+          <Item Value="filenameOrig"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="PolicycategoriespartitionView1Iterator"
+          id="PolicycategoriespartitionView1">
+      <nodeDefinition DefName="gov.bnm.rh.views.PolicycategoriespartitionView"
+                      Name="PolicycategoriespartitionView10">
+        <AttrNames>
+          <Item Value="CategoryName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="PolicydepartmentpartitionView1Iterator"
+          id="PolicydepartmentpartitionView1">
+      <nodeDefinition DefName="gov.bnm.rh.views.PolicydepartmentpartitionView"
+                      Name="PolicydepartmentpartitionView10">
+        <AttrNames>
+          <Item Value="DepartmentName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="Policybusinesssectorpartition1View1Iterator"
+          id="Policybusinesssectorpartition1View1">
+      <nodeDefinition DefName="gov.bnm.rh.views.Policybusinesssectorpartition1View"
+                      Name="Policybusinesssectorpartition1View10">
+        <AttrNames>
+          <Item Value="SectorName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="PolicyinstitutiontypepartitionView1Iterator"
+          id="PolicyinstitutiontypepartitionView1">
+      <nodeDefinition DefName="gov.bnm.rh.views.PolicyinstitutiontypepartitionView"
+                      Name="PolicyinstitutiontypepartitionView10">
+        <AttrNames>
+          <Item Value="InstitutiontypeName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="PolicyorganizationpartitionView1Iterator"
+          id="PolicyorganizationpartitionView1">
+      <nodeDefinition DefName="gov.bnm.rh.views.PolicyorganizationpartitionView"
+                      Name="PolicyorganizationpartitionView10">
+        <AttrNames>
+          <Item Value="OrgName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="SuperseededpoliciesView1Iterator"
+          id="SuperseededpoliciesView1">
+      <nodeDefinition DefName="gov.bnm.rh.views.SuperseededpoliciesView"
+                      Name="SuperseededpoliciesView10">
+        <AttrNames>
+          <Item Value="PolicyName"/>
+          <Item Value="itemIdSup"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="AttachedfileEx1View1Iterator" id="AttachedfileEx1View1">
+      <nodeDefinition DefName="gov.bnm.rh.views.AttachedfileEx1View"
+                      Name="AttachedfileEx1View10">
+        <AttrNames>
+          <Item Value="filenameOrig"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="EnquiryfaqForFaqView1Iterator"
+          id="EnquiryfaqForFaqView1">
+      <nodeDefinition DefName="gov.bnm.rh.views.EnquiryfaqForFaqView"
+                      Name="EnquiryfaqForFaqView10">
+        <AttrNames>
+          <Item Value="itemId"/>
+          <Item Value="Title"/>
+          <Item Value="Abstract11"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="PolicyamendmentHistoryViewObj1Iterator"
+          id="PolicyamendmentHistoryViewObj1">
+      <nodeDefinition DefName="gov.bnm.rh.views.PolicyamendmentHistoryViewObj"
+                      Name="PolicyamendmentHistoryViewObj10">
+        <AttrNames>
+          <Item Value="version"/>
+          <Item Value="AmendmentHighlights"/>
+          <Item Value="CreatedDate"/>
+          <Item Value="ViewPolicyId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="AttachedfileSupportDocViewObj1Iterator"
+          id="AttachedfileSupportDocViewObj1">
+      <nodeDefinition DefName="gov.bnm.rh.views.AttachedfileSupportDocViewObj"
+                      Name="AttachedfileSupportDocViewObj10">
+        <AttrNames>
+          <Item Value="fileId"/>
+          <Item Value="documentName"/>
+          <Item Value="itemId"/>
+          <Item Value="type"/>
+          <Item Value="isRequiredAccess"/>
+          <Item Value="filenameOrig"/>
+          <Item Value="filenameStore"/>
+          <Item Value="filePath"/>
+          <Item Value="isSupportDocument"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="EnquiryfaqForEnqPolicyViewObj1Iterator"
+          id="EnquiryfaqForEnqPolicyViewObj1">
+      <nodeDefinition DefName="gov.bnm.rh.views.EnquiryfaqForEnqPolicyViewObj"
+                      Name="EnquiryfaqForEnqPolicyViewObj10">
+        <AttrNames>
+          <Item Value="Title"/>
+          <Item Value="createDate"/>
+          <Item Value="enquiryStatus"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="AttachedfileSupportDocViewObj1Iterator"
+                     id="documentName">
+      <AttrNames>
+        <Item Value="documentName"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="RequestlistView1Iterator" id="RequestlistView1">
+      <nodeDefinition DefName="gov.bnm.rh.views.RequestlistView"
+                      Name="RequestlistView10">
+        <AttrNames>
+          <Item Value="requestId"/>
+          <Item Value="typeOfReqName"/>
+          <Item Value="status"/>
+          <Item Value="createDate"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action id="Commit" DataControl="RegBookAppModuleDataControl"
+            RequiresUpdateModel="true" Action="commitTransaction"/>
+    <attributeValues IterBinding="PolicyView3Iterator" id="RefNum">
+      <AttrNames>
+        <Item Value="RefNum"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EnquiryfaqForEnqPolicyViewObj1Iterator"
+                     id="Title">
+      <AttrNames>
+        <Item Value="Title"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EnquiryfaqForEnqPolicyViewObj1Iterator"
+                     id="Abstract11">
+      <AttrNames>
+        <Item Value="Abstract11"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="PolicybnmuserspartitionView1Iterator"
+          id="PolicybnmuserspartitionView1">
+      <nodeDefinition DefName="gov.bnm.rh.views.PolicybnmuserspartitionView"
+                      Name="PolicybnmuserspartitionView10">
+        <AttrNames>
+          <Item Value="userName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="PolicyView3Iterator" id="SectionInCharge">
+      <AttrNames>
+        <Item Value="SectionInCharge"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="SectorDistinct1Iterator" id="SectorDistinct1">
+      <nodeDefinition DefName="gov.bnm.rh.views.SectorDistinct"
+                      Name="SectorDistinct10">
+        <AttrNames>
+          <Item Value="SectorName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <list IterBinding="LookuppropertiesView1Iterator" ListOperMode="navigation"
+          ListIter="LookuppropertiesView1Iterator" id="LookuppropertiesView1"
+          DTSupportsMRU="true">
+      <AttrNames>
+        <Item Value="PropertyValue"/>
+      </AttrNames>
+    </list>
+    <attributeValues IterBinding="PolicyView3Iterator" id="IssuanceStr">
+      <AttrNames>
+        <Item Value="IssuanceStr"/>
+      </AttrNames>
+    </attributeValues>
+    <list StaticList="false" IterBinding="RequestlistView1Iterator"
+          ListIter="LookuppropertiesView1Iterator" id="Designation"
+          NullValueFlag="start" NullValueId="Designation_null">
+      <AttrNames>
+        <Item Value="Designation"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="ID"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="PropertyValue"/>
+      </ListDisplayAttrNames>
+    </list>
+    <tree IterBinding="AttachedfileForEnqQueView1Iterator"
+          id="AttachedfileForEnqQueView1">
+      <nodeDefinition DefName="gov.bnm.rh.views.AttachedfileForEnqQueView"
+                      Name="AttachedfileForEnqQueView10">
+        <AttrNames>
+          <Item Value="fileId"/>
+          <Item Value="filenameOrig"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action id="Rollback" DataControl="RegBookAppModuleDataControl"
+            RequiresUpdateModel="false" Action="rollbackTransaction"/>
+    <tree IterBinding="AttachedfileForEnqAnsView1Iterator"
+          id="AttachedfileForEnqAnsView1">
+      <nodeDefinition DefName="gov.bnm.rh.views.AttachedfileForEnqAnsView"
+                      Name="AttachedfileForEnqAnsView10">
+        <AttrNames>
+          <Item Value="fileId"/>
+          <Item Value="filenameOrig"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <methodAction id="callFuncPolicyAttachment" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="callFuncPolicyAttachment"
+                  IsViewObjectMethod="false"
+                  DataControl="RegBookAppModuleDataControl"
+                  InstanceName="RegBookAppModuleDataControl.dataProvider"
+                  ReturnName="data.RegBookAppModuleDataControl.methodResults.callFuncPolicyAttachment_RegBookAppModuleDataControl_dataProvider_callFuncPolicyAttachment_result">
+      <NamedData NDName="policyId"
+                 NDValue="#{sessionScope.rhSession.fldPolicyId}"
+                 NDType="java.lang.String"/>
+    </methodAction>
+    <tree IterBinding="AttachedFileOnlyPdfViewObj1Iterator"
+          id="AttachedFileOnlyPdfViewObj1">
+      <nodeDefinition DefName="gov.bnm.rh.views.AttachedFileOnlyPdfViewObj"
+                      Name="AttachedFileOnlyPdfViewObj10">
+        <AttrNames>
+          <Item Value="fileId"/>
+          <Item Value="filenameOrig"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+  <ResourceBundle>
+    <PropertiesBundle xmlns="http://xmlns.oracle.com/adfm/resourcebundle"
+                      PropertiesFile="view.ViewControllerBundle"/>
+  </ResourceBundle>
+</pageDefinition>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<pageTemplateDefs xmlns="http://xmlns.oracle.com/adf/faces/rich/pagetemplate">
+  <pagetemplate-jsp-ui-def>/Templates/RHTemplateExternalWithOutNav.jspx</pagetemplate-jsp-ui-def>
+  <pagetemplate-jsp-ui-def>/Templates/RHTemplateExternalWithNav.jspx</pagetemplate-jsp-ui-def>
+  <pagetemplate-jsp-ui-def>/Templates/RHTemplateInternalWithOutNav.jspx</pagetemplate-jsp-ui-def>
+  <pagetemplate-jsp-ui-def>/Templates/RHTemplateInternalWithNav.jspx</pagetemplate-jsp-ui-def>
+  <pagetemplate-jsp-ui-def>/Templates/RHTemplate.jspx</pagetemplate-jsp-ui-def>
+</pageTemplateDefs>

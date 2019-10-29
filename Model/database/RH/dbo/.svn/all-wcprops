@@ -1,0 +1,263 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/database/RH/dbo
+END
+L4Browser.table
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/database/RH/dbo/L4Browser.table
+END
+L2Browser.table
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/database/RH/dbo/L2Browser.table
+END
+PartitionTypeList.table
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/database/RH/dbo/PartitionTypeList.table
+END
+PolicyBusinessSectorPartition1.1.table
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/database/RH/dbo/PolicyBusinessSectorPartition1.1.table
+END
+USERFUNCTION.table
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/database/RH/dbo/USERFUNCTION.table
+END
+tblEventLog.table
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/database/RH/dbo/tblEventLog.table
+END
+PolicyInstitutionTypePartition.table
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/database/RH/dbo/PolicyInstitutionTypePartition.table
+END
+itemTypeList.table
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/database/RH/dbo/itemTypeList.table
+END
+LookupProperties.table
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/database/RH/dbo/LookupProperties.table
+END
+RequestList.table
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/database/RH/dbo/RequestList.table
+END
+Sectors.table
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/database/RH/dbo/Sectors.table
+END
+EnquiryFaq.table
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/database/RH/dbo/EnquiryFaq.table
+END
+USERGROUP.table
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/database/RH/dbo/USERGROUP.table
+END
+tblADFTOKEN.table
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/database/RH/dbo/tblADFTOKEN.table
+END
+DocCategory.table
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/database/RH/dbo/DocCategory.table
+END
+PolicySectorCategory.table
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/database/RH/dbo/PolicySectorCategory.table
+END
+PolicyAmendments.table
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/database/RH/dbo/PolicyAmendments.table
+END
+Categories.table
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/database/RH/dbo/Categories.table
+END
+PolicyCategoriesPartition.table
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/database/RH/dbo/PolicyCategoriesPartition.table
+END
+INTERNALUSER_USERGROUP.table
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/database/RH/dbo/INTERNALUSER_USERGROUP.table
+END
+USER_USERGROUP.table
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/database/RH/dbo/USER_USERGROUP.table
+END
+attachedFile.table
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/database/RH/dbo/attachedFile.table
+END
+L3Browser.table
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/database/RH/dbo/L3Browser.table
+END
+L1Browser.table
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/database/RH/dbo/L1Browser.table
+END
+Enquiries.1.table
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/database/RH/dbo/Enquiries.1.table
+END
+PolicyOrganizationPartition.table
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/database/RH/dbo/PolicyOrganizationPartition.table
+END
+Classification.table
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/database/RH/dbo/Classification.table
+END
+PolicyDepartmentPartition.table
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/database/RH/dbo/PolicyDepartmentPartition.table
+END
+SectorCategorySME.table
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/database/RH/dbo/SectorCategorySME.table
+END
+INTERNALUSER.table
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/database/RH/dbo/INTERNALUSER.table
+END
+COMMUNITY.table
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/database/RH/dbo/COMMUNITY.table
+END
+BNMUSER.1.table
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/database/RH/dbo/BNMUSER.1.table
+END
+FUNCTION_USERGROUP.1.table
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/database/RH/dbo/FUNCTION_USERGROUP.1.table
+END
+PolicyBnmUsersPartition.table
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/database/RH/dbo/PolicyBnmUsersPartition.table
+END
+itemList.table
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/database/RH/dbo/itemList.table
+END
+DEPARTMENT.table
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/database/RH/dbo/DEPARTMENT.table
+END
+Policy.table
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/database/RH/dbo/Policy.table
+END
+institutionType.table
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/database/RH/dbo/institutionType.table
+END
+Organization.table
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/database/RH/dbo/Organization.table
+END
+PolicySectorCategories.table
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/database/RH/dbo/PolicySectorCategories.table
+END
+EXTERNALUSER.table
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/database/RH/dbo/EXTERNALUSER.table
+END
+SuperseededPolicies.table
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/database/RH/dbo/SuperseededPolicies.table
+END
+dbo.schema
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/database/RH/dbo/dbo.schema
+END

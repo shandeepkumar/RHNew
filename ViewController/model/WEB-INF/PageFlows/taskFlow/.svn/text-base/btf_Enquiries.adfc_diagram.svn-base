@@ -1,0 +1,49 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">EnquiriesPage</property>
+      <property
+         name="page">/jsff/EnquiriesPage.jsff</property>
+      <property
+         name="start">false</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>EnquiriesPage&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">161.57422</property>
+      <property
+         name="pageFragment">true</property>
+      <property
+         name="x">526.0</property>
+   </View>
+   <MethodCall
+      id="MethodCall3">
+      <property
+         name="activityId">getEnquiryManagementDetails</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>getEnquiryManagementDetails&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">158.74707</property>
+      <property
+         name="x">139.0459</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="MethodCall3"
+      to="View2">
+      <property
+         name="fromOutcome">getEnquiryManagementDetails</property>
+      <property
+         name="sdm:polyPoints">R50,180.0459,158.39648,485.0,161.22363,L50</property>
+   </ControlFlowCase>
+</SDM>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="btf_AgingReport">
+    <template-reference>
+      <document id="__1">/WEB-INF/PageFlows/template/RH-task-flow-templateForException.xml</document>
+      <id id="__2">RH-task-flow-templateForException</id>
+    </template-reference>
+    <default-activity id="__3">getAgingReportDetails</default-activity>
+    <managed-bean id="__6">
+      <managed-bean-name id="__7">backing_jsff_AgingReportPage</managed-bean-name>
+      <managed-bean-class id="__4">gov.bnm.view.rh.backingBeans.AgingReportPage</managed-bean-class>
+      <managed-bean-scope id="__5">backingBean</managed-bean-scope>
+      <!--oracle-jdev-comment:managed-bean-jsp-link:1jsff/AgingReportPage.jsff-->
+    </managed-bean>
+    <managed-bean id="__9">
+      <managed-bean-name id="__11">backing_ExcelBean</managed-bean-name>
+      <managed-bean-class id="__10">gov.bnm.view.rh.common.ExcelBean</managed-bean-class>
+      <managed-bean-scope id="__8">backingBean</managed-bean-scope>
+      <!--oracle-jdev-comment:managed-bean-jsp-link:1AgingReportPage.jsff-->
+    </managed-bean>
+    <view id="AgingReportPage">
+      <page>/jsff/AgingReportPage.jsff</page>
+    </view>
+    <method-call id="getAgingReportDetails">
+      <method>#{bindings.getAgingReportDetails.execute}</method>
+      <outcome id="__12">
+        <fixed-outcome>getAgingReportDetails</fixed-outcome>
+      </outcome>
+    </method-call>
+    <control-flow-rule id="__13">
+      <from-activity-id id="__14">getAgingReportDetails</from-activity-id>
+      <control-flow-case id="__15">
+        <from-outcome id="__17">getAgingReportDetails</from-outcome>
+        <to-activity-id id="__16">AgingReportPage</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

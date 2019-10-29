@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Itemlist"
+  Version="11.1.1.64.93"
+  InheritPersonalization="true"
+  DBObjectType="table"
+  DBObjectName="dbo.itemList"
+  AliasName="Itemlist"
+  BindingStyle="JDBC"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <AttrArray Name="_publishEvents"/>
+  </DesignTime>
+  <Attribute
+    Name="itemid"
+    IsUpdateable="false"
+    IsNotNull="true"
+    Precision="18"
+    Scale="0"
+    ColumnName="itemid"
+    SQLType="DECIMAL"
+    Type="java.math.BigDecimal"
+    ColumnType="decimal"
+    TableName="dbo.itemList"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Name"
+    IsNotNull="true"
+    Precision="500"
+    ColumnName="Name"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="varchar"
+    TableName="dbo.itemList">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="500"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="System"
+    Precision="25"
+    ColumnName="System"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="varchar"
+    TableName="dbo.itemList">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="25"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Reference"
+    Precision="255"
+    ColumnName="Reference"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="varchar"
+    TableName="dbo.itemList">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="255"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Description"
+    Precision="500"
+    ColumnName="Description"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="varchar"
+    TableName="dbo.itemList">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="500"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Type"
+    Precision="25"
+    ColumnName="Type"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="varchar"
+    TableName="dbo.itemList">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="25"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="createDate"
+    IsNotNull="true"
+    ColumnName="createDate"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="datetime"
+    TableName="dbo.itemList">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="23"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="lastUpdated"
+    ColumnName="lastUpdated"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="datetime"
+    TableName="dbo.itemList">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="23"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="Policy"
+    Association="RHmodel.view.PolicyPolicyFK1Assoc"
+    AssociationEnd="RHmodel.view.PolicyPolicyFK1Assoc.Policy"
+    AssociationOtherEnd="RHmodel.view.PolicyPolicyFK1Assoc.Itemlist"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="L4browser"
+    Association="RHmodel.view.L4BrowseritemListFK1Assoc"
+    AssociationEnd="RHmodel.view.L4BrowseritemListFK1Assoc.L4browser"
+    AssociationOtherEnd="RHmodel.view.L4BrowseritemListFK1Assoc.Itemlist"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="L2browser"
+    Association="RHmodel.view.L2BrowseritemListFK1Assoc"
+    AssociationEnd="RHmodel.view.L2BrowseritemListFK1Assoc.L2browser"
+    AssociationOtherEnd="RHmodel.view.L2BrowseritemListFK1Assoc.Itemlist"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="L3browser"
+    Association="RHmodel.view.L3BrowseritemListFK1Assoc"
+    AssociationEnd="RHmodel.view.L3BrowseritemListFK1Assoc.L3browser"
+    AssociationOtherEnd="RHmodel.view.L3BrowseritemListFK1Assoc.Itemlist"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="L1browser"
+    Association="RHmodel.view.L1BrowseritemListFK1Assoc"
+    AssociationEnd="RHmodel.view.L1BrowseritemListFK1Assoc.L1browser"
+    AssociationOtherEnd="RHmodel.view.L1BrowseritemListFK1Assoc.Itemlist"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Itemtypelist"
+    Association="RHmodel.view.itemTypeListitemListFK1Assoc"
+    AssociationEnd="RHmodel.view.itemTypeListitemListFK1Assoc.Itemtypelist"
+    AssociationOtherEnd="RHmodel.view.itemTypeListitemListFK1Assoc.Itemlist"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="itemListPK"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="itemList_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="RHmodel.view.Itemlist.itemid"/>
+    </AttrArray>
+  </Key>
+</Entity>

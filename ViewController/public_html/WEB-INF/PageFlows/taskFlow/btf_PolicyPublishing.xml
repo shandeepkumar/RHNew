@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="btf_PolicyPublishing">
+    <template-reference>
+      <document id="__2">/WEB-INF/PageFlows/template/RH-task-flow-templateForException.xml</document>
+      <id id="__1">RH-task-flow-templateForException</id>
+    </template-reference>
+    <default-activity id="__6">createNewPolicy</default-activity>
+    <managed-bean id="__14">
+      <managed-bean-name id="__13">pageFlow_GuidPojo</managed-bean-name>
+      <managed-bean-class id="__16">gov.bnm.view.rh.common.GuidPojo</managed-bean-class>
+      <managed-bean-scope id="__15">pageFlow</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__18">
+      <managed-bean-name id="__20">backBean_Shuttle</managed-bean-name>
+      <managed-bean-class id="__19">gov.bnm.view.rh.common.ShuttleBean</managed-bean-class>
+      <managed-bean-scope id="__17">backingBean</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__24">
+      <managed-bean-name id="__22">backBean_PolicyPublishing</managed-bean-name>
+      <managed-bean-class id="__23">gov.bnm.view.rh.backingBeans.PolicyPublishing</managed-bean-class>
+      <managed-bean-scope id="__21">backingBean</managed-bean-scope>
+    </managed-bean>
+    <view id="PolicyPublishingPage">
+      <page>/jsff/PolicyPublishingPage.jsff</page>
+      <input-page-parameter>
+        <from-value>PP</from-value>
+        <to-value>#{pageFlowScope.formType}</to-value>
+      </input-page-parameter>
+    </view>
+    <method-call id="createNewPolicy">
+      <method>#{bindings.createNewPolicy.execute}</method>
+      <outcome id="__7">
+        <fixed-outcome>createNewPolicy</fixed-outcome>
+      </outcome>
+    </method-call>
+    <task-flow-call id="btf_PolicyMaintenance">
+      <task-flow-reference>
+        <document>/WEB-INF/PageFlows/taskFlow/btf_PolicyMaintenance.xml</document>
+        <id>btf_PolicyMaintenance</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <method-call id="doUniqueItemsNull">
+      <method>#{sessionScope.rhSession.doUniqueItemsNull}</method>
+      <outcome id="__32">
+        <fixed-outcome>doUniqueItemsNull</fixed-outcome>
+      </outcome>
+    </method-call>
+    <control-flow-rule id="__8">
+      <from-activity-id id="__9">createNewPolicy</from-activity-id>
+      <control-flow-case id="__12">
+        <from-outcome id="__10">createNewPolicy</from-outcome>
+        <to-activity-id id="__11">doUniqueItemsNull</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__3">
+      <from-activity-id id="__4">PolicyPublishingPage</from-activity-id>
+      <control-flow-case id="__5">
+        <from-outcome id="__26">submit</from-outcome>
+        <to-activity-id id="__25">btf_PolicyMaintenance</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__27">
+      <from-activity-id id="__28">doUniqueItemsNull</from-activity-id>
+      <control-flow-case id="__30">
+        <from-outcome id="__33">doUniqueItemsNull</from-outcome>
+        <to-activity-id id="__29">PolicyPublishingPage</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

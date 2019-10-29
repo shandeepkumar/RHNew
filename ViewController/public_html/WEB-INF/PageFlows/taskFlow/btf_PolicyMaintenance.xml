@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="btf_PolicyMaintenance">
+    <template-reference>
+      <document id="__2">/WEB-INF/PageFlows/template/RH-task-flow-templateForException.xml</document>
+      <id id="__1">RH-task-flow-templateForException</id>
+    </template-reference>
+    <default-activity id="__3">PolicyMaintenancePage</default-activity>
+    <managed-bean id="__7">
+      <managed-bean-name id="__5">backing_PolicyMaintenancePage</managed-bean-name>
+      <managed-bean-class id="__6">gov.bnm.view.rh.backingBeans.PolicyMaintenancePage</managed-bean-class>
+      <managed-bean-scope id="__4">backingBean</managed-bean-scope>
+      <!--oracle-jdev-comment:managed-bean-jsp-link:1jsff/PolicyMaintenancePage.jsff-->
+    </managed-bean>
+    <managed-bean id="__27">
+      <managed-bean-name id="__19">backing_ExcelBean</managed-bean-name>
+      <managed-bean-class id="__26">gov.bnm.view.rh.common.ExcelBean</managed-bean-class>
+      <managed-bean-scope id="__20">backingBean</managed-bean-scope>
+    </managed-bean>
+    <view id="PolicyMaintenancePage">
+      <page>/jsff/PolicyMaintenancePage.jsff</page>
+    </view>
+    <method-call id="filterByPolicyId">
+      <method>#{bindings.filterByPolicyId.execute}</method>
+      <outcome id="__8">
+        <fixed-outcome>filterByPolicyId</fixed-outcome>
+      </outcome>
+    </method-call>
+    <view id="PolicyPublishingPage">
+      <page>/jsff/PolicyPublishingPage.jsff</page>
+    </view>
+    <method-call id="refreshPolicyMaintenance1">
+      <method>#{bindings.refreshPolicyMaintenance.execute}</method>
+      <outcome id="__34">
+        <fixed-outcome>refreshPolicyMaintenance</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="filterByPolicyId1">
+      <method>#{bindings.filterByPolicyId.execute}</method>
+      <outcome id="__49">
+        <fixed-outcome>filterByPolicyId</fixed-outcome>
+      </outcome>
+    </method-call>
+    <control-flow-rule id="__9">
+      <from-activity-id id="__10">PolicyMaintenancePage</from-activity-id>
+      <control-flow-case id="__11">
+        <from-outcome id="__13">filterByPolicyId</from-outcome>
+        <to-activity-id id="__12">filterByPolicyId</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__14">
+      <from-activity-id id="__15">filterByPolicyId</from-activity-id>
+      <control-flow-case id="__17">
+        <from-outcome id="__18">filterByPolicyId</from-outcome>
+        <to-activity-id id="__16">PolicyPublishingPage</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__21">
+      <from-activity-id id="__22">PolicyPublishingPage</from-activity-id>
+      <control-flow-case id="__31">
+        <from-outcome id="__33">submit</from-outcome>
+        <to-activity-id id="__32">refreshPolicyMaintenance1</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__39">
+        <from-outcome id="__45">back</from-outcome>
+        <to-activity-id id="__38">filterByPolicyId1</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__40">
+      <from-activity-id id="__41">refreshPolicyMaintenance1</from-activity-id>
+      <control-flow-case id="__44">
+        <from-outcome id="__43">refreshPolicyMaintenance</from-outcome>
+        <to-activity-id id="__42">PolicyMaintenancePage</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__50">
+      <from-activity-id id="__51">filterByPolicyId1</from-activity-id>
+      <control-flow-case id="__53">
+        <from-outcome id="__52">filterByPolicyId</from-outcome>
+        <to-activity-id id="__54">PolicyMaintenancePage</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

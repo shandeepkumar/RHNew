@@ -1,0 +1,657 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<table xmlns="http://xmlns.oracle.com/jdeveloper/1111/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <identifier class="java.lang.String">37ee48ff-ed4a-4c9b-94d3-93eb42f254cf</identifier>
+  </ID>
+  <name>SectorCategorySME</name>
+  <columns>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">94fb7c78-bd3e-45f3-a79d-d879fef0d86e</identifier>
+      </ID>
+      <name>SectorCategorySMEID</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">d6408332-6514-4f9a-b4a4-ad4b80ee92b5</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.Long">18</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.SQLServer.SQLServerDatabaseImpl</providerClass>
+          <typeName>DECIMAL</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>SectorCategorySMEID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>SectorCategorySME</name>
+                  <schemaName>dbo</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>SectorCategorySMEID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>SectorCategorySME</name>
+              <schemaName>dbo</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">728ac7b6-07ef-4b4f-a6b8-1730103fd2ba</identifier>
+      </ID>
+      <name>SMEName</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">5e4543e7-cabe-4684-9eac-73a89bbc377c</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">100</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.SQLServer.SQLServerDatabaseImpl</providerClass>
+          <typeName>VARCHAR</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>SMEName</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>SectorCategorySME</name>
+                  <schemaName>dbo</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>SMEName</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>SectorCategorySME</name>
+              <schemaName>dbo</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">f0e74a3e-1e00-4c14-ba1e-c2819fd8373e</identifier>
+      </ID>
+      <name>SMEEmail</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">0d4a662a-833f-4767-8ddd-085553136fa5</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">255</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.SQLServer.SQLServerDatabaseImpl</providerClass>
+          <typeName>VARCHAR</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>SMEEmail</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>SectorCategorySME</name>
+                  <schemaName>dbo</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>SMEEmail</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>SectorCategorySME</name>
+              <schemaName>dbo</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">9487572a-6c3d-4fcc-b4e2-b1800fe642c2</identifier>
+      </ID>
+      <name>SectorID</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">9385a91f-1408-491a-b638-4e2704f51f2a</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.Long">18</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.SQLServer.SQLServerDatabaseImpl</providerClass>
+          <typeName>DECIMAL</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>SectorID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>SectorCategorySME</name>
+                  <schemaName>dbo</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>SectorID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>SectorCategorySME</name>
+              <schemaName>dbo</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">482bd254-878f-4ee2-bbeb-fafeb234d194</identifier>
+      </ID>
+      <name>CategoryID</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">1ba40622-5c7e-4bbd-87dd-bd76d4d953d3</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.Long">18</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.SQLServer.SQLServerDatabaseImpl</providerClass>
+          <typeName>DECIMAL</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>CategoryID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>SectorCategorySME</name>
+                  <schemaName>dbo</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CategoryID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>SectorCategorySME</name>
+              <schemaName>dbo</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">2d13f125-fb2c-4061-b4f7-f8a8e5cf35fe</identifier>
+      </ID>
+      <name>isPrimary</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">6cac51b2-fa35-4645-82e3-1d9414a50d46</identifier>
+        </ID>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.SQLServer.SQLServerDatabaseImpl</providerClass>
+          <typeName>BIT</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>isPrimary</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>SectorCategorySME</name>
+                  <schemaName>dbo</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>isPrimary</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>SectorCategorySME</name>
+              <schemaName>dbo</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+  </columns>
+  <constraints>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">809d1eab-b4ad-4d58-b1eb-554176715fa4</identifier>
+      </ID>
+      <name>FK_SectorCategorySME_Categories</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>CategoryID</name>
+          <identifier class="java.lang.String">482bd254-878f-4ee2-bbeb-fafeb234d194</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>SectorCategorySME</name>
+            <identifier class="java.lang.String">37ee48ff-ed4a-4c9b-94d3-93eb42f254cf</identifier>
+            <schemaName>dbo</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>dbo</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>FK_SectorCategorySME_Categories</name>
+            <childObjectNames>
+              <childObjectName>CategoryID</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>SectorCategorySME</name>
+              <schemaName>dbo</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>FKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+      <referenceID class="oracle.javatools.db.IdentifierBasedID">
+        <name>PK_Categories</name>
+        <identifier class="java.lang.String">e862947b-bc77-4c27-a6ea-95ed448df327</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>Categories</name>
+          <identifier class="java.lang.String">2bf175da-8f29-42b3-bcd6-2dc1412ec06d</identifier>
+          <schemaName>dbo</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>dbo</schemaName>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">ce533928-9b47-4a9b-b90e-49a6872617c6</identifier>
+      </ID>
+      <name>FK_SectorCategorySME_Sectors</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>SectorID</name>
+          <identifier class="java.lang.String">9487572a-6c3d-4fcc-b4e2-b1800fe642c2</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>SectorCategorySME</name>
+            <identifier class="java.lang.String">37ee48ff-ed4a-4c9b-94d3-93eb42f254cf</identifier>
+            <schemaName>dbo</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>dbo</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>FK_SectorCategorySME_Sectors</name>
+            <childObjectNames>
+              <childObjectName>SectorID</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>SectorCategorySME</name>
+              <schemaName>dbo</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>FKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+      <referenceID class="oracle.javatools.db.IdentifierBasedID">
+        <name>PK_Sectors</name>
+        <identifier class="java.lang.String">27f89cd9-31dc-42a0-84c5-730e64e1262d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>Sectors</name>
+          <identifier class="java.lang.String">dfc81377-327c-427f-a998-e423e5551de2</identifier>
+          <schemaName>dbo</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>dbo</schemaName>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.PKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">79025dcc-c925-4e05-81c8-d0f55226e1f1</identifier>
+      </ID>
+      <name>PK_EnquiryResponders</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>SectorCategorySMEID</name>
+          <identifier class="java.lang.String">94fb7c78-bd3e-45f3-a79d-d879fef0d86e</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>SectorCategorySME</name>
+            <identifier class="java.lang.String">37ee48ff-ed4a-4c9b-94d3-93eb42f254cf</identifier>
+            <schemaName>dbo</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>dbo</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>PK_EnquiryResponders</name>
+            <childObjectNames>
+              <childObjectName>SectorCategorySMEID</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>SectorCategorySME</name>
+              <schemaName>dbo</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>PKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+    </constraint>
+  </constraints>
+  <indexes>
+    <indexe>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">49037f56-74f7-417e-9921-03a40b1b341f</identifier>
+      </ID>
+      <name>SMEBySectorCategory</name>
+      <columnExpressions>
+        <columnExpression>
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">50582a4b-bacc-43e6-9b64-1121e0c4bbe0</identifier>
+          </ID>
+          <expression class="oracle.javatools.db.sql.ColumnUsage">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">10cd1374-8198-4d87-8cf8-95a934fad44c</identifier>
+            </ID>
+            <objectID class="oracle.javatools.db.IdentifierBasedID">
+              <name>SectorID</name>
+              <identifier class="java.lang.String">9487572a-6c3d-4fcc-b4e2-b1800fe642c2</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>SectorCategorySME</name>
+                <identifier class="java.lang.String">37ee48ff-ed4a-4c9b-94d3-93eb42f254cf</identifier>
+                <schemaName>dbo</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <schemaName>dbo</schemaName>
+              <type>COLUMN</type>
+            </objectID>
+            <outerJoin>false</outerJoin>
+            <properties>
+              <entry>
+                <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                <value class="oracle.javatools.db.ReferenceID">
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <parent class="oracle.javatools.db.ReferenceID">
+                      <name>SMEBySectorCategory</name>
+                      <parent class="oracle.javatools.db.ReferenceID">
+                        <name>SectorCategorySME</name>
+                        <schemaName>dbo</schemaName>
+                        <type>TABLE</type>
+                      </parent>
+                      <schemaName>dbo</schemaName>
+                      <type>INDEX</type>
+                    </parent>
+                    <type>IndexObject</type>
+                  </parent>
+                  <type>SQLFragment</type>
+                </value>
+              </entry>
+            </properties>
+            <qualified>true</qualified>
+          </expression>
+          <order>ASC</order>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>SMEBySectorCategory</name>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>SectorCategorySME</name>
+                    <schemaName>dbo</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>dbo</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+        <columnExpression>
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">6603297a-128e-4ded-ad00-691fdb871efc</identifier>
+          </ID>
+          <expression class="oracle.javatools.db.sql.ColumnUsage">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">1c68b3d7-072b-4bfe-9d29-1663a07b354b</identifier>
+            </ID>
+            <objectID class="oracle.javatools.db.IdentifierBasedID">
+              <name>CategoryID</name>
+              <identifier class="java.lang.String">482bd254-878f-4ee2-bbeb-fafeb234d194</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>SectorCategorySME</name>
+                <identifier class="java.lang.String">37ee48ff-ed4a-4c9b-94d3-93eb42f254cf</identifier>
+                <schemaName>dbo</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <schemaName>dbo</schemaName>
+              <type>COLUMN</type>
+            </objectID>
+            <outerJoin>false</outerJoin>
+            <properties>
+              <entry>
+                <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                <value class="oracle.javatools.db.ReferenceID">
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <parent class="oracle.javatools.db.ReferenceID">
+                      <name>SMEBySectorCategory</name>
+                      <parent class="oracle.javatools.db.ReferenceID">
+                        <name>SectorCategorySME</name>
+                        <schemaName>dbo</schemaName>
+                        <type>TABLE</type>
+                      </parent>
+                      <schemaName>dbo</schemaName>
+                      <type>INDEX</type>
+                    </parent>
+                    <type>IndexObject</type>
+                  </parent>
+                  <type>SQLFragment</type>
+                </value>
+              </entry>
+            </properties>
+            <qualified>true</qualified>
+          </expression>
+          <order>ASC</order>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>SMEBySectorCategory</name>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>SectorCategorySME</name>
+                    <schemaName>dbo</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>dbo</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+      </columnExpressions>
+      <indexType>NORMAL</indexType>
+      <parallelDegree>1</parallelDegree>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>SMEBySectorCategory</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>SectorCategorySME</name>
+              <schemaName>dbo</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <schemaName>dbo</schemaName>
+            <type>INDEX</type>
+          </value>
+        </entry>
+      </properties>
+      <schema>
+        <name>dbo</name>
+      </schema>
+    </indexe>
+  </indexes>
+  <properties>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_CONNECTION</key>
+      <value class="java.lang.String">b2fifd</value>
+    </entry>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+      <value class="oracle.javatools.db.ReferenceID">
+        <name>SectorCategorySME</name>
+        <schemaName>dbo</schemaName>
+        <type>TABLE</type>
+      </value>
+    </entry>
+    <entry>
+      <key>TableType</key>
+      <value class="oracle.javatools.db.Table$TableType">NORMAL</value>
+    </entry>
+  </properties>
+  <schema>
+    <name>dbo</name>
+  </schema>
+</table>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="btf_KeywordPolicySearch">
+    <default-activity id="__2">loadAdvanceKeywordsValue</default-activity>
+    <managed-bean id="__5">
+      <managed-bean-name id="__3">backing_jsff_keywordPolicySearch</managed-bean-name>
+      <managed-bean-class id="__6">view.backing.jsff.KeywordPolicySearch</managed-bean-class>
+      <managed-bean-scope id="__4">pageFlow</managed-bean-scope>
+      <!--oracle-jdev-comment:managed-bean-jsp-link:1jsff/keywordPolicySearch.jsff-->
+    </managed-bean>
+    <managed-bean id="__32">
+      <managed-bean-name id="__29">backing_jsff_IssuingDepartmentWelcomePage</managed-bean-name>
+      <managed-bean-class id="__31">view.backing.jsff.IssuingDepartmentWelcomePage</managed-bean-class>
+      <managed-bean-scope id="__30">backingBean</managed-bean-scope>
+    </managed-bean>
+    <view id="keywordPolicySearch">
+      <page>/jsff/keywordPolicySearch.jsff</page>
+    </view>
+    <method-call id="loadAdvanceKeywordsValue">
+      <method>#{pageFlowScope.backing_jsff_keywordPolicySearch.loadAdvanceSearchSelectItem}</method>
+      <outcome id="__11">
+        <fixed-outcome>success</fixed-outcome>
+      </outcome>
+    </method-call>
+    <view id="IssuingDepartmentWelcomePage">
+      <page>/jsff/IssuingDepartmentWelcomePage.jsff</page>
+    </view>
+    <task-flow-call id="btf_PolicyPreface">
+      <task-flow-reference>
+        <document>/WEB-INF/PageFlows/taskFlow/btf_PolicyPreface.xml</document>
+        <id>btf_PolicyPreface</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <control-flow-rule id="_12">
+      <from-activity-id id="__7">loadAdvanceKeywordsValue</from-activity-id>
+      <control-flow-case id="__9">
+        <from-outcome id="__10">success</from-outcome>
+        <to-activity-id id="__8">keywordPolicySearch</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__1">
+      <from-activity-id id="__12">keywordPolicySearch</from-activity-id>
+      <control-flow-case id="__13">
+        <from-outcome id="__26">policyPreface</from-outcome>
+        <to-activity-id id="__14">btf_PolicyPreface</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__20">
+        <from-outcome id="__28">issDepartment</from-outcome>
+        <to-activity-id id="__21">IssuingDepartmentWelcomePage</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__15">
+      <from-activity-id id="__16">btf_PolicyPreface</from-activity-id>
+      <control-flow-case id="__17">
+        <from-outcome id="__18">backCateTreePolicySearch</from-outcome>
+        <to-activity-id id="__19">keywordPolicySearch</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__22">
+      <from-activity-id id="__23">IssuingDepartmentWelcomePage</from-activity-id>
+      <control-flow-case id="__25">
+        <from-outcome id="__27">back</from-outcome>
+        <to-activity-id id="__24">keywordPolicySearch</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

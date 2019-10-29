@@ -1,0 +1,395 @@
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity
+END
+Policyamendments.xml
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/Policyamendments.xml
+END
+FKEnquiriesCategoriesAssoc.xml
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/FKEnquiriesCategoriesAssoc.xml
+END
+FUNCTIONUSERGROUPFUNCTIONFK1Assoc.xml
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/FUNCTIONUSERGROUPFUNCTIONFK1Assoc.xml
+END
+L3browser.xml
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/L3browser.xml
+END
+OrganizationSectorsFK1Assoc.xml
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/OrganizationSectorsFK1Assoc.xml
+END
+UserUsergroup.xml
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/UserUsergroup.xml
+END
+L3BrowserL2BrowserFKAssoc.xml
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/L3BrowserL2BrowserFKAssoc.xml
+END
+Department.xml
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/Department.xml
+END
+USERUSERGROUPUSERGROUPFK1Assoc.xml
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/USERUSERGROUPUSERGROUPFK1Assoc.xml
+END
+Usergroup.xml
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/Usergroup.xml
+END
+FunctionUsergroup.xml
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/FunctionUsergroup.xml
+END
+L1BrowseritemListFKAssoc.xml
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/L1BrowseritemListFKAssoc.xml
+END
+L3BrowseritemListFKAssoc.xml
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/L3BrowseritemListFKAssoc.xml
+END
+attachedFilePolicyFKAssoc.xml
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/attachedFilePolicyFKAssoc.xml
+END
+PolicyPartitionTypeListFKAssoc.xml
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/PolicyPartitionTypeListFKAssoc.xml
+END
+Enquiries.xml
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/Enquiries.xml
+END
+PcollControl.xml
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/PcollControl.xml
+END
+L2browser.xml
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/L2browser.xml
+END
+EnquiryFaqPolicyAmendmentsFKAssoc.xml
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/EnquiryFaqPolicyAmendmentsFKAssoc.xml
+END
+BNMUSERDEPARTMENTFK1Assoc.xml
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/BNMUSERDEPARTMENTFK1Assoc.xml
+END
+USERUSERGROUPEXTERNALUSERFK1Assoc.xml
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/USERUSERGROUPEXTERNALUSERFK1Assoc.xml
+END
+PolicyDepartmentPartitionFKAssoc.xml
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/PolicyDepartmentPartitionFKAssoc.xml
+END
+Policyinstitutiontypepartition.xml
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/Policyinstitutiontypepartition.xml
+END
+Itemtypelist.xml
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/Itemtypelist.xml
+END
+BNMUSERUSERGROUPBNMUSERFK1Assoc.xml
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/BNMUSERUSERGROUPBNMUSERFK1Assoc.xml
+END
+L4BrowserL3BrowserFKAssoc.xml
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/L4BrowserL3BrowserFKAssoc.xml
+END
+attachedFileFKAssoc.xml
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/attachedFileFKAssoc.xml
+END
+Enquiryfaq.xml
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/Enquiryfaq.xml
+END
+FKSectorCategorySMECategoriesAssoc.xml
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/FKSectorCategorySMECategoriesAssoc.xml
+END
+Partitiontypelist.xml
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/Partitiontypelist.xml
+END
+L1browser.xml
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/L1browser.xml
+END
+BnmuserUsergroup.xml
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/BnmuserUsergroup.xml
+END
+FKEnquiriesSectorCategorySMEAssoc.xml
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/FKEnquiriesSectorCategorySMEAssoc.xml
+END
+EnquiryFaqPolicyFKAssoc.xml
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/EnquiryFaqPolicyFKAssoc.xml
+END
+Sectors.xml
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/Sectors.xml
+END
+PolicyInstitutionTypePartitFKAssoc.xml
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/PolicyInstitutionTypePartitFKAssoc.xml
+END
+BNMUSERUSERGROUPUSERGROUPFK1Assoc.xml
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/BNMUSERUSERGROUPUSERGROUPFK1Assoc.xml
+END
+Externaluser.xml
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/Externaluser.xml
+END
+Function1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/Function1.xml
+END
+Categories.xml
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/Categories.xml
+END
+L2BrowseritemListFKAssoc.xml
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/L2BrowseritemListFKAssoc.xml
+END
+L4BrowseritemListFKAssoc.xml
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/L4BrowseritemListFKAssoc.xml
+END
+PolicyInstitutionTypePartiFK1Assoc.xml
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/PolicyInstitutionTypePartiFK1Assoc.xml
+END
+Attachedfile.xml
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/Attachedfile.xml
+END
+EXTERNALUSERSectorsFK1Assoc.xml
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/EXTERNALUSERSectorsFK1Assoc.xml
+END
+L4browser.xml
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/L4browser.xml
+END
+FUNCTIONUSERGROUPUSERGROUPFK1Assoc.xml
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/FUNCTIONUSERGROUPUSERGROUPFK1Assoc.xml
+END
+PolicyDepartmentPartitionDEPARTMENTFK1Assoc.xml
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/PolicyDepartmentPartitionDEPARTMENTFK1Assoc.xml
+END
+FKEnquiriesSectorsAssoc.xml
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/FKEnquiriesSectorsAssoc.xml
+END
+Policydepartmentpartition.xml
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/Policydepartmentpartition.xml
+END
+PsTxn.xml
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/PsTxn.xml
+END
+Sectorcategorysme.xml
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/Sectorcategorysme.xml
+END
+OrganizationinstitutionTypeFK1Assoc.xml
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/OrganizationinstitutionTypeFK1Assoc.xml
+END
+FKSectorCategorySMESectorsAssoc.xml
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/FKSectorCategorySMESectorsAssoc.xml
+END
+Bnmuser.xml
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/Bnmuser.xml
+END
+Lookupproperties.xml
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/Lookupproperties.xml
+END
+PolicyitemListFKAssoc.xml
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/PolicyitemListFKAssoc.xml
+END
+L2BrowserL1BrowserFKAssoc.xml
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/L2BrowserL1BrowserFKAssoc.xml
+END
+Itemlist.xml
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/Itemlist.xml
+END
+EXTERNALUSEROrganizationFK1Assoc.xml
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/EXTERNALUSEROrganizationFK1Assoc.xml
+END
+Institutiontype.xml
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/Institutiontype.xml
+END
+Policy.xml
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/Policy.xml
+END
+Organization.xml
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/Organization.xml
+END
+Tbladftoken.xml
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/Tbladftoken.xml
+END
+itemTypeListitemListFKAssoc.xml
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/Model/src/RHmodel/common/entity/itemTypeListitemListFKAssoc.xml
+END

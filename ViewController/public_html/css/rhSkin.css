@@ -1,0 +1,469 @@
+/**ADFFaces_Skin_File / DO NOT REMOVE**/
+@namespace af "http://xmlns.oracle.com/adf/faces/rich";
+
+@namespace dvt "http://xmlns.oracle.com/dss/adf/faces";
+
+af|tree {
+    background-color: rgb(217, 232, 255);
+}
+
+af|richTextEditor:content-input-container {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+}
+
+af|panelFormLayout::label-cell {
+    text-align: left;
+    color: Black;
+}
+
+af|selectBooleanRadio::label {
+    color: Black;
+}
+
+af|selectBooleanRadio:disabled::label {
+    color: Black;
+}
+
+af|inputText::label {
+    color: Black;
+}
+
+af|inputText:disabled::label {
+    color: Black;
+}
+
+af|inputFile::label {
+    color: Black;
+}
+
+af|inputFile:disabled::label {
+    color: Black;
+}
+
+af|selectBooleanCheckbox::label {
+    color: Black;
+}
+
+af|selectBooleanCheckbox:disabled::label {
+    color: Black;
+}
+
+af|selectManyCheckbox::label {
+    color: Black;
+}
+
+af|selectManyCheckbox:disabled::label {
+    color: Black;
+}
+
+af|selectOneChoice::label {
+    color: Black;
+}
+
+af|selectOneChoice:disabled::label {
+    color: Black;
+}
+
+af|selectManyChoice::label {
+    color: Black;
+}
+
+af|selectManyChoice:disabled::label {
+    color: Black;
+}
+
+af|inputDate::label {
+    color: Black;
+}
+
+af|inputDate:disabled::label {
+    color: Black;
+}
+
+af|inputListOfValues::label {
+    color: Black;
+}
+
+af|inputListOfValues:disabled::label {
+    color: Black;
+}
+
+af|inputComboboxListOfValues::label {
+    color: Black;
+}
+
+af|inputComboboxListOfValues:disabled::label {
+    color: Black;
+}
+
+af|inputNumberSpinbox::label {
+    color: Black;
+}
+
+af|inputNumberSpinbox:disabled::label {
+    color: Black;
+}
+
+af|selectOneListbox::label {
+    color: Black;
+}
+
+af|selectOneListbox:disabled::label {
+    color: Black;
+}
+
+af|selectManyListbox::label {
+    color: Black;
+}
+
+af|selectManyListbox:disabled::label {
+    color: Black;
+}
+
+af|selectOneRadio::label {
+    color: Black;
+}
+
+af|selectOneRadio:disabled::label {
+    color: Black;
+}
+
+body {
+    background-color: White;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    color: navy;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: x-large;
+    font-weight: bolder;
+    text-transform: capitalize;
+}
+
+h2 {
+    color: navy;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    font-weight: bolder;
+    text-transform: capitalize;
+}
+
+h3 {
+    color: navy;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    font-weight: lighter;
+    text-transform: capitalize;
+}
+
+.width_600 {
+    vertical-align: middle;
+    width: 600px;
+}
+
+.width_550 {
+    vertical-align: middle;
+    width: 550px;
+}
+
+.width_540 {
+    vertical-align: middle;
+    width: 540px;
+}
+
+.width_400 {
+    vertical-align: middle;
+    width: 400px;
+}
+
+.width_120 {
+    vertical-align: middle;
+    width: 120px;
+}
+
+.width_80 {
+    vertical-align: middle;
+    width: 80px;
+}
+
+.width_70 {
+    vertical-align: middle;
+    width: 70px;
+}
+
+.width_60 {
+    vertical-align: middle;
+    width: 60px;
+}
+
+.width_50 {
+    vertical-align: middle;
+    width: 50px;
+}
+
+.width_40 {
+    vertical-align: middle;
+    width: 40px;
+}
+
+.text_align_left {
+    text-align: left;
+}
+
+.text_align_right {
+    text-align: right;
+}
+
+.text_align_center {
+    text-align: center;
+}
+
+.padding_group_layout {
+    padding-bottom: 10px;
+}
+
+af|commandButton {
+    text-align: center;
+    background-color: rgb(173, 82, 255);
+    /**color: Green; **/
+}
+/** align text to left at panelFormLayou start**/
+af|panelFormLayout::label-cell {
+    text-align: left;
+    font-size: 11px;
+    color: #727272;
+}
+
+af|panelLabelAndMessage::label {
+    text-align: left;
+    font-size: 11px;
+    color: #727272;
+}
+
+af|outputLabel::value {
+    text-align: left;
+    font-size: 11px;
+    color: #727272;
+}
+
+af|commandButton::icon-style {
+    text-align: center;
+}
+
+af|statusIndicator::connected-icon, af|statusIndicator::disconnected-icon, af|statusIndicator::idle-icon {
+    content: url(/images/ajax-loader.gif);
+}
+
+af|statusIndicator::connecting-icon, af|statusIndicator::processing-icon, af|statusIndicator::reconnecting-icon {
+    content: url(/images/ajax-loader.gif);
+}
+/**af|inputText::label
+{
+  color: Aqua; 
+  text-align: right;
+  background-color: Fuchsia;
+}**/
+/** align text to left at panelFormLayout end**/
+/** Form End  **/
+/**
+af|table
+{
+  background-color: Lime; 
+}
+
+
+af|panelFormLayout ::label-cell
+{
+ text-align: center;
+  color: Green; 
+
+}
+af|inputText::label
+{
+  color: Aqua; 
+  text-align: right;
+  background-color: Fuchsia;
+}**/
+/**af|panelGroupLayout
+{
+  background-color: rgb(148,255,148); 
+}*/
+.textAlignRight af|panelFormLayout::label-cell {
+    /**  font-size: 11px;
+     font-family: Arial;**/
+
+    text-align: right;
+}
+
+.textAlignRightView af|panelLabelAndMessage::label {
+    text-align: right;
+    /**font-size: 11px;
+  color:#727272;**/
+}
+
+.heading af|outputText {
+    color: navy;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: x-large;
+    font-weight: bolder;
+    text-transform: capitalize;
+}
+/** ----------------------- Skin Works Start  ----------------------- **/
+af|table {
+    font-size: 11px;
+}
+
+af|column::row-header-cell {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+af|column::row-column-header-cell {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    font-size: 11px;
+    border-top: #004C68 1px solid;
+    border-bottom: #004C68 1px solid;
+    background: #C0E1F5;
+    /* older browser */
+
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#C0E1F5', endColorstr='#0EA9FC', GradientType=0);
+    /* IE6-9 */
+
+    background: -ms-linear-gradient(bottom, #C0E1F5 1%, #0EA9FC 100%);
+    /* IE10+ */
+
+    background: -moz-linear-gradient(top, #C0E1F5, #0EA9FC);
+    /* Mozilla */
+
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#C0E1F5), to(#0EA9FC));
+    /* webkit */
+
+    background: linear-gradient(to bottom, #C0E1F5 1%, #0EA9FC 100%);
+    /* W3C */
+}
+
+af|column::column-header-cell {
+    font-size: 11px;
+    font-weight: bold;
+      border-top: #004C68 1px solid;
+    border-bottom: #004C68 1px solid;
+    background: #C0E1F5;
+    /* older browser */
+
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#C0E1F5', endColorstr='#0EA9FC', GradientType=0);
+    /* IE6-9 */
+
+    background: -ms-linear-gradient(bottom, #C0E1F5 1%, #0EA9FC 100%);
+    /* IE10+ */
+
+    background: -moz-linear-gradient(top, #C0E1F5, #0EA9FC);
+    /* Mozilla */
+
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#C0E1F5), to(#0EA9FC));
+    /* webkit */
+
+    background: linear-gradient(to bottom, #C0E1F5 1%, #0EA9FC 100%);
+    /* W3C */
+}
+
+af|column::column-header-cell-content {
+    font-size: 11px;
+    font-weight: bold;
+    text-align: left;
+    padding: 5px 5px 5px 5px;
+}
+
+af|column::column-filter-cell {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url("../images/tb-header-bg2.png");
+    padding: 5px 5px 5px 5px;
+    color: Black;
+}
+
+af|column::data-cell {
+    padding: 5px 2px 5px 2px;
+}
+
+af|column::banded-data-cell {
+    background-color: #D5EFFD;
+    padding: 5px 2px 5px 2px;
+}
+
+.rowItemExpiry {
+    padding: 5px 2px 5px 2px;
+    background-color: #FF9B9B;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    color: Black;
+}
+
+af|outputText {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    color: lime;
+    padding: 0px 5px 10px 5px;
+}
+
+.tree-link-navigable {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    color: #000000;
+}
+
+.tree-link-null {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    color: #0033FF;
+}
+
+.pageTitleHeaderLeft {
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: Black;
+    text-align: left;
+}
+
+af|outputFormatted {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    padding: 0px 5px 10px 5px;
+}
+
+af|richTextEditor::content-input {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    padding: 0px 5px 10px 5px;
+}
+
+.tableHeader {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    font-size: 11px;
+    background-image: url("../images/tb-header-bg2.png");
+}
+
+.tableHeaderHeaderLeft {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: Black;
+    text-align: left;
+    font-size: 13px;
+    background-image: url("../images/tb-header-bg2.png");
+}
+
+.columnVerticalAlignTop {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    text-align: left;
+    vertical-align: top;
+    vertical-align: text-top;
+    font-size: 11px;
+}
+/** ----------------------- Skin Works End ----------------------- **/

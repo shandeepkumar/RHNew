@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/RegulatoryHandbook/!svn/ver/41/branches/NewRegulatoryHandbook/ViewController/src/gov/bnm/view/rh/backingBeans
+END
+EnquiriesPage.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/ViewController/src/gov/bnm/view/rh/backingBeans/EnquiriesPage.java
+END
+PolicyMaintenancePage.java
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/ViewController/src/gov/bnm/view/rh/backingBeans/PolicyMaintenancePage.java
+END
+WhatsNewPolicyListingPage.java
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/ViewController/src/gov/bnm/view/rh/backingBeans/WhatsNewPolicyListingPage.java
+END
+PolicyAgingConfirmationPage.java
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/ViewController/src/gov/bnm/view/rh/backingBeans/PolicyAgingConfirmationPage.java
+END
+PolicyPreface.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/ViewController/src/gov/bnm/view/rh/backingBeans/PolicyPreface.java
+END
+FaqsPage.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/ViewController/src/gov/bnm/view/rh/backingBeans/FaqsPage.java
+END
+SupportingDocumentsRequests.java
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/ViewController/src/gov/bnm/view/rh/backingBeans/SupportingDocumentsRequests.java
+END
+PolicyPublishing.java
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/RegulatoryHandbook/!svn/ver/53/branches/NewRegulatoryHandbook/ViewController/src/gov/bnm/view/rh/backingBeans/PolicyPublishing.java
+END
+WhatsNewPage.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/ViewController/src/gov/bnm/view/rh/backingBeans/WhatsNewPage.java
+END
+AgingReportPage.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/ViewController/src/gov/bnm/view/rh/backingBeans/AgingReportPage.java
+END
+AgingResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/ViewController/src/gov/bnm/view/rh/backingBeans/AgingResponse.java
+END
+PolicyDecisionEmailPage.java
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/ViewController/src/gov/bnm/view/rh/backingBeans/PolicyDecisionEmailPage.java
+END
+PolicyDecisionPage.java
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/ViewController/src/gov/bnm/view/rh/backingBeans/PolicyDecisionPage.java
+END
+EnquiryResponsePage.java
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/ViewController/src/gov/bnm/view/rh/backingBeans/EnquiryResponsePage.java
+END
+SuppDocReqDecisionPage.java
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/ViewController/src/gov/bnm/view/rh/backingBeans/SuppDocReqDecisionPage.java
+END
+UnathorisedUser.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/ViewController/src/gov/bnm/view/rh/backingBeans/UnathorisedUser.java
+END

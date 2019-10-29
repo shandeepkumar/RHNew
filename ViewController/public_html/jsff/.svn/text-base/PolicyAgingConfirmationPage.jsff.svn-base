@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelStretchLayout binding="#{backingBeanScope.backing_jspx_PolicyAgingConfirmationPage.psl1}"
+                         id="psl1">
+    <f:facet name="center">
+      <af:panelGroupLayout layout="scroll"
+                           xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                           binding="#{backingBeanScope.backing_jspx_PolicyAgingConfirmationPage.pgl1}"
+                           id="pgl1" halign="left">
+        <af:outputFormatted value='&lt;div align="justify">&lt;span style="font-family: Arial,Helvetica,sans-serif;font-size: 11px;">Please be informed that &lt;b>" #{bindings.GuidelineTitle.inputValue} "&lt;/b> will expire on  #{bindings.IssuanceStr.inputValue}  As stated in the Policy Development Framework,all documents must be reviewed every 5 years from  issuance date  or earlier as determined by Management.&lt;/font>&lt;/span>&lt;/div>' 
+                             binding="#{backingBeanScope.backing_jspx_PolicyAgingConfirmationPage.of1}"
+                            id="of1"
+                            inlineStyle="text-align:justify; font-size:medium;"/>
+          <af:outputText visible="false" id="ot3" value="#{bindings.NewIssuanceDate.inputValue} " >
+          <f:convertDateTime type="date" pattern="dd MMMM yyyy"/>
+        </af:outputText>       
+        
+          <af:outputFormatted value='&lt;span style="font-family: Arial,Helvetica,sans-serif;font-size: 11px;">&lt;br>&lt;br>If a review is required, please select the number of years for extension from the options below: &lt;br>&lt;/font>&lt;br>&lt;/span>' 
+                            id="of2"
+                            inlineStyle="text-align:justify; font-size:medium;"/>
+        <af:selectOneChoice label="Number of years of extension"
+                            binding="#{backingBeanScope.backing_jspx_PolicyAgingConfirmationPage.soc1}"
+                            id="soc1" value="0">
+          <af:selectItem label="No Review" value="0"
+                         id="si6" />                
+          <af:selectItem label="1 Year" value="1"
+                         binding="#{backingBeanScope.backing_jspx_PolicyAgingConfirmationPage.si1}"
+                         id="si1"/>
+          <af:selectItem label="2 Years" value="2"
+                         binding="#{backingBeanScope.backing_jspx_PolicyAgingConfirmationPage.si2}"
+                         id="si2"/>
+          <af:selectItem label="3 Years" value="3"
+                         binding="#{backingBeanScope.backing_jspx_PolicyAgingConfirmationPage.si3}"
+                         id="si3"/>
+          <af:selectItem label="4 Years" value="4"
+                         binding="#{backingBeanScope.backing_jspx_PolicyAgingConfirmationPage.si4}"
+                         id="si4"/>
+          <af:selectItem label="5 Years" value="5"
+                         binding="#{backingBeanScope.backing_jspx_PolicyAgingConfirmationPage.si5}"
+                         id="si5"/>
+        </af:selectOneChoice>
+        <af:spacer id="s2" height="10" width="10"/>
+        <af:panelGroupLayout binding="#{backingBeanScope.backing_jspx_PolicyAgingConfirmationPage.pgl2}"
+                             id="pgl2">
+          <af:commandButton text="Confirm"
+                            binding="#{backingBeanScope.backing_jspx_PolicyAgingConfirmationPage.cb1}"
+                            id="cb1"
+                            disabled="#{pageFlowScope.confirmStatus eq 'failure'}"
+                            action="#{backingBeanScope.backing_jspx_PolicyAgingConfirmationPage.confirmAging}"/>
+          <af:spacer width="10" height="10" id="s1"/>
+          <af:commandButton text="Cancel"
+                            binding="#{backingBeanScope.backing_jspx_PolicyAgingConfirmationPage.cb2}"
+                            id="cb2"
+                            action="#{backingBeanScope.backing_jspx_PolicyAgingConfirmationPage.closePage}"
+                            rendered="#{pageFlowScope.formType eq 'ARE'}"/>
+          <af:spacer width="10" height="10" id="s3"/>
+          <af:commandButton text="Cancel" id="cb3" action="back"
+                            rendered="#{pageFlowScope.formType eq 'AR'}"/>
+        </af:panelGroupLayout>
+        <af:spacer id="s4" height="10" width="10"/>
+        <af:outputFormatted value='&lt;span style="font-family: Arial,Helvetica,sans-serif;font-size: 11px;">If no review is required, the above document will be archived upon expiry. &lt;br>&lt;/font>&lt;br>&lt;/span>' 
+                            id="of3"
+                            inlineStyle="text-align:center; font-size:medium;"/>      
+      </af:panelGroupLayout>
+    </f:facet>
+    <f:facet name="top">
+      <af:outputText value="POLICY AGING - CONFIRMATION OF EXTENSION OF POLICY"
+                     binding="#{backingBeanScope.backing_jspx_PolicyAgingConfirmationPage.ot1}"
+                     id="ot1"
+                     inlineStyle="font-weight:bold; text-align:center; vertical-align:bottom;"/>
+    </f:facet>
+  </af:panelStretchLayout>
+  <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_jspx_PolicyAgingConfirmationPage-->
+</jsp:root>

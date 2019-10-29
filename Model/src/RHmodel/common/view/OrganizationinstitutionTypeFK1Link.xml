@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="OrganizationinstitutionTypeFK1Link"
+  Version="11.1.1.64.93"
+  InheritPersonalization="true"
+  EntityAssociation="RHmodel.common.entity.OrganizationinstitutionTypeFK1Assoc">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewLinkDefEnd
+    Name="InstitutiontypeView"
+    Cardinality="1"
+    Owner="RHmodel.common.view.InstitutiontypeView"
+    Source="true">
+    <DesignTime>
+      <Attr Name="_finderName" Value="InstitutiontypeView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="RHmodel.common.view.InstitutiontypeView.id"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="OrganizationView"
+    Cardinality="-1"
+    Owner="RHmodel.common.view.OrganizationView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="OrganizationView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="RHmodel.common.view.OrganizationView.INSTTYPE"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<menu xmlns="http://myfaces.apache.org/trinidad/menu">
+  <itemNode id="itemNode_NavInternalEnquiries"
+            label="label_NavInternalEnquiries" action="InternalEnquiries"
+            focusViewId="/NavInternalEnquiries"/>
+  <itemNode id="itemNode_NavInternalFaqs" label="label_NavInternalFaqs"
+            action="InternalFaqs" focusViewId="/NavInternalFaqs"/>
+</menu>

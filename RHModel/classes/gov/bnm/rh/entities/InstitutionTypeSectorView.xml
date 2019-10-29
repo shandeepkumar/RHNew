@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="InstitutionTypeSectorView"
+  Version="11.1.1.64.93"
+  InheritPersonalization="true"
+  SelectList="InstitutionTypeSector.INSTTYPEID, 
+       InstitutionTypeSector.SectorID"
+  FromList="InstitutionTypeSector InstitutionTypeSector"
+  BindingStyle="JDBC"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="VarAccess"/>
+  </DesignTime>
+  <EntityUsage
+    Name="InstitutionTypeSector"
+    Entity="gov.bnm.rh.entities.InstitutionTypeSector"/>
+  <ViewAttribute
+    Name="INSTTYPEID"
+    PrecisionRule="true"
+    EntityAttrName="INSTTYPEID"
+    EntityUsage="InstitutionTypeSector"
+    AliasName="INSTTYPEID"/>
+  <ViewAttribute
+    Name="SectorID"
+    PrecisionRule="true"
+    EntityAttrName="SectorID"
+    EntityUsage="InstitutionTypeSector"
+    AliasName="SectorID"/>
+</ViewObject>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="PolicyActiveOnlyDoccategoryViewLink"
+  Version="11.1.1.64.93"
+  InheritPersonalization="true">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="gov.bnm.rh.views.links.PolicyActiveOnlyDoccategoryViewLink_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewLinkDefEnd
+    Name="DoccategoryView"
+    Cardinality="1"
+    Owner="gov.bnm.rh.views.DoccategoryView"
+    Source="true">
+    <DesignTime>
+      <Attr Name="_accessor" Value="true"/>
+      <Attr Name="_finderName" Value="DoccategoryView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="gov.bnm.rh.views.DoccategoryView.IdDoCCat"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="PolicyActiveOnlyViewObj"
+    Cardinality="-1"
+    Owner="gov.bnm.rh.views.PolicyActiveOnlyViewObj">
+    <DesignTime>
+      <Attr Name="_finderName" Value="PolicyActiveOnlyViewObj"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="gov.bnm.rh.views.PolicyActiveOnlyViewObj.DocCategory"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="gov.bnm.rh.RHModelBundle"/>
+  </ResourceBundle>
+</ViewLink>

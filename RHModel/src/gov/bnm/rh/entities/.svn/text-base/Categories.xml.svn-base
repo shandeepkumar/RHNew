@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Categories"
+  Version="11.1.1.64.93"
+  InheritPersonalization="true"
+  DBObjectType="table"
+  DBObjectName="dbo.Categories"
+  AliasName="Categories"
+  BindingStyle="JDBC"
+  UseGlueCode="false"
+  RowClass="gov.bnm.rh.entities.CategoriesImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Delete|Access|DML"/>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="CategoryID"
+    IsNotNull="true"
+    Precision="18"
+    Scale="0"
+    ColumnName="CategoryID"
+    SQLType="DECIMAL"
+    Type="java.math.BigDecimal"
+    ColumnType="decimal"
+    TableName="dbo.Categories"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CategoryName"
+    IsNotNull="true"
+    Precision="500"
+    ColumnName="CategoryName"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="varchar"
+    TableName="dbo.Categories">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="500"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CategoryDescription"
+    IsNotNull="true"
+    Precision="500"
+    ColumnName="CategoryDescription"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="varchar"
+    TableName="dbo.Categories">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="500"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ParentNodeID"
+    IsNotNull="true"
+    Precision="18"
+    Scale="0"
+    ColumnName="ParentNodeID"
+    SQLType="DECIMAL"
+    Type="java.math.BigDecimal"
+    ColumnType="decimal"
+    TableName="dbo.Categories">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedDate"
+    IsNotNull="true"
+    ColumnName="CreatedDate"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="datetime"
+    TableName="dbo.Categories">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="23"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdated"
+    IsNotNull="true"
+    ColumnName="LastUpdated"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="datetime"
+    TableName="dbo.Categories">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="23"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="EntryID"
+    IsNotNull="true"
+    Precision="10"
+    Scale="0"
+    ColumnName="EntryID"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="int"
+    TableName="dbo.Categories">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="11"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="isActive"
+    IsNotNull="true"
+    Precision="1"
+    Scale="0"
+    ColumnName="isActive"
+    SQLType="BIT"
+    Type="java.lang.Boolean"
+    ColumnType="bit"
+    TableName="dbo.Categories">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="isAllowToPublish"
+    Precision="1"
+    Scale="0"
+    ColumnName="isAllowToPublish"
+    SQLType="BIT"
+    Type="java.lang.Boolean"
+    ColumnType="bit"
+    TableName="dbo.Categories">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="PolicyCount"
+    IsQueriable="false"
+    IsPersistent="false"
+    ColumnName="PolicyCount"
+    SQLType="VARCHAR"
+    Type="java.lang.Integer"
+    ColumnType="$none$">
+    <TransientExpression><![CDATA[Policycategoriespartition.count("CategoryID")]]></TransientExpression>
+  </Attribute>
+  <Attribute
+    Name="isCheckCategory"
+    IsQueriable="false"
+    IsPersistent="false"
+    ColumnName="$none$"
+    SQLType="VARCHAR"
+    Type="java.lang.Boolean"
+    ColumnType="BIT"/>
+  <AccessorAttribute
+    Name="Policysectorcategory"
+    Association="gov.bnm.rh.entities.assoc.FKPolicySectorCategoryCategoriesAssoc"
+    AssociationEnd="gov.bnm.rh.entities.assoc.FKPolicySectorCategoryCategoriesAssoc.Policysectorcategory"
+    AssociationOtherEnd="gov.bnm.rh.entities.assoc.FKPolicySectorCategoryCategoriesAssoc.Categories"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Categories"
+    Association="gov.bnm.rh.entities.assoc.search.CategoryParentIdAssoc"
+    AssociationEnd="gov.bnm.rh.entities.assoc.search.CategoryParentIdAssoc.Categories"
+    AssociationOtherEnd="gov.bnm.rh.entities.assoc.search.CategoryParentIdAssoc.ParentNodeIDCategories"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="ParentNodeIDCategories"
+    Association="gov.bnm.rh.entities.assoc.search.CategoryParentIdAssoc"
+    AssociationEnd="gov.bnm.rh.entities.assoc.search.CategoryParentIdAssoc.ParentNodeIDCategories"
+    AssociationOtherEnd="gov.bnm.rh.entities.assoc.search.CategoryParentIdAssoc.Categories"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Policycategoriespartition"
+    Association="gov.bnm.rh.entities.assoc.search.CategoriesPolicyCountAssoc"
+    AssociationEnd="gov.bnm.rh.entities.assoc.search.CategoriesPolicyCountAssoc.Policycategoriespartition"
+    AssociationOtherEnd="gov.bnm.rh.entities.assoc.search.CategoriesPolicyCountAssoc.Categories"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="PKCategories"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_Categories"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="gov.bnm.rh.entities.Categories.CategoryID"/>
+    </AttrArray>
+  </Key>
+</Entity>

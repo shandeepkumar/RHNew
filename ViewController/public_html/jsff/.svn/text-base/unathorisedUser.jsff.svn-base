@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelStretchLayout id="psl1">
+    <f:facet name="center">
+      <af:panelGroupLayout id="pgl1" layout="scroll" 
+      xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+      binding="#{backingBeanScope.backingBean_UnathorisedUser.pgl1}" >
+        <af:activeOutputText value="You are not an authorised user." id="aot1"
+        binding="#{backingBeanScope.backingBean_UnathorisedUser.aot1}"
+                             inlineStyle="font-weight:bold; font-size:small;"/>
+      </af:panelGroupLayout>
+    </f:facet>
+  </af:panelStretchLayout>
+</jsp:root>

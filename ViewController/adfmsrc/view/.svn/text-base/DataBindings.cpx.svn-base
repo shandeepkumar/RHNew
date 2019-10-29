@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application"
+             version="11.1.1.60.13" id="DataBindings" SeparateXMLFiles="false"
+             Package="view" ClientType="Generic" >
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/Templates/RHTemplate.jspx" usageId="view_RHTemplatePageDef"/>
+    <page path="/jsff/ExceptionHandler.jsff"
+          usageId="view_ExceptionHandlerPageDef"/>
+    <page path="/jsff/unathorisedUser.jsff"
+          usageId="view_unathorisedUserPageDef"/>
+    <page path="/jsff/PolicyPublishingPage.jsff"
+          usageId="view_PolicyPublishingPagePageDef"/>
+    <page path="/jspx/main.jspx" usageId="view_mainPageDef3"/>
+    <page path="/jsff/emty.jsff" usageId="view_emtyPageDef"/>
+    <page path="/jsff/PolicyAgingConfirmationPage.jsff"
+          usageId="view_PolicyAgingConfirmationPageDef3"/>
+    <page path="/jspx/PolicyMaintenanceNavigationPage.jspx"
+          usageId="view_PolicyMaintenanceNavigationPagePageDef"/>
+    <page path="/jspx/EnquiriesNavigationPage.jspx"
+          usageId="view_EnquiriesNavigationPagePageDef"/>
+    <page path="/jspx/PolicyPublishingNavigationPage.jspx"
+          usageId="view_PolicyPublishingNavigationPagePageDef"/>
+    <page path="/WEB-INF/PageFlows/taskFlow/btf_PolicyPublishing.xml#btf_PolicyPublishing@createNewPolicy"
+          usageId="view_btf_PolicyPublishing_btf_PolicyPublishing_createNewPolicyPageDef"/>
+    <page path="/jsff/PolicyMaintenancePage.jsff"
+          usageId="view_PolicyMaintenancePagePageDef"/>
+    <page path="/jsff/EnquiriesPage.jsff" usageId="view_EnquiriesPagePageDef"/>
+    <page path="/jsff/RHAdminWelcomePage.jsff"
+          usageId="view_RHAdminWelcomePagePageDef"/>
+    <page path="/WEB-INF/PageFlows/taskFlow/btf_PolicyMaintenance.xml#btf_PolicyMaintenance@filterByPolicyId"
+          usageId="view_btf_PolicyMaintenance_btf_PolicyMaintenance_filterByPolicyIdPageDef"/>
+    <page path="/jspx/FaqsNavigationPage.jspx"
+          usageId="view_FaqsNavigationPagePageDef"/>
+    <page path="/jsff/FaqsPage.jsff" usageId="view_FaqsPagePageDef"/>
+    <page path="/jsff/PolicyPreface.jsff" usageId="view_PolicyPrefacePageDef"/>
+    <page path="/jsff/WelcomePage.jsff" usageId="view_WelcomePagePageDef"/>
+    <page path="/Templates/RHTemplateInternalWithNav.jspx"
+          usageId="view_RHTemplateInternalPageDef"/>
+    <page path="/Templates/RHTemplateInternalWithOutNav.jspx"
+          usageId="view_RHTemplateInternalWithOutNavPageDef"/>
+    <page path="/Templates/RHTemplateExternalWithNav.jspx"
+          usageId="view_RHTemplateExternalWithNavPageDef"/>
+    <page path="/Templates/RHTemplateExternalWithOutNav.jspx"
+          usageId="view_RHTemplateExternalWithOutNavPageDef"/>
+    <page path="/WEB-INF/PageFlows/taskFlow/btf_PolicyPreface.xml#btf_PolicyPreface@filterByPolicyId"
+          usageId="view_btf_PolicyPreface_btf_PolicyPreface_filterByPolicyIdPageDef"/>
+    <page path="/search/cateTreePolicySearch.jsff"
+          usageId="view_cateTreePolicySearchPageDef"/>
+    <page path="/jspx/PolicyPrefaceNavigationPage.jspx"
+          usageId="view_PolicyPrefaceNavigationPagePageDef1"/>
+    <page path="/jspx/FaqsInternalNavigationPage.jspx"
+          usageId="view_FaqsInternalNavigationPagePageDef"/>
+    <page path="/WEB-INF/PageFlows/taskFlow/search/CateTreePolicySearch.xml#CateTreePolicySearch@filterCateByParentId"
+          usageId="view_CateTreePolicySearch_CateTreePolicySearch_filterCateByParentIdPageDef"/>
+    <page path="/WEB-INF/PageFlows/taskFlow/btf_InternalFaqs.xml#btf_InternalFaqs@getInsernalUserFaqManagementDetails"
+          usageId="view_btf_InternalFaqs_btf_InternalFaqs_getInsernalUserFaqManagementDetailsPageDef"/>
+    <page path="/jsff/IssuingDepartmentWelcomePage.jsff"
+          usageId="view_IssuingDepartmentWelcomePagePageDef"/>
+    <page path="/jspx/AgingReportNavigationPage.jspx"
+          usageId="view_AgingReportNavigationPagePageDef"/>
+    <page path="/jsff/AgingReportPage.jsff"
+          usageId="view_AgingReportPagePageDef"/>
+    <page path="/WEB-INF/PageFlows/taskFlow/btf_RH_ManageAppForm.xml#btf_RH_ManageAppForm@filterByPolicyIdOnlyPolicyTable"
+          usageId="view_btf_RH_ManageAppForm_btf_RH_ManageAppForm_filterByPolicyIdOnlyPolicyTablePageDef"/>
+    <page path="/WEB-INF/PageFlows/taskFlow/btf_AgingResponse.xml#btf_AgingResponse@getAgingResponseManagementDetails"
+          usageId="view_btf_AgingResponse_btf_AgingResponse_getAgingResponseManagementDetailsPageDef"/>
+    <page path="/jsff/AgingResponse.jsff" usageId="view_agingResponsePageDef"/>
+    <page path="/WEB-INF/PageFlows/taskFlow/btf_AgingResponse.xml#btf_AgingResponse@filterByPolicyIdOnlyPolicyTable"
+          usageId="view_btf_AgingResponse_btf_AgingResponse_filterByPolicyIdOnlyPolicyTablePageDef"/>
+    <page path="/jspx/AgingResponseInternalNavigationPage.jspx"
+          usageId="view_AgingResponseInternalNavigationPagePageDef"/>
+    <page path="/jspx/AgingResponseAdminNavigationPage.jspx"
+          usageId="view_AgingResponseAdminNavigationPagePageDef"/>
+    <page path="/jsff/keywordPolicySearch.jsff"
+          usageId="view_keywordPolicySearchPageDef"/>
+    <page path="/jspx/keywordPolicySearchPage.jspx"
+          usageId="view_keywordPolicySearchPagePageDef"/>
+    <page path="/WEB-INF/PageFlows/taskFlow/btf_SupportingDocumentsRequests.xml#btf_SupportingDocumentsRequests@getSupportingDocumentsRequests"
+          usageId="view_btf_SupportingDocumentsRequests_btf_SupportingDocumentsRequests_getSupportingDocumentsRequestsPageDef"/>
+    <page path="/jsff/SupportingDocumentsRequests.jsff"
+          usageId="view_SupportingDocumentsRequestsPageDef"/>
+    <page path="/jspx/SuppDocReqInternalNavigationPage.jspx"
+          usageId="view_SuppDocReqInternalNavigationPagePageDef"/>
+    <page path="/jspx/SuppDocReqAdminNavigationPage.jspx"
+          usageId="view_SuppDocReqAdminNavigationPagePageDef"/>
+    <page path="/jsff/SuppDocReqDecisionPage.jsff"
+          usageId="view_SuppDocReqDecisionPagePageDef"/>
+    <page path="/WEB-INF/PageFlows/taskFlow/btf_RH_ManageAppForm.xml#btf_RH_ManageAppForm@getSupportingDocumentsDecision"
+          usageId="view_btf_RH_ManageAppForm_btf_RH_ManageAppForm_getSupportingDocumentsDecisionPageDef"/>
+    <page path="/jspx/EnquiriesInternalNavigationPage.jspx"
+          usageId="view_EnquiriesInternalNavigationPagePageDef"/>
+    <page path="/WEB-INF/PageFlows/taskFlow/btf_Enquiries.xml#btf_Enquiries@getEnquiryManagementDetails"
+          usageId="view_btf_Enquiries_btf_Enquiries_getEnquiryManagementDetailsPageDef"/>
+    <page path="/WEB-INF/PageFlows/taskFlow/btf_PolicyApproval.xml#btf_PolicyApproval@getApprovalPolicys"
+          usageId="view_btf_PolicyApproval_btf_PolicyApproval_getApprovalPolicysPageDef"/>
+    <page path="/jsff/PolicyDecisionPage.jsff"
+          usageId="view_PolicyApprovalPagePageDef"/>
+    <page path="/jspx/CateTreePolicySearchPage.jspx"
+          usageId="view_CateTreePolicySearchPagePageDef"/>
+    <page path="/WEB-INF/PageFlows/taskFlow/btf_RH_ManageAppForm.xml#btf_RH_ManageAppForm@getEnquiryResponse"
+          usageId="view_btf_RH_ManageAppForm_btf_RH_ManageAppForm_getEnquiryResponsePageDef"/>
+    <page path="/jsff/EnquiryResponsePage.jsff"
+          usageId="view_EnquiryResponsePagePageDef"/>
+    <page path="/jsff/WhatsNewPage.jsff" usageId="view_WhatsNewPagePageDef"/>
+    <page path="/search/policyListingPage.jsff"
+          usageId="view_policyListingPagePageDef"/>
+    <page path="/WEB-INF/PageFlows/taskFlow/search/btf_PolicyListing.xml#btf_PolicyListing@filterPolicyActiveOnlyView"
+          usageId="view_btf_PolicyListing_btf_PolicyListing_filterPolicyActiveOnlyViewPageDef"/>
+    <page path="/WEB-INF/PageFlows/taskFlow/btf_WhatsNewPolicy.xml#btf_WhatsNewPolicy@getWhatsNewPolicys"
+          usageId="view_btf_WhatsNewPolicy_btf_WhatsNewPolicy_getWhatsNewPolicysPageDef"/>
+    <page path="/jsff/IssuingDepartmentEnquiryPage.jsff"
+          usageId="view_IssuingDepartmentEnquiryPagePageDef"/>
+    <page path="/WEB-INF/PageFlows/taskFlow/btf_PolicyMaintenance.xml#btf_PolicyMaintenance@refreshPolicyMaintenance1"
+          usageId="view_btf_PolicyMaintenance_btf_PolicyMaintenance_refreshPolicyMaintenance1PageDef"/>
+    <page path="/jspx/AdminAgingReportNavigationPage.jspx"
+          usageId="view_AdminAgingReportNavigationPagePageDef"/>
+    <page path="/WEB-INF/PageFlows/taskFlow/btf_Faqs.xml#btf_Faqs@getFaqManagementDetails"
+          usageId="view_btf_Faqs_btf_Faqs_getFaqManagementDetailsPageDef"/>
+    <page path="/WEB-INF/PageFlows/taskFlow/btf_AgingReport.xml#btf_AgingReport@getAgingReportDetails"
+          usageId="view_btf_AgingReport_btf_AgingReport_getAgingReportDetailsPageDef"/>
+    <page path="/WEB-INF/PageFlows/taskFlow/btf_RH_ManageAppForm.xml#btf_RH_ManageAppForm@getPolicyPublishDecision"
+          usageId="view_btf_RH_ManageAppForm_btf_RH_ManageAppForm_getPolicyPublishDecisionPageDef"/>
+    <page path="/jsff/PolicyDecisionEmailPage.jsff"
+          usageId="view_PolicyDecisionEmailPagePageDef"/>
+    <page path="/WEB-INF/PageFlows/taskFlow/btf_RH_ManageAppForm.xml#btf_RH_ManageAppForm@filterByPolicyId"
+          usageId="view_btf_RH_ManageAppForm_btf_RH_ManageAppForm_filterByPolicyIdPageDef"/>
+    <page path="/WEB-INF/PageFlows/taskFlow/btf_PolicyMaintenance.xml#btf_PolicyMaintenance@filterByPolicyId1"
+          usageId="view_btf_PolicyMaintenance_btf_PolicyMaintenance_filterByPolicyId1PageDef"/>
+    <page path="/WEB-INF/PageFlows/taskFlow/btf_PolicyPreface.xml#btf_PolicyPreface@filterByPolicyIdToPreface"
+          usageId="view_btf_PolicyPreface_btf_PolicyPreface_filterByPolicyIdToPrefacePageDef"/>
+    <page path="/jsff/WhatsNewPolicyListingPage.jsff"
+          usageId="view_WhatsNewPolicyListingPagePageDef"/>
+    <page path="/WEB-INF/PageFlows/taskFlow/btf_PolicyPreface.xml#btf_PolicyPreface@filterByPolicyIdToPreface1"
+          usageId="view_btf_PolicyPreface_btf_PolicyPreface_filterByPolicyIdToPreface1PageDef"/>
+    <page path="/jsff/AdminFaqsWithTemplate.jsff"
+          usageId="view_AdminFaqsWithTemplatePageDef"/>
+    <page path="/jsff/AdminEnquiriesWithTemplate.jsff"
+          usageId="view_AdminEnquiriesWithTemplatePageDef"/>
+    <page path="/jsff/PolicyPublishingPageWithTemplate.jsff"
+          usageId="view_PolicyPublishingPageWithTemplatePageDef"/>
+    <page path="/jsff/AdminAgingReportWithTemplate.jsff"
+          usageId="view_AdminAgingReportWithTemplatePageDef"/>
+    <page path="/jsff/InternalAgingReportWithTemplate.jsff"
+          usageId="view_InternalAgingReportWithTemplatePageDef"/>
+    <page path="/jsff/InternalEnquiriesWithTemplate.jsff"
+          usageId="view_InternalEnquiriesWithTemplatePageDef"/>
+    <page path="/jsff/InternalFaqsWithTemplate.jsff"
+          usageId="view_InternalFaqsWithTemplatePageDef"/>
+    <page path="/jsff/InternalSupportingDocumentsRequest.jsff"
+          usageId="view_InternalSupportingDocumentsRequestPageDef"/>
+    <page path="/jsff/AdminSupportingDocumentsRequest.jsff"
+          usageId="view_AdminSupportingDocumentsRequestPageDef"/>
+    <page path="/jsff/AdminPolicyExpiry.jsff"
+          usageId="view_AdminPolicyExpiryPageDef"/>
+    <page path="/jsff/InternalPolicyExpiry.jsff"
+          usageId="view_InternalPolicyExpiryPageDef"/>
+    <page path="/jsff/InternalPolicyPreface.jsff"
+          usageId="view_InternalPolicyPrefacePageDef"/>
+    <page path="/WEB-INF/PageFlows/taskFlow/search/btf_PolicyListing.xml#btf_PolicyListing@filterPolicyActiveOnlyViewUserId"
+          usageId="view_btf_PolicyListing_btf_PolicyListing_filterPolicyActiveOnlyViewUserIdPageDef"/>
+    <page path="/WEB-INF/PageFlows/taskFlow/btf_WhatsNewPolicy.xml#btf_WhatsNewPolicy@getWhatsNewPolicysUserId"
+          usageId="view_btf_WhatsNewPolicy_btf_WhatsNewPolicy_getWhatsNewPolicysUserIdPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="view_RHMainTemplatePageDef"
+          path="Templates.RHMainTemplatePageDef"/>
+    <page id="view_page1PageDef" path="view.pageDefs.page1PageDef"/>
+    <page id="view_page2PageDef" path="view.pageDefs.page2PageDef"/>
+    <page id="view_RHTemplatePageDef" path="Templates.RHTemplatePageDef"/>
+    <page id="view_page3PageDef" path="view.pageDefs.page3PageDef"/>
+    <page id="view_page4PageDef" path="view.pageDefs.page4PageDef"/>
+    <page id="view_ExceptionHandlerPageDef"
+          path="PageFlows.jsff.ExceptionHandlerPageDef"/>
+    <page id="view_unathorisedUserPageDef"
+          path="PageFlows.jsff.unathorisedUserPageDef"/>
+    <page id="view_mainPageDef" path="PageFlows.jspx.mainPageDef"/>
+    <page id="view_mainPageDef1" path="PageFlows.jsff.mainPageDef"/>
+    <page id="view_mainPageDef2" path="view.pageDefs.mainPageDef"/>
+    <page id="view_PolicyPublishingPagePageDef"
+          path="PageFlows.jsff.PolicyPublishingPagePageDef"/>
+    <page id="view_mainPageDef3" path="jspx.mainPageDef"/>
+    <page id="view_emtyPageDef" path="jsff.emtyPageDef"/>
+    <page id="view_PolicyMaintenanceNavigationPagePageDef"
+          path="jspx.PolicyMaintenanceNavigationPagePageDef"/>
+    <page id="view_EnquiriesNavigationPagePageDef"
+          path="jspx.EnquiriesNavigationPagePageDef"/>
+    <page id="view_PolicyPublishingNavigationPagePageDef"
+          path="jspx.PolicyPublishingNavigationPagePageDef"/>
+    <page id="view_btf_PolicyPublishing_btf_PolicyPublishing_createNewPolicyPageDef"
+          path="PageFlows.taskFlow.btf_PolicyPublishing_btf_PolicyPublishing_createNewPolicyPageDef"/>
+    <page id="view_PolicyMaintenancePagePageDef"
+          path="jsff.PolicyMaintenancePagePageDef"/>
+    <page id="view_EnquiriesPagePageDef" path="jsff.EnquiriesPagePageDef"/>
+    <page id="view_RHAdminWelcomePagePageDef"
+          path="jsff.RHAdminWelcomePagePageDef"/>
+    <page id="view_btf_PolicyMaintenance_btf_PolicyMaintenance_filterByPolicyIdPageDef"
+          path="PageFlows.taskFlow.btf_PolicyMaintenance_btf_PolicyMaintenance_filterByPolicyIdPageDef"/>
+    <page id="view_RHTemplateOthPageDef" path="Templates.RHTemplateOthPageDef"/>
+    <page id="view_PolicyPrefaceNavigationPagePageDef"
+          path="jspx.PolicyPrefaceNavigationPagePageDef"/>
+    <page id="view_PolicyPrefaceWithTemplatePageDef"
+          path="view.pageDefs.PolicyPrefaceWithTemplatePageDef"/>
+    <page id="view_FaqsNavigationPagePageDef"
+          path="jspx.FaqsNavigationPagePageDef"/>
+    <page id="view_FaqsPagePageDef" path="view.pageDefs.FaqsPagePageDef"/>
+    <page id="view_PolicyPrefacePageDef" path="jsff.PolicyPrefacePageDef"/>
+    <page id="view_WelcomePagePageDef" path="view.pageDefs.WelcomePagePageDef"/>
+    <page id="view_RHTemplateInternalPageDef"
+          path="Templates.RHTemplateInternalPageDef"/>
+    <page id="view_RHTemplateInternalWithOutNavPageDef"
+          path="Templates.RHTemplateInternalWithOutNavPageDef"/>
+    <page id="view_RHTemplateExternalWithNavPageDef"
+          path="Templates.RHTemplateExternalWithNavPageDef"/>
+    <page id="view_RHTemplateExternalWithOutNavPageDef"
+          path="Templates.RHTemplateExternalWithOutNavPageDef"/>
+    <page id="view_btf_PolicyPreface_btf_PolicyPreface_filterByPolicyIdPageDef"
+          path="PageFlows.taskFlow.btf_PolicyPreface_btf_PolicyPreface_filterByPolicyIdPageDef"/>
+    <page id="view_cateTreePolicySearchPageDef"
+          path="search.cateTreePolicySearchPageDef"/>
+    <page id="view_PolicyPrefaceNavigationPagePageDef1"
+          path="jspx.PolicyPrefaceNavigationPagePageDef1"/>
+    <page id="view_FaqsInternalNavigationPagePageDef"
+          path="jspx.FaqsInternalNavigationPagePageDef"/>
+    <page id="view_CateTreePolicySearch_CateTreePolicySearch_filterCateByParentIdPageDef"
+          path="PageFlows.taskFlow.search.CateTreePolicySearch_CateTreePolicySearch_filterCateByParentIdPageDef"/>
+    <page id="view_btf_InternalFaqs_btf_InternalFaqs_getInsernalUserFaqManagementDetailsPageDef"
+          path="PageFlows.taskFlow.btf_InternalFaqs_btf_InternalFaqs_getInsernalUserFaqManagementDetailsPageDef"/>
+    <page id="view_IssuingDepartmentWelcomePagePageDef"
+          path="jsff.IssuingDepartmentWelcomePagePageDef"/>
+    <page id="view_AgingReportNavigationPagePageDef"
+          path="jspx.AgingReportNavigationPagePageDef"/>
+    <page id="view_PolicyAgingConfirmationPageDef3"
+          path="jspx.PolicyAgingConfirmationPageDef"/>
+    <page id="view_AgingReportPagePageDef" path="jsff.AgingReportPagePageDef"/>
+    <page id="view_btf_RH_ManageAppForm_btf_RH_ManageAppForm_filterByPolicyIdOnlyPolicyTablePageDef"
+          path="PageFlows.taskFlow.btf_RH_ManageAppForm_btf_RH_ManageAppForm_filterByPolicyIdOnlyPolicyTablePageDef"/>
+    <page id="view_btf_AgingResponse_btf_AgingResponse_getAgingResponseManagementDetailsPageDef"
+          path="PageFlows.taskFlow.btf_AgingResponse_btf_AgingResponse_getAgingResponseManagementDetailsPageDef"/>
+    <page id="view_agingResponsePageDef" path="jsff.agingResponsePageDef"/>
+    <page id="view_btf_AgingResponse_btf_AgingResponse_filterByPolicyIdOnlyPolicyTablePageDef"
+          path="PageFlows.taskFlow.btf_AgingResponse_btf_AgingResponse_filterByPolicyIdOnlyPolicyTablePageDef"/>
+    <page id="view_AgingResponseInternalNavigationPagePageDef"
+          path="jspx.AgingResponseInternalNavigationPagePageDef"/>
+    <page id="view_AgingResponseAdminNavigationPagePageDef"
+          path="jspx.AgingResponseAdminNavigationPagePageDef"/>
+    <page id="view_keywordPolicySearchPageDef"
+          path="jsff.keywordPolicySearchPageDef"/>
+    <page id="view_keywordPolicySearchPagePageDef"
+          path="jspx.keywordPolicySearchPagePageDef"/>
+    <page id="view_btf_SupportingDocumentsRequests_btf_SupportingDocumentsRequests_getSupportingDocumentsRequestsPageDef"
+          path="PageFlows.taskFlow.btf_SupportingDocumentsRequests_btf_SupportingDocumentsRequests_getSupportingDocumentsRequestsPageDef"/>
+    <page id="view_SupportingDocumentsRequestsPageDef"
+          path="jsff.SupportingDocumentsRequestsPageDef"/>
+    <page id="view_SuppDocReqInternalNavigationPagePageDef"
+          path="jspx.SuppDocReqInternalNavigationPagePageDef"/>
+    <page id="view_SuppDocReqAdminNavigationPagePageDef"
+          path="jspx.SuppDocReqAdminNavigationPagePageDef"/>
+    <page id="view_SuppDocReqDecisionPagePageDef"
+          path="jsff.SuppDocReqDecisionPagePageDef"/>
+    <page id="view_btf_RH_ManageAppForm_btf_RH_ManageAppForm_getSupportingDocumentsDecisionPageDef"
+          path="PageFlows.taskFlow.btf_RH_ManageAppForm_btf_RH_ManageAppForm_getSupportingDocumentsDecisionPageDef"/>
+    <page id="view_EnquiriesInternalNavigationPagePageDef"
+          path="jspx.EnquiriesInternalNavigationPagePageDef"/>
+    <page id="view_btf_Enquiries_btf_Enquiries_getEnquiryManagementDetailsPageDef"
+          path="PageFlows.taskFlow.btf_Enquiries_btf_Enquiries_getEnquiryManagementDetailsPageDef"/>
+    <page id="view_btf_PolicyApproval_btf_PolicyApproval_getApprovalPolicysPageDef"
+          path="PageFlows.taskFlow.btf_PolicyApproval_btf_PolicyApproval_getApprovalPolicysPageDef"/>
+    <page id="view_PolicyApprovalPagePageDef"
+          path="jsff.PolicyApprovalPagePageDef"/>
+    <page id="view_CateTreePolicySearchPagePageDef"
+          path="jspx.CateTreePolicySearchPagePageDef"/>
+    <page id="view_btf_RH_ManageAppForm_btf_RH_ManageAppForm_getEnquiryResponsePageDef"
+          path="PageFlows.taskFlow.btf_RH_ManageAppForm_btf_RH_ManageAppForm_getEnquiryResponsePageDef"/>
+    <page id="view_EnquiryResponsePagePageDef"
+          path="view.pageDefs.EnquiryResponsePagePageDef"/>
+    <page id="view_WhatsNewPagePageDef" path="jsff.WhatsNewPagePageDef"/>
+    <page id="view_policyListingPagePageDef"
+          path="search.policyListingPagePageDef"/>
+    <page id="view_btf_PolicyListing_btf_PolicyListing_filterPolicyActiveOnlyViewPageDef"
+          path="PageFlows.taskFlow.search.btf_PolicyListing_btf_PolicyListing_filterPolicyActiveOnlyViewPageDef"/>
+    <page id="view_btf_WhatsNewPolicy_btf_WhatsNewPolicy_getWhatsNewPolicysPageDef"
+          path="PageFlows.taskFlow.btf_WhatsNewPolicy_btf_WhatsNewPolicy_getWhatsNewPolicysPageDef"/>
+    <page id="view_IssuingDepartmentEnquiryPagePageDef"
+          path="jsff.IssuingDepartmentEnquiryPagePageDef"/>
+    <page id="view_btf_PolicyMaintenance_btf_PolicyMaintenance_refreshPolicyMaintenance1PageDef"
+          path="PageFlows.taskFlow.btf_PolicyMaintenance_btf_PolicyMaintenance_refreshPolicyMaintenance1PageDef"/>
+    <page id="view_AdminAgingReportNavigationPagePageDef"
+          path="jspx.AdminAgingReportNavigationPagePageDef"/>
+    <page id="view_btf_Faqs_btf_Faqs_getFaqManagementDetailsPageDef"
+          path="PageFlows.taskFlow.btf_Faqs_btf_Faqs_getFaqManagementDetailsPageDef"/>
+    <page id="view_btf_AgingReport_btf_AgingReport_getAgingReportDetailsPageDef"
+          path="PageFlows.taskFlow.btf_AgingReport_btf_AgingReport_getAgingReportDetailsPageDef"/>
+    <page id="view_btf_RH_ManageAppForm_btf_RH_ManageAppForm_getPolicyPublishDecisionPageDef"
+          path="PageFlows.taskFlow.btf_RH_ManageAppForm_btf_RH_ManageAppForm_getPolicyPublishDecisionPageDef"/>
+    <page id="view_PolicyDecisionEmailPagePageDef"
+          path="jsff.PolicyDecisionEmailPagePageDef"/>
+    <page id="view_btf_RH_ManageAppForm_btf_RH_ManageAppForm_filterByPolicyIdPageDef"
+          path="PageFlows.taskFlow.btf_RH_ManageAppForm_btf_RH_ManageAppForm_filterByPolicyIdPageDef"/>
+    <page id="view_btf_PolicyMaintenance_btf_PolicyMaintenance_filterByPolicyId1PageDef"
+          path="PageFlows.taskFlow.btf_PolicyMaintenance_btf_PolicyMaintenance_filterByPolicyId1PageDef"/>
+    <page id="view_btf_PolicyPreface_btf_PolicyPreface_filterByPolicyIdToPrefacePageDef"
+          path="PageFlows.taskFlow.btf_PolicyPreface_btf_PolicyPreface_filterByPolicyIdToPrefacePageDef"/>
+    <page id="view_WhatsNewPolicyListingPagePageDef"
+          path="jsff.WhatsNewPolicyListingPagePageDef"/>
+    <page id="view_btf_PolicyPreface_btf_PolicyPreface_filterByPolicyIdToPreface1PageDef"
+          path="PageFlows.taskFlow.btf_PolicyPreface_btf_PolicyPreface_filterByPolicyIdToPreface1PageDef"/>
+    <page id="view_AdminFaqsWithTemplatePageDef"
+          path="jsff.AdminFaqsWithTemplatePageDef"/>
+    <page id="view_AdminEnquiriesWithTemplatePageDef"
+          path="jsff.AdminEnquiriesWithTemplatePageDef"/>
+    <page id="view_PolicyPublishingPageWithTemplatePageDef"
+          path="jsff.PolicyPublishingPageWithTemplatePageDef"/>
+    <page id="view_AdminAgingReportWithTemplatePageDef"
+          path="jsff.AdminAgingReportWithTemplatePageDef"/>
+    <page id="view_InternalAgingReportWithTemplatePageDef"
+          path="view.pageDefs.InternalAgingReportWithTemplatePageDef"/>
+    <page id="view_InternalEnquiriesWithTemplatePageDef"
+          path="jsff.InternalEnquiriesWithTemplatePageDef"/>
+    <page id="view_InternalFaqsWithTemplatePageDef"
+          path="jsff.InternalFaqsWithTemplatePageDef"/>
+    <page id="view_InternalSupportingDocumentsRequestPageDef"
+          path="jsff.InternalSupportingDocumentsRequestPageDef"/>
+    <page id="view_AdminSupportingDocumentsRequestPageDef"
+          path="jsff.AdminSupportingDocumentsRequestPageDef"/>
+    <page id="view_AdminPolicyExpiryPageDef"
+          path="jsff.AdminPolicyExpiryPageDef"/>
+    <page id="view_InternalPolicyExpiryPageDef"
+          path="jsff.InternalPolicyExpiryPageDef"/>
+    <page id="view_InternalPolicyPrefacePageDef"
+          path="jsff.InternalPolicyPrefacePageDef"/>
+    <page id="view_btf_PolicyListing_btf_PolicyListing_filterPolicyActiveOnlyViewUserIdPageDef"
+          path="PageFlows.taskFlow.search.btf_PolicyListing_btf_PolicyListing_filterPolicyActiveOnlyViewUserIdPageDef"/>
+    <page id="view_btf_WhatsNewPolicy_btf_WhatsNewPolicy_getWhatsNewPolicysUserIdPageDef"
+          path="PageFlows.taskFlow.btf_WhatsNewPolicy_btf_WhatsNewPolicy_getWhatsNewPolicysUserIdPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="RegBookAppModuleDataControl" Package="gov.bnm.rh"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
+                     SupportsTransactions="true" SupportsFindMode="true"
+                     SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true"
+                     Configuration="RegBookAppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

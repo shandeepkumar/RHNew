@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:pageTemplate viewId="/Templates/RHTemplate.jspx"
+                   value="#{bindings.pageTemplateBinding}" id="pt1">
+    <f:facet name="body">
+      <af:region value="#{bindings.btf_Faqs1.regionModel}" id="r1"
+                 binding="#{backingBeanScope.backing_jsff_AdminFaqsWithTemplate.r1}"/>
+    </f:facet>
+  </af:pageTemplate>
+  <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_jsff_AdminFaqsWithTemplate-->
+</jsp:root>

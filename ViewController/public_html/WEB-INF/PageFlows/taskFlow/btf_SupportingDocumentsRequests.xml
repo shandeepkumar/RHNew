@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="btf_SupportingDocumentsRequests">
+    <template-reference>
+      <document id="__1">/WEB-INF/PageFlows/template/RH-task-flow-templateForException.xml</document>
+      <id id="__2">RH-task-flow-templateForException</id>
+    </template-reference>
+    <default-activity id="__5">getSupportingDocumentsRequests</default-activity>
+    <managed-bean id="__9">
+      <managed-bean-name id="__10">backing_SupportingDocumentsRequests</managed-bean-name>
+      <managed-bean-class id="__7">gov.bnm.view.rh.backingBeans.SupportingDocumentsRequests</managed-bean-class>
+      <managed-bean-scope id="__8">backingBean</managed-bean-scope>
+      <!--oracle-jdev-comment:managed-bean-jsp-link:1jsff/SupportingDocumentsRequests.jsff-->
+    </managed-bean>
+    <method-call id="getSupportingDocumentsRequests">
+      <method>#{bindings.getSupportingDocumentsRequests.execute}</method>
+      <outcome id="__6">
+        <fixed-outcome>getSupportingDocumentsRequests</fixed-outcome>
+      </outcome>
+    </method-call>
+    <view id="SupportingDocumentsRequests">
+      <page>/jsff/SupportingDocumentsRequests.jsff</page>
+    </view>
+    <control-flow-rule id="__11">
+      <from-activity-id id="__12">getSupportingDocumentsRequests</from-activity-id>
+      <control-flow-case id="__15">
+        <from-outcome id="__13">getSupportingDocumentsRequests</from-outcome>
+        <to-activity-id id="__14">SupportingDocumentsRequests</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

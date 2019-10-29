@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="btf_Consultation">
+    <default-activity id="__2">filterPolicyActiveOnlyViewUserIdAndDocumentType</default-activity>
+    <view id="ConsultationPage">
+      <page>/ConsultationPage.jsff</page>
+    </view>
+    <task-flow-call id="btf_PolicyPreface">
+      <task-flow-reference>
+        <document id="__17">/WEB-INF/PageFlows/taskFlow/btf_PolicyPreface.xml</document>
+        <id id="__18">btf_PolicyPreface</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <method-call id="filterPolicyActiveOnlyViewUserIdAndDocumentType">
+      <method>#{bindings.filterPolicyActiveOnlyViewUserIdAndDocumentType.execute}</method>
+      <outcome id="__1">
+        <fixed-outcome>filterPolicyActiveOnlyViewUserIdAndDocumentType</fixed-outcome>
+      </outcome>
+    </method-call>
+    <control-flow-rule id="__19">
+      <from-activity-id id="__20">ConsultationPage</from-activity-id>
+      <control-flow-case id="__22">
+        <from-outcome id="__23">policyPreface</from-outcome>
+        <to-activity-id id="__21">btf_PolicyPreface</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__24">
+      <from-activity-id id="__25">btf_PolicyPreface</from-activity-id>
+      <control-flow-case id="__26">
+        <from-outcome id="__28">backCateTreePolicySearch</from-outcome>
+        <to-activity-id id="__27">ConsultationPage</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__3">
+      <from-activity-id id="__4">filterPolicyActiveOnlyViewUserIdAndDocumentType</from-activity-id>
+      <control-flow-case id="__5">
+        <from-outcome id="__7">filterPolicyActiveOnlyViewUserIdAndDocumentType</from-outcome>
+        <to-activity-id id="__6">ConsultationPage</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

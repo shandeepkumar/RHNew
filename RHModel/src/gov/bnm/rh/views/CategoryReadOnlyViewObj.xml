@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CategoryReadOnlyViewObj"
+  Version="11.1.1.64.93"
+  InheritPersonalization="true"
+  BindingStyle="JDBC"
+  CustomQuery="true"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="gov.bnm.rh.views.CategoryReadOnlyViewObj_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <SQLQuery>
+    <![CDATA[SELECT Categories.CategoryID, 
+       Categories.CategoryName, 
+       Categories.CategoryDescription, 
+       Categories.ParentNodeID, 
+       Categories.CreatedDate, 
+       Categories.LastUpdated, 
+       Categories.EntryID, 
+       Categories.isActive, 
+       Categories.isAllowToPublish 
+FROM dbo.Categories Categories
+where isAllowToPublish =1]]>
+  </SQLQuery>
+  <ViewAttribute
+    Name="CategoryID"
+    IsUpdateable="false"
+    IsPersistent="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    AliasName="CategoryID"
+    Expression="CategoryID"
+    SQLType="DECIMAL">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CategoryName"
+    IsUpdateable="false"
+    IsPersistent="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    Precision="500"
+    Type="java.lang.String"
+    ColumnType="varchar"
+    AliasName="CategoryName"
+    Expression="CategoryName"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="500"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CategoryDescription"
+    IsUpdateable="false"
+    IsPersistent="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    Precision="500"
+    Type="java.lang.String"
+    ColumnType="varchar"
+    AliasName="CategoryDescription"
+    Expression="CategoryDescription"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="500"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ParentNodeID"
+    IsUpdateable="false"
+    IsPersistent="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    Precision="18"
+    Scale="0"
+    Type="java.math.BigDecimal"
+    ColumnType="decimal"
+    AliasName="ParentNodeID"
+    Expression="ParentNodeID"
+    SQLType="DECIMAL">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CreatedDate"
+    IsUpdateable="false"
+    IsPersistent="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    Type="java.sql.Timestamp"
+    ColumnType="datetime"
+    AliasName="CreatedDate"
+    Expression="CreatedDate"
+    SQLType="TIMESTAMP">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="23"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="LastUpdated"
+    IsUpdateable="false"
+    IsPersistent="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    Type="java.sql.Timestamp"
+    ColumnType="datetime"
+    AliasName="LastUpdated"
+    Expression="LastUpdated"
+    SQLType="TIMESTAMP">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="23"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="EntryID"
+    IsUpdateable="false"
+    IsPersistent="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    Precision="10"
+    Scale="0"
+    Type="java.lang.Integer"
+    ColumnType="int"
+    AliasName="EntryID"
+    Expression="EntryID"
+    SQLType="INTEGER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="11"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="isActive"
+    IsUpdateable="false"
+    IsPersistent="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    Precision="1"
+    Scale="0"
+    Type="java.lang.Boolean"
+    ColumnType="bit"
+    AliasName="isActive"
+    Expression="isActive"
+    SQLType="BIT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="isAllowToPublish"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="1"
+    Scale="0"
+    Type="java.lang.Boolean"
+    ColumnType="bit"
+    AliasName="isAllowToPublish"
+    Expression="isAllowToPublish"
+    SQLType="BIT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </ViewAttribute>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="CategoryID"/>
+  </AttrArray>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="gov.bnm.rh.RHModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="L4BrowseritemListFKLink"
+  Version="11.1.1.64.93"
+  InheritPersonalization="true"
+  EntityAssociation="RHmodel.common.entity.L4BrowseritemListFKAssoc">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewLinkDefEnd
+    Name="ItemlistView"
+    Cardinality="1"
+    Owner="RHmodel.common.view.ItemlistView"
+    Source="true">
+    <DesignTime>
+      <Attr Name="_finderName" Value="ItemlistView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="RHmodel.common.view.ItemlistView.itemid"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="L4browserView"
+    Cardinality="-1"
+    Owner="RHmodel.common.view.L4browserView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="L4browserView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="RHmodel.common.view.L4browserView.itemid"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

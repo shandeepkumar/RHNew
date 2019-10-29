@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Department1View"
+  Version="11.1.1.64.93"
+  InheritPersonalization="true"
+  SelectList="Department1.ID, 
+       Department1.NAME"
+  FromList="dbo.DEPARTMENT Department1"
+  BindingStyle="JDBC"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+  </DesignTime>
+  <EntityUsage
+    Name="Department1"
+    Entity="RHmodel.view.Department1"/>
+  <ViewAttribute
+    Name="ID"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ID"
+    EntityUsage="Department1"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="NAME"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="NAME"
+    EntityUsage="Department1"
+    AliasName="NAME"/>
+</ViewObject>

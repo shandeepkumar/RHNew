@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="btf_PolicyListing">
+    <default-activity id="__6">filterPolicyActiveOnlyViewUserId</default-activity>
+    <managed-bean id="__4">
+      <managed-bean-name id="__3">backing_search_policyListingPage</managed-bean-name>
+      <managed-bean-class id="__2">view.backing.search.PolicyListingPage</managed-bean-class>
+      <managed-bean-scope id="__5">backingBean</managed-bean-scope>
+      <!--oracle-jdev-comment:managed-bean-jsp-link:1search/policyListingPage.jsff-->
+    </managed-bean>
+    <managed-bean id="__35">
+      <managed-bean-name id="__38">backing_jsff_IssuingDepartmentWelcomePage</managed-bean-name>
+      <managed-bean-class id="__37">view.backing.jsff.IssuingDepartmentWelcomePage</managed-bean-class>
+      <managed-bean-scope id="__36">backingBean</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__15">
+      <managed-bean-name id="__12">backing_jsff_WhatsNewPolicyListingPage</managed-bean-name>
+      <managed-bean-class id="__14">gov.bnm.view.rh.backingBeans.WhatsNewPolicyListingPage</managed-bean-class>
+      <managed-bean-scope id="__13">backingBean</managed-bean-scope>
+      <!--oracle-jdev-comment:managed-bean-jsp-link:1jsff/WhatsNewPolicyListingPage.jsff-->
+    </managed-bean>
+    <view id="policyListingPage">
+      <page>/search/policyListingPage.jsff</page>
+    </view>
+    <method-call id="filterPolicyActiveOnlyView">
+      <method>#{bindings.filterPolicyActiveOnlyView.execute}</method>
+      <outcome id="__1">
+        <fixed-outcome>filterPolicyActiveOnlyView</fixed-outcome>
+      </outcome>
+    </method-call>
+    <task-flow-call id="btf_PolicyPreface">
+      <task-flow-reference>
+        <document>/WEB-INF/PageFlows/taskFlow/btf_PolicyPreface.xml</document>
+        <id>btf_PolicyPreface</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <view id="IssuingDepartmentWelcomePage">
+      <page>/jsff/IssuingDepartmentWelcomePage.jsff</page>
+    </view>
+    <view id="WhatsNewPolicyListingPage">
+      <page>/jsff/WhatsNewPolicyListingPage.jsff</page>
+    </view>
+    <method-call id="filterPolicyActiveOnlyViewUserId">
+      <method>#{bindings.filterPolicyActiveOnlyViewUserId.execute}</method>
+      <outcome id="__16">
+        <fixed-outcome>filterPolicyActiveOnlyViewUserId</fixed-outcome>
+      </outcome>
+    </method-call>
+    <control-flow-rule id="__7">
+      <from-activity-id id="__8">filterPolicyActiveOnlyView</from-activity-id>
+      <control-flow-case id="__10">
+        <from-outcome id="__9">filterPolicyActiveOnlyView</from-outcome>
+        <to-activity-id id="__11">policyListingPage</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__22">
+      <from-activity-id id="__23">btf_PolicyPreface</from-activity-id>
+      <control-flow-case id="__25">
+        <from-outcome id="__26">backCateTreePolicySearch</from-outcome>
+        <to-activity-id id="__24">policyListingPage</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__30">
+      <from-activity-id id="__31">IssuingDepartmentWelcomePage</from-activity-id>
+      <control-flow-case id="__33">
+        <from-outcome id="__34">back</from-outcome>
+        <to-activity-id id="__32">policyListingPage</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__47">
+      <from-activity-id id="__48">policyListingPage</from-activity-id>
+      <control-flow-case id="__49">
+        <from-outcome id="__50">policyPreface</from-outcome>
+        <to-activity-id id="__51">btf_PolicyPreface</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__52">
+        <from-outcome id="__53">issDepartment</from-outcome>
+        <to-activity-id id="__54">IssuingDepartmentWelcomePage</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__17">
+      <from-activity-id id="__18">filterPolicyActiveOnlyViewUserId</from-activity-id>
+      <control-flow-case id="__21">
+        <from-outcome id="__19">filterPolicyActiveOnlyViewUserId</from-outcome>
+        <to-activity-id id="__20">policyListingPage</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

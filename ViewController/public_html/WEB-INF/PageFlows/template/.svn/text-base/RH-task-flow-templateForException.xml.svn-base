@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-template id="RH-task-flow-templateForException">
+    <exception-handler id="__4">ExceptionHandler</exception-handler>
+    <view id="ExceptionHandler">
+      <page>/jsff/ExceptionHandler.jsff</page>
+    </view>
+    <use-page-fragments/>
+  </task-flow-template>
+</adfc-config>

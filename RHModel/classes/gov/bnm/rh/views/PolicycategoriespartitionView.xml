@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="PolicycategoriespartitionView"
+  Version="11.1.1.64.93"
+  InheritPersonalization="true"
+  BindingStyle="JDBC"
+  CustomQuery="true"
+  PageIterMode="Full"
+  UseGlueCode="false"
+  RowClass="gov.bnm.rh.views.PolicycategoriespartitionViewRowImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <Attr Name="_isExpertMode" Value="true"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Variable
+    Name="bindItemId"
+    Kind="where"
+    Type="java.lang.String">
+    <AttrArray Name="ExtendedDataInts">
+      <Item Value="0"/>
+    </AttrArray>
+  </Variable>
+  <SQLQuery>
+    <![CDATA[SELECT Policycategoriespartition.CategoryID, 
+       Policycategoriespartition.itemId
+FROM PolicyCategoriesPartition Policycategoriespartition 
+where Policycategoriespartition.itemId =?]]>
+  </SQLQuery>
+  <EntityUsage
+    Name="Policycategoriespartition"
+    Entity="gov.bnm.rh.entities.Policycategoriespartition"/>
+  <ViewAttribute
+    Name="CategoryID"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="CategoryID"
+    EntityUsage="Policycategoriespartition"
+    AliasName="CategoryID"/>
+  <ViewAttribute
+    Name="itemId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="itemId"
+    EntityUsage="Policycategoriespartition"
+    AliasName="itemId"/>
+  <ViewAttribute
+    Name="CategoryName"
+    IsUpdateable="false"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR">
+    <TransientExpression><![CDATA[CategoriesView.CategoryDescription]]></TransientExpression>
+  </ViewAttribute>
+  <ViewLinkAccessor
+    Name="CategoriesView"
+    ViewLink="gov.bnm.rh.views.links.PolicyCategoriesPartitionCategoriesViewLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="PolicycategoriespartitionCountView"
+    ViewLink="gov.bnm.rh.views.links.searchfn.PolicyCategoryCountViewLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+</ViewObject>

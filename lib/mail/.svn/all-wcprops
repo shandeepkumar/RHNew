@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/lib/mail
+END
+mail.jar
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/lib/mail/mail.jar
+END
+EmailMgr.jar
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/lib/mail/EmailMgr.jar
+END
+commons-configuration-1.6.jar
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/RegulatoryHandbook/!svn/ver/35/branches/NewRegulatoryHandbook/lib/mail/commons-configuration-1.6.jar
+END

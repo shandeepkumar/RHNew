@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.64.93"
+                id="btf_PolicyPublishing_btf_PolicyPublishing_createNewPolicyPageDef"
+                Package="PageFlows.taskFlow" SkipValidation="true">
+  <parameters/>
+  <executables/>
+  <bindings>
+    <methodAction id="createNewPolicy" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="createNewPolicy"
+                  IsViewObjectMethod="false"
+                  DataControl="RegBookAppModuleDataControl"
+                  InstanceName="RegBookAppModuleDataControl.dataProvider">
+      <NamedData NDName="policy"
+                 NDValue="#{pageFlowScope.pageFlow_GuidPojo.guid}"
+                 NDType="java.lang.String"/>
+      <NamedData NDName="userId" NDValue="#{sessionScope.rhSession.fldUserid}"
+                 NDType="java.lang.String"/>
+    </methodAction>
+  </bindings>
+</pageDefinition>

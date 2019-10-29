@@ -1,0 +1,5 @@
+# 
+RHmodel.entity.Policy.GuidelineTitle_LABEL=Title
+RHmodel.entity.Policy.GuidelineTitle_TOOLTIP=Title of the policy
+RHmodel.entity.Policy.AmendmentHighlights_LABEL=Highlights of latest update
+RHmodel.entity.Policy.AmendmentHighlights_TOOLTIP=Highlights of latest update of this policy

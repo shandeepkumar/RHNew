@@ -1,0 +1,245 @@
+# 
+gov.bnm.rh.views.links.Policybusinesssectorpartition1Sector_LABEL=Policybusinesssectorpartition 1 Sector
+gov.bnm.rh.views.links.OrganizationSectorsViewLink_LABEL=Organization Sectors View Link
+gov.bnm.rh.views.links.OrganizationInstitutiontypeViewLink_LABEL=Organization Institutiontype View Link
+gov.bnm.rh.views.links.PolicyorganizationpartitionOrganizationViewLink_LABEL=Policyorganizationpartition Organization View Link
+gov.bnm.rh.views.links.InstitutionTypeSectorsViewLink_LABEL=Institution Type Sectors View Link
+gov.bnm.rh.views.AttachedfileView2_LABEL=Attachedfile View 2
+gov.bnm.rh.views.AttachedfileEx1View_LABEL=Attachedfile Ex 1 View
+
+gov.bnm.rh.views.PolicyView.EffectiveDate_LABEL=Effective Date
+gov.bnm.rh.views.ItemlistView.Reference_LABEL=Reference No
+
+
+gov.bnm.rh.views.PolicyActiveOnlyViewObj_LABEL=Policy Active Only View Obj
+gov.bnm.rh.views.PolicyamendmentHistoryViewObj_LABEL=Policyamendment History View Obj
+
+gov.bnm.rh.views.links.EnquiryfaqForFaqPolicyFK1ViewLink_LABEL=Enquiryfaq For Faq Policy Fk1 View Link
+gov.bnm.rh.views.links.EnquiryfaqPolicyFK1ViewLink_LABEL=Enquiryfaq Policy Fk1 View Link
+gov.bnm.rh.views.EnquiryfaqForFaqManView_LABEL=Enquiryfaq For Faq Man View
+gov.bnm.rh.views.EnquiryfaqForFaqManView.Abstract11_LABEL=Answer
+gov.bnm.rh.views.EnquiryfaqForFaqManView.Title_LABEL=Question
+gov.bnm.rh.views.EnquiryfaqForFaqManView.faqStatus_LABEL=FAQ Status
+
+
+
+gov.bnm.rh.views.SuperseededpoliciesView.PolicyName_LABEL=Title
+gov.bnm.rh.views.SuperseededpoliciesView.PolicyId_LABEL=Reference No
+
+
+gov.bnm.rh.views.PolicyActiveOnlyViewObj.RecordStatus_LABEL=Status
+gov.bnm.rh.views.PolicyActiveOnlyViewObj.GuidelineTitle_LABEL=Title
+gov.bnm.rh.views.PolicyActiveOnlyViewObj.NewIssuanceDate_LABEL=Issuance Date
+
+gov.bnm.rh.views.PolicydepartmentpartitionView.departmentId_LABEL=ID
+gov.bnm.rh.views.PolicydepartmentpartitionView.DepartmentName_LABEL=Department
+
+gov.bnm.rh.views.OrganizationView.SectorName_LABEL=Sector
+
+gov.bnm.rh.views.PolicyinstitutiontypepartitionView.InstitutiontypeName_LABEL=Industry
+
+gov.bnm.rh.views.OrganizationView.InstTypeName_LABEL=Industry
+
+gov.bnm.rh.views.SectorsView.SectorName_LABEL=Sector
+
+gov.bnm.rh.views.Policybusinesssectorpartition1View.SectorName_LABEL=Sector
+
+gov.bnm.rh.views.InstitutiontypeView.Name_LABEL=Industry
+
+gov.bnm.rh.views.InstitutiontypeView.SectorName_LABEL=Sector
+
+gov.bnm.rh.views.PolicyorganizationpartitionView.OrgName_LABEL=Institution
+
+gov.bnm.rh.views.EnquiryfaqForFaqManView.RefNo_LABEL=Reference No
+
+gov.bnm.rh.views.links.EnquiryfaqForFaqManPolicyViewLink_LABEL=Enquiryfaq For Faq Man Policy View Link
+gov.bnm.rh.views.links.SuperseededPoliciesPolicyViewLink_LABEL=Superseeded Policies Policy View Link
+gov.bnm.rh.views.PolicyArchiveOnly_LABEL=Policy Archive Only
+gov.bnm.rh.views.PolicyArchiveOnly.RefNum_LABEL=Reference No
+
+gov.bnm.rh.views.PolicyArchiveOnly.GuidelineTitle_LABEL=Title
+gov.bnm.rh.views.PolicyamendmentHistoryViewObj.ViewPolicyId_LABEL=Access History
+gov.bnm.rh.views.PolicyamendmentHistoryViewObj.AmendmentHighlights_LABEL=Description
+gov.bnm.rh.views.PolicyamendmentHistoryViewObj.CreatedDate_LABEL=Amendment Date
+gov.bnm.rh.views.EnquiryfaqForEnqViewObj_LABEL=Enquiryfaq For Enq View Obj
+gov.bnm.rh.views.EnquiryfaqForEnqPendingViewObj_LABEL=Enquiryfaq For Enq Pending View Obj
+gov.bnm.rh.views.links.EnquiryfaqForEnqPendingPolicyViewLink_LABEL=Enquiryfaq For Enq Pending Policy View Link
+gov.bnm.rh.views.links.EnquiryfaqForEnqPolicyViewLink_LABEL=Enquiryfaq For Enq Policy View Link
+gov.bnm.rh.views.EnquiryfaqForEnqPolicyViewObj_LABEL=Enquiryfaq For Enq Policy View Obj
+gov.bnm.rh.views.EnquiryfaqForEnqPendingViewObj.OriginType_LABEL=Ref No
+gov.bnm.rh.views.EnquiryfaqForEnqPendingViewObj.OrigTitle_LABEL=Policy Title
+gov.bnm.rh.views.EnquiryfaqForEnqPendingViewObj.enquiryStatus_LABEL=Status
+gov.bnm.rh.views.EnquiryfaqForEnqPolicyViewObj.enquiryStatus_LABEL=Status
+gov.bnm.rh.views.EnquiryfaqForEnqViewObj.enquiryStatus_LABEL=Status
+gov.bnm.rh.views.EnquiryfaqForEnqViewObj.OriginType_LABEL=Ref No
+gov.bnm.rh.views.EnquiryfaqForEnqViewObj.OrigTitle_LABEL=Policy Title
+gov.bnm.rh.views.EnquiryfaqForEnqPolicyViewObj.Abstract11_LABEL=Answer
+
+gov.bnm.rh.views.EnquiryfaqForEnqPolicyViewObj.Title_LABEL=Question
+gov.bnm.rh.views.EnquiryfaqForFaqView.Title_LABEL=Question
+gov.bnm.rh.views.AttachedfileSupportDocViewObj_LABEL=Attachedfile Support Doc View Obj
+gov.bnm.rh.views.PolicyAgingReportViewObj_LABEL=Policy Aging Report View Obj
+gov.bnm.rh.views.OrganizationView.Name_LABEL=Institution
+gov.bnm.rh.views.links.PolicyCategoriesPartitionCategoriesViewLink_LABEL=Policy Categories Partition Categories View Link
+gov.bnm.rh.views.searchfn.CategoryParentLevelViewObj_LABEL=Category Parent Level View Obj
+gov.bnm.rh.views.links.searchfn.CategoryParentIdLevelViewLink_LABEL=Category Parent Id Level View Link
+
+gov.bnm.rh.views.searchfn.PolicyPartitionCompViewObj_LABEL=Policy Partition Comp View Obj
+gov.bnm.rh.views.links.searchfn.PolicyPartitionCompViewLink_LABEL=Policy Partition Comp View Link
+gov.bnm.rh.views.searchfn.PolicyCategoriesCountViewObj_LABEL=Policy Categories Count View Obj
+gov.bnm.rh.views.links.searchfn.PolicyCategoryCountViewLink_LABEL=Policy Category Count View Link
+gov.bnm.rh.views.links.searchfn.PolicyCateogyCountViewLink_LABEL=Policy Cateogy Count View Link
+
+gov.bnm.rh.views.AttachedFileOnlyPdfViewObj_LABEL=Attached File Only Pdf View Obj
+gov.bnm.rh.views.links.PolicybnmuserspartitionInternaluserViewLink_LABEL=Policybnmuserspartition Internaluser View Link
+
+gov.bnm.rh.views.links.searchfn.CategoryChildLevel2ViewLink_LABEL=Category Child Level 2 View Link
+gov.bnm.rh.views.searchfn.CategoryChildLevel3ViewObj_LABEL=Category Child Level 3 View Obj
+gov.bnm.rh.views.links.searchfn.CategoryChildLevel3ViewLink_LABEL=Category Child Level 3 View Link
+gov.bnm.rh.views.PolicyAgingEmailViewObj_LABEL=Policy Aging Email View Obj
+gov.bnm.rh.views.links.RequestlistPolicyViewLink_LABEL=Requestlist Policy View Link
+gov.bnm.rh.views.links.RequestlistInternaluserViewLink_LABEL=Requestlist Internaluser View Link
+gov.bnm.rh.views.links.InternaluserDepartmentViewLink_LABEL=Internaluser Department View Link
+gov.bnm.rh.views.RequestlistView.createDate_LABEL=Date Requested
+gov.bnm.rh.views.RequestlistView.requestId_LABEL=Request Id
+gov.bnm.rh.views.RequestlistView.typeOfReqName_LABEL=Document Requested
+gov.bnm.rh.views.RequestlistView.RequestorName_LABEL=Requestor Name
+gov.bnm.rh.views.RequestlistView.reasonForRequest_LABEL=Reason for Request
+gov.bnm.rh.views.RequestlistView.RequestorDepartmentName_LABEL=Requestor Department
+gov.bnm.rh.views.RequestlistView.GuidelineTitle_LABEL=Policy  Title
+
+
+gov.bnm.rh.views.links.EnquiryfaqForEnqPolicyViewObjPolicyViewLink_LABEL=Enquiryfaq For Enq Policy View Obj Policy View Link
+gov.bnm.rh.views.InternaluserManagersViewObj_LABEL=Internaluser Managers View Obj
+gov.bnm.rh.views.links.PolicyActiveOnlyDoccategoryViewLink_LABEL=Policy Active Only Doccategory View Link
+gov.bnm.rh.views.PolicyView.DocCategory_LABEL=Document Type
+
+gov.bnm.rh.views.EnquiryfaqForEnqViewObj.Abstract11_LABEL=Answer
+gov.bnm.rh.views.EnquiryfaqForEnqViewObj.Title_LABEL=Question
+gov.bnm.rh.views.EnquiryfaqForEnqPendingViewObj.Abstract11_LABEL=Answer
+gov.bnm.rh.views.EnquiryfaqForEnqPendingViewObj.Title_LABEL=Question
+gov.bnm.rh.views.EnquiryfaqForFaqView.Abstract11_LABEL=Answer
+gov.bnm.rh.views.EnquiryfaqView.Abstract11_LABEL=Answer
+gov.bnm.rh.views.EnquiryfaqView.Title_LABEL=Question
+gov.bnm.rh.views.PolicyView.partitionTypeId_LABEL=Partition Type Id
+gov.bnm.rh.views.SectorDistinct_LABEL=Sector Distinct
+gov.bnm.rh.views.PolicyView.SectionInCharge_LABEL=Section in Charge
+gov.bnm.rh.views.PolicyRejectedViewObj_LABEL=Rejected View Obj
+gov.bnm.rh.views.PolicyAgingReportViewObj.GuidelineTitle_LABEL=Title
+gov.bnm.rh.views.PolicyView.RefNum_LABEL=Reference No
+gov.bnm.rh.views.PolicyAgingReportViewObj.RefNum_LABEL=Reference No
+gov.bnm.rh.views.PolicyView.DisplayInWhatsNew_LABEL=Display in Whats New
+
+gov.bnm.rh.views.PolicyView.FirstIssuanceDate_LABEL=First Issuance Date
+gov.bnm.rh.views.PolicyView.NewIssuanceDate_LABEL=Issuance Date
+gov.bnm.rh.views.PolicyAgingReportViewObj.NewIssuanceDate_LABEL=Issuance Date
+gov.bnm.rh.views.PolicyAgingReportViewObj.FirstIssuanceDate_LABEL=First Issuance Date
+gov.bnm.rh.views.PolicyAgingReportViewObj.PublishToBNM_LABEL=Publish To BNM
+gov.bnm.rh.views.PolicyAgingReportViewObj.FirstIssuanceDate_FMT_FORMATTER=oracle.jbo.format.DefaultDateFormatter
+gov.bnm.rh.views.PolicyAgingReportViewObj.FirstIssuanceDate_FMT_FORMAT=dd/MM/yyyy
+gov.bnm.rh.views.PolicyAgingReportViewObj.EffectiveDate_LABEL=Effective Date
+gov.bnm.rh.views.PolicyView.ReasonForRejection_LABEL=Reason For Rejection
+gov.bnm.rh.views.links.EnquiryInternaluserPendingViewLink_LABEL=Enquiry Internaluser Pending View Link
+gov.bnm.rh.views.links.EnquiryExternaluserPendingViewLink_LABEL=Enquiry Externaluser Pending View Link
+gov.bnm.rh.views.EnquiryfaqForEnqPendingViewObj.IssuingDepartment_LABEL=Issuing Department
+gov.bnm.rh.views.EnquiryfaqForEnqPendingViewObj.PolicyTitle_LABEL=Policy Title
+
+gov.bnm.rh.views.EnquiryfaqForEnqPendingViewObj.RefNo_LABEL=Reference No
+gov.bnm.rh.views.EnquiryfaqForEnqPendingViewObj.createDate_FMT_FORMATTER=oracle.jbo.format.DefaultDateFormatter
+gov.bnm.rh.views.EnquiryfaqForEnqPendingViewObj.createDate_FMT_FORMAT=dd/MM/yyyy
+gov.bnm.rh.views.EnquiryfaqForEnqViewObj.PolicyTitle_LABEL=Policy Title
+
+gov.bnm.rh.views.EnquiryfaqForEnqViewObj.createDate_FMT_FORMATTER=oracle.jbo.format.DefaultDateFormatter
+gov.bnm.rh.views.EnquiryfaqForEnqViewObj.createDate_FMT_FORMAT=dd/MM/yyyy
+gov.bnm.rh.views.EnquiryfaqForEnqViewObj.RefNo_LABEL=Reference No
+gov.bnm.rh.views.EnquiryfaqForEnqViewObj.EnquirerBNMRole_LABEL=Issuing Department
+gov.bnm.rh.views.links.EnquiryInternaluserViewLink_LABEL=Enquiry Internaluser View Link
+gov.bnm.rh.views.links.EnquiryExternaluserViewLink_LABEL=Enquiry Externaluser View Link
+gov.bnm.rh.views.EnquiryfaqForFaqManView.PolicyTitle_LABEL=Policy Title
+
+gov.bnm.rh.views.EnquiryfaqForFaqManView.IssuingDepartment_LABEL=Issuing Department
+gov.bnm.rh.views.RequestlistView.createDate_FMT_FORMATTER=oracle.jbo.format.DefaultDateFormatter
+gov.bnm.rh.views.RequestlistView.createDate_FMT_FORMAT=dd/MM/yyyy
+gov.bnm.rh.views.searchfn.PolicyCountView_LABEL=Policy Count View
+gov.bnm.rh.views.PolicyView.GuidelineTitle_LABEL=Title
+gov.bnm.rh.views.PolicyView.keywords_LABEL=Keyword
+
+gov.bnm.rh.views.PolicyView.PublishToBNM_LABEL=Publish in BNM Website
+gov.bnm.rh.views.PolicyActiveOnlyViewObj.EffectiveDate_LABEL=Effective Date
+gov.bnm.rh.views.PolicyActiveOnlyViewObj.RefNum_LABEL=Reference No
+gov.bnm.rh.views.PolicyActiveOnlyViewObj.DocCategory_LABEL=Document Type
+gov.bnm.rh.views.PolicyArchiveOnly.DocCategory_LABEL=Document Type
+gov.bnm.rh.views.PolicyArchiveOnly.DisplayInWhatsNew_LABEL=Display in Whats New
+gov.bnm.rh.views.PolicyActiveOnlyViewObj.DisplayInWhatsNew_LABEL=Display in Whats New
+gov.bnm.rh.views.PolicyArchiveOnly.EffectiveDate_LABEL=Effective Date
+gov.bnm.rh.views.PolicyArchiveOnly.FirstIssuanceDate_LABEL=First Issuance Date
+gov.bnm.rh.views.PolicyActiveOnlyViewObj.FirstIssuanceDate_LABEL=First Issuance Date
+gov.bnm.rh.views.PolicyArchiveOnly.NewIssuanceDate_LABEL=Issuance Date
+gov.bnm.rh.views.PolicyArchiveOnly.NewIssuanceDate_FMT_FORMATTER=oracle.jbo.format.DefaultDateFormatter
+gov.bnm.rh.views.PolicyArchiveOnly.NewIssuanceDate_FMT_FORMAT=dd/MM/yyyy
+gov.bnm.rh.views.PolicyArchiveOnly.PublishToBNM_LABEL=Publish in BNM Website
+gov.bnm.rh.views.PolicyActiveOnlyViewObj.PublishToBNM_LABEL=Publish in BNM Website
+gov.bnm.rh.views.PolicyArchiveOnly.SectionInCharge_LABEL=Section in Charge
+gov.bnm.rh.views.PolicyActiveOnlyViewObj.SectionInCharge_LABEL=Section in Charge
+gov.bnm.rh.views.PolicyArchiveOnly.partitionTypeId_LABEL=Partition Type Id
+gov.bnm.rh.views.PolicyActiveOnlyViewObj.partitionTypeId_LABEL=Partition Type Id
+gov.bnm.rh.views.PolicyActiveOnlyViewObj.ReasonForRejection_LABEL=Reason For Rejection
+gov.bnm.rh.views.PolicyArchiveOnly.ReasonForRejection_LABEL=Reason For Rejection
+gov.bnm.rh.views.PolicyView.RecordStatus_LABEL=Status
+gov.bnm.rh.views.PolicyRejectedViewObj.EffectiveDate_LABEL=Effective Date
+gov.bnm.rh.views.PolicyRejectedViewObj.GuidelineTitle_LABEL=Title
+gov.bnm.rh.views.PolicyRejectedViewObj.FirstIssuanceDate_LABEL=First Issuance Date
+gov.bnm.rh.views.PolicyView.FirstIssuanceDate_FMT_FORMATTER=oracle.jbo.format.DefaultDateFormatter
+gov.bnm.rh.views.PolicyView.FirstIssuanceDate_FMT_FORMAT=dd/MM/yyyy
+gov.bnm.rh.views.PolicyRejectedViewObj.FirstIssuanceDate_FMT_FORMATTER=oracle.jbo.format.DefaultDateFormatter
+gov.bnm.rh.views.PolicyRejectedViewObj.FirstIssuanceDate_FMT_FORMAT=dd/MM/yyyy
+gov.bnm.rh.views.PolicyRejectedViewObj.NewIssuanceDate_LABEL=Issuance Date
+gov.bnm.rh.views.PolicyRejectedViewObj.NewIssuanceDate_FMT_FORMATTER=oracle.jbo.format.DefaultDateFormatter
+gov.bnm.rh.views.PolicyRejectedViewObj.NewIssuanceDate_FMT_FORMAT=dd/MM/yyyy
+gov.bnm.rh.views.PolicyRejectedViewObj.ReasonForRejection_LABEL=Reason For Rejection
+gov.bnm.rh.views.PolicyRejectedViewObj.RecordStatus_LABEL=Status
+gov.bnm.rh.views.PolicyRejectedViewObj.RefNum_LABEL=Reference No
+gov.bnm.rh.views.EnquiryfaqForFaqManView.OrigTitle_LABEL=Policy Title
+gov.bnm.rh.views.PolicyAgingEmailViewObj.GuidelineTitle_LABEL=Title
+gov.bnm.rh.views.PolicyAgingEmailViewObj.NewIssuanceDate_LABEL=Issuance Date
+gov.bnm.rh.views.PolicyAgingEmailViewObj.NewIssuanceDate_FMT_FORMATTER=oracle.jbo.format.DefaultDateFormatter
+gov.bnm.rh.views.PolicyAgingEmailViewObj.NewIssuanceDate_FMT_FORMAT=dd/MM/yyyy
+gov.bnm.rh.views.PolicyAgingEmailViewObj.RefNum_LABEL=Reference No
+gov.bnm.rh.views.PolicyAgingEmailViewObj.EffectiveDate_LABEL=Effective Date
+gov.bnm.rh.views.PolicyAgingEmailViewObj.FirstIssuanceDate_LABEL=First Issuance Date
+gov.bnm.rh.views.links.RequestSupportDocViewLink_LABEL=Request Support Doc View Link
+gov.bnm.rh.views.CategoryReadOnlyViewObj_LABEL=Category Read Only View Obj
+gov.bnm.rh.views.EnquiryfaqForEnqPolicyViewObj.createDate_FMT_FORMATTER=oracle.jbo.format.DefaultDateFormatter
+gov.bnm.rh.views.EnquiryfaqForEnqPolicyViewObj.createDate_FMT_FORMAT=dd/MM/yyyy
+gov.bnm.rh.views.AttachedfileSupportDocViewObj.documentName_LABEL=Document Name
+gov.bnm.rh.views.PolicyAgingReportViewObj.NewIssuanceDate_FMT_FORMATTER=oracle.jbo.format.DefaultDateFormatter
+gov.bnm.rh.views.PolicyAgingReportViewObj.NewIssuanceDate_FMT_FORMAT=dd/MM/yyyy
+gov.bnm.rh.views.PolicyamendmentHistoryViewObj.CreatedDate_FMT_FORMATTER=oracle.jbo.format.DefaultDateFormatter
+gov.bnm.rh.views.PolicyamendmentHistoryViewObj.CreatedDate_FMT_FORMAT=dd/MM/yyyy
+gov.bnm.rh.views.PolicyActiveOnlyViewObj.IssuingDepartment_LABEL=Issuing Department
+gov.bnm.rh.views.PolicyActiveOnlyViewObj.InstitutionTypes_LABEL=Institution Types
+gov.bnm.rh.views.PolicyActiveOnlyViewObj.NewIssuanceDate_FMT_FORMATTER=oracle.jbo.format.DefaultDateFormatter
+gov.bnm.rh.views.PolicyActiveOnlyViewObj.NewIssuanceDate_FMT_FORMAT=dd MMMM yyyy
+
+gov.bnm.rh.views.searchfn.PolicyPartitionCompViewObj.GuidelineTitle_LABEL=Title
+
+gov.bnm.rh.views.searchfn.PolicyPartitionCompViewObj.NewIssuanceDate_LABEL=Issuance Date
+gov.bnm.rh.views.searchfn.PolicyPartitionCompViewObj.NewIssuanceDate_FMT_FORMATTER=oracle.jbo.format.DefaultDateFormatter
+gov.bnm.rh.views.searchfn.PolicyPartitionCompViewObj.NewIssuanceDate_FMT_FORMAT=dd MMMM yyyy
+gov.bnm.rh.views.links.EnquiryApproverViewLink_LABEL=Enquiry Approver View Link
+gov.bnm.rh.views.InternaluserView.FULLNAME_LABEL=Fullname
+gov.bnm.rh.views.PolicybnmuserspartitionView.userName_LABEL=Fullname
+gov.bnm.rh.views.DepartmentView.NAME_LABEL=Department
+gov.bnm.rh.views.PolicyView.NewIssuanceDate_FMT_FORMATTER=oracle.jbo.format.DefaultDateFormatter
+gov.bnm.rh.views.PolicyView.NewIssuanceDate_FMT_FORMAT=dd MMMM yyyy
+gov.bnm.rh.views.links.RequestDesignationViewLink_LABEL=Request Designation View Link
+gov.bnm.rh.views.AttachmentDownloadViewObj_LABEL=Attachment Download View Obj
+
+gov.bnm.rh.views.PolicyPendingViewObj.GuidelineTitle_LABEL=Title
+gov.bnm.rh.views.PolicyPendingViewObj.NewIssuanceDate_LABEL=Issuance Date
+gov.bnm.rh.views.PolicyPendingViewObj.NewIssuanceDate_FMT_FORMATTER=oracle.jbo.format.DefaultDateFormatter
+gov.bnm.rh.views.PolicyPendingViewObj.NewIssuanceDate_FMT_FORMAT=dd MMMM yyyy
+gov.bnm.rh.views.PolicyPendingViewObj_LABEL=Policy Pending View Obj
+gov.bnm.rh.views.PolicyPendingViewObj.ReasonForRejection_LABEL=Reason For Rejection
+gov.bnm.rh.views.PolicyPendingViewObj.RecordStatus_LABEL=Status
+gov.bnm.rh.views.PolicyPendingViewObj.RefNum_LABEL=Reference No

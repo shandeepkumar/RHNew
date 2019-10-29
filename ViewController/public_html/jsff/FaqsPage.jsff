@@ -1,0 +1,192 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelStretchLayout binding="#{backingBeanScope.backing_FaqsPage.psl1}"
+                         id="psl1" topHeight="37px">
+    <f:facet name="center">
+      <af:panelGroupLayout binding="#{backingBeanScope.backing_FaqsPage.pgl2}"
+                           id="pgl2" layout="scroll">
+        <af:table value="#{bindings.EnquiryfaqForFaqManView1.collectionModel}"
+                  var="row"
+                  rows="#{bindings.EnquiryfaqForFaqManView1.rangeSize}"
+                  emptyText="#{bindings.EnquiryfaqForFaqManView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                  fetchSize="#{bindings.EnquiryfaqForFaqManView1.rangeSize}"
+                  rowBandingInterval="1"
+                  filterModel="#{bindings.EnquiryfaqForFaqManView1Query.queryDescriptor}"
+                  queryListener="#{bindings.EnquiryfaqForFaqManView1Query.processQuery}"
+                  filterVisible="#{securityContext.userInRole['01'] ? true : false}" varStatus="vs"
+                  rowSelection="multiple"
+                  binding="#{backingBeanScope.backing_FaqsPage.t1}" id="t1"
+                  width="99%" columnStretching="column:c3"
+                  selectionListener="#{backingBeanScope.backing_FaqsPage.faqTableSelectionListener}">
+          <af:column headerText="No" id="c6" width="44">
+            <af:outputText value="#{vs.index + 1}" id="ot6"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.EnquiryfaqForFaqManView11.hints.Mark.name}"
+                     sortable="false"
+                     rendered="#{pageFlowScope.faqFromType eq 'AM'}"
+                     headerText="#{bindings.EnquiryfaqForFaqManView11.hints.Mark.label}"
+                     id="c5" width="44">
+            <af:selectBooleanCheckbox value="#{row.bindings.Mark.inputValue}"
+                                      label="#{row.bindings.Mark.label}"
+                                      shortDesc="#{bindings.EnquiryfaqForFaqManView11.hints.Mark.tooltip}"
+                                      id="sbc1"
+                                      disabled="#{row.faqStatus eq 'ARCHIVE'}"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.EnquiryfaqForFaqManView1.hints.RefNo.name}"
+                     filterable="true" sortable="true"
+                     headerText="#{bindings.EnquiryfaqForFaqManView1.hints.RefNo.label}"
+                     id="c2" filterFeatures="caseInsensitive" noWrap="false">
+            <af:outputText value="#{row.RefNo}" id="ot4"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.EnquiryfaqForFaqManView1.hints.PolicyTitle.name}"
+                     filterable="true" sortable="true"
+                     headerText="#{bindings.EnquiryfaqForFaqManView1.hints.PolicyTitle.label}"
+                     id="c4" width="250" filterFeatures="caseInsensitive"
+                     noWrap="false">
+            <af:outputText value="#{row.PolicyTitle}" id="ot8"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.EnquiryfaqForFaqManView1.hints.IssuingDepartment.name}"
+                     filterable="true" filterFeatures="caseInsensitive"
+                     sortable="true"
+                     headerText="#{bindings.EnquiryfaqForFaqManView1.hints.IssuingDepartment.label}"
+                     width="250" id="c7"
+                     rendered="#{sessionScope.rhSession.fldUserType ne '03'}"
+                     noWrap="false">
+            <af:outputText value="#{row.IssuingDepartment}" id="ot15"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.EnquiryfaqForFaqManView1.hints.Title.name}"
+                     sortable="false"
+                     headerText="#{bindings.EnquiryfaqForFaqManView1.hints.Title.label}"
+                     id="c3" width="150" noWrap="false">
+            <af:outputText value="#{row.Title}" id="ot3"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.EnquiryfaqForFaqManView1.hints.faqStatus.name}"
+                     filterable="true" sortable="true"
+                     headerText="#{bindings.EnquiryfaqForFaqManView1.hints.faqStatus.label}"
+                     id="c1" width="63" filterFeatures="caseInsensitive">
+            <af:outputText value="#{row.faqStatus}" id="ot5"/>
+          </af:column>
+        </af:table>
+        <af:spacer width="10" height="30"
+                   binding="#{backingBeanScope.backing_FaqsPage.s2}" id="s2"/>
+        <af:panelGroupLayout binding="#{backingBeanScope.backing_FaqsPage.pgl3}"
+                             id="pgl3" layout="horizontal"
+                             rendered="#{pageFlowScope.faqFromType eq 'AM'}">
+          <af:spacer width="50" height="10"
+                     binding="#{backingBeanScope.backing_FaqsPage.s3}" id="s3"/>
+          <af:commandButton text="Publish Selected FAQ"
+                            binding="#{backingBeanScope.backing_FaqsPage.cb1}"
+                            id="cb1"
+                            action="#{backingBeanScope.backing_FaqsPage.doPublishFaq}"
+                            partialTriggers="t1"
+                            disabled="#{bindings.faqStatus eq 'ARCHIVE'}"/>
+          <af:spacer width="20" height="10"
+                     binding="#{backingBeanScope.backing_FaqsPage.s4}" id="s4"/>
+          <af:commandButton text="Archive Selected FAQ"
+                            binding="#{backingBeanScope.backing_FaqsPage.cb2}"
+                            id="cb2"
+                            action="#{backingBeanScope.backing_FaqsPage.doArchiveFaq}"
+                            partialTriggers="t1"
+                            disabled="#{bindings.faqStatus eq 'ARCHIVE'}"/>
+          <af:spacer width="20" height="10" id="s5"/>
+          <af:commandButton text="Update Selected FAQ"
+                            binding="#{backingBeanScope.backing_FaqsPage.cb3}"
+                            id="cb3"
+                            action="#{backingBeanScope.backing_FaqsPage.getUpdateStatus}"
+                            partialTriggers="t1"
+                            disabled="#{bindings.faqStatus eq 'ARCHIVE'}"/>
+        </af:panelGroupLayout>
+        <af:spacer width="10" height="10" id="s6"
+                   rendered="#{pageFlowScope.faqFromType eq 'AM'}"/>
+        <af:panelTabbed binding="#{backingBeanScope.backing_FaqsPage.pt1}"
+                        id="pt1" dimensionsFrom="auto">
+          <af:showDetailItem text="Details"
+                             binding="#{backingBeanScope.backing_FaqsPage.sdi1}"
+                             id="sdi1">
+            <af:panelFormLayout binding="#{backingBeanScope.backing_FaqsPage.pfl1}"
+                                id="pfl1" partialTriggers="t1"
+                                visible="#{bindings.EnquiryfaqForFaqManView1Iterator.estimatedRowCount >0}">
+              <f:facet name="footer">
+                <af:panelGroupLayout binding="#{backingBeanScope.backing_FaqsPage.pgl4}"
+                                     id="pgl4" layout="horizontal"
+                                     rendered="#{pageFlowScope.faqFromType eq 'AM'}">
+                  <af:spacer width="50" height="10" id="s10"/>
+                  <af:commandButton text="Save"
+                                    binding="#{backingBeanScope.backing_FaqsPage.cb4}"
+                                    id="cb4"
+                                    action="#{backingBeanScope.backing_FaqsPage.doFaqUpdate}"
+                                    disabled="#{pageFlowScope.updateSts ne 'Y'}"/>
+                  <af:spacer width="20" height="10" id="s9"/>
+                  <af:commandButton text="Cancel"
+                                    binding="#{backingBeanScope.backing_FaqsPage.cb5}"
+                                    id="cb5"
+                                    disabled="#{pageFlowScope.updateSts ne 'Y'}"
+                                    action="#{backingBeanScope.backing_FaqsPage.doCancel}">
+                    <af:resetActionListener/>
+                  </af:commandButton>
+                </af:panelGroupLayout>
+              </f:facet>
+              <af:inputText value="#{bindings.EnquiryFAQId.inputValue}"
+                            simple="true"
+                            required="#{bindings.EnquiryFAQId.hints.mandatory}"
+                            columns="#{bindings.EnquiryFAQId.hints.displayWidth}"
+                            maximumLength="#{bindings.EnquiryFAQId.hints.precision}"
+                            shortDesc="#{bindings.EnquiryFAQId.hints.tooltip}"
+                            binding="#{backingBeanScope.backing_FaqsPage.it1}"
+                            id="it1" rendered="false">
+                <f:validator binding="#{bindings.EnquiryFAQId.validator}"/>
+              </af:inputText>
+              <af:inputText value="#{bindings.Title.inputValue}"
+                            label="#{bindings.Title.hints.label}"
+                            required="#{bindings.Title.hints.mandatory}"
+                            columns="100"
+                            maximumLength="#{bindings.Title.hints.precision}"
+                            shortDesc="#{bindings.Title.hints.tooltip}"
+                            binding="#{backingBeanScope.backing_FaqsPage.it2}"
+                            id="it2" rows="3"
+                            visible="#{pageFlowScope.updateSts eq 'Y'}">
+                <f:validator binding="#{bindings.Title.validator}"/>
+              </af:inputText>
+              <af:panelLabelAndMessage label="#{bindings.Title.hints.label}"
+                                       binding="#{backingBeanScope.backing_FaqsPage.plam2}"
+                                       id="plam2"
+                                       visible="#{pageFlowScope.updateSts ne 'Y'}">
+                <af:outputText value="#{bindings.Title.inputValue}"
+                               binding="#{backingBeanScope.backing_FaqsPage.ot2}"
+                               id="ot2"/>
+              </af:panelLabelAndMessage>
+              <af:spacer width="10" height="10" id="s7"/>
+              <af:panelLabelAndMessage label="#{bindings.Abstract11.hints.label}"
+                                       binding="#{backingBeanScope.backing_FaqsPage.plam1}"
+                                       id="plam1"
+                                       visible="#{pageFlowScope.updateSts ne 'Y'}">
+                <af:outputFormatted value="#{bindings.Abstract11.inputValue}"
+                                    binding="#{backingBeanScope.backing_FaqsPage.of1}"
+                                    id="of1"/>
+              </af:panelLabelAndMessage>
+              <af:richTextEditor label="#{bindings.Abstract11.hints.label}"
+                                 binding="#{backingBeanScope.backing_FaqsPage.rte1}"
+                                 id="rte1"
+                                 value="#{bindings.Abstract11.inputValue}"
+                                 rows="3" columns="100"
+                                 toolboxLayout="history formatAll justify list indent"
+                                 visible="#{pageFlowScope.updateSts eq 'Y'}"
+                                 clientComponent="true"/>
+              <af:spacer width="10" height="10" id="s8"/>
+            </af:panelFormLayout>
+          </af:showDetailItem>
+        </af:panelTabbed>
+      </af:panelGroupLayout>
+    </f:facet>
+    <f:facet name="top">
+        <af:outputText value="FAQ Management"
+                       binding="#{backingBeanScope.backing_FaqsPage.ot1}"
+                       id="ot1"
+                       styleClass="pageTitleHeaderLeft"/>
+    
+    </f:facet>
+  </af:panelStretchLayout>
+  <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_FaqsPage-->
+</jsp:root>

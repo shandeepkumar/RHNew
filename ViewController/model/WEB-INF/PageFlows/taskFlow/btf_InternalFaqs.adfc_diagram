@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <MethodCall
+      id="MethodCall2">
+      <property
+         name="activityId">getInsernalUserFaqManagementDetails</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>getInsernalUserFaqManagementDetails&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">134.5</property>
+      <property
+         name="x">206.05469</property>
+   </MethodCall>
+   <View
+      id="View3">
+      <property
+         name="activityId">FaqsPage</property>
+      <property
+         name="page">/jsff/FaqsPage.jsff</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>FaqsPage&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">234.80371</property>
+      <property
+         name="x">588.5</property>
+      <property
+         name="pageFragment">true</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="MethodCall2"
+      to="View3">
+      <property
+         name="fromOutcome">getInsernalUserFaqManagementDetails</property>
+      <property
+         name="sdm:polyPoints">R50,247.05469,134.14941,547.5,234.45312,L50</property>
+   </ControlFlowCase>
+</SDM>
